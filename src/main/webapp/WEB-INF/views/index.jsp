@@ -44,14 +44,15 @@
 		<div class="main_body">
 			<img alt="" src="./resources/images/mainHome/main_visual_img1.jpg">
 			<div class="body_inner">
-				<h2 class="main_font">
+				<div class="main_font">
 					<span>파리</span>
 					<span>크레파스</span>
-				</h2>
-				<h2 class="main_font2">
+					</div>
+				
+				<div class="main_font2">
 					<span>Paris</span>
 					<span>Crayon</span>
-				</h2>
+				</div>
 			</div>
 		</div> 
 	
