@@ -3,7 +3,7 @@
 <html>
 <head>
 <title>Home</title>
-<c:import url="./css/layout/header.css"></c:import>
+<link href="<c:url value="/resources/css/layout/header.css"/>" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js">
 </script>
 </head>
@@ -11,7 +11,6 @@
 	
 	<!-------------------------------header----------------------------->
 	<header>
-	<h1>CSS</h1>
 	<div id="headerWrap">
 		
 	</div>
