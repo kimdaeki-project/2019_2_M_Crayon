@@ -12,13 +12,13 @@
 	padding-top: 28px;
 	padding-bottom: 27px;
 	z-index: 10;
-	background-color: orange;
+	background-color: transparent;
 }
 .header_inner{
 	width: 1100px;
 	overflow: hidden;
 	height:45px;
-	background-color: black;
+	background-color: transparent;
 	margin: 0 auto;
 
 }
@@ -29,10 +29,22 @@
 }
 .header_inner .navigationWrap{
 	float: left;
-	width: 50%;
+	margin-left:80px;
+	font-size:22px;
+	word-spacing:30px;
+	width: 60%;
+	line-height:45px;
 	height: 48px;
-	background-color: yellow;
+	color:gray;
+	background-color: transparent;
 }
+
+.navigationWrap > a:hover {
+	color:white;
+}
+
 .header_inner .snsWrap{
+	float:right;
+	word-spacing: 30px;
 	
 }
