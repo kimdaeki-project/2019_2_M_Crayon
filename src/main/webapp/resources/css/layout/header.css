@@ -14,12 +14,25 @@
 	z-index: 10;
 	background-color: orange;
 }
-#header_inner{
-	width: 100%;
+.header_inner{
+	width: 1100px;
 	overflow: hidden;
-	height:48px;
-	background-color: yellow;
+	height:45px;
+	background-color: black;
 	margin: 0 auto;
-	
+
+}
+.header_inner .logoWrap{
+	width: 180px;
+	height: 48px;
+	float: left;
+}
+.header_inner .navigationWrap{
+	float: left;
+	width: 50%;
+	height: 48px;
+	background-color: yellow;
+}
+.header_inner .snsWrap{
 	
 }
