@@ -10,12 +10,13 @@
 <body>
 	
 	<!-------------------------------header----------------------------->
-	<header>
-	<div id="headerWrap">
-		
+	
+	<div class="header">
+		<div id="header_inner">
+		</div>
 	</div>
 	
-	</header>
+	
 	
 	
 
