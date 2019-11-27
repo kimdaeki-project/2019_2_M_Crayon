@@ -10,9 +10,9 @@
 	rel="stylesheet">
 	<link href="<c:url value="/resources/css/layout/main.css"/>"
 	rel="stylesheet">
-<script src="https://kit.fontawesome.com/a076d05399.js">
-	
+<script src="https://kit.fontawesome.com/a076d05399.js">	
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -42,18 +42,22 @@
 	
 	<div class="body">
 		<div class="main_body">
-			<img alt="" src="./resources/images/mainHome/main_visual_img1.jpg">
-			<div class="body_inner">
-				<div class="main_font">
-					<span>파리</span>
-					<span>크레파스</span>
+			<div id="main_body_image">
+			
+				<div class="body_inner">
+					<div class="main_font">
+						<span>파리</span>
+						<span>크레파스</span>
 					</div>
-				
-				<div class="main_font2">
-					<span>Paris</span>
-					<span>Crayon</span>
+					
+					<div class="main_font2">
+						<span>Paris</span>
+						<span>Crayon</span>
+					</div>
 				</div>
+			
 			</div>
+			
 		</div> 
 	
 	</div>
