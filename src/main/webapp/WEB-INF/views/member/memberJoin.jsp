@@ -60,7 +60,7 @@
 		</div>
 
 		<input type="button" id="join" class="btn btn-default" value="Join">
-		<a href="./${board}List" class="btn btn-info">Go list</a>
+		<a href="#" class="btn btn-info">Go list</a>
 	</form>
 
 
