@@ -9,7 +9,23 @@
   		</insert>
   		
   		<select id="memberLogin" parameterType="MemberVO" resultType="MemberVO">
-  			select * from member where email=#{email}, pw=#{pw}
+  			select * from member where email=#{email} and pw=#{pw}
+  		</select>
+  		
+  		<update id="memberUpdate" parameterType="MemberVO">
+  		update member set pw=#{pw}, name=#{name} where email=#{email}
+  		</update>
+  		
+  		<delete id="memberDelete" parameterType="MemberVO">
+  			delete member where email=#{email}
+  		</delete>
+  		
+  		
+  		<select id="memberSearchID" parameterType="MemberVO" resultType="MemberVO">
+  			select email from member where name=#{name} and birth=#{birth}
   		</select>
 
+		<select id="memberSearchPW" parameterType="MemberVO" resultType="MemberVO">
+			select pw from member where email=#{email} and birth=#{birth}
+		</select>
   </mapper>

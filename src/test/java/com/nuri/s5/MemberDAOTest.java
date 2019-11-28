@@ -16,7 +16,7 @@ public class MemberDAOTest extends TestAbstractCase{
 	@Inject
 	private MemberDAOImpl memberDAOImpl;
 	
-	@Test
+	//@Test
 	public void Join()throws Exception {
 		MemberVO memberVO = new MemberVO();
 		memberVO.setEmail("test@g.com");
@@ -29,4 +29,28 @@ public class MemberDAOTest extends TestAbstractCase{
 		assertEquals(1, result);
 	}
 
+	//@Test
+	public void update()throws Exception{
+		MemberVO memberVO = new MemberVO();
+		
+		memberVO.setEmail("admin@g.com");
+		memberVO.setName("admin");
+		memberVO.setPw("admin");
+		
+		int result = memberDAOImpl.memberUpdate(memberVO);
+		assertEquals(1,	result);
+	}
+	
+	@Test
+	public void delete()throws Exception{
+		MemberVO memberVO = new MemberVO();
+		
+		memberVO.setEmail("tt@g.com");
+		
+		int result = memberDAOImpl.memberDelete(memberVO);
+		assertEquals(1, result);
+	}
+	
+	
+	
 }

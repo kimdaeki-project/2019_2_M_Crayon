@@ -17,4 +17,10 @@ public interface MemberDAO {
 	public MemberVO memberSelect(MemberVO memberVO)throws Exception;
 	//memberidCheck
 	public MemberVO memberIdCheck(MemberVO memberVO)throws Exception;
+	//memberSearchID(이름,생일)
+	public MemberVO memberSearchID(MemberVO memberVO)throws Exception;
+	//memberSearchPW(이메일,생일)
+	public MemberVO memberSearchPW(MemberVO memberVO)throws Exception;
+	
+	
 }
