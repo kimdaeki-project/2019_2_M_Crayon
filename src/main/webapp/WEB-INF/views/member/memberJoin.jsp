@@ -11,8 +11,7 @@
 
 
 
-	<form id="frm" action="./memberJoin" method="POST"
-		enctype="multipart/form-data">
+	<form id="frm" action="./memberJoin" method="POST">
 
 
 		<div class="email">
@@ -59,7 +58,7 @@
 			</select> <br>
 		</div>
 
-		<input type="button" id="join" class="btn btn-default" value="Join">
+		<input type="submit" id="join" class="btn btn-default" value="Join">
 		<a href="#" class="btn btn-info">Go list</a>
 	</form>
 
