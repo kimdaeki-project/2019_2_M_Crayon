@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -125,12 +126,36 @@ public class MemberController {
 
 	}
 	
-	//ID 찾기 폼 
+	
+	//ID 중복확인(이메일)
+	@GetMapping(value = "memberIdCheck")
+	public Model memberIdCheck(MemberVO memberVO, Model model)throws Exception {
+		memberVO = memberServiceImpl.memberIdCheck(memberVO);
+		
+		String msg = "중복된 이메일입니다.";
+		if (memberVO == null) {
+			msg = "사용가능한 이메일입니다.";	
+		}
+		
+		model.addAttribute("dto", memberVO);
+		model.addAttribute("msg", msg);
+		
+		return model;
+		
+	}
+	
+	
+	
+	
+	
+	
+	//ID 찾기 폼 (이메일)
 	@GetMapping(value = "memberSearchID")
 	public void memberSearchID() throws Exception{
 		
+		
 	}
-	//ID 찾기
+	//ID 찾기(이메일)
 	@PostMapping(value = "memberSearchID")
 	public ModelAndView memberSearchID(MemberVO memberVO) throws Exception{
 		ModelAndView mv = new ModelAndView();

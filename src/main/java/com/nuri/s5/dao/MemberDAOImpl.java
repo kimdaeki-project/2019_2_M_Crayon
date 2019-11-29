@@ -47,7 +47,7 @@ import com.nuri.s5.model.MemberVO;
 	@Override
 	public MemberVO memberIdCheck(MemberVO memberVO) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne(NAMESPACE+"memberIdCheck", memberVO);
 	}
 	
 	@Override

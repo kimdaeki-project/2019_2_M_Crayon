@@ -8,7 +8,7 @@
 <title>SearchID</title>
 </head>
 <body>
-						<h1>ID 찾기</h1>
+						<h1>E-mail 찾기</h1>
 					
 					
 					
