@@ -1,4 +1,4 @@
-package com.nuri.s5;
+package com.nuri.s5.controller;
 
 import java.text.DateFormat;
 import java.util.Date;

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="reviewMapper">
+  		<update id="reviewUpdate" parameterType="ReviewVO">
+  			update review set title=#{title}, writer=#{writer}, contents=#{contents} where num=#{num}
+  		</update>	
+  		
+  		<update id="countUpdate" parameterType="ReviewVO">
+  			update review set hit=#{hit} where num=#{num}
+  		</update>
+  		
+  		<resultMap type="ReviewVO" id="reviewFile">
+  			<id property="num" column="num" />
+			<result property="title" column="title" />
+			<result property="writer" column="writer" />
+			<result property="contents" column="contents" />
+			<result property="day" column="day" />
+			<collection property="files" javaType="java.util.List" ofType="ReviewFilesVO">
+				<id property="fnum" column="fnum" />
+				<result property="fname" column="fname" />
+				<result property="oname" column="oname" />
+			</collection>
+  		</resultMap>
+  		
+  
+  		<insert id="reviewWrite" parameterType="ReviewVO">
+  			<selectKey order="BEFORE" resultType="Integer" keyProperty="num">
+  				select seq_review.nextval from dual
+  			</selectKey>
+  			insert into review 
+  			values(num, #{title}, #{writer}, #{contents}, sysdate, 0)
+  		</insert>
+  		
+  		<delete id="reviewDelete">
+  			delete review where num=#{num}
+  		</delete>
+  		
+  		<select id="reviewSelect" parameterType="ReviewVO" resultMap="reviewFile">
+  			select R.*, F.fnum, F.fname, F.oname 
+  			from review R full outer join files F 
+  			on R.num = F.num
+  			where R.num = #{num}
+  		</select>
+  
+	    <sql id="searching">
+	    	<choose>
+				<when test="kind == 'kt'">
+					where title like '%'||#{search}||'%'
+				</when>
+				<when test="kind == 'kw'">
+					where writer like '%'||#{search}||'%'
+				</when>
+				<otherwise>
+					where contents like	'%'||#{search}||'%'
+				</otherwise>
+			</choose>
+	    </sql>
+  
+  		<select id="reviewList" parameterType="Pager" resultType="ReviewVO">
+  			select * from 
+  				(select R.*, rownum RN from
+		  			(select * from review
+		  			<include refid="searching"></include> 
+		  			order by num desc) R)
+		  	where RN between #{startRow} and #{lastRow}
+  		</select>
+
+  		<select id="reviewCount" resultType="Integer" parameterType="Pager">
+  			select count(num) from review
+  			<include refid="searching"></include>
+  		</select>
+  		
+  </mapper>
