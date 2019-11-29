@@ -23,7 +23,9 @@ public class ReviewController {
 	
 	@Inject
 	private ReviewServiceImpl reviewServiceImpl;
+
 	
+/////////////////////////// review file ///////////////////////////////////
 	@GetMapping(value = "fileWrite")
 	public ModelAndView fileWrite(ReviewFilesVO reviewFilesVO) throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -33,6 +35,9 @@ public class ReviewController {
 		return mv;
 	}
 	
+	
+/////////////////////////// review board ///////////////////////////////////
+	
 	@GetMapping(value = "reviewWrite")
 	public void reviewWrite() throws Exception{
 	}
@@ -41,6 +46,7 @@ public class ReviewController {
 	public ModelAndView reviewWrite(ReviewVO reviewVO, MultipartFile [] file, HttpSession httpSession)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		int result = reviewServiceImpl.reviewWrite(reviewVO, file, httpSession);
+		mv.addObject("dto", reviewVO);
 		if(result>0) {
 			mv.setViewName("redirect:./reviewList");
 		}else {
@@ -61,11 +67,11 @@ public class ReviewController {
 	public ModelAndView reviewSelect(ReviewVO reviewVO) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		reviewVO = reviewServiceImpl.reviewSelect(reviewVO);
+		mv.addObject("dto", reviewVO);
 		int hit = reviewVO.getHit();	
 		hit = hit+1;
 		reviewVO.setHit(hit);
 		int count = reviewServiceImpl.countUpdate(reviewVO);
-		mv.addObject("dto", reviewVO);
 		mv.setViewName("review/reviewSelect");
 		return mv;
 	}

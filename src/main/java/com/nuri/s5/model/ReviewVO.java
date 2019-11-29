@@ -10,7 +10,15 @@ public class ReviewVO {
 	private String contents;
 	private String day;
 	private int hit;
+	private String tourName;
 	
+	
+	public String getTourName() {
+		return tourName;
+	}
+	public void setTourName(String tourName) {
+		this.tourName = tourName;
+	}
 	public int getHit() {
 		return hit;
 	}

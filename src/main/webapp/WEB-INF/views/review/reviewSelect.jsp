@@ -12,11 +12,12 @@
 	<div class="container">
 		<table class="table">
 			<thead>
-				<tr class="danger"><th>NUM</th><th>TITLE</th><th>WRITER</th><th>DATE</th><th>HIT</th></tr>
+				<tr class="danger"><th>NUM</th><th>TOURNAME</th><th>TITLE</th><th>WRITER</th><th>DATE</th><th>HIT</th></tr>
 			</thead>
 			<tbody>
 				<tr class="active">
 					<td>${dto.num}</td>
+					<td>${dto.tourName}</td>
 					<td>${dto.title}</td>
 					<td>${dto.writer}</td>
 					<td>${dto.day}</td>

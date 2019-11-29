@@ -15,7 +15,7 @@ public interface ReviewService {
 	
 	public ReviewVO reviewSelect(ReviewVO reviewVO)throws Exception;
 	
-	public int reviewUpdate(ReviewVO reviewVO)throws Exception;
+	public int reviewUpdate(ReviewVO reviewVO, MultipartFile [] file, HttpSession httpSession)throws Exception;
 	
 	public int reviewDelete(ReviewVO reviewVO)throws Exception;
 	

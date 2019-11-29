@@ -51,9 +51,22 @@ public class ReviewServiceImpl implements ReviewService {
 	}
 
 	@Override
-	public int reviewUpdate(ReviewVO reviewVO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+	public int reviewUpdate(ReviewVO reviewVO, MultipartFile [] file, HttpSession httpSession) throws Exception {
+		
+		String realPath = httpSession.getServletContext().getRealPath("resources/upload/review");
+		int result = reviewDAOImpl.reviewUpdate(reviewVO);
+		ReviewFilesVO reviewFilesVO = new ReviewFilesVO();
+		
+		for (MultipartFile multipartFile : file) {
+			if(multipartFile.getOriginalFilename() != "") {
+				String fileName = fs.fileSave(realPath, multipartFile);
+				reviewFilesVO.setNum(reviewVO.getNum());
+				reviewFilesVO.setFname(fileName);
+				reviewFilesVO.setOname(multipartFile.getOriginalFilename());
+				reviewFilesDAO.fileWite(reviewFilesVO);
+			}
+		}
+		return reviewDAOImpl.reviewUpdate(reviewVO);
 	}
 
 	@Override
@@ -62,7 +75,6 @@ public class ReviewServiceImpl implements ReviewService {
 	}
 	
 	@Override
-	@Transactional
 	public int reviewWrite(ReviewVO reviewVO, MultipartFile [] file, HttpSession httpSession) throws Exception{
 		
 		// 1. 글쓰기 파일 첨부를 위한 설정 : realPath

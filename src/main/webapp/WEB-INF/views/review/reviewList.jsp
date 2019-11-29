@@ -13,7 +13,7 @@
 	  <div>
 	  	<form action="./reviewList" id="frm">
 	  	<input type="hidden" id="curPage" value="1" name="curPage">
-	  		<select id="kind" name="kind">
+	  		<select id="kind" name="kind" >
 	  			<option id="kt" value="kt">TITLE</option>
 	  			<option id="kw" value="kw">WRITER</option>
 	  			<option id="kc" value="kc">CONTENTS</option>
@@ -26,13 +26,14 @@
 	<table class="table table-striped">
 	    <thead>
 	      <tr>
-	        <th>NUM</th><th>TITLE</th><th>WRITER</th><th>CONTENTS</th><th>DATE</th><th>HIT</th>
+	        <th>NUM</th><th>TOURNAME</th><th>TITLE</th><th>WRITER</th><th>CONTENTS</th><th>DATE</th><th>HIT</th>
 	      </tr>
 	    </thead>
 	    <tbody>
 	    	<c:forEach items="${list}" var="dto" varStatus="st">
 		      <tr>
 		        <td>${dto.num}</td>
+		        <td>${dto.tourName}</td>
 		        <td><a href="./reviewSelect?num=${dto.num}">${dto.title}</a></td>
 		        <td>${dto.writer}</td>
 		        <td>${dto.contents}</td>

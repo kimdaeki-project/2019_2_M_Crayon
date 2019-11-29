@@ -5,6 +5,6 @@
   
   <mapper namespace="reviewFilesMapper">
   	<insert id="fileWrite" parameterType="ReviewFilesVO">
-	  	insert into files values(num=#{num}, files_seq.nextval, fname=#{fname}, oname=#{oname})
+	  	insert into files values(seq_files.nextval, #{num}, #{fname}, #{oname})
   	</insert>
   </mapper>
