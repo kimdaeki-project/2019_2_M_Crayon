@@ -59,7 +59,7 @@
 			</div> <!-- main_body_image끝 -->	
 			<div class="body_box">
 				<div class="tour_main">
-					<div class="tour_main_txt">파리 크레파스
+					<div class="tour_main_txt">파리크레파스
 						<strong>투어 상품</strong>
 					</div>
 					<div class="tour_main_img">
@@ -123,7 +123,8 @@
 						      </div></figure>
 						      <header class="slide__header">
 						        <h2 class="slide__title">
-						          <span class="title-line"><span>Versailles & Giverny & Gogh</span></span>
+						          <span class="title-line"><span>Versailles</span></span>
+						          <span class="title-line"><span>Giverny & Gogh</span></span>
 						          <span class="title-line"><span>Tour</span></span>
 						        </h2>
 						      </header>
@@ -134,24 +135,117 @@
 				</div><!--tour_main 끝 -->
 				<div class="main_review">
 					<div class="main_rebox_1">
-							<div class="main_rebox_2">
-								<p>파리크레파스</p>
-								<strong>베스트 리얼 후기</strong>
+							<div class ="main_rebox_23">
+								<div class="main_rebox_2">
+									<p>파리크레파스</p>
+									<h3><strong>베스트 리얼후기</strong></h3>
+								</div><!-- rebox2 끝 -->
+								<div class="main_rebox_3">
+									<button class="re_prev_btn"></button>
+									<button class="re_next_btn"></button>
+									<!-- <img alt="" src="./resources/images/mainHome/left_btn.jpg">
+									<img alt="" src="./resources/images/mainHome/right_btn.jpg"> -->
+								</div><!-- rebox3 끝 -->
 							</div>
+							<div class="main_rebox_4">
+								<div class="main_rebox_4_2">
+									<div class="main_re">
+										<div class="img_circle">
+										</div>
+										<div class="re_txtbox">
+										</div>
+									</div>
+									
+									<div class="main_re">
+										<div class="img_circle">
+										</div>
+										<div class="re_txtbox">
+										</div>
+									</div>
+									
+									<div class="main_re">
+										<div class="img_circle">
+										</div>
+										<div class="re_txtbox">
+										</div>
+									</div>
+									
+								
+								</div><!-- rebox_4_2 -->
+							</div> <!-- 리뷰 들어갈 rebox_4 -->
+					</div><!-- rebox_끝 -->
+				</div><!-- review끝 -->
+				<div class="ytb">
+					<div class="ytb_box">
+						<div class="ytb_box2">
+						</div><!-- ytb_box2끝 -->
+						
+						<div class='ytb_realbox_1'>
+							<iframe src='https://www.youtube.com/embed/Tj2W0o3h3OI' frameborder='0' allowfullscreen></iframe>
+						</div><!-- 유투부 들어가는 상자 -->
+						<div class="ytb_txt">
+							<div class="ytb_txt_1">
+								<div class="txt_font">
+									<strong>인스타그램 라이브</strong>
+									<br><br><br><br>
+									<p>파리 크레파스(paris crapas) 인스타그램을 팔로우 하</p>
+									<p>시면 에트르타, 옹플뢰르, 몽생미셸의 생생한 현장을</p>
+									<p>라이브 방송으로 보실 수 있습니다. 여행에 관해 궁금</p>
+									<p>한 점이 있으시거나 현장이 어떤지 궁금하신 점들을</p>
+									<p>현장에 있는 가이드를 통해 보실 수 있는 기회! 놓치지</p>
+									<p>마세요 (정확한 방송 시간대는 인스타그램을통해 안내</p>
+									<p>해 드리고있습니다)</p>
+								</div>
+								<br>
+								<div class="txt_insta"></div>
+							</div>
+						</div>
+					
+					</div><!-- ytb_box끝 -->
+				</div><!-- ytb 유튭 큰박스 끝 -->
+			
+			<div class="blue_txt">
+				<div class="blur_real_txt">
+					<div class="b_t_1"><strong>파리크레파스</strong>
 					</div>
+					<div class="b_t_2">
+					프랑스 여행의 관련된 모든 서비스를 한 곳에서 해결할 수 있는 파리크레파스 여행사입니다.
+					<br>합리적인 비용으로 여러분께 최상의 서비스와 감동을 드리겠습니다.
+					<br><br>10년이상 베테랑 가이드들의 전문적인 노하우와 재미를 담아 여러분께 최고의 만족을 제공할 것을 약속합니다.
+					<br>파리크레파스는 한국과 프랑스 양국 사업자를 모두 가지고 있는 합법 여행사입니다.
+					<br><br><strong>프랑스 여행의 시작, 파리크레파스 여행사가 함께합니다.</strong>
+					</div>
+					
+				</div>
+			</div><!-- blue_txt끝 -->
+			
+			<!-- --------footer -->			
+				<div class="footer">
+					<div class="footer_box">
+						상호 : 파리크레파스 | 대표 : 김은경ㅣ<a href="#">[사업자 정보보기]</a>
+						
+						
+					</div>
+				
 				</div>
 			
 			
 			</div> <!-- body_box끝 -->
+	
+			
 		</div> <!-- main_body끝 -->
 	
-	
-	
+
 	
 	
 	</div>
 	
+	<!-- footer script -->
+	<script type="text/javascript">
 	
+	</script>
+	
+	<!-- slider script -->
 	<script type="text/javascript">
 	(function($) {
 		 
