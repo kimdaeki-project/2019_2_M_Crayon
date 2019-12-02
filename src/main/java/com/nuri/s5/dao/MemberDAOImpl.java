@@ -29,13 +29,13 @@ import com.nuri.s5.model.MemberVO;
 	@Override
 	public int memberUpdate(MemberVO memberVO) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.update(NAMESPACE+"memberUpdate", memberVO);
 	}
 
 	@Override
 	public int memberDelete(MemberVO memberVO) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.delete(NAMESPACE+"memberDelete", memberVO);
 	}
 
 	@Override
@@ -47,7 +47,18 @@ import com.nuri.s5.model.MemberVO;
 	@Override
 	public MemberVO memberIdCheck(MemberVO memberVO) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne(NAMESPACE+"memberIdCheck", memberVO);
+	}
+	
+	@Override
+	public MemberVO memberSearchID(MemberVO memberVO)throws Exception{
+		
+		return sqlSession.selectOne(NAMESPACE+"memberSearchID", memberVO);
+	}
+	@Override
+	public MemberVO memberSearchPW(MemberVO memberVO)throws Exception{
+		
+		return sqlSession.selectOne(NAMESPACE+"memberSearchPW", memberVO);
 	}
 
 }
