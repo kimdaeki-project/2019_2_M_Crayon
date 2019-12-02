@@ -75,7 +75,7 @@
 	<script type="text/javascript">
 		//필수입력
 
-	
+	//이메일 체크
 		$(".checkEmail").click(
 				function() {
 					var email = $("#email").val();
@@ -83,9 +83,16 @@
 							"width=500,height=500,top=200, left=600");
 				});
 
-		
+		//비밀번호 체크
+		 $('#pwCheck').keyup(function() {
+				if ($('#pw').val() != $('#pwCheck').val()) {
+					$("#pwResult").html('암호가 맞지 않습니다.');
+				} else {
+					$("#pwResult").html('암호가 일치합니다.');
+				}
+			});
 
-		//
+		//모두 입력 확인
 		$("#join").click(function() {
 
 			if ($("#email").val() == "") {
