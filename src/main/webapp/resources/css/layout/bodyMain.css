@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+.body_head{
+	position:relative;
+	top:101px;
+	background-image: url("../../images/kategorie/faq.jpg");
+	background-size:cover;
+	width:100%;
+	height: 320px;
+	z-index: 5;
+}
+
+.body_back{
+	position:relative;
+	background-color:rgba(0, 0, 0, 0.5);
+	width:100%;
+	height: 320px;
+}
+
+.body_h_txt{
+	width: 1070px;
+	margin: 0 auto;
+	height: 36px;
+	background-color: transparent;
+	position: relative;
+	color:white;
+	font-size: 36px;
+	font-weight: 700;
+	top:210px;
+	letter-spacing: -.2px;
+	
+}
+
+.body_h_txt2{
+	width: 1070px;
+	margin: 0 auto;
+	background-color: transparent;
+	position: relative;
+	color:white;
+	top:230px;
+	font-size: 16px;
+}
+
+.body_name{
+	top:150px;
+	position:relative;
+	width: 500px;
+	height: 40px;
+	background-color: transparent;
+	line-height: 40px;
+	font-size: 28px;
+	border-left: solid 3px black;
+}
+
+/*body 본문*/
+.body_main{
+	position:relative;
+	z-index:1;
+	width: 1100px;
+	height: 1000px;
+	margin: 0 auto;
+	background-color: pink;
+}
+
+/*안에 넣을 거 여기다가 추가*/
+.body_inner{
+	margin-top:150px;
+	width: 100%;
+	height:100px;
+	background-color: orange;
+}

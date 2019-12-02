@@ -8,23 +8,23 @@
 	top: 0px;
 	left:0px;
 	right:0px;
-	position:absolute;
+	position:fixed;
 	padding-top: 28px;
 	padding-bottom: 27px;
-	z-index: 10;
-	background-color: transparent;
+	z-index: 990;
+	background-color:white;
 }
 .header_inner{
 	width: 1100px;
 	overflow: hidden;
-	height:45px;
+	height:47px;
 	background-color: transparent;
 	margin: 0 auto;
 
 }
 .header_inner .logoWrap{
 	width: 180px;
-	height: 48px;
+	height: 49px;
 	float: left;
 }
 .header_inner .navigationWrap{
@@ -35,12 +35,17 @@
 	width: 60%;
 	line-height:45px;
 	height: 48px;
-	color:#a3a0a7;
+	color:#333333;
 	background-color: transparent;
 }
 
+.navigationWrap > a{
+	color:#333333;
+	
+}
+
 .navigationWrap > a:hover {
-	color:white;
+	color:#333333;
 }
 
 .header_inner .snsWrap{

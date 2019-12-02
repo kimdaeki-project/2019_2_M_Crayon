@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>Home</title>
-<link href="<c:url value="/resources/css/layout/header.css"/>"
+	<link href="<c:url value="/resources/css/layout/footer.css"/>"
 	rel="stylesheet">
 	<link href="<c:url value="/resources/css/layout/reset.css"/>"
 	rel="stylesheet">
@@ -20,12 +20,12 @@
 
 	<div class="header">
 		<div class="header_inner">
-			<a href="#"><div class="logoWrap">
-				<img alt="" src="./resources/images/mainHome/logo.jpg">
-			</div></a>
+			<div class="logoWrap">
+				<a href="#"><img alt="" src="./resources/images/mainHome/logo.jpg"></a>
+			</div>
 			<div class="navigationWrap">
 				<a href="#">투어상품</a>
-				<a href="#">FAQ</a>
+				<a href="./faq/faqHome">FAQ</a>
 				<a href="#">여행리뷰</a>
 				<a href="#">회사소개</a>
 				<a href="#">마이페이지</a>
@@ -237,7 +237,7 @@
 						
 					</div>
 				
-				</div>
+				</div><!-- footer끝 -->
 			
 			
 			</div> <!-- body_box끝 -->
