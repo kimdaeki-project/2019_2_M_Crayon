@@ -17,7 +17,7 @@
 <body>
 
 	<!-------------------------------header----------------------------->
-<c:import url="./layout/nav.jsp"></c:import>
+<c:import url="./layout/nav2.jsp"></c:import>
 	<!-------------------------------Main----------------------------->
 	
 	<div class="body">
