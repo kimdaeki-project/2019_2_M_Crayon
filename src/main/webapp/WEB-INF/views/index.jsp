@@ -17,27 +17,7 @@
 <body>
 
 	<!-------------------------------header----------------------------->
-
-	<div class="header">
-		<div class="header_inner">
-			<div class="logoWrap">
-				<a href="#"><img alt="" src="./resources/images/mainHome/logo.jpg"></a>
-			</div>
-			<div class="navigationWrap">
-				<a href="#">투어상품</a>
-				<a href="./faq/faqHome">FAQ</a>
-				<a href="#">여행리뷰</a>
-				<a href="#">회사소개</a>
-				<a href="#">마이페이지</a>
-			</div>
-			<div class="snsWrap">
-				<img alt="" src="./resources/images/mainHome/sns_instagram.jpg" id="insta">
-				<img alt="" src="./resources/images/mainHome/sns_kakao.jpg" id="kakaplus">
-			</div>
-
-		</div>
-	</div>
-
+<c:import url="./layout/nav.jsp"></c:import>
 	<!-------------------------------Main----------------------------->
 	
 	<div class="body">
