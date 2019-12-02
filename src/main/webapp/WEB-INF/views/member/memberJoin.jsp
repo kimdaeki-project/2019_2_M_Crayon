@@ -75,7 +75,7 @@
 	<script type="text/javascript">
 		//필수입력
 
-		/* 이메일 중복*/
+	
 		$(".checkEmail").click(
 				function() {
 					var email = $("#email").val();
@@ -85,7 +85,7 @@
 
 		
 
-		//비밀번호 정규식은 나중에~!(일단 8자리 이상으로 )
+		//
 		$("#join").click(function() {
 
 			if ($("#email").val() == "") {
@@ -94,10 +94,6 @@
 
 			} else if ($("#pw").val() == "") {
 				alert("비밀번호를 입력하세요!");
-				$("#pw").focus();
-
-			} else if($("#pw").length<8){
-				alert("비밀번호를 8자리 이상 입력하세요")
 				$("#pw").focus();
 				
 			}else if ($("#pwCheck").val() == "") {
@@ -120,8 +116,26 @@
 
 				$("#frm").submit();
 			}
-		});
+		}); 
+		
+		
+		
+
+		// 영숫자 특수문자 8자 이상 정규식 
+		var passwordRule = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,14}$/;
+
+		$("#pw").blur(function() {
 			
+			if ($('#pw').val() != "" && passwordRule.test($('#pw').val()) != true) 
+			  { 
+			    alert('6~14자리 내에 영문과 숫자 특수문자 로만 사용해주세요.'); 
+			    $('#pw').val(""); 
+			    $('#pw').focus(); 
+			    return; 
+			 } 
+			
+		
+		});
 
 	</script>
 
