@@ -23,7 +23,7 @@
 			</c:if>
 		
 			<div>
-				<label for="email">Name:</label> 
+				<label for="email">Email:</label> 
 				<input type="email" id="email" name="email" value="${param.email}">
 			</div>
 
@@ -39,6 +39,7 @@
 		
 		
 		<script type="text/javascript">
+		
 		
 		
 		

@@ -73,68 +73,58 @@
 
 
 	<script type="text/javascript">
-		
- 
- 
 		//필수입력
-		
+
+		/* 이메일 중복*/
+		$(".checkEmail").click(
+				function() {
+					var email = $("#email").val();
+					window.open("./memberIdCheck?email=" + email, "",
+							"width=500,height=500,top=200, left=600");
+				});
 
 		
-		/* 이메일 중복*/	
- 		$(".checkEmail").click(function() {
-			var email = $("#email").val();
-			window.open("./memberIdCheck?email="+email,"","width=500,height=500,top=200, left=600");
-		});
-		
-		
-		//비밀번호 일치 
-		$("#pwCheck").keyup(function() {
-			if($("#pw").val() != $("#pwCheck").val()){
-				$("#pwResult").html('암호가 일치하지 않습니다.')
-			}else{
-				$("#pwResult").html('암호가 일치합니다.')
+
+		//비밀번호 정규식은 나중에~!(일단 8자리 이상으로 )
+		$("#join").click(function() {
+
+			if ($("#email").val() == "") {
+				alert("이메일을 입력하세요!");
+				$("#email").focus();
+
+			} else if ($("#pw").val() == "") {
+				alert("비밀번호를 입력하세요!");
+				$("#pw").focus();
+
+			} else if($("#pw").length<8){
+				alert("비밀번호를 8자리 이상 입력하세요")
+				$("#pw").focus();
+				
+			}else if ($("#pwCheck").val() == "") {
+			
+				alert("비밀번호를 확인하세요!");
+				$("#pwCheck").focus();
+
+			} else if ($("#pw").val() != $("#pwCheck").val()) {
+				alert("비밀번호를 확인하세요!");
+				$("#pwCheck").focus();
+
+			} else if ($("#name").val() == "") {
+				alert("이름을 입력하세요!");
+				$("#name").focus();
+
+			} else if ($("#birth").val() == "") {
+				alert("생일을 입력하세요!")
+				$("#birth").focus();
+			} else {
+
+				$("#frm").submit();
 			}
 		});
-		
-		
-		//비밀번호 정규식은 나중에~!
-		$("#join").click(function() {
 			
-			if ($("#email").val() == "") {
-                alert("이메일을 입력하세요!");
-                $("#email").focus();
 
-            } else if ($("#pw").val() == "") {
-                alert("비밀번호를 입력하세요!");
-                $("#pw").focus();
-                
- 
-            } else if ($("#pwCheck").val() == "") {
-                alert("비밀번호를 확인하세요!");
-                $("#pwCheck").focus();
-                
-            } else if($("#pw").val()!=$("#pwCheck").val()){
-            	alert("비밀번호를 확인하세요!");
-            	$("#pwCheck").focus();
-            	
-            }else if ($("#name").val() == "") {
-                alert("이름을 입력하세요!");
-                $("#name").focus();
-                
-             } else if($("#birth").val()==""){
-            	 alert("생일을 입력하세요!")
-            	 $("#birth").focus();
-             }else{
-            	 
-				$("#frm").submit();
-             }
-			
-			
-		});
-			  
-			
-	
-</script>
+	</script>
+
 
 
 
