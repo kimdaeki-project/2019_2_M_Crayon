@@ -19,7 +19,7 @@
             <a href="#">투어상품</a>
             <a href="#">FAQ</a>
             <a href="#">여행리뷰</a>
-            <a href="#">회사소개</a>
+            <a href="${pageContext.request.contextPath}/intro/company">회사소개</a>
             <c:if test="${not empty sessionScope.member}">
             <a href="${pageContext.request.contextPath}/member/memberMyPage">마이페이지</a>
             
@@ -29,8 +29,8 @@
          	</c:if>
          </div>
          <div class="snsWrap">
-            <img alt="" src="./resources/images/mainHome/sns_instagram.jpg">
-            <img alt="" src="./resources/images/mainHome/sns_kakao.jpg">
+            <img alt="" src="../resources/images/header/sns_instagram_sub.jpg" id="insta">
+            <img alt="" src="../resources/images/header/sns_kakao_sub.png" id="kakaplus">
          </div>
 
       </div>

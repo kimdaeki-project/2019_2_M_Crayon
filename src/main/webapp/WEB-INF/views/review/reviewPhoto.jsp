@@ -183,6 +183,7 @@ img.hover-shadow {
     <div class="column">
     <img src="./resources/images/animal.jpg" style="width: 200px; height: 200px;" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
   </div>
+  
 </div>
 
 <div id="myModal" class="modal">
@@ -216,13 +217,14 @@ img.hover-shadow {
     
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
+</div>
+</div>
 <!--     <div class="caption-container"> -->
 <!--       <p id="caption"></p> -->
 <!--     </div> -->
 
 
-<!--     <div class="column"> -->
+<!--   <div class="column"> -->
 <!--       <img class="demo cursor" src="./resources/images/iu1.jpg" style="width: 200px; height: 100px;" onclick="currentSlide(1)" alt="Fall"> -->
 <!--     </div> -->
 <!--     <div class="column"> -->
@@ -277,6 +279,7 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
+
 </script>
 
 

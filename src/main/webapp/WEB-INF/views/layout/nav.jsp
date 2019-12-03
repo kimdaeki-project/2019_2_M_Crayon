@@ -31,8 +31,8 @@
          	</c:if>
          </div>
          <div class="snsWrap">
-            <img alt="" src="../resources/images/header/sns_instagram_sub.jpg">
-            <img alt="" src="../resources/images/header/sns_kakao_sub.png">
+            <img alt="" src="../resources/images/header/sns_instagram_sub.jpg" id="insta">
+            <img alt="" src="../resources/images/header/sns_kakao_sub.png" id="kakaplus">
          </div>
 
       </div>

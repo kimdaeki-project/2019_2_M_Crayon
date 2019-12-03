@@ -41,6 +41,11 @@ public class ReviewController {
 	
 /////////////////////////// review board ///////////////////////////////////
 	
+	@GetMapping(value = "reviewPhoto")
+	public void reviewPhoto() throws Exception{
+		
+	}
+	
 	@GetMapping(value = "reviewWrite")
 	public void reviewWrite() throws Exception{
 	}
