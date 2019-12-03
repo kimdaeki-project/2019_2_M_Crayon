@@ -5,12 +5,13 @@
   
   <mapper namespace="qnaMapper">
   
-  	<insert id="qnaQuestion" parameterType="QnaVO">
-  		insert into qna values(#{question});
-  		
-  	</insert>
+
   	
-  	<select id="qnaList" resultType="QnaVO" >
+  	<select id="qnaList" parameterType="Pager" resultType="QnaVO" >
   		select * from qna
+  	</select>
+  	
+  	<select id="qnaCount" resultType="Integer" parameterType="Pager">
+  	select count(qnum) from qna
   	</select>
   </mapper>

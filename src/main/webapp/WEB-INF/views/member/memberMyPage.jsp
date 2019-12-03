@@ -26,30 +26,20 @@
 	<div class="mypageMain">
 		<div class="mypageMain_sub">
 			<div class="btnsBox">
-			<a href="./memberUpdate">
-			<input type="submit" id="update" value="회원정보 수정" class="btns_p"></a> 
-			<a href="./memberLogout">
-			<input type="submit" id="logout" value="로그아웃" class="btns"></a>
-			
-			<input type="button" id="delete" value="회원 탈퇴" class="btns"></a> 
+				<a href="./memberUpdate"> <input type="submit" id="update"
+					value="회원정보 수정" class="btns_p"></a> <a href="./memberLogout">
+					<input type="submit" id="logout" value="로그아웃" class="btns">
+				</a> 
+				<a href="./memberDelete?email=${member.email}"><input type="submit" id="delete" value="Delete" class="btns"></a> 
 			</div>
 		</div>
 	</div>
-	<div class="mypageContain"></div>
+	<div class="mypageContain">
+	
+	</div>
 
 
 	<c:import url="../layout/navFoot.jsp"></c:import>
-
-
-
-<script type="text/javascript">
-
-		$("#delete").click(function() {
-			var email = $("#email").val();
-			window.open("./Delete?email=" + email, "" ,"width=500,height=500,top=200,left=600");
-		})
-
-</script>
 
 
 

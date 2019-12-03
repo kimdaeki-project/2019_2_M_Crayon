@@ -98,7 +98,7 @@
 				function() {
 					var email = $("#email").val();
 					window.open("./memberIdCheck?email=" + email, "",
-							"width=500,height=500,top=200, left=600");
+							"width=500,height=230,top=200, left=600");
 				});
 
 		//비밀번호 체크

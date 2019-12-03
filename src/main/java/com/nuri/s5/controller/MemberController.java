@@ -5,13 +5,16 @@ import java.text.SimpleDateFormat;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.nuri.s5.model.MemberVO;
 import com.nuri.s5.service.MemberServiceImpl;
@@ -114,10 +117,11 @@ public class MemberController {
 	}
 
 	// 회원 탈퇴
-	@RequestMapping(value = "memberDelete", method = { RequestMethod.GET, RequestMethod.POST })
+	
+	@GetMapping(value = "memberDelete")
 	public ModelAndView memberDelete(HttpSession session, MemberVO memberVO) throws Exception {
 		int result = memberServiceImpl.memberDelete(memberVO);
-		System.out.println(memberVO.getEmail());
+		
 		String msg = "Fail";
 
 		ModelAndView mv = new ModelAndView();
@@ -126,7 +130,6 @@ public class MemberController {
 		}
 
 		mv.addObject("msg", msg);
-		mv.addObject("dto", memberVO);
 		mv.addObject("path", "../");
 		mv.setViewName("common/common_result");
 
