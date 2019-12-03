@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.body_inner{
+	margin-top:150px;
+	width: 100%;
+	height:100px;
+	background-color: orange;
+}

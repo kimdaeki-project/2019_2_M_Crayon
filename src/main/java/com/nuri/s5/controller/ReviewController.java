@@ -25,7 +25,10 @@ public class ReviewController {
 	private ReviewServiceImpl reviewServiceImpl;
 
 	
+	
+	
 /////////////////////////// review file ///////////////////////////////////
+	
 	@GetMapping(value = "fileWrite")
 	public ModelAndView fileWrite(ReviewFilesVO reviewFilesVO) throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -54,7 +57,6 @@ public class ReviewController {
 		}
 		return mv;
 	}
-	
 	
 	
 	@GetMapping(value = "reviewDelete")
