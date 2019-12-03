@@ -6,5 +6,6 @@
   <configuration>
   	<typeAliases>
   		<typeAlias type="com.nuri.s5.model.MemberVO" alias="MemberVO"/>
+  		<typeAlias type="com.nuri.s5.model.FaqVO" alias="FaqVO"/>
   	</typeAliases>
   </configuration>

@@ -14,6 +14,8 @@
 	rel="stylesheet">
 	<link href="<c:url value="/resources/css/layout/bodyMain.css"/>"
 	rel="stylesheet">
+	<link href="<c:url value="/resources/css/layout/faq.css"/>"
+	rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js">	
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -54,13 +56,35 @@
 		<!-- 넣을거 -->
 		<div class="body_main">
 			<div class="body_name">
-			　투어상품
+			　자주 묻는 질문
 			</div>
 			<div class="body_inner">
+				
+				<ul>
+					<c:forEach items="${list}" var="dto">
+					<li class="qna">
+							<!-- <a><img src="" alt="머야"></a> -->
+							<a ><div class="qt"><span>Q.</span> ${dto.question}</div></a>
+							<ul class="hide">
+								<li>${dto.answer}</li>
+							</ul>					
+						
+					</li>
+					</c:forEach>
+				</ul>
+				
 			</div>
-		</div><!-- body_main 끝 -->
+				
+		</div><!-- main끝 -->
+			
 		
-	</div>	
+			<div>
+			<button class="btn_add">추가</button>
+			</div>
+	
+		</div><!-- body 끝 -->
+		
+	
 				<!-- --------footer -->			
 				<div class="footer">
 					<div class="footer_box">
@@ -99,6 +123,33 @@
 	$("#view2").click(function(){
 		open("http://www.pariscrayon.com/html/privacy.html","_blank","resizable=yes,width=550,height=900px")
 	});
+	</script>
+	
+	<!-- faq script -->
+	<script type="text/javascript">
+		$("#btn_add").click(function(){
+			alert("aa");
+		});
+	
+	</script>
+	
+	<!-- 눌렀을때 내려오는 거 -->
+	<script type="text/javascript">
+	
+
+		$(".qna>a").click(function(){
+		var subqna=$(this).next("ul");
+		
+			if(subqna.is(":visible")){
+				subqna.slideUp();
+			}else{
+				subqna.slideDown();
+			}
+			
+		});
+
+
+	
 	</script>
 
 </body>

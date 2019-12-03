@@ -5,4 +5,12 @@
   
   <mapper namespace="faqMapper">
   
+  	<insert id="faqQuestion" parameterType="faqVO">
+  		insert into faq values(#{question});
+  		
+  	</insert>
+  	
+  	<select id="faqList" resultType="faqVO" >
+  		select * from faq
+  	</select>
   </mapper>
