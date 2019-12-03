@@ -5,7 +5,11 @@
   
   <mapper namespace="qnaMapper">
   
-
+  	<insert id="qnaQuestion" parameterType="QnaVO">
+  	
+  	insert into qna (question, answer,qnum,email) 
+  	values(#{question},'관리자의 답변을 기다리는 중입니다.',seq_qna.nextval,'asd@g.com')
+  	</insert>
   	
   	<select id="qnaList" parameterType="Pager" resultType="QnaVO" >
   		select * from qna

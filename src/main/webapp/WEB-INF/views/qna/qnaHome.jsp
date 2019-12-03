@@ -23,28 +23,7 @@
 <body>
 
 
-	<!-------------------------------header----------------------------->
-
-	<div class="header">
-		<div class="header_inner">
-			<div class="logoWrap">
-				<a href="#"><img alt="" src="../resources/images/header/logo_sub.jpg" id="main"></a>
-			</div>
-			<div class="navigationWrap">
-				<a href="#">투어상품</a>
-				<a href="#">FAQ</a>
-				<a href="#">여행리뷰</a>
-				<a href="#">회사소개</a>
-				<a href="#">마이페이지</a>
-			</div>
-			<div class="snsWrap">
-				<img alt="" src="../resources/images/header/sns_instagram_sub.jpg" id="insta">
-				<img alt="" src="../resources/images/header/sns_kakao_sub.png" id="kakaplus">
-			</div>
-
-		</div>
-	</div>
-	
+	<c:import url="../layout/nav.jsp"></c:import>
 	<!-- body -->
 	<div class="body">
 		<div class="body_head">
@@ -53,19 +32,23 @@
 				<div class="body_h_txt2">파리크레파스에 대한 궁금한 점을 확인해주세요. 카카오톡 문의도 가능합니다.</div>
 			</div>
 		</div>
+		
 		<!-- 넣을거 -->
+		<div class="body_cover">
 		<div class="body_main">
 			<div class="body_name">
 			　자주 묻는 질문
 			</div>
 			<div class="body_inner">
-				
-				<ul>
+			
+				<ul class="body_qna">
 					<c:forEach items="${list}" var="dto">
 					<li class="qna">
-							<a ><div class="qt"><span>Q.</span> ${dto.question}</div></a>
+							<a><div class="qt"><span>Q.</span> ${dto.question}</div></a>
 							<ul class="hide">
+							
 								<li>${dto.answer}</li>
+								
 							</ul>					
 						
 					</li>
@@ -73,35 +56,40 @@
 				</ul>
 				
 			</div>
+		</div>	
+		<div class="body_cover2"></div>
 				
 		</div><!-- main끝 -->
 			
-	
-			<div>
-			<button class="btn_add">추가</button>
-			</div>
 
 		
 		</div><!-- body 끝 -->
-		
-	
-				<!-- --------footer -->			
-				<div class="footer">
-					<div class="footer_box">
-						<br><br><br>상호 : 파리크레파스 | 대표 : 김은경ㅣ<a href="#">[사업자 정보보기]</a>
-						<br>한국 주소 : 인천광역시 부평구 부일로19번길 8,1층 TEL : 070-4645-8279 | E-MAIL : PARISCRAYON@NAVER.COM
-						<br>한국 사업자 등록 번호 : 122-14-72077 ㅣ통신 판매업 등록번호 : 제 2014 인천부평 - 00850 호 ㅣ 한국 관광 등록 번호 : 제2015-000003호
-						<br><br>한국 인 허가 보증보험번호 : 제 100-000-2016 0161 1483 호
-						<br><br>프랑스 주소 : 9 RUE ANDRE PINGAT 51100 REIMS ㅣ프랑스 라인센스 번호 2015/21/0000464 | 프랑스 허가 번호 JEV 11 15 02414
-						<br>프랑스 사업자 번호 : SIRET:805 399 433 R.C.S REIMS
-						<br><br>COPYRIGHT(C)2008 PARIS CRAYON. ALL RIGHT RESERVED. CREATED BY PARISCRAYON.
-						<br><br>
-						<input type=button id="view1" value="이용약관">ㅣ<input type=button id="view2" value="개인정보 보호방침">
-						
-						
-					</div>
+			
+			
 				
-				</div><!-- footer끝 -->
+		<div class="page">
+	 	 	<ul>
+		 	 <c:if test="${pager.curBlock gt 1}">
+		 	 	<li><span id="${pager.startNum-1}" class="list">이전</span></li>
+		 	 </c:if>
+			 <c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
+			 	<li><span id="${i}" class="list">${i}</span></li>
+			 </c:forEach>
+			 <c:if test="${pager.curBlock lt pager.totalBlock}">
+			 	<li><span id="${pager.lastNum+1}" class="list">다음</span></li>
+			 </c:if>
+	  	 	</ul>
+	  	 	
+	  	 	<!-- user 로그인하면 보이는 추가 버튼 -->
+			<div>
+			<c:if test="${not empty sessionScope.member}">
+			<button id="btn_add">추가</button>
+			</c:if>
+			</div>
+	  	 
+	  </div>
+	
+				<c:import url="../layout/navFoot.jsp"></c:import>
 	
 
 	<!-- footer script -->
@@ -128,8 +116,9 @@
 	<!-- faq script -->
 	<script type="text/javascript">
 		$("#btn_add").click(function(){
-			alert("aa");
+		open("/s5/qna/qnaQuestion","_blank","resizable=yes,width=500,height=230, top=200, left=600")
 		});
+
 	
 	</script>
 	

@@ -20,4 +20,9 @@ public class QnaService {
 		pager.makePage(qnaDAO.qnaCount(pager));
 		return qnaDAO.qnaList(pager);
 	}
+	
+	public int qnaQuestion(QnaVO qnaVO) throws Exception{
+		return qnaDAO.qnaQuestion(qnaVO);
+	}
+	
 }
