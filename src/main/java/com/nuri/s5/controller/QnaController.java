@@ -9,22 +9,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.nuri.s5.model.FaqVO;
-import com.nuri.s5.service.FaqService;
+import com.nuri.s5.model.QnaVO;
+import com.nuri.s5.service.QnaService;
 
 @Controller
-@RequestMapping("/faq/**")
-public class FaqController {
+@RequestMapping("/qna/**")
+public class QnaController {
 
 	@Inject
-	private FaqService faqService;
+	private QnaService qnaService;
 	
-	@GetMapping("faqHome")
-	public ModelAndView faqList(FaqVO faqVO) throws Exception{
-		List<FaqVO> ar =faqService.faqList(faqVO);
+	@GetMapping("qnaHome")
+	public ModelAndView faqList(QnaVO qnaVO) throws Exception{
+		List<QnaVO> ar =qnaService.qnaList(qnaVO);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("list",ar);
-		mv.setViewName("faq/faqHome");
+		mv.setViewName("qna/qnaHome");
 		return mv;
 	}
 	

@@ -1,6 +1,6 @@
 package com.nuri.s5.model;
 
-public class FaqVO {
+public class QnaVO {
 	private String question;
 	private String answer;
 	

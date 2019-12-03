@@ -10,6 +10,6 @@
   		<typeAlias type="com.nuri.s5.model.ReviewFilesVO" alias="ReviewFilesVO"/>
   		<typeAlias type="com.nuri.s5.util.Pager" alias="Pager"/>
   		<typeAlias type="java.lang.Integer" alias="Integer"/>
-  		<typeAlias type="com.nuri.s5.model.FaqVO" alias="FaqVO"/>
+  		<typeAlias type="com.nuri.s5.model.QnaVO" alias="QnaVO"/>
   	</typeAliases>
   </configuration>

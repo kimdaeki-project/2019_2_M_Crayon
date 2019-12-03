@@ -3,14 +3,14 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-  <mapper namespace="faqMapper">
+  <mapper namespace="qnaMapper">
   
-  	<insert id="faqQuestion" parameterType="faqVO">
-  		insert into faq values(#{question});
+  	<insert id="qnaQuestion" parameterType="QnaVO">
+  		insert into qna values(#{question});
   		
   	</insert>
   	
-  	<select id="faqList" resultType="faqVO" >
-  		select * from faq
+  	<select id="qnaList" resultType="QnaVO" >
+  		select * from qna
   	</select>
   </mapper>
