@@ -16,9 +16,6 @@
 </head>
 <body>
 
-
-
-
 	<form id="frm" action="./memberJoin" method="POST">
 
 
