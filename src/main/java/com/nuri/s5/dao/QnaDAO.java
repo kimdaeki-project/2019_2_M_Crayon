@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.nuri.s5.model.QnaVO;
+import com.nuri.s5.util.Pager;
 
 @Repository
 public class QnaDAO {
@@ -20,7 +21,11 @@ public class QnaDAO {
 		return sqlSession.insert(NAMESPACE+"qnaInsert", qnaVO);
 	}
 	
-	public List<QnaVO> qnaList(QnaVO qnaVO) throws Exception{
-		return sqlSession.selectList(NAMESPACE+"qnaList",qnaVO);
+	public List<QnaVO> qnaList(Pager pager) throws Exception{
+		return sqlSession.selectList(NAMESPACE+"qnaList",pager);
+	}
+	
+	public int qnaCount(Pager pager) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"qnaCount",pager);
 	}
 }

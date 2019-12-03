@@ -63,7 +63,6 @@
 				<ul>
 					<c:forEach items="${list}" var="dto">
 					<li class="qna">
-							<!-- <a><img src="" alt="머야"></a> -->
 							<a ><div class="qt"><span>Q.</span> ${dto.question}</div></a>
 							<ul class="hide">
 								<li>${dto.answer}</li>
@@ -77,11 +76,12 @@
 				
 		</div><!-- main끝 -->
 			
-		
+		<c:if test="${not empty sessionScope.member}">
 			<div>
 			<button class="btn_add">추가</button>
 			</div>
-	
+		</c:if>
+		
 		</div><!-- body 끝 -->
 		
 	

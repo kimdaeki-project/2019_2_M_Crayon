@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.nuri.s5.model.QnaVO;
 import com.nuri.s5.service.QnaService;
+import com.nuri.s5.util.Pager;
 
 @Controller
 @RequestMapping("/qna/**")
@@ -20,11 +21,13 @@ public class QnaController {
 	private QnaService qnaService;
 	
 	@GetMapping("qnaHome")
-	public ModelAndView faqList(QnaVO qnaVO) throws Exception{
-		List<QnaVO> ar =qnaService.qnaList(qnaVO);
+	public ModelAndView qnaList(Pager pager) throws Exception{
+		List<QnaVO> ar =qnaService.qnaList(pager);
+		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("list",ar);
 		mv.setViewName("qna/qnaHome");
+		
 		return mv;
 	}
 	
