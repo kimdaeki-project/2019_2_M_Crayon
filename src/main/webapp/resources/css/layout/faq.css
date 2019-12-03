@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+/*안에 넣을 거 여기다가 추가*/
+.body_inner{
+	margin-top:200px;
+	width: 100%;
+	height:500px;
+	position: relative;
+	
+
+}
+
+/**/
+
+.qt{
+	margin: 0 auto;
+	width:1040px;
+	height:20px;
+	line-height:-2;
+	font-size: 20px;
+	padding:13px 30px 24px 25px;
+	border-bottom: 2px solid #cacaca;
+	color:black;
+}
+
+
+.qna >.q>a{
+	cursor:pointer;
+	
+}
+
+.qna> .hide{
+	
+	display: none;
+	
+}
+
+.hide >li{
+	border: 1px solid #cacaca;
+	padding: 13px 30px 24px 25px;
+	line-height: 1.6;
+	font-size: 17px;
+}

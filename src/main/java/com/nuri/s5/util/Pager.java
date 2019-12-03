@@ -125,6 +125,8 @@ public class Pager {
 		if(curBlock == totalBlock) {
 			lastNum = totalPage;
 		}
-	}
 	
+	}
 }
+
+
