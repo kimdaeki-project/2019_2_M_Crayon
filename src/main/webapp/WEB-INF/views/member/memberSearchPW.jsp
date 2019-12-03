@@ -31,35 +31,41 @@
 			<div class="inputsearch_Form">
 				<div class="searchTitle">
 					<h1>PW 찾기</h1>
-				</div>
-				<form id="frm" action="./memberSearchPW" method="POST">
-					<div class="email">
-						<label for="email">email:</label> <input type="text" id="email"
-							placeholder="Enter email" name="email">
-					</div>
 					<br>
+				</div>
+				<div class="searchInputBox">
+					<form id="frm" action="./memberSearchPW" method="POST">
+						<div class="email">
+							<label for="email"></label> <input type="text" id="email"
+								placeholder="   이메일을 입력하세요" name="email" class="searchinput">
+						</div>
+						<br>
 
 
-					<div class="birth">
-						<label for="birth">birth:</label> <input type="date" id="birth"
-							placeholder="Enter contents" name="birth">
+						<div class="birth">
+							<label for="birth"></label> <input type="date" id="birth"
+								placeholder="Enter contents" name="birth" class="searchinput">
+						</div>
+						<br> <input type="submit" id="SearchPW" value="찾기"
+							class="searchBox">
+
+					</form>
+
+
+
+					<div class="msgBox">
+						<c:choose>
+							<c:when test="${not empty pw}">
+								<p>비밀번호는 ${pw}입니다.</p>
+							</c:when>
+
+							<c:otherwise>
+    							${msg}
+    						</c:otherwise>
+
+						</c:choose>
 					</div>
-					<br> <input type="submit" id="SearchPW" value="SearchPW">
-				</form>
-
-
-
-
-				<c:choose>
-					<c:when test="${not empty pw}">
-						<p>비밀번호는 ${pw}입니다.</p>
-					</c:when>
-
-					<c:otherwise>
-    		${msg}
-    		</c:otherwise>
-
-				</c:choose>
+				</div>
 			</div>
 		</div>
 	</div>

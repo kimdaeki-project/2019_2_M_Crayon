@@ -84,8 +84,17 @@ public class MemberController {
 
 	// 업데이트 폼
 	@GetMapping(value = "memberUpdate")
-	public void memberUpdate() throws Exception {
+	public void memberUpdate(HttpSession session) throws Exception {
+		MemberVO memberVO = (MemberVO) session.getAttribute("member");
 
+		String date = memberVO.getBirth();
+
+		SimpleDateFormat sf = new SimpleDateFormat("yyyy-mm-dd");
+		java.util.Date to = sf.parse(date);
+
+		memberVO.setBirth(sf.format(to));
+
+		session.setAttribute("member", memberVO);
 	}
 
 	// 업데이트
@@ -117,6 +126,7 @@ public class MemberController {
 		}
 
 		mv.addObject("msg", msg);
+		mv.addObject("dto", memberVO);
 		mv.addObject("path", "../");
 		mv.setViewName("common/common_result");
 
@@ -125,78 +135,68 @@ public class MemberController {
 		return mv;
 
 	}
-	
-	
-	//ID 중복확인(이메일)
+
+	// ID 중복확인(이메일)
 	@GetMapping(value = "memberIdCheck")
-	public Model memberIdCheck(MemberVO memberVO, Model model)throws Exception {
+	public Model memberIdCheck(MemberVO memberVO, Model model) throws Exception {
 		memberVO = memberServiceImpl.memberIdCheck(memberVO);
-		
+
 		String msg = "중복된 이메일입니다.";
 		if (memberVO == null) {
-			msg = "사용가능한 이메일입니다.";	
+			msg = "사용가능한 이메일입니다.";
 		}
-		
+
 		model.addAttribute("dto", memberVO);
 		model.addAttribute("msg", msg);
-		
+
 		return model;
-		
+
 	}
-	
-	
-	
-	
-	
-	
-	//ID 찾기 폼 (이메일)
+
+	// ID 찾기 폼 (이메일)
 	@GetMapping(value = "memberSearchID")
-	public void memberSearchID() throws Exception{
-		
-		
+	public void memberSearchID() throws Exception {
+
 	}
-	//ID 찾기(이메일)
+
+	// ID 찾기(이메일)
 	@PostMapping(value = "memberSearchID")
-	public ModelAndView memberSearchID(MemberVO memberVO) throws Exception{
+	public ModelAndView memberSearchID(MemberVO memberVO) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		memberVO = memberServiceImpl.memberSearchID(memberVO);
-		
-		if(memberVO !=null) {
+
+		if (memberVO != null) {
 			mv.addObject("email", memberVO.getEmail());
-		}else {
+		} else {
 			mv.addObject("msg", "회원정보가 없습니다.");
 		}
-		
+
 		mv.setViewName("member/memberSearchID");
 		return mv;
 	}
-	
-	//PW 찾기 폼 
+
+	// PW 찾기 폼
 	@GetMapping(value = "memberSearchPW")
-	public void memberSearchPW()throws Exception{
-		
+	public void memberSearchPW() throws Exception {
+
 	}
-	
-	//PW 찾기
+
+	// PW 찾기
 	@PostMapping(value = "memberSearchPW")
-	public ModelAndView memberSearchPW(MemberVO memberVO)throws Exception{
+	public ModelAndView memberSearchPW(MemberVO memberVO) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		
-		memberVO = memberServiceImpl.memberSearchPW(memberVO);	
-			
-		if(memberVO !=null) {
-				mv.addObject("pw", memberVO.getPw());
-		}else {
+
+		memberVO = memberServiceImpl.memberSearchPW(memberVO);
+
+		if (memberVO != null) {
+			mv.addObject("pw", memberVO.getPw());
+		} else {
 			mv.addObject("msg", "회원정보가 없습니다.");
 		}
-		
+
 		mv.setViewName("member/memberSearchPW");
-		
+
 		return mv;
 	}
-	
-	
-	
-	
 
 }
