@@ -11,6 +11,7 @@ public class ReviewVO {
 	private String day;
 	private int hit;
 	private String tourName;
+	private List<ReviewFilesVO> files;
 	
 	
 	public String getTourName() {
@@ -25,7 +26,6 @@ public class ReviewVO {
 	public void setHit(int hit) {
 		this.hit = hit;
 	}
-	private List<ReviewFilesVO> files;
 	
 	public List<ReviewFilesVO> getFiles() {
 		return files;

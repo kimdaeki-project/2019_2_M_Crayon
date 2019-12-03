@@ -8,6 +8,8 @@
 </head>
 <body>
 	<c:import url="../layout/bootStrap.jsp" />
+	<c:import url="../layout/summerNote.jsp" />
+	
 		<div class="container">
 		  <h2>ReviewWrite Page</h2>
 		  <form action="./reviewWrite" method="post" id="frm" onsubmit=true enctype="multipart/form-data">
@@ -15,13 +17,13 @@
 		  	<div class="form-group">
 		  		<select id="tourName" name="tourName">
 		  			<option id="p1" class="tour" value="몽생미셸 (야경)투어">몽생미셸 (야경)투어</option>
-		  			<option id="p2" class="tour" value="(소그룹 벤) 베르사유&파리차량투어">(소그룹 벤) 베르사유&파리차량투어</option>
+		  			<option id="p2" class="tour" value="(소그룹 벤) 베르사유파리차량투어">(소그룹 벤) 베르사유파리차량투어</option>
 		  			<option id="p3" class="tour" value="VIP맞춤투어">VIP맞춤투어</option>
 		  			<option id="p4" class="tour" value="파리워킹투어">파리워킹투어</option>
 		  			<option id="p5" class="tour" value="파리야경차량투어">파리야경차량투어</option>
 		  			<option id="p6" class="tour" value="(소그룹 벤) 벨기에투어">(소그룹 벤) 벨기에투어</option>
 		  			<option id="p1" class="tour" value="루브르 집중투어">루브르 집중투어</option>
-		  			<option id="p1" class="tour" value="(소그룹 벤) 베르사유&지베르니&고흐투어">(소그룹 벤) 베르사유&지베르니&고흐투어</option>
+		  			<option id="p1" class="tour" value="(소그룹 벤) 베르사유,지베르니,고흐투어">(소그룹 벤) 베르사유,지베르니,고흐투어</option>
 		  			<option id="p1" class="tour" value="픽업%샌딩">픽업%샌딩</option>
 		  		</select>
 		  	</div>
@@ -38,12 +40,12 @@
 		    
 		    <div class="form-group" id="editor">
 	      		<label for="comment">Contents:</label>
-	      		<textarea class="form-control" rows="5" id="contents" placeholder="Enter contents" name="contents"></textarea>
+	      		<textarea class="form-control" rows="5" id="contents" placeholder="내용을 입력하세요</br>후기와 관련없는 부적합한 게시물은 관리자 확인 후 노출이 제한 될 수 있습니다." name="contents"></textarea>
 	   		</div>
 	   		
 		    <div class="form-group">
 		      <label for="day">DATE</label>
-		      <input type="date" class="form-control" id="day" placeholder="date" name="day" value="${dto.day}" readonly="readonly">
+		      <input type="text" class="form-control" id="day" placeholder="date" name="day" value="${dto.day}" readonly="readonly">
 		    </div>
 		    
 		    <div class="form-group">
@@ -73,10 +75,67 @@
 		  </form>
 		</div>
 		
+<!-------------------------------- java Script ---------------------------------------->
+
+
 		<script type="text/javascript">
 			$("#tourName").change(function() {
 				alert($(this).val());
 			});
+			
+			var files = $("#files").html();
+			$("#files").empty();
+			var count = 0;
+			
+			$("#btn").click(function() {
+				if(count<5){
+					$("#files").append(files);
+					count ++;
+				}else{
+					alert("첨부파일은 5개를 초과할 수 없습니다.")
+				}
+			});
+			
+			$("#files").on("click", ".del", function() {
+				$(this).parents(".form-group").remove();
+				count --;
+			});
+			
+			
+			<!---------------------- summerNote ---------------------->
+			
+			$("#contents").summernote({
+				height: 300,
+				callback: {
+					onImageUpload: function(files, editor) {
+						uploadFile(files[0], this);
+					}, // upload end point
+					onMediaDelete: function(files, editor) {
+						deleteFile(files[0], this);
+					} // delete end point
+				} // callback end point
+			}); // summernote end point
+			
+			
+			function uploadFile(file, editor) {
+				var formData = new FormData();
+				formData.append('file', file);
+				$.ajax({
+					data:formData,
+					type:"POST",
+					url:"./summerFile",
+					enctype:"multipart/form-data",
+					contentType:false,
+					cache:false,
+					processData:false,
+					success:function(data){
+						data = data.trim();
+						data = '../resources/upload/summerFile/'+data;
+						$(editor).summernote('insertImage', data);
+					}
+				
+				});
+			}
 		
 		</script>
 </body>

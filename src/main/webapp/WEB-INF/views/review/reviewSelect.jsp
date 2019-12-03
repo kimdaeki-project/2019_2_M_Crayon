@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="../layout/bootStrap.jsp"></c:import>
@@ -25,6 +26,12 @@
 				</tr>
 			</tbody>
 		</table>
+	</div>
+	
+	<div>
+		<c:forEach items="${dto.files}" var="file">
+			<a href="./fileDown?fnum=${file.fnum}">${file.oname}</a>
+		</c:forEach>
 	</div>
 		
 	<div class="container">
