@@ -13,7 +13,7 @@
       <div class="header_inner">
          <div class="logoWrap">
            <a href="${pageContext.request.contextPath}/"> 
-           <img alt="" src="../resources/images/header/logo_sub.jpg"></a>
+           <img alt="" src="./resources/images/mainHome/logo.jpg"></a>
          </div>
          <div class="navigationWrap">
             <a href="#">투어상품</a>
@@ -29,8 +29,8 @@
          	</c:if>
          </div>
          <div class="snsWrap">
-            <img alt="" src="../resources/images/header/sns_instagram_sub.jpg">
-            <img alt="" src="../resources/images/header/sns_kakao_sub.png">
+            <img alt="" src="./resources/images/mainHome/sns_instagram.jpg">
+            <img alt="" src="./resources/images/mainHome/sns_kakao.jpg">
          </div>
 
       </div>
@@ -40,4 +40,3 @@
 
 </body>
 </html>
-

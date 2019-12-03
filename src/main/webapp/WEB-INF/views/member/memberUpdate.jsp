@@ -6,50 +6,105 @@
 <head>
 <meta charset="UTF-8">
 <title>memberUpdate</title>
+<link href="<c:url value="/resources/css/layout/member.css"/>"
+	rel="stylesheet">
+<link href="<c:url value="/resources/css/layout/header.css"/>"
+	rel="stylesheet">
+<link href="<c:url value="/resources/css/layout/reset.css"/>"
+	rel="stylesheet">
+<link href="<c:url value="/resources/css/layout/footer.css"/>"
+	rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js">
+	
+</script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<meta charset="UTF-8">
 </head>
 <body>
 
+
+	<c:import url="../layout/nav.jsp"></c:import>
+
 	<form method="post" id="frm" action="./memberUpdate">
 
-		<div>
-			<label for="pw">PASSWORD:</label> <input type="password" id="pw"
-				name="pw" value="${member.pw}">
-		</div>
-		
-		<div>
-			<label for="name">NAME:</label> <input type="text" id="name"
-				name="name" value="${member.name}">
-		</div>
-		<div>
-			<label for="email">EMAIL:</label> <input type="text" id="email"
-				readonly="readonly" name="email" value="${member.email}">
-		</div>
-		<div class="form-group" class="col-sm-4">
-			<label for="sel1">GENDER:</label> <select id="sel1" name="gender"
-				readonly="readonly">
-				<c:if test="${member.gender eq 'M'}">
-					<option value="M" selected="selected">남성</option>
-					<option value="F">여성</option>
-				</c:if>
+		<div class="joinMain">
+			<div class="joinMain_sub">
+				<div class="InputMain">
+					<h1 class="jointitle">정보 수정</h1>
+					<br>
+					<div class="joinInputBox">
+						<div class="joinInputBox_cover">
+							<div>
 
-				<c:if test="${member.gender eq 'F'}">
-					<option value="M">남성</option>
-					<option value="F" selected="selected">여성</option>
-				</c:if>
-			</select>
-		</div>
-		<div class="form-group">
-			<label for="birth">BIRTH:</label> <input type="date" id="birth"
-				name="birth" readonly="readonly" value="${member.birth}">
-		</div>
-		
+								<div>
+									<label for="email"></label> <input type="text" id="email"
+										readonly="readonly" name="email" value="   ${member.email}"
+										class="updateInput">
+								</div>
+								<br> <label for="pw"></label> <input type="password"
+									id="pw" name="pw" value="${member.pw}" class="joinInput">
+							</div>
+							<br>
 
-			
-			<a href="memberUpdate"><input type="submit" id="update" value="Update"></a> 
+							<div>
+								<label for="name"></label> <input type="text" id="name"
+									name="name" value=" ${member.name}" class="joinInput">
+							</div>
+							<br>
 
+							<div class="form-group">
+								<label for="sel1"></label> <input type="text" id="sel1" name="gender"
+									readonly="readonly" value=" ${member.gender}"class="updateInput">
+									
+								</select>
+							</div>
+							<br>
+
+							<div class="form-group">
+								<label for="birth"></label> <input type="date" id="birth"
+									name="birth" readonly="readonly" value="${member.birth}"
+									class="updateInput">
+							</div>
+
+
+							<br> <a href="memberUpdate"><input type="submit"
+								id="update" value="Update" class="Joinbtn"></a>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</form>
+
+	<c:import url="../layout/navFoot.jsp"></c:import>
+
+	<script type="text/javascript">
+		
+		// 영숫자 특수문자 8자 이상 정규식 
+		var passwordRule = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,14}$/;
+
+		$("#pw").blur(
+				function() {
+
+					if ($('#pw').val() != ""
+							&& passwordRule.test($('#pw').val()) != true) {
+						alert('6~14자리 내에 영문과 숫자 특수문자 로만 사용해주세요.');
+						$('#pw').val("");
+						$('#pw').focus();
+						return;
+					}
+
+				});
+	</script>
 
 
 
 </body>
 </html>
+
+
