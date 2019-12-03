@@ -76,11 +76,11 @@
 				
 		</div><!-- main끝 -->
 			
-		<c:if test="${not empty sessionScope.member}">
+	
 			<div>
 			<button class="btn_add">추가</button>
 			</div>
-		</c:if>
+
 		
 		</div><!-- body 끝 -->
 		
