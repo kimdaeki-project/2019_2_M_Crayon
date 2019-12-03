@@ -45,7 +45,7 @@ public class MemberDAOTest extends TestAbstractCase{
 	public void delete()throws Exception{
 		MemberVO memberVO = new MemberVO();
 		
-		memberVO.setEmail("tt@g.com");
+		memberVO.setEmail("wow@g.com");
 		
 		int result = memberDAOImpl.memberDelete(memberVO);
 		assertEquals(1, result);
