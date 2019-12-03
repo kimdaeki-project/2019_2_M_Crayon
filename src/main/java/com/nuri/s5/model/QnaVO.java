@@ -3,8 +3,15 @@ package com.nuri.s5.model;
 public class QnaVO {
 	private String question;
 	private String answer;
+	private int qnum;
 	
 	
+	public int getQnum() {
+		return qnum;
+	}
+	public void setQnum(int qnum) {
+		this.qnum = qnum;
+	}
 	public String getQuestion() {
 		return question;
 	}
