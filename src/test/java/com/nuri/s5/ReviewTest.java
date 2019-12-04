@@ -36,7 +36,7 @@ public class ReviewTest extends TestAbstractCase{
 		assertEquals(6, ar.size());
 	}
 	
-	@Test
+	//@Test
 	public void reviewWriteTest() throws Exception{
 		ReviewVO reviewVO = null;
 		for(int i=0; i<50; i++) {
