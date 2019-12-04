@@ -25,7 +25,13 @@ public class MemberController {
 
 	@Inject
 	private MemberServiceImpl memberServiceImpl;
+	
+	//카카오 로그인실험
+	@GetMapping(value = "kakaoLogin")
+	public void kakaoLogin() throws Exception {
 
+	}
+	
 	// 회원가입 폼
 	@GetMapping(value = "memberJoin")
 	public void memberJoin() throws Exception {
