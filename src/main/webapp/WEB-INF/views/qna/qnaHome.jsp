@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <link href="<c:url value="/resources/css/layout/header.css"/>"
 	rel="stylesheet">
 	<link href="<c:url value="/resources/css/layout/reset.css"/>"
@@ -18,11 +19,10 @@
 	rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js">	
 </script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-
-
 	<c:import url="../layout/nav.jsp"></c:import>
 	<!-- body -->
 	<div class="body">
@@ -39,10 +39,11 @@
 			<div class="body_name">
 			　자주 묻는 질문
 			</div>
+			<form action="./qnaHome" id="frm">
 			<div class="body_inner">
 			
 				<ul class="body_qna">
-					<c:forEach items="${list}" var="dto">
+					<c:forEach items="${list}" var="dto" varStatus="st">
 					<li class="qna">
 							<a><div class="qt"><span>Q.</span> ${dto.question}</div></a>
 							<ul class="hide">
@@ -55,7 +56,23 @@
 					</c:forEach>
 				</ul>
 				
-			</div>
+				<ul class="pagination">
+				 	 <c:if test="${pager.curBlock gt 1}">
+				 	 	<li><span id="${pager.startNum-1}" class="list">이전</span></li>
+				 	 </c:if>
+					 <c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
+					 	<li><span id="${i}" class="list">${i}</span></li>
+					 </c:forEach>
+					 <c:if test="${pager.curBlock lt pager.totalBlock}">
+					 	<li><span id="${pager.lastNum+1}" class="list">다음</span></li>
+					 </c:if>
+			  	</ul>
+			  	
+			  	
+				</div>
+			</form>
+		</div>
+		
 		</div>	
 		<div class="body_cover2"></div>
 				
@@ -66,19 +83,8 @@
 		</div><!-- body 끝 -->
 			
 			
-				
-		<div class="page">
-	 	 	<ul>
-		 	 <c:if test="${pager.curBlock gt 1}">
-		 	 	<li><span id="${pager.startNum-1}" class="list">이전</span></li>
-		 	 </c:if>
-			 <c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
-			 	<li><span id="${i}" class="list">${i}</span></li>
-			 </c:forEach>
-			 <c:if test="${pager.curBlock lt pager.totalBlock}">
-			 	<li><span id="${pager.lastNum+1}" class="list">다음</span></li>
-			 </c:if>
-	  	 	</ul>
+			
+	  	 
 	  	 	
 	  	 	<!-- user 로그인하면 보이는 추가 버튼 -->
 			<div>
@@ -90,6 +96,9 @@
 	  </div>
 	
 				<c:import url="../layout/navFoot.jsp"></c:import>
+	
+	
+
 	
 
 	<!-- footer script -->
