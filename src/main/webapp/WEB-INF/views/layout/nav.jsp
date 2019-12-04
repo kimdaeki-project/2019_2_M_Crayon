@@ -17,7 +17,7 @@
          </div>
          <div class="navigationWrap">
             <a href="#">투어상품</a>
-            <a href="#">FAQ</a>
+            <a href="${pageContext.request.contextPath}/qna/qnaHome">FAQ</a>
             <a href="#">여행리뷰</a>
             <a href="#">회사소개</a>
             <c:if test="${not empty sessionScope.member}">

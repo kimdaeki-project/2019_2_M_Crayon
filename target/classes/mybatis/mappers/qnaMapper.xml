@@ -6,13 +6,16 @@
   <mapper namespace="qnaMapper">
   
   	<insert id="qnaQuestion" parameterType="QnaVO">
-  	
-  	insert into qna (question, answer,qnum,email) 
-  	values(#{question},'관리자의 답변을 기다리는 중입니다.',seq_qna.nextval,'asd@g.com')
+	  	insert into qna (question, answer,qnum,email) 
+	  	values(#{question},'관리자의 답변을 기다리는 중입니다.',seq_qna.nextval,'asd@g.com')
   	</insert>
   	
   	<select id="qnaList" parameterType="Pager" resultType="QnaVO" >
-  		select * from qna
+  		select * from
+  			(select R.*, rownum RN from
+		  			(select * from qna
+		  			order by qnum desc) R)
+		  	where RN between #{startRow} and #{lastRow}
   	</select>
   	
   	<select id="qnaCount" resultType="Integer" parameterType="Pager">

@@ -13,7 +13,7 @@
 </head>
 <body>
 <div>
-	 <form action="./qnaQuestion" method="POST">
+	 <form action="./qnaQuestion" method="POST" class="window">
 		<input type="hidden" value="${member.email}" id="${member.email}">
 		 작성자 : ${member.name}
 		<h1>Q.</h1><input type="text" name="question" id="question">
@@ -21,5 +21,11 @@
 	</form>
 </div>
 </body>
+<script type="text/javascript">
+	$("#btn").click(function() {
+		alert("등록이 완료되었습니다.");
+		window.close();
+	});
+</script>
 
 </html>

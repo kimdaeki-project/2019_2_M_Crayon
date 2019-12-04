@@ -56,7 +56,6 @@ public class ReviewController {
 	}
 	
 	
-	
 	@GetMapping(value = "reviewDelete")
 	public String reviewDelete(ReviewVO reviewVO) throws Exception{
 		int result = reviewServiceImpl.reviewDelete(reviewVO);
