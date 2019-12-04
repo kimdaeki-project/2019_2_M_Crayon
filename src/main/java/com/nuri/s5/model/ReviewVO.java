@@ -1,5 +1,6 @@
 package com.nuri.s5.model;
 
+import java.sql.Date;
 import java.util.List;
 
 public class ReviewVO {
@@ -8,7 +9,7 @@ public class ReviewVO {
 	private String title;
 	private String writer;
 	private String contents;
-	private String day;
+	private Date day;
 	private int hit;
 	private String tourName;
 	private List<ReviewFilesVO> files;
@@ -33,10 +34,10 @@ public class ReviewVO {
 	public void setFiles(List<ReviewFilesVO> files) {
 		this.files = files;
 	}
-	public String getDay() {
+	public Date getDay() {
 		return day;
 	}
-	public void setDay(String day) {
+	public void setDay(Date day) {
 		this.day = day;
 	}
 	public int getNum() {

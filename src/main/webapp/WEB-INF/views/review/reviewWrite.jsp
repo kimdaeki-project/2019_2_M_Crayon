@@ -5,13 +5,40 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="<c:url value="/resources/css/layout/header.css"/>"
+	rel="stylesheet">
+	<link href="<c:url value="/resources/css/layout/reset.css"/>"
+	rel="stylesheet">
+	<link href="<c:url value="/resources/css/layout/footer.css"/>"
+	rel="stylesheet">
+	<link href="<c:url value="/resources/css/layout/bodyMain.css"/>"
+	rel="stylesheet">
+	<link href="<c:url value="/resources/css/layout/review.css"/>"
+	rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<%-- 	<c:import url="../layout/bootStrap.jsp" /> --%>
+<%-- 	<c:import url="../layout/summerNote.jsp" /> --%>
 </head>
 <body>
-	<c:import url="../layout/bootStrap.jsp" />
-	<c:import url="../layout/summerNote.jsp" />
-	
+		<c:import url="../layout/nav.jsp"></c:import>
+		
+		<div class="body">
+		<div class="body_head">
+			<div class="body_back">
+				<div class="body_h_txt">“파리크레파스 리얼후기”</div>
+				<div class="body_h_txt2">생생한 리뷰를 들려주세요!</div>
+			</div>
+		</div>
+		<!-- 넣을거 -->
+		<div class="body_main">
+		
+		<div class="body_name">
+			　후기게시판
+			</div>
+		
 		<div class="container">
-		  <h2>ReviewWrite Page</h2>
+		
 		  <form action="./reviewWrite" method="post" id="frm" onsubmit=true enctype="multipart/form-data">
 		  
 		  	<div class="form-group">
@@ -29,28 +56,27 @@
 		  	</div>
 		  	
 		    <div class="form-group">
-		      <label for="name">TITLE</label>
-		      <input type="text" class="form-control" id="title" placeholder="Enter TITLE" name="title">
+
+		      <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요" name="title">
 		    </div>
 		    
 		    <div class="form-group">
-		      <label for="writer">WRITER</label>
-		      <input type="text" class="form-control" id="writer" placeholder="Enter your ID or name" name="writer" value="멤버아이디가져와야함." readonly="readonly">
+		    
+		      <input type="hidden" class="form-control" id="writer" placeholder="Enter your ID or name" name="writer" value="멤버아이디가져와야함." readonly="readonly">
 		    </div>
 		    
 		    <div class="form-group" id="editor">
-	      		<label for="comment">Contents:</label>
-	      		<textarea class="form-control" rows="5" id="contents" placeholder="내용을 입력하세요</br>후기와 관련없는 부적합한 게시물은 관리자 확인 후 노출이 제한 될 수 있습니다." name="contents"></textarea>
+	      		<textarea class="form-control" rows="5" id="contents" placeholder="내용을 입력하세요. 후기와 관련없는 부적합한 게시물은 관리자 확인 후 노출이 제한 될 수 있습니다." name="contents"></textarea>
 	   		</div>
 	   		
 		    <div class="form-group">
-		      <label for="day">DATE</label>
-		      <input type="text" class="form-control" id="day" placeholder="date" name="day" value="${dto.day}" readonly="readonly">
+		      
+		      <input type="hidden" class="form-control" id="day" placeholder="date" name="day" value="${dto.day}" readonly="readonly">
 		    </div>
 		    
 		    <div class="form-group">
-		      <label for="hit">HIT</label>
-		      <input type="text" class="form-control" id="hit" placeholder="your point" name="hit" value="0" readonly="readonly">
+		    
+		      <input type="hidden" class="form-control" id="hit" placeholder="your point" name="hit" value="0" readonly="readonly">
 		    </div>
 		    
 	   		
@@ -74,6 +100,12 @@
 			<a href="./reviewList" class="btn btn-default">LIST</a>
 		  </form>
 		</div>
+		
+		
+		
+		</div>
+	</div>
+	
 		
 <!-------------------------------- java Script ---------------------------------------->
 

@@ -1,5 +1,6 @@
 package com.nuri.s5.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -48,6 +49,7 @@ public class ReviewController {
 	
 	@GetMapping(value = "reviewWrite")
 	public void reviewWrite() throws Exception{
+		
 	}
 	
 	@PostMapping(value = "reviewWrite")

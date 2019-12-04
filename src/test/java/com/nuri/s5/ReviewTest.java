@@ -19,7 +19,7 @@ public class ReviewTest extends TestAbstractCase{
 	@Inject
 	private ReviewDAOImpl reviewDAOImpl;
 	
-	@Test
+//	@Test
 	public void reviewListTest() throws Exception{
 		List<ReviewVO> ar = new ArrayList<ReviewVO>();
 		Pager pager = new Pager();
@@ -34,6 +34,22 @@ public class ReviewTest extends TestAbstractCase{
 //		}
 		ar = reviewDAOImpl.reviewList(pager);
 		assertEquals(6, ar.size());
+	}
+	
+	@Test
+	public void reviewWriteTest() throws Exception{
+		ReviewVO reviewVO = null;
+		for(int i=0; i<50; i++) {
+			reviewVO = new ReviewVO();
+			reviewVO.setNum(i);
+			reviewVO.setTitle("ck"+i);
+			reviewVO.setWriter("ck"+i);
+			reviewVO.setContents("tour"+i);
+			reviewVO.setTourName("nonoTour"+i);
+			reviewVO.setHit(0);
+			int result = reviewDAOImpl.reviewWrite(reviewVO);
+			assertEquals(1, result);
+		}
 	}
 	
 	
