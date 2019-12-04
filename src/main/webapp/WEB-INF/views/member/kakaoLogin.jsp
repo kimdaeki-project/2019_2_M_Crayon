@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,8 +28,12 @@
          alert(JSON.stringify(err));
       }
     });
-  //]]>
+    
+    Kakao.Auth.setAccessToken(accessTokenFromServer);
+    //]]>
 </script>
 
+<!-- https://kauth.kakao.com/oauth/authorize?client_id=f5b28263e8b7eba5521a1b8751dd8a48&redirect_uri=http://localhost/s5/member/kakaoLogin&response_type=code
+ -->
 </body>
 </html>
