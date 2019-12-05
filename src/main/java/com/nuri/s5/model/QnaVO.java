@@ -4,8 +4,15 @@ public class QnaVO {
 	private String question;
 	private String answer;
 	private int qnum;
+	private String email;
 	
 	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public int getQnum() {
 		return qnum;
 	}

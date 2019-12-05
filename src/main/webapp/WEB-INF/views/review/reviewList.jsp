@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +20,7 @@
 <c:import url="/resources/bootStrap/bootStrap.jsp"></c:import>
 </head>
 <body>
+
 	<c:import url="../layout/nav.jsp"></c:import>
 	
 	<div class="body">
@@ -112,20 +113,22 @@
 	</div>
 	<!-- footer끝 -->
 	
-	  
-<!-------------------------------- java Script ---------------------------------------->
 
-	  <script type="text/javascript">
-	  	var kind = '${pager.kind}'
-	  	if(kind == ''){
-	  		kind = "kt"
-	  	}
-		$("#"+kind).prop("selected", true);
-	 	$(".list").click(function() {
+
+	<!-------------------------------- java Script ---------------------------------------->
+
+	<script type="text/javascript">
+		var kind = '${pager.kind}'
+		if (kind == '') {
+			kind = "kt"
+		}
+		$("#" + kind).prop("selected", true);
+
+		$(".list").click(function() {
 			$("#curPage").val($(this).attr("id"));
 			$("#frm").submit();
 		});
-	  </script>
-	  
+	</script>
+
 </body>
 </html>

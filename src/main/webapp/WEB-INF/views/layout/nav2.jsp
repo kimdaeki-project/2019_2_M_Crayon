@@ -17,9 +17,10 @@
          </div>
          <div class="navigationWrap">
             <a href="#">투어상품</a>
-            <a href="#">FAQ</a>
+            <a href="${pageContext.request.contextPath}/qna/qnaHome">FAQ</a>
             <a href="${pageContext.request.contextPath}/review/reviewList">여행리뷰</a>
             <a href="${pageContext.request.contextPath}/intro/company">회사소개</a>
+            
             <c:if test="${not empty sessionScope.member}">
             <a href="${pageContext.request.contextPath}/member/memberMyPage">마이페이지</a>
             
