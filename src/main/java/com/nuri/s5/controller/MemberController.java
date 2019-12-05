@@ -25,7 +25,26 @@ public class MemberController {
 
 	@Inject
 	private MemberServiceImpl memberServiceImpl;
+	
+	//카카오 로그인
+	@PostMapping(value = "memberKakao")
+	public void memberKakao(MemberVO memberVO, HttpSession session) throws Exception {
+		
+		String email =memberVO.getEmail().replace("\"", "");
+		String name = memberVO.getName().replace("\"", "");
+		String birth = memberVO.getBirth().replace("\"", "");
+		memberVO.setBirth(birth);
+		memberVO.setEmail(email);
+		memberVO.setName(name);
+		int result = memberServiceImpl.memberKakao(memberVO, session);
 
+	}
+	
+	@GetMapping(value = "memberKakao")
+	public void memberKakao() throws Exception {
+
+	}
+	
 	// 회원가입 폼
 	@GetMapping(value = "memberJoin")
 	public void memberJoin() throws Exception {

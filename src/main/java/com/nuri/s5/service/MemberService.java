@@ -6,6 +6,8 @@ import com.nuri.s5.model.MemberVO;
 
 public interface MemberService {
 	
+		//카카오
+		public int memberKakao(MemberVO memberVO,HttpSession session) throws Exception;
 	//memberJoin
 		public int memberJoin(MemberVO memberVO,HttpSession session)throws Exception;
 		//memberLogin

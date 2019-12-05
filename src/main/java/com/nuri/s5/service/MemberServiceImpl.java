@@ -58,6 +58,12 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO memberSearchPW(MemberVO memberVO)throws Exception{
 		return memberDAOImpl.memberSearchPW(memberVO);
 	}
+
+	@Override
+	public int memberKakao(MemberVO memberVO, HttpSession session) throws Exception {
+		// TODO Auto-generated method stub
+		return memberDAOImpl.memberKakao(memberVO);
+	}
 	
 	
 	

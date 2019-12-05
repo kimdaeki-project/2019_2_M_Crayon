@@ -4,6 +4,8 @@ import com.nuri.s5.model.MemberVO;
 
 public interface MemberDAO {
 	
+	//카카오
+	public int memberKakao(MemberVO memberVO) throws Exception;
 	
 	//memberJoin
 	public int memberJoin(MemberVO memberVO)throws Exception;
