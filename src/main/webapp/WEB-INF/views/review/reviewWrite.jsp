@@ -56,23 +56,21 @@
 		  	</div>
 		  	
 		    <div class="form-group">
-
+				<input type="hidden" id="email" value="${member.email}">
+			</div>
+			
+			<div>
 		      <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요" name="title">
 		    </div>
 		    
 		    <div class="form-group">
-		    
-		      <input type="hidden" class="form-control" id="writer" placeholder="Enter your ID or name" name="writer" value="멤버아이디가져와야함." readonly="readonly">
+		      <input type="hidden" class="form-control" id="writer" placeholder="Enter your ID or name" name="writer" value="${member.name}" readonly="readonly">
 		    </div>
 		    
 		    <div class="form-group" id="editor">
 	      		<textarea class="form-control" rows="5" id="contents" placeholder="내용을 입력하세요. 후기와 관련없는 부적합한 게시물은 관리자 확인 후 노출이 제한 될 수 있습니다." name="contents"></textarea>
 	   		</div>
 	   		
-		    <div class="form-group">
-		      
-		      <input type="hidden" class="form-control" id="day" placeholder="date" name="day" value="${dto.day}" readonly="readonly">
-		    </div>
 		    
 		    <div class="form-group">
 		    
@@ -100,15 +98,10 @@
 			<a href="./reviewList" class="btn btn-default">LIST</a>
 		  </form>
 		</div>
-		
-		
-		
 		</div>
 	</div>
 	
-		
 <!-------------------------------- java Script ---------------------------------------->
-
 
 		<script type="text/javascript">
 			$("#tourName").change(function() {
@@ -136,17 +129,17 @@
 			
 			<!---------------------- summerNote ---------------------->
 			
-			$("#contents").summernote({
-				height: 300,
-				callback: {
-					onImageUpload: function(files, editor) {
-						uploadFile(files[0], this);
-					}, // upload end point
-					onMediaDelete: function(files, editor) {
-						deleteFile(files[0], this);
-					} // delete end point
-				} // callback end point
-			}); // summernote end point
+// 			$("#contents").summernote({
+// 				height: 300,
+// 				callback: {
+// 					onImageUpload: function(files, editor) {
+// 						uploadFile(files[0], this);
+// 					}, // upload end point
+// 					onMediaDelete: function(files, editor) {
+// 						deleteFile(files[0], this);
+// 					} // delete end point
+// 				} // callback end point
+// 			}); // summernote end point
 			
 			
 			function uploadFile(file, editor) {

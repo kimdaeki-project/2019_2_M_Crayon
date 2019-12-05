@@ -34,7 +34,7 @@
 	<div class="body">
 		<div class="body_head">
 			<div class="body_back">
-				<div class="body_h_txt">jj무엇을 도와드릴까요?”</div>
+				<div class="body_h_txt">무엇을 도와드릴까요?”</div>
 				<div class="body_h_txt2">파리크레파스에 대한 궁금한 점을 확인해주세요. 카카오톡 문의도 가능합니다.</div>
 			</div>
 		</div>
