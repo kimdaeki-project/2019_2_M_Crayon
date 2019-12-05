@@ -5,9 +5,22 @@
   
   <mapper namespace="qnaMapper">
   
+  	<update id="qnaUpdate" parameterType="QnaVO">
+  		update qna set answer=#{answer} where qnum=#{qnum}
+  	</update>
+  
+    <select id="qnaSelect" parameterType="QnaVO" resultType="QnaVO">
+    	select * from qna where qnum = #{qnum}
+    </select>
+  
+  	<insert id="qnaAnswer" parameterType="QnaVO">
+  		insert into qna (question, answer, qnum, email) 
+  		values(#{question}, #{answer}, seq_qna.nextval, #{email})
+  	</insert>
+  
   	<insert id="qnaQuestion" parameterType="QnaVO">
-	  	insert into qna (question, answer,qnum,email) 
-	  	values(#{question},'관리자의 답변을 기다리는 중입니다.',seq_qna.nextval,'asd@g.com')
+	  	insert into qna (question, answer, qnum, email) 
+	  	values(#{question},'관리자의 답변을 기다리는 중입니다.', seq_qna.nextval, #{email})
   	</insert>
   	
   	<select id="qnaList" parameterType="Pager" resultType="QnaVO" >
@@ -19,6 +32,6 @@
   	</select>
   	
   	<select id="qnaCount" resultType="Integer" parameterType="Pager">
-  	select count(qnum) from qna
+  		select count(qnum) from qna
   	</select>
   </mapper>

@@ -21,7 +21,7 @@ public class qnaTest extends TestAbstractCase{
 	@Inject
 	private QnaDAO qnaDAO;
 	
-	@Test
+//	@Test
 	public void reviewListTest() throws Exception{
 		List<QnaVO> ar = new ArrayList<QnaVO>();
 		Pager pager = new Pager();
@@ -36,6 +36,16 @@ public class qnaTest extends TestAbstractCase{
 //		}
 		ar = qnaDAO.qnaList(pager);
 		assertEquals(2, ar.size());
+	}
+	
+	@Test
+	public void qnaQuestion() throws Exception{
+		QnaVO qnaVO = new QnaVO();
+		qnaVO.setQuestion("왜 안되는거야");
+		qnaVO.setEmail("asd@g.com");
+		int result = qnaDAO.qnaQuestion(qnaVO);
+		
+		assertEquals(1, result);
 	}
 	
 	

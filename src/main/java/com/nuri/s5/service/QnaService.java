@@ -25,4 +25,14 @@ public class QnaService {
 		return qnaDAO.qnaQuestion(qnaVO);
 	}
 	
+	public int qnaUpdate(QnaVO qnaVO)throws Exception {
+		return qnaDAO.qnaUpdate(qnaVO);
+	}
+	
+	public QnaVO qnaSelet(QnaVO qnaVO) throws Exception{
+		return qnaDAO.qnaSelect(qnaVO);
+	}
+	
+	
+	
 }

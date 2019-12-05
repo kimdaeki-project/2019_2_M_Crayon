@@ -96,7 +96,8 @@
 }
 
 .answerButton{
-	right: -100px;
+	right: 0px;
+	margin-top: 20px;
 	position: absolute;
 }
 

@@ -38,7 +38,6 @@ public class QnaController {
 	@GetMapping("qnaQuestion")
 	public void qnaQuestion(HttpSession session) throws Exception{
 		MemberVO memberVO = (MemberVO)session.getAttribute("member");
-		
 		session.setAttribute("member", memberVO);
 		
 	}
@@ -47,12 +46,11 @@ public class QnaController {
 	public ModelAndView qnaQuestion(QnaVO qnaVO) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		int result = qnaService.qnaQuestion(qnaVO);
-		String msg ="등록 실패";
-		if(qnaVO != null) {
+		String msg ="등록 실패"; 
+		if(result > 0) {
 			msg= "등록 성공";
-			mv.setViewName("redirect:./qnaHome");
+//			mv.setViewName("redirect:./qnaHome");
 		}
-		
 		mv.addObject("msg",msg);
 		mv.addObject("path","../");
 		mv.setViewName("common/common_result");
@@ -64,16 +62,18 @@ public class QnaController {
 	public void qnaAnswer(HttpSession session) throws Exception{
 		MemberVO memberVO = (MemberVO)session.getAttribute("member");
 		session.setAttribute("member", memberVO);
+		
 	}
+	
 	
 	@PostMapping("qnaAnswer")
 	public ModelAndView qnaAnswer(QnaVO qnaVO) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		int result = qnaService.qnaQuestion(qnaVO);
+		int result = qnaService.qnaUpdate(qnaVO);
 		String msg ="등록 실패";
-		if(qnaVO != null) {
+		if(result > 0) {
 			msg= "등록 성공";
-			mv.setViewName("redirect:./qnaHome");
+//			mv.setViewName("redirect:./qnaHome");
 		}
 		
 		mv.addObject("msg",msg);
@@ -82,6 +82,8 @@ public class QnaController {
 		
 		return mv;
 	}
+	
+	
 	
 	
 }

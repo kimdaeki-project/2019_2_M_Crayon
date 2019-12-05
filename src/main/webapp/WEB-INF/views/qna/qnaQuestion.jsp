@@ -14,7 +14,7 @@
 <body>
 <div>
 	 <form action="./qnaQuestion" method="POST" class="window">
-		<input type="hidden" value="${member.email}" id="${member.email}">
+		<input type="hidden" value="${member.email}" id="${member.email}" name="email">
 		 작성자 : ${member.name}
 		<h1>Q.</h1><input type="text" name="question" id="question">
 		<input type="submit" id="btn" value="등록하기">

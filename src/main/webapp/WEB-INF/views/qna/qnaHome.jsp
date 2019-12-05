@@ -34,7 +34,7 @@
 	<div class="body">
 		<div class="body_head">
 			<div class="body_back">
-				<div class="body_h_txt">zzzasd무엇을 도와드릴까요?”</div>
+				<div class="body_h_txt">jj무엇을 도와드릴까요?”</div>
 				<div class="body_h_txt2">파리크레파스에 대한 궁금한 점을 확인해주세요. 카카오톡 문의도 가능합니다.</div>
 			</div>
 		</div>
@@ -50,34 +50,37 @@
 				<input type="hidden" id="curPage" value="1" name="curPage">
 				<ul class="body_qna">
 					<c:forEach items="${list}" var="dto" varStatus="st">
+						<c:if test="${not empty sessionScope.member}">
+							<button class="answerButton" value="${dto.qnum}">답변하기</button>
+						</c:if>
 					<li class="qna">
-							<div class="qt"><span>Q.</span> ${dto.question}<input type="button" value="답변하기" class="answerButton" id="btn_answer"></div>
+							<div class="qt"><span>Q.<input type="hidden" value="${dto.qnum}" name="qnum" class="qn_name"></span>${dto.question}</div>
 							<ul class="hide">
 								<li>${dto.answer}</li>
 							</ul>					
 					</li>
 					</c:forEach>
 				</ul>
-				<div class="pageWrap">
-					<ul class="pagination">
-					 	 <c:if test="${pager.curBlock gt 1}">
-					 	 	<li><span id="${pager.startNum-1}" class="list">이전</span></li>
-					 	 </c:if>
-						 <c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
-						 	<li><span id="${i}" class="list">${i}</span></li>
-						 </c:forEach>
-						 <c:if test="${pager.curBlock lt pager.totalBlock}">
-						 	<li><span id="${pager.lastNum+1}" class="list">다음</span></li>
-						 </c:if>
-				  	</ul>
-			  	</div>
-			  	
+				
+					<div class="pageWrap">
+						<ul class="pagination">
+						 	 <c:if test="${pager.curBlock gt 1}">
+						 	 	<li><span id="${pager.startNum-1}" class="list">이전</span></li>
+						 	 </c:if>
+							 <c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
+							 	<li><span id="${i}" class="list">${i}</span></li>
+							 </c:forEach>
+							 <c:if test="${pager.curBlock lt pager.totalBlock}">
+							 	<li><span id="${pager.lastNum+1}" class="list">다음</span></li>
+							 </c:if>
+					  	</ul>
+				  	</div>
 			  	
 				</div>
 			</form>
 			<div>
 				<c:if test="${not empty sessionScope.member}">
-					 <img alt="글쓰기" src="../resources/images/write.jpg" style="width: 150px; height: 50px;" id="btn_add" class="btn_class">
+					<img alt="글쓰기" src="../resources/images/write.jpg" style="width: 150px; height: 50px;" id="btn_add" class="btn_class">
 				</c:if>
 			</div>
 		</div>
@@ -89,7 +92,7 @@
 	  	 	<!-- user 로그인하면 보이는 추가 버튼 -->
 	  	 
 	
-				<c:import url="../layout/navFoot.jsp"></c:import>
+	<c:import url="../layout/navFoot.jsp"></c:import>
 	<!-- footer script -->
 	<script type="text/javascript">
 	
@@ -112,12 +115,14 @@
 	
 	<!-- faq script -->
 	<script type="text/javascript">
-		$("#btn_add").click(function(){
-			open("/s5/qna/qnaQuestion","_blank","resizable=yes,width=500,height=230, top=200, left=600");
-		});
+ 		$("#btn_add").click(function(){
+ 			open("/s5/qna/qnaQuestion","_blank","resizable=yes,width=500,height=230, top=200, left=600");
+ 		});
 		
-		$("#btn_answer").click(function() {
-			open("/s5/qna/qnaAnswer","_blank","resizable=yes,width=500,height=230, top=200, left=600");
+		
+		$(".answerButton").click(function() {
+			var qt_name = $(this).val();
+			open("/s5/qna/qnaAnswer?qnum="+qt_name, "_blank","resizable=yes, width=500, height=230, top=200, left=600");
 		});
 
 	
@@ -135,8 +140,6 @@
 			}
 		});
 	</script>
-	
-	
 	
 	<script type="text/javascript">
 	 	$(".list").click(function() {
