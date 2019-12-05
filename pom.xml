@@ -22,9 +22,8 @@
 		</repository>
 	</repositories>
 
-	<dependencies>
+	<dependencies>	
 		
-
 
 		<!-- json -->
 		<dependency>

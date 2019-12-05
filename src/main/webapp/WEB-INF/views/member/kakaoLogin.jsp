@@ -13,27 +13,40 @@
 </head>
 <body>
 <a id="kakao-login-btn"></a>
-<a href="http://developers.kakao.com/logout"></a>
+<a href="http://developers.kakao.com/logout">로그아웃</a>
 <script type='text/javascript'>
-  //<![CDATA[
-    // 사용할 앱의 JavaScript 키를 설정해 주세요.
-    Kakao.init('6ba0b2e0894b510063b292edfad86999');  //여기서 아까 발급받은 키 중 javascript키를 사용해준다.
-    // 카카오 로그인 버튼을 생성합니다.
-    Kakao.Auth.createLoginButton({
-      container: '#kakao-login-btn',
-      success: function(authObj) {
-        alert(JSON.stringify(authObj));
+//<![CDATA[
+// 사용할 앱의 JavaScript 키를 설정해 주세요.
+Kakao.init('6ba0b2e0894b510063b292edfad86999');
+// 카카오 로그인 버튼을 생성합니다.
+Kakao.Auth.createLoginButton({
+  container: '#kakao-login-btn',
+  success: function(authObj) {
+    // 로그인 성공시, API를 호출합니다.
+    Kakao.API.request({
+      url: '/v2/user/me',
+      success: function(res) {
+    	  var info =[
+
+              JSON.stringify(res.kakao_account.email), 
+              JSON.stringify(res.properties.nickname), 
+              JSON.stringify(res.kakao_account.birthday)
+
+		]; 
+ 		console.log(info); 
       },
-      fail: function(err) {
-         alert(JSON.stringify(err));
+      fail: function(error) {
+        alert(JSON.stringify(error));
       }
     });
-    
-    Kakao.Auth.setAccessToken(accessTokenFromServer);
-    //]]>
+  },
+  fail: function(err) {
+    alert(JSON.stringify(err));
+  }
+});
+//]]>
+   
 </script>
 
-<!-- https://kauth.kakao.com/oauth/authorize?client_id=f5b28263e8b7eba5521a1b8751dd8a48&redirect_uri=http://localhost/s5/member/kakaoLogin&response_type=code
- -->
 </body>
 </html>
