@@ -61,8 +61,12 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public int memberKakao(MemberVO memberVO, HttpSession session) throws Exception {
-		// TODO Auto-generated method stub
 		return memberDAOImpl.memberKakao(memberVO);
+	}
+	
+	@Override
+	public MemberVO selectKakao(MemberVO memberVO, HttpSession session)throws Exception{
+		return memberDAOImpl.selectKakao(memberVO);
 	}
 	
 	

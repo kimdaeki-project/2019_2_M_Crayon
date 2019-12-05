@@ -5,6 +5,9 @@
   
   <mapper namespace="memberMapper">
   
+		<select id="selectKakao" parameterType="MemberVO" resultType="MemberVO">
+			select * from kmember where email = #{email}			
+		</select>  
   		
   		<insert id="memberKakao" parameterType="MemberVO">
   			insert into kmember values(#{email},#{name},#{birth})

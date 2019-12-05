@@ -41,7 +41,7 @@ public class MemberDAOTest extends TestAbstractCase{
 		assertEquals(1,	result);
 	}
 	
-	@Test
+//	@Test
 	public void delete()throws Exception{
 		MemberVO memberVO = new MemberVO();
 		
@@ -49,6 +49,15 @@ public class MemberDAOTest extends TestAbstractCase{
 		
 		int result = memberDAOImpl.memberDelete(memberVO);
 		assertEquals(1, result);
+	}
+	
+	@Test
+	public void selectKakao() throws Exception{
+		MemberVO memberVO = new MemberVO();
+		memberVO.setEmail("wlsckdrb323@naver.com");
+		
+		memberVO = memberDAOImpl.selectKakao(memberVO);
+		assertNotNull(memberVO);
 	}
 	
 	

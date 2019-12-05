@@ -63,8 +63,12 @@ import com.nuri.s5.model.MemberVO;
 
 	@Override
 	public int memberKakao(MemberVO memberVO) throws Exception {
-		// TODO Auto-generated method stub
 		return sqlSession.insert(NAMESPACE+"memberKakao",memberVO);
+	}
+	
+	@Override
+	public MemberVO selectKakao(MemberVO memberVO)throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"selectKakao", memberVO);
 	}
 
 }

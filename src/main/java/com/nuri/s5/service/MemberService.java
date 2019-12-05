@@ -8,7 +8,10 @@ public interface MemberService {
 	
 		//카카오
 		public int memberKakao(MemberVO memberVO,HttpSession session) throws Exception;
-	//memberJoin
+		//카카오 아이디
+		public MemberVO selectKakao(MemberVO memberVO, HttpSession session)throws Exception;
+		
+		//memberJoin
 		public int memberJoin(MemberVO memberVO,HttpSession session)throws Exception;
 		//memberLogin
 		public MemberVO memberLogin(MemberVO memberVO)throws Exception;
