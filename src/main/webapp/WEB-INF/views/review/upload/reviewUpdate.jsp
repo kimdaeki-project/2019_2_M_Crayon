@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 <meta charset="UTF-8">
 <link href="<c:url value="/resources/css/layout/header.css"/>"
 	rel="stylesheet">
@@ -39,7 +41,7 @@
 		
 		<div class="container">
 		
-		  <form action="./reviewWrite" method="post" id="frm" onsubmit=true enctype="multipart/form-data">
+		  <form action="./reviewUpdate" method="post" id="frm" onsubmit=true enctype="multipart/form-data">
 		  
 		  	<div class="form-group">
 		  		<select id="tourName" name="tourName">
@@ -106,53 +108,5 @@
 	</div>
 	
 <c:import url="../layout/navFoot.jsp"></c:import>	
-	
-<!-------------------------------- java Script ---------------------------------------->
-
-		<script type="text/javascript">
-			$("#tourName").change(function() {
-				alert($(this).val());
-			});
-			
-			var files = $("#files").html();
-			$("#files").empty();
-			var count = 0;
-			
-			$("#btn").click(function() {
-				if(count<5){
-					$("#files").append(files);
-					count ++;
-				}else{
-					alert("첨부파일은 5개를 초과할 수 없습니다.")
-				}
-			});
-			
-			$("#files").on("click", ".del", function() {
-				$(this).parents(".form-group").remove();
-				count --;
-			});
-			
-			
-			function uploadFile(file, editor) {
-				var formData = new FormData();
-				formData.append('file', file);
-				$.ajax({
-					data:formData,
-					type:"POST",
-					url:"./summerFile",
-					enctype:"multipart/form-data",
-					contentType:false,
-					cache:false,
-					processData:false,
-					success:function(data){
-						data = data.trim();
-						data = '../resources/upload/summerFile/'+data;
-						$(editor).summernote('insertImage', data);
-					}
-				
-				});
-			}
-		
-		</script>
 </body>
 </html>

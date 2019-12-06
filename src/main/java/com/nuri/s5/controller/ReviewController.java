@@ -99,5 +99,17 @@ public class ReviewController {
 		return mv;
 	}
 	
+	@GetMapping(value = "reviewUpdate")
+	public ModelAndView reviewUpdate(ReviewVO reviewVO,HttpSession session) throws Exception{
+		reviewVO = reviewServiceImpl.reviewSelect(reviewVO);
+		MemberVO memberVO = (MemberVO)session.getAttribute("member");
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("review", reviewVO);
+		mv.addObject("member", memberVO);
+		
+		return mv;
+	}
+	
 
 }

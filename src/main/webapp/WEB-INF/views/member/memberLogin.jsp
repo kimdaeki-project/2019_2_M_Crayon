@@ -37,7 +37,7 @@
 					<br>
 					<div class="inputform">
 						<div class="email">
-							<label for="email"></label> <input type="email" id="email"
+							<label for="email"></label> <input type="text" id="email"
 								placeholder="   이메일을 입력해주세요" name="email" class="inputform_sub">
 						</div>
 						<br>
