@@ -21,7 +21,6 @@ public class MemberDAOTest extends TestAbstractCase{
 		MemberVO memberVO = new MemberVO();
 		memberVO.setEmail("test@g.com");
 		memberVO.setBirth("1999-12-13");
-		memberVO.setGender("F");
 		memberVO.setName("test");
 		memberVO.setPw("test");
 		
