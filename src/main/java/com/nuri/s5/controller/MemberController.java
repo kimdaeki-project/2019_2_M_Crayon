@@ -25,7 +25,41 @@ public class MemberController {
 
 	@Inject
 	private MemberServiceImpl memberServiceImpl;
+	
+	
+	//카카오 회원가입
+	@PostMapping(value = "memberKakao")
+	public String memberKakao(MemberVO memberVO, HttpSession session) throws Exception {
+			String email =memberVO.getEmail().replace("\"", "");
+			String name = memberVO.getName().replace("\"", "");
 
+			memberVO.setEmail(email);
+			memberVO.setName(name);
+			session.setAttribute("member", memberVO);
+			memberVO = memberServiceImpl.selectKakao(memberVO, session);
+			
+			if(memberVO != null) {
+				System.out.println("중복된 아이디");
+			}else {
+				System.out.println("회원가입 가능한 아이디");
+				MemberVO memberVO2 = new MemberVO();
+				memberVO2.setEmail(email);
+				memberVO2.setName(name);
+
+				session.setAttribute("member", memberVO2);
+				int result = memberServiceImpl.memberKakao(memberVO2, session);
+			}
+			
+			return "redirect:../";
+	}
+		
+
+	
+	@GetMapping(value = "memberKakao")
+	public void memberKakao() throws Exception {
+
+	}
+	
 	// 회원가입 폼
 	@GetMapping(value = "memberJoin")
 	public void memberJoin() throws Exception {

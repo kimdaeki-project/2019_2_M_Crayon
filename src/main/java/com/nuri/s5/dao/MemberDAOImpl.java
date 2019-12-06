@@ -61,4 +61,14 @@ import com.nuri.s5.model.MemberVO;
 		return sqlSession.selectOne(NAMESPACE+"memberSearchPW", memberVO);
 	}
 
+	@Override
+	public int memberKakao(MemberVO memberVO) throws Exception {
+		return sqlSession.insert(NAMESPACE+"memberKakao",memberVO);
+	}
+	
+	@Override
+	public MemberVO selectKakao(MemberVO memberVO)throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"selectKakao", memberVO);
+	}
+
 }

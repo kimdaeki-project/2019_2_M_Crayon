@@ -18,6 +18,11 @@
 </script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
+<title>Login Demo - Kakao JavaScript SDK</title>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 <body>
 	<c:import url="../layout/nav.jsp"></c:import>
@@ -45,16 +50,19 @@
 							아직 파리크레파스 회원이 아니세요? <a href="./memberJoin">회원가입</a>
 						</div>
 					</div>
-
+					
 					<div class="btnform">
-						<br> <input type="submit" id="login" value="로그인"
+						<input type="submit" id="login" value="로그인"
 							class="logbtn"> 
+							<div><a id="kakao-login-btn"></a></div>
 							<br> 
 							<div class="findbtn">
+							
 							<a href="./memberSearchID">Email찾기</a> 
 							<a href="./memberSearchPW">PW찾기</a>
 							</div>
 					</div>
+					
 				</div>
 
 			</div>
@@ -62,7 +70,49 @@
 	</form>
 
 	<c:import url="../layout/navFoot.jsp"></c:import>
+	<script type='text/javascript'>
+//<![CDATA[
+// 사용할 앱의 JavaScript 키를 설정해 주세요.
+Kakao.init('6ba0b2e0894b510063b292edfad86999');
+// 카카오 로그인 버튼을 생성합니다.
+Kakao.Auth.createLoginButton({
+  container: '#kakao-login-btn',
+  success: function(authObj) {
+    // 로그인 성공시, API를 호출합니다.
+    Kakao.API.request({
+      url: '/v2/user/me',
+      success: function(res) {
+    	  var info =[
+              JSON.stringify(res.kakao_account.email), 
+              JSON.stringify(res.properties.nickname), 
+              JSON.stringify(res.kakao_account.birthday)
+		]; 			
+ 		
+ 		$.ajax({
+ 			url:"./memberKakao",
+ 			type:"POST",
+ 			data:{"email":info[0],
+ 				"name":info[1]
+ 			},
+ 			success:function(){
+ 				alert("로그인성공"),
+ 				location.replace("../");
 
+ 			}
+ 		});
+      },
+      fail: function(error) {
+        alert(JSON.stringify(error));
+      }
+    });
+  },
+  fail: function(err) {
+    alert(JSON.stringify(err));
+  }
+});
+//]]>
+   
+</script>
 
 
 </body>
