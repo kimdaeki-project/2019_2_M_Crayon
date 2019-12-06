@@ -29,12 +29,13 @@
 	<div class="mypageMain">
 		<div class="mypageMain_sub">
 			<div class="btnsBox">
+				<input type="hidden" value="${member.kCheck}" id="kCheck">
 				<a href="./memberUpdate"> <input type="submit" id="update"
 					value="회원정보 수정" class="btns_p"></a> <a href="./memberLogout">
 					<input type="submit" id="logout" value="로그아웃" class="btns">
 				</a> 
 				<a href="./memberDelete?email=${member.email}"><input type="submit" id="delete" value="Delete" class="btns"></a> 
-				<button onclick="kakaoLogout()">로그아웃</button>
+				
 			</div>
 		</div>
 	</div>
@@ -46,28 +47,21 @@
 	<c:import url="../layout/navFoot.jsp"></c:import>
 	<script type="text/javascript">
 	
-	//<![CDATA[
-	// 사용할 앱의 JavaScript 키를 설정해 주세요.
-	Kakao.init('6ba0b2e0894b510063b292edfad86999');	
-	function kakaoLogout(){
-			Kakao.Auth.logout(function(){
-				
-				success:function(){
-				$.ajax({
-					url:"https://accounts.kakao.com/logout?continue=https://accounts.kakao.com/weblogin/account",
-					type:"POST",
-				alert("로그아웃 성공"),
-					location.replace("../");
+	
+			$("#logout").click(function(){
+				var kCheck = $("#kCheck").val();
+				if(kCheck==1){
+				window.open("https://accounts.kakao.com/logout?continue=https://accounts.kakao.com/weblogin/account", "",
+						"width=500,height=230,top=200, left=600");
+				location.replace("../");
 				}
-			});
 				
 				
-				/* setTimeout(function(){
-					location.href ="https://accounts.kakao.com/logout?continue=https://accounts.kakao.com/weblogin/account"
-				},1000); */
 			});
 			
-			};
+			
+				
+			
 			
 		
 	</script>

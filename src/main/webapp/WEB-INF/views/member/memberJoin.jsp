@@ -38,8 +38,8 @@
 					<div class="joinInputBox">
 						<div class="joinInputBox_cover">
 							<div class="email">
-								<label for="email"></label> <input type="email" id="email"
-									name="email" readonly="readonly" placeholder="   Email 입력"
+								<label for="email"></label> <input type="text" id="email"
+									name="email" readonly="readonly" placeholder="   ID 입력"
 									class="checkEmail joinInput">
 							</div>
 
@@ -54,7 +54,8 @@
 									id="pwCheck" placeholder="   비밀번호 재확인" name="pwCheck"
 									class="joinInput">
 							</div>
-							<div id=pwResult class="pwjoincheck" style="color: white;"></div> <br>
+							<div id=pwResult class="pwjoincheck" style="color: white;"></div>
+							<br>
 
 							<div class="name">
 								<label for="name"></label> <input type="text" id="name"
@@ -68,10 +69,9 @@
 							</div>
 							<span id=birthResult></span> <br>
 
-							<div class="gender">
-							
-							</div>
-								<br> <br> <input type="button" class="Joinbtn" id="join" value="Join">
+							<div class="gender"></div>
+							<br> <br> <input type="button" class="Joinbtn"
+								id="join" value="Join">
 						</div>
 					</div>
 
@@ -110,7 +110,7 @@
 		$("#join").click(function() {
 
 			if ($("#email").val() == "") {
-				alert("이메일을 입력하세요!");
+				alert("아이디를 입력하세요!");
 				$("#email").focus();
 
 			} else if ($("#pw").val() == "") {
@@ -139,7 +139,6 @@
 			}
 		});
 
-
 		// 영숫자 특수문자 8자 이상 정규식 
 		var passwordRule = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,14}$/;
 
@@ -155,6 +154,8 @@
 					}
 
 				});
+
+		
 	</script>
 
 

@@ -32,7 +32,8 @@ public class MemberController {
 	public String memberKakao(MemberVO memberVO, HttpSession session) throws Exception {
 			String email =memberVO.getEmail().replace("\"", "");
 			String name = memberVO.getName().replace("\"", "");
-
+			
+			memberVO.setkCheck(1);
 			memberVO.setEmail(email);
 			memberVO.setName(name);
 			session.setAttribute("member", memberVO);
@@ -178,9 +179,9 @@ public class MemberController {
 	public Model memberIdCheck(MemberVO memberVO, Model model) throws Exception {
 		memberVO = memberServiceImpl.memberIdCheck(memberVO);
 
-		String msg = "중복된 이메일입니다.";
+		String msg = "아이디입니다.";
 		if (memberVO == null) {
-			msg = "사용가능한 이메일입니다.";
+			msg = "사용가능한 아이디입니다.";
 		}
 
 		model.addAttribute("dto", memberVO);

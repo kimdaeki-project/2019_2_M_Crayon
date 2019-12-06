@@ -28,7 +28,7 @@
 		</c:if>
 
 		<div>
-			<label for="email">Email:</label> <input type="email" id="email"
+			<label for="email">Email:</label> <input type="text" id="email"
 				name="email" value="${param.email}">
 		</div>
 
@@ -50,6 +50,21 @@
 			$("#email", opener.document).val(email);
 			window.self.close();
 		});
+		
+		
+		var pattern = /[^가-힣a-z0-9\s,.!~()?]/;
+		$("#email").blur(
+				function() {
+
+					if (pattern.test($('#email').val()) == true) {
+						alert('특수문자를 제외하고 입력해주세요.')
+						$('#email').val("");
+						$('#email').focus();
+						return;
+					}
+				});
+		
+		
 	</script>
 
 
