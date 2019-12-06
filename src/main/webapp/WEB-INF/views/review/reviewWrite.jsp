@@ -17,8 +17,8 @@
 	rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<%-- 	<c:import url="../layout/bootStrap.jsp" /> --%>
-<%-- 	<c:import url="../layout/summerNote.jsp" /> --%>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
 <body>
 		<c:import url="../layout/nav.jsp"></c:import>
@@ -73,7 +73,6 @@
 	   		
 		    
 		    <div class="form-group">
-		    
 		      <input type="hidden" class="form-control" id="hit" placeholder="your point" name="hit" value="0" readonly="readonly">
 		    </div>
 		    
@@ -90,16 +89,23 @@
 	   			</div>
 				</div>
 			</div>	   		
+			
+			<div class="btnAdd" style="height: 50px;margin-right: 100px;">
+		   		<span>첨부파일은 최대 5개까지 가능합니다^^<input type="button" value="add file" class="btn btn-default" id="btn" style="float: right; right: "></span>
+			</div>
 	   		
-	   		<input type="button" value="add file" class="btn btn-default" id="btn">
+	   		<div class="btnSelect" style="height: 100px;margin-left: 450px;">
+			    <button class="btn btn-default" id="submit">SUBMIT</button>
+				<a href="./reviewList" class="btn btn-default">LIST</a>
+	   		</div>
 		    
 		    
-		    <button class="btn btn-default" id="submit">SUBMIT</button>
-			<a href="./reviewList" class="btn btn-default">LIST</a>
 		  </form>
 		</div>
 		</div>
 	</div>
+	
+<c:import url="../layout/navFoot.jsp"></c:import>	
 	
 <!-------------------------------- java Script ---------------------------------------->
 
@@ -127,7 +133,7 @@
 			});
 			
 			
-			<!---------------------- summerNote ---------------------->
+			<!---------------------- summerNote --------------------->
 			
 // 			$("#contents").summernote({
 // 				height: 300,
