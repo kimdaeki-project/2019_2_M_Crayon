@@ -12,34 +12,39 @@
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/footer.css"/>"
 	rel="stylesheet">
+	<link href="<c:url value="/resources/css/layout/mini.css"/>"
+	rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <meta charset="UTF-8">
-<title>E-mail 중복확인</title>
+<title>아이디 중복확인</title>
 </head>
 <body>
 
 
 	<form action="./memberIdCheck">
-
+		<div class="h_Css"><img alt="" src="../resources/images/header/logo_sub.jpg">
 		<c:if test="${not empty param.email}">
-			<h1>${param.email}:${msg}</h1>
+			<div class="idTest"><div class="idTest_font">${param.email} 는 ${msg}</div></div>
 		</c:if>
-
-		<div>
-			<label for="email">Email:</label> <input type="email" id="email"
+		
+		
+		<div class="h_Css2">
+			<br>
+			<label for="email">ID : </label> <input type="text" id="email"
 				name="email" value="${param.email}">
+			<button type="submit" class="CheckIDBtn btn btn-default">확인</button>
+			<c:if test="${empty dto and not empty param.email}">
+
+			<input type="button" value="사용하기" id="useEmail" class="btn btn-default" >
+
+			</c:if>			
 		</div>
 
-		<button type="submit" class="CheckIDBtn">확인</button>
-
-		<c:if test="${empty dto and not empty param.email}">
-
-			<input type="button" value="사용하기" id="useEmail" >
-
-		</c:if>
-
+		</div>
 	</form>
 
 

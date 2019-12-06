@@ -102,8 +102,7 @@
 }
 
 .btn_class{
-	position : absolute;
-	right: 500px;
+	float:right;
 	overflow: auto;
 	margin-top: 50px;
 }
@@ -111,3 +110,4 @@
 .pageWrap{
 	margin-left: 500px;
 }
+

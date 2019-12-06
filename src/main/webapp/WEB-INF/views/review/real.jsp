@@ -37,7 +37,7 @@
 
 		<div class="reviewT">
 			<br>
-			<h2>| 후기 게시판</h2>
+			<h2> 후기 게시판</h2>
 			<div class="Reviewtable">
 
 				<div class="Reviewactive">
