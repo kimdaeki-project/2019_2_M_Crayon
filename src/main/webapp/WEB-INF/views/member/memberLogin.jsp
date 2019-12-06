@@ -86,9 +86,7 @@ Kakao.Auth.createLoginButton({
               JSON.stringify(res.kakao_account.email), 
               JSON.stringify(res.properties.nickname), 
               JSON.stringify(res.kakao_account.birthday)
-		];
- 		console.log(info);
- 			
+		]; 			
  		
  		$.ajax({
  			url:"./memberKakao",
@@ -96,10 +94,10 @@ Kakao.Auth.createLoginButton({
  			data:{"email":info[0],
  				"name":info[1],
  				"birth":info[2]},
- 		
  			success:function(){
- 				alert("성공")
- 				redirect("");
+ 				alert("로그인성공"),
+ 				location.replace("../");
+
  			}
  		});
       },

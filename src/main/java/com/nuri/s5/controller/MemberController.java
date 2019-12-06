@@ -29,13 +29,14 @@ public class MemberController {
 	
 	//카카오 회원가입
 	@PostMapping(value = "memberKakao")
-	public void memberKakao(MemberVO memberVO, HttpSession session) throws Exception {
+	public String memberKakao(MemberVO memberVO, HttpSession session) throws Exception {
 			String email =memberVO.getEmail().replace("\"", "");
 			String name = memberVO.getName().replace("\"", "");
 			String birth = memberVO.getBirth().replace("\"", "");
 			memberVO.setBirth(birth);
 			memberVO.setEmail(email);
 			memberVO.setName(name);
+			session.setAttribute("member", memberVO);
 			memberVO = memberServiceImpl.selectKakao(memberVO, session);
 			
 			if(memberVO != null) {
@@ -46,8 +47,11 @@ public class MemberController {
 				memberVO2.setEmail(email);
 				memberVO2.setName(name);
 				memberVO2.setBirth(birth);
+				session.setAttribute("member", memberVO2);
 				int result = memberServiceImpl.memberKakao(memberVO2, session);
 			}
+			
+			return "redirect:../";
 	}
 		
 
