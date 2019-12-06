@@ -1,0 +1,37 @@
+package com.nuri.s5.controller;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.nuri.s5.service.KakaoPay;
+
+
+@Controller
+@RequestMapping("/kakao/**")
+public class kakaoPayController {
+	
+		@Inject
+	    private KakaoPay kakaopay;
+	    
+	    
+	    @GetMapping("kakaoPay")
+	    public void kakaoPayGet() {
+	    }
+	    
+	    @PostMapping("kakaoPay")
+	    public String kakaoPay() {
+	        return "redirect:" + kakaopay.kakaoPayReady();
+	    }
+	    
+	    @GetMapping("/kakaoPaySuccess")
+	    public void kakaoPaySuccess(@RequestParam("pg_token") String pg_token, Model model) {
+	        
+	        model.addAttribute("info", kakaopay.kakaoPayInfo(pg_token));
+	    }
+}
