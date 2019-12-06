@@ -32,8 +32,7 @@ public class MemberController {
 	public String memberKakao(MemberVO memberVO, HttpSession session) throws Exception {
 			String email =memberVO.getEmail().replace("\"", "");
 			String name = memberVO.getName().replace("\"", "");
-			String birth = memberVO.getBirth().replace("\"", "");
-			memberVO.setBirth(birth);
+
 			memberVO.setEmail(email);
 			memberVO.setName(name);
 			session.setAttribute("member", memberVO);
@@ -46,7 +45,7 @@ public class MemberController {
 				MemberVO memberVO2 = new MemberVO();
 				memberVO2.setEmail(email);
 				memberVO2.setName(name);
-				memberVO2.setBirth(birth);
+
 				session.setAttribute("member", memberVO2);
 				int result = memberServiceImpl.memberKakao(memberVO2, session);
 			}

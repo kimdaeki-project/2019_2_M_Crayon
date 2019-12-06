@@ -92,8 +92,8 @@ Kakao.Auth.createLoginButton({
  			url:"./memberKakao",
  			type:"POST",
  			data:{"email":info[0],
- 				"name":info[1],
- 				"birth":info[2]},
+ 				"name":info[1]
+ 			},
  			success:function(){
  				alert("로그인성공"),
  				location.replace("../");
