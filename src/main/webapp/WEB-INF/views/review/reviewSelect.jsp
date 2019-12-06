@@ -28,7 +28,7 @@
 <body>
 	<div class="reviewImg">
 		<div class="reviewImg_sub">
-			<div class="realReview">jj파리크레파스 리얼후기</div>
+			<div class="realReview">파리크레파스 리얼후기</div>
 			<div class="realReview2">투어상품을 경험한 후 리얼한 후기를 남겨주세요</div>
 
 		</div>
@@ -95,7 +95,6 @@
 					<div class="reviewBtns">
 							<a href="./reviewList">LIST</a>
 							<a href="./reviewDelete?num=${dto.num}">DELETE</a> 
-							<a href="./reviewReply?num=${dto.num}">REPLY</a> 
 							<a href="./reviewUpdate?num=${dto.num}">UPDATE</a> 
 					</div>
 			</div>
