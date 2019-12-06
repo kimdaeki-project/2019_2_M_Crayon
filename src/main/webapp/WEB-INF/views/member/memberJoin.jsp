@@ -54,7 +54,7 @@
 									id="pwCheck" placeholder="   비밀번호 재확인" name="pwCheck"
 									class="joinInput">
 							</div>
-							<span id=pwResult></span> <br>
+							<div id=pwResult class="pwjoincheck" style="color: white;"></div> <br>
 
 							<div class="name">
 								<label for="name"></label> <input type="text" id="name"
@@ -69,13 +69,9 @@
 							<span id=birthResult></span> <br>
 
 							<div class="gender">
-								<label for="gender"></label> <select id="sel1" name="gender"
-									class="joinInput">
-									<option>F</option>
-									<option>M</option>
-								</select> <span id=genderResult></span> <br> <br> <input
-									type="button" class="Joinbtn" id="join" value="Join">
+							
 							</div>
+								<br> <br> <input type="button" class="Joinbtn" id="join" value="Join">
 						</div>
 					</div>
 
@@ -142,7 +138,7 @@
 				$("#frm").submit();
 			}
 		});
-		}); 
+
 
 		// 영숫자 특수문자 8자 이상 정규식 
 		var passwordRule = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,14}$/;

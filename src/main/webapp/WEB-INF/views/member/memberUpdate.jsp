@@ -57,15 +57,7 @@
 							<br>
 
 							<div class="form-group">
-								<label for="sel1"></label> <input type="text" id="sel1" name="gender"
-									readonly="readonly" value=" ${member.gender}"class="updateInput">
-									
-								</select>
-							</div>
-							<br>
-
-							<div class="form-group">
-								<label for="birth"></label> <input type="date" id="birth"
+								<label for="birth"></label> <input type="text" id="birth"
 									name="birth" readonly="readonly" value="${member.birth}"
 									class="updateInput">
 							</div>

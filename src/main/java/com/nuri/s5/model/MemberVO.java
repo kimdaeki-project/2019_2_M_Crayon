@@ -1,13 +1,15 @@
 package com.nuri.s5.model;
 
-import java.sql.Date;
+
 
 public class MemberVO {
 	private String email;
 	private String pw;
 	private String name;
 	private String birth;
-	private String gender;
+	private int kCheck;
+	private int aCheck;
+
 	
 	
 	
@@ -36,12 +38,19 @@ public class MemberVO {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
-	public String getGender() {
-		return gender;
+	public int getkCheck() {
+		return kCheck;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setkCheck(int kCheck) {
+		this.kCheck = kCheck;
 	}
+	public int getaCheck() {
+		return aCheck;
+	}
+	public void setaCheck(int aCheck) {
+		this.aCheck = aCheck;
+	}
+	
 	
 	
 	
