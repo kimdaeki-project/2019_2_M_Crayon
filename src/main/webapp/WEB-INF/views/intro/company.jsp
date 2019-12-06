@@ -54,47 +54,50 @@
 				</div>
 			</div>
 			
+<!-- 	하나 눌렀을 때 확대 사진 -->
 			<div>
 				<div id="myModal" class="modal">
-		  <span class="close cursor" onclick="closeModal()">&times;</span>
-		  <div class="modal-content">
+		 		<span class="close cursor" onclick="closeModal()">&times;</span>
+		 		
+					<div class="modal-content">
 		  
-			    <div class="mySlides">
-			      <div class="numbertext">1 / 6</div>
-			      <img src="../resources/images/certification/in_1.jpg" style="width:720px; height: 900px;">
-			    </div>
+			   			<div class="mySlides">
+			      			<div class="numbertext">1 / 6</div>
+			      			<img src="../resources/images/certification/in_1.jpg" style="width:720px; height: 900px;">
+			    		</div>
 			
-			    <div class="mySlides">
-			      <div class="numbertext">2 / 6</div>
-			      <img src="../resources/images/certification/in_2.jpg" style="width:720px; height: 900px;">
-			    </div>
+			    		<div class="mySlides">
+			      			<div class="numbertext">2 / 6</div>
+			      			<img src="../resources/images/certification/in_2.jpg" style="width:720px; height: 900px;">
+			   			</div>
 			
-			    <div class="mySlides">
-			      <div class="numbertext">3 / 6</div>
-			      <img src="../resources/images/certification/in_3.jpg" style="width:720px; height: 900px;">
-			    </div>
+					    <div class="mySlides">
+					    	<div class="numbertext">3 / 6</div>
+					    	<img src="../resources/images/certification/in_3.jpg" style="width:720px; height: 900px;">
+					    </div>
 			    
-			    <div class="mySlides">
-			      <div class="numbertext">4 / 6</div>
-			      <img src="../resources/images/certification/in_4.jpg" style="width:720px; height: 900px;">
-			    </div>
+					    <div class="mySlides">
+					    	<div class="numbertext">4 / 6</div>
+					    	<img src="../resources/images/certification/in_4.jpg" style="width:720px; height: 900px;">
+					    </div>
 			    
-			    <div class="mySlides">
-			      <div class="numbertext">5 / 6</div>
-			      <img src="../resources/images/certification/in_5.jpg" style="width:720px; height: 900px;">
-			    </div>
+					    <div class="mySlides">
+					    	<div class="numbertext">5 / 6</div>
+					    	<img src="../resources/images/certification/in_5.jpg" style="width:720px; height: 900px;">
+					    </div>
 			    
-			   	<div class="mySlides">
-			      <div class="numbertext">6 / 6</div>
-			      <img src="../resources/images/certification/in_6.jpg" style="width:720px; height: 900px;">
-			    </div>
+					   	<div class="mySlides">
+					    	<div class="numbertext">6 / 6</div>
+					    	<img src="../resources/images/certification/in_6.jpg" style="width:720px; height: 900px;">
+					    </div>
 					    
-		    <div class="caption-container">
-		      <p id="caption"></p>
-		    </div>
-			    
-			    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-			    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+		 			<div class="caption-container">
+		    			<p id="caption"></p>
+		    		</div>
+		    		
+<!-- 	이전 / 다음  이동하는 a태그 -->			    
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
 			
 <!-- 			    <div class="column"> -->
 <!-- 			      <img class="demo cursor" src="../resources/images/certification/in_1.jpg" style="width: 200px; height: 100px;" onclick="currentSlide(1)" alt="Fall"> -->
@@ -115,19 +118,18 @@
 <!-- 			      <img class="demo cursor" src="../resources/images/certification/in_6.jpg" style="width: 200px; height: 100px;" onclick="currentSlide(6)" alt="person"> -->
 <!-- 			    </div> -->
 			    
-			  </div>
-			</div>
+			  		</div>
+				</div>
 			</div>
 			
 			<div class="certification_name">
 			　인증서
 			</div>
-			
+
+<!-- 	onclick 전 사진 -->
 			<div class="certificationList row">
 				<div class="imgWrap column">
-<!-- 					<a href="../resources/images/certification/in_1.jpg?s=300x200" style="width:300px; height:100px;"> -->
-						<img src="../resources/images/certification/in_1.jpg" style="width: 220px; height: 300px;" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
-<!-- 					</a> -->
+					<img src="../resources/images/certification/in_1.jpg" style="width: 220px; height: 300px;" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
 					<p>한국 사업자 등록증</p>
 				</div>
 				<div class="imgWrap column">

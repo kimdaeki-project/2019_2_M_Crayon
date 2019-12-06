@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.nuri.s5.model.MemberVO;
 import com.nuri.s5.model.ReviewFilesVO;
 import com.nuri.s5.model.ReviewVO;
 import com.nuri.s5.service.ReviewServiceImpl;
@@ -48,8 +49,11 @@ public class ReviewController {
 	}
 	
 	@GetMapping(value = "reviewWrite")
-	public void reviewWrite() throws Exception{
-		
+	public ModelAndView reviewWrite(HttpSession session) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		mv.addObject("member", member);
+		return mv;
 	}
 	
 	@PostMapping(value = "reviewWrite")
