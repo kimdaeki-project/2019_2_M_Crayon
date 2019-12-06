@@ -51,11 +51,11 @@
 	Kakao.init('6ba0b2e0894b510063b292edfad86999');	
 	function kakaoLogout(){
 			Kakao.Auth.logout(function(){
+				
+				success:function(){
 				$.ajax({
 					url:"https://accounts.kakao.com/logout?continue=https://accounts.kakao.com/weblogin/account",
 					type:"POST",
-				
-				success:function(){
 				alert("로그아웃 성공"),
 					location.replace("../");
 				}
