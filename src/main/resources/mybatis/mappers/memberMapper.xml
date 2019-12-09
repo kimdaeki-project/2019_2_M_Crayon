@@ -14,7 +14,7 @@
   		</insert>
   		
   		<insert id="memberJoin" parameterType="MemberVO">
-  			insert into member values(#{email},#{pw},#{name},#{birth},0,0)
+  			insert into member values(#{email},#{pw},#{name},#{birth},0,0,seq_member.nextval)
   		</insert>
   		
   		<select id="memberLogin" parameterType="MemberVO" resultType="MemberVO">
@@ -41,4 +41,33 @@
 		<select id="memberSearchPW" parameterType="MemberVO" resultType="MemberVO">
 			select pw from member where email=#{email} and birth=#{birth}
 		</select>
+		
+		<sql id="searching">
+	    	<choose>
+				<when test="kind == 'kt'">
+					where title like '%'||#{search}||'%'
+				</when>
+				<when test="kind == 'kw'">
+					where writer like '%'||#{search}||'%'
+				</when>
+				<otherwise>
+					where contents like	'%'||#{search}||'%'
+				</otherwise>
+			</choose>
+	    </sql>
+		
+		<select id="adminPage" parameterType="Pager" resultType="MemberVO">
+			select * from 
+  				(select M.*, rownum MN from
+		  			(select * from member
+		  			<include refid="searching"></include> 
+		  			order by email desc) M)
+		  	where MN between #{startRow} and #{lastRow}
+		</select>
+		
+		<select id="adminCount" resultType="Integer" parameterType="Pager">
+  			select count(mnum) from member
+  			<include refid="searching"></include>
+  		</select> 
+		
   </mapper>

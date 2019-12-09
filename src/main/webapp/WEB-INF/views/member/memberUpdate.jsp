@@ -41,26 +41,22 @@
 							<div>
 
 								<div>
-									<label for="email"></label> <input type="text" id="email"
+									<label for="email">Email </label> <input type="text" id="email"
 										readonly="readonly" name="email" value="   ${member.email}"
 										class="updateInput">
 								</div>
-								<br> <label for="pw"></label> <input type="password"
+								<br> <label for="pw">Pw </label> <input type="password"
 									id="pw" name="pw" value="${member.pw}" class="joinInput">
 							</div>
 							<br>
 
 							<div>
-								<label for="name"></label> <input type="text" id="name"
+								<label for="name">Name </label> <input type="text" id="name"
 									name="name" value=" ${member.name}" class="joinInput">
 							</div>
 							<br>
 
-							<div class="form-group">
-								<label for="birth"></label> <input type="text" id="birth"
-									name="birth" readonly="readonly" value="${member.birth}"
-									class="updateInput">
-							</div>
+							
 
 
 							<br> <a href="memberUpdate"><input type="submit"

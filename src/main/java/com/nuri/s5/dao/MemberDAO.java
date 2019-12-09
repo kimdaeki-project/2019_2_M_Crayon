@@ -1,6 +1,9 @@
 package com.nuri.s5.dao;
 
+import java.util.List;
+
 import com.nuri.s5.model.MemberVO;
+import com.nuri.s5.util.Pager;
 
 public interface MemberDAO {
 	
@@ -26,6 +29,11 @@ public interface MemberDAO {
 	public MemberVO memberSearchID(MemberVO memberVO)throws Exception;
 	//memberSearchPW(이메일,생일)
 	public MemberVO memberSearchPW(MemberVO memberVO)throws Exception;
-	
+	//adminPage(List)
+	public List<MemberVO> adminPage(Pager pager)throws Exception;
+	//adminCount
+	public int adminCount(Pager pager) throws Exception;
+	//adminCountUpdate
+	public int adminCountUpdate(MemberVO memberVO)throws Exception;
 	
 }
