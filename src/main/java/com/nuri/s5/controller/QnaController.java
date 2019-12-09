@@ -59,17 +59,20 @@ public class QnaController {
 	}
 	
 	@GetMapping(value = "qnaAnswer")
-	public void qnaAnswer(HttpSession session) throws Exception{
+	public ModelAndView qnaAnswer(HttpSession session,QnaVO qnaVO) throws Exception{
 		MemberVO memberVO = (MemberVO)session.getAttribute("member");
 		session.setAttribute("member", memberVO);
-		
+		ModelAndView mv = new ModelAndView();
+		qnaVO = qnaService.qnaSelet(qnaVO);
+		mv.addObject("dto",qnaVO);
+		return mv;
 	}
 	
 	
 	@PostMapping("qnaAnswer")
 	public ModelAndView qnaAnswer(QnaVO qnaVO) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		int result = qnaService.qnaUpdate(qnaVO);
+		int result = qnaService.qnaAnswer(qnaVO);
 		String msg ="등록 실패";
 		if(result > 0) {
 			msg= "등록 성공";
@@ -83,7 +86,51 @@ public class QnaController {
 		return mv;
 	}
 	
+	@GetMapping(value = "qnaUpdate")
+	public ModelAndView qnaUpdate(HttpSession session,QnaVO qnaVO) throws Exception{
+		MemberVO memberVO = (MemberVO)session.getAttribute("member");
+		session.setAttribute("member", memberVO);
+		qnaVO = qnaService.qnaSelet(qnaVO);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("dto",qnaVO);
+		
+		return mv;
+	}
 	
+	@PostMapping("qnaUpdate")
+	public ModelAndView qnaUpdate(QnaVO qnaVO) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result = qnaService.qnaUpdate(qnaVO);
+		String msg ="수정 실패";
+		if(result > 0) {
+			msg= "수정 성공";
+		}
+		
+		mv.addObject("msg",msg);
+		mv.addObject("path","../");
+		mv.setViewName("common/common_result");
+		
+		return mv;
+	}
+	
+	@GetMapping("qnaDelete")
+	public ModelAndView qnaDelete(QnaVO qnaVO) throws Exception{
+	
+		qnaVO = qnaService.qnaSelet(qnaVO);
+		int result = qnaService.qnaDelete(qnaVO);
+		ModelAndView mv = new ModelAndView();
+		
+		String msg = "삭제 실패";
+		if(result > 0) {
+			msg= "삭제 성공";
+		}
+		
+		mv.addObject("msg",msg);
+		mv.addObject("path","../");
+		mv.setViewName("common/common_result");
+		
+		return mv;
+	}
 	
 	
 }

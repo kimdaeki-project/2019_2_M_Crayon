@@ -48,11 +48,15 @@
 				<input type="hidden" id="curPage" value="1" name="curPage">
 				<ul class="body_qna">
 					<c:forEach items="${list}" var="dto" varStatus="st">
-						<c:if test="${not empty sessionScope.member}">
+						<c:if test="${sessionScope.member.email eq dto.email or sessionScope.member.aCheck eq 1}">
+							<button class="btn2" value="${dto.qnum}">수정하기</button>
+							<button class="btn1" value="${dto.qnum}">삭제하기</button>
+						</c:if>
+						<c:if test="${sessionScope.member.aCheck eq 1}">
 							<button class="answerButton" value="${dto.qnum}">답변하기</button>
 						</c:if>
 					<li class="qna">
-							<div class="qt"><span>Q.<input type="hidden" value="${dto.qnum}" name="qnum" class="qn_name"></span>${dto.question}</div>
+							<div class="qt"><span>Q.<input type="hidden" value="${dto.qnum}" name="qnum" class="qn_name"></span>${dto.question} <span class="user">작성자: ${dto.email}</span></div>
 							<ul class="hide">
 								<li>${dto.answer}</li>
 							</ul>					
@@ -122,7 +126,19 @@
 			var qt_name = $(this).val();
 			open("/s5/qna/qnaAnswer?qnum="+qt_name, "_blank","resizable=yes, width=500, height=230, top=200, left=600");
 		});
-
+		
+		$(".btn2").click(function() {
+			var qt_name = $(this).val();
+			open("/s5/qna/qnaUpdate?qnum="+qt_name, "_blank","resizable=yes, width=500, height=230, top=200, left=600");
+		});
+		
+		$(".btn1").on("click",function() {
+			var qt_name = $(this).val();
+			location.href= "./qnaDelete?qnum="+qt_name;
+			
+			alert("삭제 성공");
+			
+		});
 	
 	</script>
 	
@@ -144,7 +160,11 @@
 			$("#curPage").val($(this).attr("id"));
 			$("#frm").submit();
 		});
+	 	
+
 	</script>
+	
+	
 
 </body>
 </html>

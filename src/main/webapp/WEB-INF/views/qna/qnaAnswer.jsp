@@ -17,8 +17,9 @@
 	 <form action="./qnaAnswer" method="POST" class="window">
 		<div class="h_Css"><img alt="" src="../resources/images/header/logo_sub.jpg">
 		<input type="hidden" value="${member.email}" id="${member.email}">
-		 작성자 : ${member.name}
-		<h1>A.</h1><input type="hidden" name="qnum" value="${param.qnum}">
+		<h4>Q. ${dto.question}  작성자 : ${member.name}</h4>
+		
+		<h1>A.</h1><input type="hidden" name="qnum" id ="qnum" value="${dto.qnum}">
 		<input type="text" name="answer" id="answer">
 		<div class="qhfk"></div>
 		<input type="submit" id="btn" class="btn btn-default" value="등록하기">
@@ -29,7 +30,12 @@
 <script type="text/javascript">
 	$("#btn").click(function() {
 		alert("등록이 완료되었습니다.");
+		window.opener.location.reload();
+		
 		window.close();
 	});
+	
+	
+	
 </script>
 </html>

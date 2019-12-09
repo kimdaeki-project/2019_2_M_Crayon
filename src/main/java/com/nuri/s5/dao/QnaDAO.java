@@ -21,6 +21,10 @@ public class QnaDAO {
 		return sqlSession.update(NAMESPACE+"qnaUpdate", qnaVO);
 	}
 	
+	public int qnaDelete(QnaVO qnaVO) throws Exception{
+		return sqlSession.update(NAMESPACE+"qnaDelete", qnaVO);
+	}
+	
 	public QnaVO qnaSelect(QnaVO qnaVO) throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"qnaSelect", qnaVO);
 	}
