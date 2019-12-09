@@ -119,45 +119,47 @@
                <div class="Test">
                   <div class=Test1>
                   
-                           <div class="monthDay" id="tbCalendarMD">m월 d일
+                           <div class="monthDay" id="tbCalendarMD">MM DAY
                            </div>
 
                   
                      <div class="Test1_sub">
 
                         <div>
-                           <input type="text" readonly="readonly"> <br><br>
+
                            <select>
-                              <option>성인0</option>
-                              <option>성인1</option>
-                              <option>성인2</option>
-                              <option>성인3</option>
-                              <option>성인4</option>
-                              <option>성인5</option>
-                              <option>성인6</option>
-                              <option>성인7</option>
-                              <option>성인8</option>
-                              <option>성인9</option>
-                              <option>성인10</option>
+                              <option>성인 0명</option>
+                              <option>성인 1명</option>
+                              <option>성인 2명</option>
+                              <option>성인 3명</option>
+                              <option>성인 4명</option>
+                              <option>성인 5명</option>
+                              <option>성인 6명</option>
+                              <option>성인 7명</option>
+                              <option>성인 8명</option>
+                              <option>성인 9명</option>
+                              <option>성인 10명</option>
                            </select>
                         </div><br>
                         <div>
                            <select>
-                              <option>어린이0</option>
-                              <option>어린이1</option>
-                              <option>어린이2</option>
-                              <option>어린이3</option>
-                              <option>어린이4</option>
-                              <option>어린이5</option>
-                              <option>어린이6</option>
-                              <option>어린이7</option>
-                              <option>어린이8</option>
-                              <option>어린이9</option>
-                              <option>어린이10</option>
+                              <option>어린이 0명</option>
+                              <option>어린이 1명</option>
+                              <option>어린이 2명</option>
+                              <option>어린이 3명</option>
+                              <option>어린이 4명</option>
+                              <option>어린이 5명</option>
+                              <option>어린이 6명</option>
+                              <option>어린이 7명</option>
+                              <option>어린이 8명</option>
+                              <option>어린이 9명</option>
+                              <option>어린이 10명</option>
                            </select>
                         </div>
-                     </div>
-
+                   </div>
+				
+					<a href="#" class="btn-layerClose">취소</a>
+               		<input type="button" value="등록하기">
                   </div>
                   <div class=Test2>
 
@@ -184,10 +186,6 @@
                          
                      </script>
                      
-         
-
-               <a href="#" class="btn-layerClose">취소</a>
-               <input type="button" value="등록하기">
 
             </div>
          </div>
