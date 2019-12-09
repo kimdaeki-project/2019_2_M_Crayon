@@ -10,7 +10,7 @@
 		</select>  
   		
   		<insert id="memberKakao" parameterType="MemberVO">
-  			insert into member values(#{email},'',#{name},'',1,0)
+  			insert into member values(#{email},'',#{name},'',1,0,seq_member.nextval)
   		</insert>
   		
   		<insert id="memberJoin" parameterType="MemberVO">
