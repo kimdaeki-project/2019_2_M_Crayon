@@ -61,6 +61,18 @@
 	font-size: large;
 }
 
+/*폰트 설정*/
+
+.contents > p{
+	font-size: 18px;
+	color: #000;
+	font-weight:200;
+}
+
+.contents p.bigTxt{
+	font-size: 22px;
+}
+
 /****************** 사진 크게보기  ********************/
 
 /* body { */
