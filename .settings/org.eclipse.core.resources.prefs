@@ -3,4 +3,4 @@
 >>>>>>>=origin/Review_Test
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/views/index.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/kakao/kakaoPay.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/pay/kakaoPay.jsp=UTF-8

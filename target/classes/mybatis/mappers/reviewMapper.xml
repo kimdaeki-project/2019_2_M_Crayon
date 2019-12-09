@@ -9,7 +9,7 @@
   		</update>	
   		
   		<update id="countUpdate" parameterType="ReviewVO">
-  			update review set hit=#{hit} where num=#{num}
+  			update review set hit=hit+1 where num=#{num}
   		</update>
   		
   		<resultMap type="ReviewVO" id="reviewFile">

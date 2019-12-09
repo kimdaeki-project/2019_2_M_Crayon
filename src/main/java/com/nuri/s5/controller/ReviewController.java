@@ -1,6 +1,5 @@
 package com.nuri.s5.controller;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -81,10 +80,6 @@ public class ReviewController {
 		ModelAndView mv = new ModelAndView();
 		reviewVO = reviewServiceImpl.reviewSelect(reviewVO);
 		mv.addObject("dto", reviewVO);
-		int hit = reviewVO.getHit();	
-		hit = hit+1;
-		reviewVO.setHit(hit);
-		int count = reviewServiceImpl.countUpdate(reviewVO);
 		mv.setViewName("review/reviewSelect");
 		return mv;
 	}

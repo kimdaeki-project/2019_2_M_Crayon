@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -17,7 +19,7 @@
  
  
  
-<h2>[[${info}]]</h2>
+<h2>[[쌍용크레파스를 이용해주셔서 감사합니다]]</h2>
  
 </body>
 </html>
