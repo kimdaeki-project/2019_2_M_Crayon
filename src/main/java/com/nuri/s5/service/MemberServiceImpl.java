@@ -73,6 +73,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 	@Override
 	public List<MemberVO> adminPage(Pager pager)throws Exception{
+		pager.makeRow();
+		pager.makePage(memberDAOImpl.adminCount(pager));
 		return memberDAOImpl.adminPage(pager);
 	}
 	@Override

@@ -45,13 +45,13 @@
 		<sql id="searching">
 	    	<choose>
 				<when test="kind == 'kt'">
-					where title like '%'||#{search}||'%'
+					where email like '%'||#{search}||'%'
 				</when>
 				<when test="kind == 'kw'">
-					where writer like '%'||#{search}||'%'
+					where name like '%'||#{search}||'%'
 				</when>
 				<otherwise>
-					where contents like	'%'||#{search}||'%'
+					where kCheck like '%'||#{search}||'%'
 				</otherwise>
 			</choose>
 	    </sql>
@@ -61,7 +61,7 @@
   				(select M.*, rownum MN from
 		  			(select * from member
 		  			<include refid="searching"></include> 
-		  			order by email desc) M)
+		  			order by mnum desc) M)
 		  	where MN between #{startRow} and #{lastRow}
 		</select>
 		
