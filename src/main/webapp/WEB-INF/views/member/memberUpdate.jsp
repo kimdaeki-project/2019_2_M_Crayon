@@ -41,17 +41,17 @@
 							<div>
 
 								<div>
-									<label for="email">Email </label> <input type="text" id="email"
+									<div style="color: white; font-weight: bold;">ID</div> <input type="text" id="email"
 										readonly="readonly" name="email" value="   ${member.email}"
 										class="updateInput">
 								</div>
-								<br> <label for="pw">Pw </label> <input type="password"
+								<br> <div style="color: white; font-weight: bold;">Pw</div> <input type="password"
 									id="pw" name="pw" value="${member.pw}" class="joinInput">
 							</div>
 							<br>
 
 							<div>
-								<label for="name">Name </label> <input type="text" id="name"
+								<div style="color: white; font-weight: bold;">Name</div> <input type="text" id="name"
 									name="name" value=" ${member.name}" class="joinInput">
 							</div>
 							<br>

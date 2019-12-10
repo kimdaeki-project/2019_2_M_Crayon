@@ -40,7 +40,12 @@ import com.nuri.s5.util.Pager;
 		// TODO Auto-generated method stub
 		return sqlSession.delete(NAMESPACE+"memberDelete", memberVO);
 	}
-
+	@Override
+	public int memberAdminDelete(MemberVO memberVO)throws Exception{
+		
+		return sqlSession.delete(NAMESPACE+"memberAdminDelete", memberVO);
+	}
+	
 	@Override
 	public MemberVO memberSelect(MemberVO memberVO) throws Exception {
 		// TODO Auto-generated method stub
@@ -75,16 +80,16 @@ import com.nuri.s5.util.Pager;
 	}
 
 	@Override
-	public List<MemberVO> adminPage(Pager pager)throws Exception{
-		return sqlSession.selectList(NAMESPACE+"adminPage", pager);
+	public List<MemberVO> memberList(Pager pager)throws Exception{
+		return sqlSession.selectList(NAMESPACE+"memberList", pager);
 	}
 	@Override
-	public int adminCount(Pager pager) throws Exception{
-		return sqlSession.selectOne(NAMESPACE+"adminCount",pager);
+	public int memberCount(Pager pager) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"memberCount",pager);
 	}
 	@Override
-	public int adminCountUpdate(MemberVO memberVO)throws Exception{
-		return sqlSession.update(NAMESPACE+"adminCountUpdate", memberVO);
+	public int memberCountUpdate(MemberVO memberVO)throws Exception{
+		return sqlSession.update(NAMESPACE+"memberCountUpdate", memberVO);
 	}
 	
 	}

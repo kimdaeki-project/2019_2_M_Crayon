@@ -40,6 +40,11 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return memberDAOImpl.memberDelete(memberVO);
 	}
+	@Override
+	public int memberAdminDelete(MemberVO memberVO)throws Exception{
+		
+		return memberDAOImpl.memberAdminDelete(memberVO);
+	}
 
 	@Override
 	public MemberVO memberSelect(MemberVO memberVO) throws Exception {
@@ -72,18 +77,18 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAOImpl.selectKakao(memberVO);
 	}
 	@Override
-	public List<MemberVO> adminPage(Pager pager)throws Exception{
+	public List<MemberVO> memberList(Pager pager)throws Exception{
 		pager.makeRow();
-		pager.makePage(memberDAOImpl.adminCount(pager));
-		return memberDAOImpl.adminPage(pager);
+		pager.makePage(memberDAOImpl.memberCount(pager));
+		return memberDAOImpl.memberList(pager);
 	}
 	@Override
-	public int adminCount(Pager pager) throws Exception{
-		return memberDAOImpl.adminCount(pager);
+	public int memberCount(Pager pager) throws Exception{
+		return memberDAOImpl.memberCount(pager);
 	}
 	@Override
-	public int adminCountUpdate(MemberVO memberVO)throws Exception{
-		return memberDAOImpl.adminCountUpdate(memberVO);
+	public int memberCountUpdate(MemberVO memberVO)throws Exception{
+		return memberDAOImpl.memberCountUpdate(memberVO);
 	}
 	
 

@@ -5,6 +5,8 @@
   
   <mapper namespace="memberMapper">
   
+  
+  
 		<select id="selectKakao" parameterType="MemberVO" resultType="MemberVO">
 			select * from member where email = #{email}			
 		</select>  
@@ -29,6 +31,10 @@
   			delete member where email=#{email}
   		</delete>
   		
+  		<delete id="memberAdminDelete" parameterType="MemberVO">
+  			delete member where mnum=#{mnum}
+  		</delete>
+  		
   		<select id="memberIdCheck" parameterType="MemberVO" resultType="MemberVO">
   			select * from member where email=#{email}
   		</select>
@@ -44,10 +50,10 @@
 		
 		<sql id="searching">
 	    	<choose>
-				<when test="kind == 'kt'">
+				<when test="kind == 'ke'">
 					where email like '%'||#{search}||'%'
 				</when>
-				<when test="kind == 'kw'">
+				<when test="kind == 'kn'">
 					where name like '%'||#{search}||'%'
 				</when>
 				<otherwise>
@@ -56,7 +62,7 @@
 			</choose>
 	    </sql>
 		
-		<select id="adminPage" parameterType="Pager" resultType="MemberVO">
+		<select id="memberList" parameterType="Pager" resultType="MemberVO">
 			select * from 
   				(select M.*, rownum MN from
 		  			(select * from member
@@ -65,7 +71,7 @@
 		  	where MN between #{startRow} and #{lastRow}
 		</select>
 		
-		<select id="adminCount" resultType="Integer" parameterType="Pager">
+		<select id="memberCount" resultType="Integer" parameterType="Pager">
   			select count(mnum) from member
   			<include refid="searching"></include>
   		</select> 

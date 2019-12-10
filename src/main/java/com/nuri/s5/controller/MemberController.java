@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.nuri.s5.model.MemberVO;
+import com.nuri.s5.model.ReviewVO;
 import com.nuri.s5.service.MemberServiceImpl;
 import com.nuri.s5.util.Pager;
 
@@ -27,6 +28,22 @@ public class MemberController {
 
 	@Inject
 	private MemberServiceImpl memberServiceImpl;
+	
+	
+	
+	@GetMapping(value="memberResult")
+	public String memberResult(Pager pager, Model model) throws Exception{
+		pager.setPerPage(10);
+		List<MemberVO> ar = memberServiceImpl.memberList(pager);
+		
+		model.addAttribute("list", ar);
+		
+		return "member/memberResult";
+	}
+	
+	
+	
+	
 
 	// 카카오 회원가입
 	@PostMapping(value = "memberKakao")
@@ -118,6 +135,16 @@ public class MemberController {
 	public void memberMyPage() throws Exception {
 
 	}
+	
+	
+	// 관리자 폼
+
+		@RequestMapping(value = "adminPage")
+		public void adminPage() throws Exception {
+
+		}
+	
+	
 
 	// 업데이트 폼
 	@GetMapping(value = "memberUpdate")
@@ -165,6 +192,25 @@ public class MemberController {
 		return mv;
 
 	}
+	
+	@GetMapping(value = "memberAdminDelete")
+	public ModelAndView memberAdminDelete(MemberVO memberVO)throws Exception{
+		int result = memberServiceImpl.memberAdminDelete(memberVO);
+		
+		String msg = "Fail";
+
+		ModelAndView mv = new ModelAndView();
+		if (result > 0) {
+			msg = "Success";
+		}
+
+		mv.addObject("msg", msg);
+		mv.addObject("path", "./");
+		mv.setViewName("common/common_result");
+		return mv;
+		
+	}
+	
 
 	// ID 중복확인(이메일)
 	@GetMapping(value = "memberIdCheck")
@@ -229,15 +275,15 @@ public class MemberController {
 		return mv;
 	}
 
-	// adminPage
+	// memberList
 
-	@GetMapping(value = "adminPage")
+	@GetMapping(value = "memberList")
 	public ModelAndView adminPage(Pager pager) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		List<MemberVO> ar = memberServiceImpl.adminPage(pager);
+		List<MemberVO> ar = memberServiceImpl.memberList(pager);
 		mv.addObject("list", ar);
 		mv.addObject("pager", pager);
-		mv.setViewName("member/adminPage");
+		mv.setViewName("member/memberList");
 		return mv;
 	}
 

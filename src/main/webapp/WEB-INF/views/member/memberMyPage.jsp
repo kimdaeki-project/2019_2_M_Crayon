@@ -37,7 +37,7 @@
 				<a href="./memberUpdate"><input type="submit" id="update" value="회원정보 수정" class="btns_p"></a> 
 				</c:if>
 				<a href="./memberLogout"><input type="submit" id="logout" value="로그아웃" class="btns"></a> 
-				<a href="./memberDelete?email=${member.email}"><input type="submit" id="delete" value="Delete" class="btns"></a> 
+				<input type="button" id="delete" value="Delete" class="btns">
 				
 			</div>
 		</div>
@@ -61,6 +61,16 @@
 				
 				
 			});
+			
+			$("#delete").click(function() {
+				if(confirm("정말로 탈퇴하시겠습니까?")){
+					location.replace("./memberDelete?email=${member.email}");
+				}else{
+					alert("회원 탈퇴 취소, 홈페이지로 돌아갑니다")
+					location.replace("../");
+				}
+			});
+			
 			
 			
 				

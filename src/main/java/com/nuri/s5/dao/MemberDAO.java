@@ -21,6 +21,8 @@ public interface MemberDAO {
 	public int memberUpdate(MemberVO memberVO)throws Exception;
 	//memberDelete
 	public int memberDelete(MemberVO memberVO)throws Exception;
+	//memberAdminDelete
+	public int memberAdminDelete(MemberVO memberVO)throws Exception;
 	//memberSelect
 	public MemberVO memberSelect(MemberVO memberVO)throws Exception;
 	//memberidCheck
@@ -30,10 +32,10 @@ public interface MemberDAO {
 	//memberSearchPW(이메일,생일)
 	public MemberVO memberSearchPW(MemberVO memberVO)throws Exception;
 	//adminPage(List)
-	public List<MemberVO> adminPage(Pager pager)throws Exception;
+	public List<MemberVO> memberList(Pager pager)throws Exception;
 	//adminCount
-	public int adminCount(Pager pager) throws Exception;
+	public int memberCount(Pager pager) throws Exception;
 	//adminCountUpdate
-	public int adminCountUpdate(MemberVO memberVO)throws Exception;
+	public int memberCountUpdate(MemberVO memberVO)throws Exception;
 	
 }

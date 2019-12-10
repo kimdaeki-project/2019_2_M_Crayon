@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +27,17 @@ public class ReviewController {
 	@Inject
 	private ReviewServiceImpl reviewServiceImpl;
 
+	
+	
+	@GetMapping(value="reviewResult")
+	public String reviewResult(Pager pager, Model model) throws Exception{
+		pager.setPerPage(10);
+		List<ReviewVO> ar = reviewServiceImpl.reviewList(pager);
+		
+		model.addAttribute("list", ar);
+		
+		return "review/reviewResult";
+	}
 	
 	
 	

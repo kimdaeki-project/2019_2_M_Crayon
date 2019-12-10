@@ -24,6 +24,7 @@
 	<c:import url="../layout/nav.jsp"></c:import>
 	
 	<div class="body">
+	
 		<div class="body_head">
 			<div class="body_back">
 				<div class="body_h_txt">“파리크레파스 리얼후기”</div>

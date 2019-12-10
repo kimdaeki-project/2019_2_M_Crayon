@@ -8,10 +8,17 @@ public class MemberVO {
 	private String birth;
 	private int kCheck;
 	private int aCheck;
-
+	private int mnum;
 	
 	
 	
+	
+	public int getMnum() {
+		return mnum;
+	}
+	public void setMnum(int mnum) {
+		this.mnum = mnum;
+	}
 	public String getEmail() {
 		return email;
 	}
