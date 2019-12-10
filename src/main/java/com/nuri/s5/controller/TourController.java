@@ -17,5 +17,10 @@ public class TourController {
 	public void realCal() throws Exception {
 
 	}
+	
+	@GetMapping(value = "tourGoods")
+	public void tourGoods() throws Exception {
+
+	}
 
 }
