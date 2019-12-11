@@ -75,16 +75,46 @@
 				</ul>
 			</div><!-- menu1 -->
 			<div class="menu2">
-				<div class="m" id="m2">포함사항</div>
+				<div id="m2"></div>
+				<div class="m">포함사항</div>
 			</div><!-- menu2 -->
 			<div class="menu3">
-				<div class="m" id="m3">모임장소</div>
+				<div id="m3"></div>
+				<div class="m m3 m3_main">모임장소<br><br>
+					<img class="m3Img" src="../resources/images/tour/T3_1.jpg">
+					<div class="m3Txt">M4호선 Cite 출구는 하나입니다.</div>
+					<a href="https://www.google.com/maps/place/%EC%8B%9C%ED%85%8C+%EC%84%AC/@48.8546301,2.3472317,18.39z/data=!4m5!3m4!1s0x47e671e037bbc73d:0x9c2a87a32dd21743!8m2!3d48.8548825!4d2.3474928?hl=ko&shorturl=1">
+						<img class="m3Map" src="../resources/images/tour/map_view_btn.png"></a>
+				</div>
+				
 			</div><!-- menu3 -->
 			<div class="menu4">
-				<div class="m" id="m4">여행리뷰</div>
+				<div id="m4"></div>
+				<div class="m m4_main">여행리뷰</div>
+				<div id="reviewT"></div>
+				<button id="reviewGO" class="gocenterBtn">모든 후기 보기</button>
+				<script type="text/javascript">
+				var xhttp;
+			      if (XMLHttpRequest) {
+			         xhttp = new XMLHttpRequest();
+			      } else {
+			         xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			      }
+
+			      xhttp.open("GET", "../review/tourReview");
+			      xhttp.send();
+
+			      xhttp.onreadystatechange = function() {
+			         if (this.readyState == 4 && this.status == 200) {
+			            $("#reviewT").html(this.responseText);
+			         }
+			      };	
+				</script>
 			</div><!-- menu4 -->
 			<div class="menu5">
-				<div class="m" id="m5">ㄱ</div>
+				<div id="m5"></div>
+				<div class="m"></div>
+				<div class="ytb"><iframe id ="ytb_box" src='https://www.youtube.com/embed/Tj2W0o3h3OI' allowfullscreen="" frameborder="0"  width="640" height="360"></iframe></div>
 			</div><!-- menu5 -->
 			<div class="menu6">
 				<div class="m" id="m6">고객센터</div>
@@ -104,6 +134,10 @@
 				
 				$("#qnaGO").click(function(){
 					 location.href= "../qna/qnaHome"
+				});
+				
+				$("#reviewGO").click(function(){
+					 location.href= "../review/reviewList"
 				});
 				</script>
 			</div><!-- menu6 -->
