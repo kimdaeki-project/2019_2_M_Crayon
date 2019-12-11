@@ -47,6 +47,7 @@ public class ReviewServiceImpl implements ReviewService {
 
 	@Override
 	public ReviewVO reviewSelect(ReviewVO reviewVO) throws Exception {
+		reviewDAOImpl.countUpdate(reviewVO);
 		return reviewDAOImpl.reviewSelect(reviewVO);
 	}
 
