@@ -10,6 +10,7 @@
 	height: 100px;
 	background-color: lightgray;
 	position: fixed;
+	z-index: 1;
 }
 
 .adtopname {
@@ -51,6 +52,12 @@
 .sideBar {
 	width: 250px;
 	height: 1000px;
+	background-color: black;
+	float: left;
+}
+.sideBar_Qna{
+	width: 250px;
+	height: 1500px;
 	background-color: black;
 	float: left;
 }

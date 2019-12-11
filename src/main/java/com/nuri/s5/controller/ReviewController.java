@@ -85,6 +85,17 @@ public class ReviewController {
 	@GetMapping(value = "reviewDelete")
 	public String reviewDelete(ReviewVO reviewVO) throws Exception{
 		int result = reviewServiceImpl.reviewDelete(reviewVO);
+		
+		String msg = "Fail";
+		ModelAndView mv = new ModelAndView();
+		if (result > 0) {
+			msg = "Success";
+		}
+
+		mv.addObject("msg", msg);
+		mv.addObject("path", "./");
+		mv.setViewName("common/common_result");
+		
 		return "redirect:./reviewList";
 	}
 	

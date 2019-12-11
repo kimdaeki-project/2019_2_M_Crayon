@@ -94,8 +94,10 @@
 				
 					<div class="reviewBtns">
 							<a href="./reviewList">LIST</a>
+							<c:if test="${sessionScope.review.writer eq dto.writer}">
 							<a href="./reviewDelete?num=${dto.num}">DELETE</a> 
 							<a href="./reviewUpdate?num=${dto.num}">UPDATE</a> 
+							</c:if>
 					</div>
 			</div>
 

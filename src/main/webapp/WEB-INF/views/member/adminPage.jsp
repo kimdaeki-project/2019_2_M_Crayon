@@ -63,6 +63,10 @@
 					<a href="#" style="color: white; font-size: 24px">AddTour <i
 						class="fa fa-plus-square-o" style="font-size: 28px"></i></a>
 				</div>
+				<div class="adminAdd">
+					<a href="../qna/qnaHome" style="color: white; font-size: 24px">Qna <i
+						class="fa fa-question-circle-o" style="font-size: 24px"></i></a>
+				</div>
 
 			</div>
 			<div class="content_wrap">
@@ -82,7 +86,8 @@
 
 				<div class="content4">
 					<div class="content4Ti">Tour 추가</div>
-					<input type="text" class="touraddInput"> <input type="button" value="입력" class= "tabtn">
+					<input type="text" class="touraddInput"> <input
+						type="button" value="입력" class="tabtn">
 				</div>
 			</div>
 		</div>
