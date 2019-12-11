@@ -31,6 +31,15 @@ public class MemberController {
 	
 	
 	
+	
+	@GetMapping(value = "calcal")
+	public void calcal() throws Exception {
+
+	}
+	
+	
+	
+	
 	@GetMapping(value="memberResult")
 	public String memberResult(Pager pager, Model model) throws Exception{
 		pager.setPerPage(10);

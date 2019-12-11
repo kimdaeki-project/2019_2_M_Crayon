@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+#date {
+	width: 200px;
+	height: 32px;
+	border: 1px, #010101, solid;
+	font-size: 16px;
+	margin-left: 29px;
+}
+
+.reserveDate_wrap {
+	width: 360px;
+	height: 560px;
+	border: 1px #010101 solid;
+	margin-left: 1300px;
+	margin-top: 200px;
+	position: fixed;
+	margin-left: 1300px;
+}
+
+#adult_wrap {
+	width: 200px;
+	height: 32px;
+	border-color: black;
+	margin-left: 65px;
+	font-size: 15px;
+	border: 1px #010101 solid;
+}
+
+#child_wrap {
+	width: 200px;
+	height: 32px;
+	border-color: black;
+	margin-left: 112px;
+	font-size: 15px;
+	border: 1px #010101 solid;
+}
+
+.all_wrap {
+	width: 320px;
+	height: 170px;
+	margin: 0 auto;
+	margin-top: 20px;
+	font-size: large;
+	font-weight: bold;
+}
+
+.select_all {
+	width: 360px;
+	height: 50px;
+	border-bottom: 1px #010101 solid;
+	margin: 0 auto;
+	margin-top: 20px;
+	font-size: large;
+	text-align: left;
+	line-height: 60px;
+	font-size: x-large;
+	font-weight: 555;
+	font-size: x-large;
+}
+
+.selectOption {
+	width: 320px;
+	height: 180px;
+	background-color: lightgray;
+	border: 1px #010101 solid;
+	margin: 0 auto;
+}
+
+.select_btn {
+	width: 320px;
+	height: 60px;
+	margin-left: 20px;
+	margin-top: 10px;
+	background-color: #a36ae3;
+	border-style: none;
+	font-size: 22px;
+	font-weight: 555;
+	color: white;
+}
+
+.select_text {
+	width: 250px;
+	height: 50px;
+	margin-left: 20px;
+}
+
+.Allmoney {
+	width: 320px;
+	height: 30px;
+	text-align: right;
+	line-height: 30px;
+	margin: 0 auto;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#Aresult {
+	width: 100px;
+	height: 50px;
+	font-size: 16px;
+	margin-top: 20px;
+	margin-left: 20px;
+	font-weight: bold;
+	color: gray;
+	font-weight: bold;
+}
+
+#Nad {
+	width: 150px;
+	height: 30px; 
+	font-size : 16px;
+	font-weight: 555;
+	padding-left: 50px;
+	font-size: 16px;
+}
+
+#Nch {
+	width: 150px;
+	height: 30px;
+	font-size: 16px;
+	padding-left: 50px;
+	font-weight: 555;
+}
+
+#reDay {
+	width: 150px;
+	height: 30px;
+	font-size: 16px;
+	padding-left: 50px;
+	font-weight: 555;
+}
