@@ -1,5 +1,7 @@
 package com.nuri.s5.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import javax.servlet.http.HttpSession;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.nuri.s5.dao.MemberDAOImpl;
 import com.nuri.s5.model.MemberVO;
+import com.nuri.s5.util.Pager;
 @Service
 public class MemberServiceImpl implements MemberService {
 
@@ -36,6 +39,11 @@ public class MemberServiceImpl implements MemberService {
 	public int memberDelete(MemberVO memberVO) throws Exception {
 		// TODO Auto-generated method stub
 		return memberDAOImpl.memberDelete(memberVO);
+	}
+	@Override
+	public int memberAdminDelete(MemberVO memberVO)throws Exception{
+		
+		return memberDAOImpl.memberAdminDelete(memberVO);
 	}
 
 	@Override
@@ -68,8 +76,20 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO selectKakao(MemberVO memberVO, HttpSession session)throws Exception{
 		return memberDAOImpl.selectKakao(memberVO);
 	}
-	
-	
+	@Override
+	public List<MemberVO> memberList(Pager pager)throws Exception{
+		pager.makeRow();
+		pager.makePage(memberDAOImpl.memberCount(pager));
+		return memberDAOImpl.memberList(pager);
+	}
+	@Override
+	public int memberCount(Pager pager) throws Exception{
+		return memberDAOImpl.memberCount(pager);
+	}
+	@Override
+	public int memberCountUpdate(MemberVO memberVO)throws Exception{
+		return memberDAOImpl.memberCountUpdate(memberVO);
+	}
 	
 
 }

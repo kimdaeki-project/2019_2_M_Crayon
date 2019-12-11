@@ -5,6 +5,8 @@
   
   <mapper namespace="memberMapper">
   
+  
+  
 		<select id="selectKakao" parameterType="MemberVO" resultType="MemberVO">
 			select * from member where email = #{email}			
 		</select>  
@@ -14,7 +16,7 @@
   		</insert>
   		
   		<insert id="memberJoin" parameterType="MemberVO">
-  			insert into member values(#{email},#{pw},#{name},#{birth},0,0)
+  			insert into member values(#{email},#{pw},#{name},#{birth},0,0,seq_member.nextval)
   		</insert>
   		
   		<select id="memberLogin" parameterType="MemberVO" resultType="MemberVO">
@@ -29,6 +31,10 @@
   			delete member where email=#{email}
   		</delete>
   		
+  		<delete id="memberAdminDelete" parameterType="MemberVO">
+  			delete member where mnum=#{mnum}
+  		</delete>
+  		
   		<select id="memberIdCheck" parameterType="MemberVO" resultType="MemberVO">
   			select * from member where email=#{email}
   		</select>
@@ -41,4 +47,33 @@
 		<select id="memberSearchPW" parameterType="MemberVO" resultType="MemberVO">
 			select pw from member where email=#{email} and birth=#{birth}
 		</select>
+		
+		<sql id="searching">
+	    	<choose>
+				<when test="kind == 'ke'">
+					where email like '%'||#{search}||'%'
+				</when>
+				<when test="kind == 'kn'">
+					where name like '%'||#{search}||'%'
+				</when>
+				<otherwise>
+					where kCheck like '%'||#{search}||'%'
+				</otherwise>
+			</choose>
+	    </sql>
+		
+		<select id="memberList" parameterType="Pager" resultType="MemberVO">
+			select * from 
+  				(select M.*, rownum MN from
+		  			(select * from member
+		  			<include refid="searching"></include> 
+		  			order by mnum desc) M)
+		  	where MN between #{startRow} and #{lastRow}
+		</select>
+		
+		<select id="memberCount" resultType="Integer" parameterType="Pager">
+  			select count(mnum) from member
+  			<include refid="searching"></include>
+  		</select> 
+		
   </mapper>

@@ -1,6 +1,7 @@
 package com.nuri.s5.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
@@ -17,7 +18,9 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.nuri.s5.model.MemberVO;
+import com.nuri.s5.model.ReviewVO;
 import com.nuri.s5.service.MemberServiceImpl;
+import com.nuri.s5.util.Pager;
 
 @Controller
 @RequestMapping("/member/**")
@@ -27,40 +30,53 @@ public class MemberController {
 	private MemberServiceImpl memberServiceImpl;
 	
 	
-	//카카오 회원가입
+	
+	@GetMapping(value="memberResult")
+	public String memberResult(Pager pager, Model model) throws Exception{
+		pager.setPerPage(10);
+		List<MemberVO> ar = memberServiceImpl.memberList(pager);
+		
+		model.addAttribute("list", ar);
+		
+		return "member/memberResult";
+	}
+	
+	
+	
+	
+
+	// 카카오 회원가입
 	@PostMapping(value = "memberKakao")
 	public String memberKakao(MemberVO memberVO, HttpSession session) throws Exception {
-			String email =memberVO.getEmail().replace("\"", "");
-			String name = memberVO.getName().replace("\"", "");
-			
-			memberVO.setkCheck(1);
-			memberVO.setEmail(email);
-			memberVO.setName(name);
-			session.setAttribute("member", memberVO);
-			memberVO = memberServiceImpl.selectKakao(memberVO, session);
-			
-			if(memberVO != null) {
-				System.out.println("중복된 아이디");
-			}else {
-				System.out.println("회원가입 가능한 아이디");
-				MemberVO memberVO2 = new MemberVO();
-				memberVO2.setEmail(email);
-				memberVO2.setName(name);
+		String email = memberVO.getEmail().replace("\"", "");
+		String name = memberVO.getName().replace("\"", "");
 
-				session.setAttribute("member", memberVO2);
-				int result = memberServiceImpl.memberKakao(memberVO2, session);
-			}
-			
-			return "redirect:../";
+		memberVO.setkCheck(1);
+		memberVO.setEmail(email);
+		memberVO.setName(name);
+		session.setAttribute("member", memberVO);
+		memberVO = memberServiceImpl.selectKakao(memberVO, session);
+
+		if (memberVO != null) {
+			System.out.println("중복된 아이디");
+		} else {
+			System.out.println("회원가입 가능한 아이디");
+			MemberVO memberVO2 = new MemberVO();
+			memberVO2.setEmail(email);
+			memberVO2.setName(name);
+
+			session.setAttribute("member", memberVO2);
+			int result = memberServiceImpl.memberKakao(memberVO2, session);
+		}
+
+		return "redirect:../";
 	}
-		
 
-	
 	@GetMapping(value = "memberKakao")
 	public void memberKakao() throws Exception {
 
 	}
-	
+
 	// 회원가입 폼
 	@GetMapping(value = "memberJoin")
 	public void memberJoin() throws Exception {
@@ -119,18 +135,21 @@ public class MemberController {
 	public void memberMyPage() throws Exception {
 
 	}
+	
+	
+	// 관리자 폼
+
+		@RequestMapping(value = "adminPage")
+		public void adminPage() throws Exception {
+
+		}
+	
+	
 
 	// 업데이트 폼
 	@GetMapping(value = "memberUpdate")
 	public void memberUpdate(HttpSession session) throws Exception {
 		MemberVO memberVO = (MemberVO) session.getAttribute("member");
-
-		String date = memberVO.getBirth();
-
-		SimpleDateFormat sf = new SimpleDateFormat("yyyy-mm-dd");
-		java.util.Date to = sf.parse(date);
-
-		memberVO.setBirth(sf.format(to));
 
 		session.setAttribute("member", memberVO);
 	}
@@ -152,11 +171,11 @@ public class MemberController {
 	}
 
 	// 회원 탈퇴
-	
+
 	@GetMapping(value = "memberDelete")
 	public ModelAndView memberDelete(HttpSession session, MemberVO memberVO) throws Exception {
 		int result = memberServiceImpl.memberDelete(memberVO);
-		
+
 		String msg = "Fail";
 
 		ModelAndView mv = new ModelAndView();
@@ -173,6 +192,25 @@ public class MemberController {
 		return mv;
 
 	}
+	
+	@GetMapping(value = "memberAdminDelete")
+	public ModelAndView memberAdminDelete(MemberVO memberVO)throws Exception{
+		int result = memberServiceImpl.memberAdminDelete(memberVO);
+		
+		String msg = "Fail";
+
+		ModelAndView mv = new ModelAndView();
+		if (result > 0) {
+			msg = "Success";
+		}
+
+		mv.addObject("msg", msg);
+		mv.addObject("path", "./");
+		mv.setViewName("common/common_result");
+		return mv;
+		
+	}
+	
 
 	// ID 중복확인(이메일)
 	@GetMapping(value = "memberIdCheck")
@@ -234,6 +272,18 @@ public class MemberController {
 
 		mv.setViewName("member/memberSearchPW");
 
+		return mv;
+	}
+
+	// memberList
+
+	@GetMapping(value = "memberList")
+	public ModelAndView adminPage(Pager pager) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		List<MemberVO> ar = memberServiceImpl.memberList(pager);
+		mv.addObject("list", ar);
+		mv.addObject("pager", pager);
+		mv.setViewName("member/memberList");
 		return mv;
 	}
 

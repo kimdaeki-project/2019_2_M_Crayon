@@ -1,11 +1,14 @@
 package com.nuri.s5.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.nuri.s5.model.MemberVO;
+import com.nuri.s5.util.Pager;
 
 	@Repository
 	public class MemberDAOImpl implements MemberDAO {
@@ -37,7 +40,12 @@ import com.nuri.s5.model.MemberVO;
 		// TODO Auto-generated method stub
 		return sqlSession.delete(NAMESPACE+"memberDelete", memberVO);
 	}
-
+	@Override
+	public int memberAdminDelete(MemberVO memberVO)throws Exception{
+		
+		return sqlSession.delete(NAMESPACE+"memberAdminDelete", memberVO);
+	}
+	
 	@Override
 	public MemberVO memberSelect(MemberVO memberVO) throws Exception {
 		// TODO Auto-generated method stub
@@ -71,4 +79,17 @@ import com.nuri.s5.model.MemberVO;
 		return sqlSession.selectOne(NAMESPACE+"selectKakao", memberVO);
 	}
 
-}
+	@Override
+	public List<MemberVO> memberList(Pager pager)throws Exception{
+		return sqlSession.selectList(NAMESPACE+"memberList", pager);
+	}
+	@Override
+	public int memberCount(Pager pager) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"memberCount",pager);
+	}
+	@Override
+	public int memberCountUpdate(MemberVO memberVO)throws Exception{
+		return sqlSession.update(NAMESPACE+"memberCountUpdate", memberVO);
+	}
+	
+	}
