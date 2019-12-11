@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="tourMapper">
+  
+  	<insert id="tourWrite" parameterType="TourNoticeVO">
+  		<selectKey order="BEFORE" resultType="Integer" keyProperty="num">
+  			select seq_tour.nextval from dual		
+  		</selectKey>
+	  	insert into tourNotice
+	  	values(#{num}, #{compared}, #{include}, #{exclude}, #{alert}, #{prepared}, #{attention}, #{refund})
+  	</insert>
+  	
+  	
+  </mapper>

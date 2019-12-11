@@ -66,12 +66,21 @@
 		</div>
 		<div class="body_main2">
 			<div class="menu1">
-				<div class="m">상품일정</div>
+				<div class="m">상품일정 
+					<span class="mText" style="font-size: 15px; color: gray;">날짜별로 일정이 조금씩 다르므로 아래 일정 확인해주세요</span>
+				</div>
 				<ul class="planList">
-					<li class="plan"><div class="planLine"></div></li>
-					<li class="plan"><div class="planLine"></div></li>
-					<li class="plan"><div class="planLine"></div></li>
-					<li class="plan"><div class="planLine"></div></li>
+					<li class="plan">
+						<div class="planLine">
+							<c:forEach items="${dto.files}" var="file">
+								<div class="modal-content">
+						   			<div class="mySlides">
+						      			<img src="/s5/resources/upload/review/${file.fname}" style="width:720px; height: 900px;">
+						    		</div>
+						  		</div>
+							</c:forEach>
+						</div>
+					</li>
 				</ul>
 			</div><!-- menu1 -->
 			<div class="menu2">
