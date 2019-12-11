@@ -98,6 +98,7 @@
 .answerButton{
 	float:right;
 	margin-top: 10px;
+	margin-left: 10px;
 }
 
 .btn_class{
@@ -119,6 +120,7 @@
 	border: 1px solid #c0c0c0;
 	border-radius:5px;
 	background-color:white; 
+	margin-left: 5px;
 }
 .btn2{
 	float:right;
@@ -127,6 +129,7 @@
 	border: 1px solid #c0c0c0;
 	border-radius:5px;
 	background-color:white; 
+	margin-left: 5px;
 }
 .user{
 	float:right;

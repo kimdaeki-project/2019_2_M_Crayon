@@ -115,7 +115,9 @@
 								<th>WRITER</th>
 								<th>DATE</th>
 								<th>HIT</th>
+								<c:if test="${sessionScope.member.aCheck eq 1}">
 								<th></th>
+								</c:if>
 							</tr>
 						</thead>
 						<tbody>
@@ -128,7 +130,9 @@
 									<td style="width: 120px; height: 56px; line-height: 38px;">${dto.writer}</td>
 									<td style="width: 120px; height: 56px; line-height: 38px;">${dto.day}</td>
 									<td style="width: 55px; height: 56px; line-height: 38px;">${dto.hit}</td>
+									<c:if test="${sessionScope.member.aCheck eq 1}">
 									<td><a href="./reviewDelete?num=${dto.num}"><input type="button" value="글 삭제" class="btn btn-dark"></a></td>
+									</c:if>
 								</tr>
 							</c:forEach>
 						</tbody>
@@ -148,10 +152,12 @@
 								<li><span id="${pager.lastNum+1}" class="list">다음</span></li>
 							</c:if>
 						</ul>
-
+					
+					<c:if test="${not empty sessionScope.member}">
 						<span> <a href="./reviewWrite" class="btn btn-default"
 							style="float: right; width: 100px;">글쓰기</a>
 						</span>
+						</c:if>
 
 					</div>
 				</div>
