@@ -1,6 +1,5 @@
 package com.nuri.s5.controller;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.inject.Inject;

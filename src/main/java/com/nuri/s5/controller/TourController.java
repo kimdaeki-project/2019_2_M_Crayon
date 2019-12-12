@@ -1,11 +1,11 @@
 package com.nuri.s5.controller;
 
+import java.util.List;
 
-
+import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +22,7 @@ import com.nuri.s5.service.TourServiceImpl;
 @RequestMapping("/tour/**")
 public class TourController {
 	
+	@Inject
 	private TourServiceImpl tourServiceImpl;
 	
 /////////////////////////// tour file ///////////////////////////////////
@@ -35,11 +36,31 @@ public class TourController {
 	}
 /////////////////////////// tour admin ///////////////////////////////////
 	
+	@GetMapping(value = "tourList")
+	public ModelAndView tourList(TourNoticeVO tourNoticeVO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		List<TourNoticeVO> ar = tourServiceImpl.tourList(tourNoticeVO);
+		mv.addObject("list", ar);
+		mv.setViewName("tour/tourList");
+		return mv;
+	} 
+	
+	
+	@GetMapping(value = "tourGoods")
+	public ModelAndView tourSelect(TourNoticeVO tourNoticeVO) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		tourNoticeVO = tourServiceImpl.tourSelect(tourNoticeVO);
+		mv.addObject("dto", tourNoticeVO);
+		mv.setViewName("tour/tourGoods");
+		return mv;
+	}
+	
+	
 	@GetMapping(value = "tourWrite")
 	public ModelAndView tourWrite(HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		MemberVO member = (MemberVO)session.getAttribute("member");
-		mv.addObject("member", member);
+//		MemberVO member = (MemberVO)session.getAttribute("member");
+//		mv.addObject("member", member);
 		return mv;
 	}
 	
@@ -49,7 +70,7 @@ public class TourController {
 		int result = tourServiceImpl.tourWrite(tourNoticeVO, file, session);
 		mv.addObject("dto", tourNoticeVO);
 		if(result>0) {
-			mv.setViewName("redirect:./tourGoods");
+			mv.setViewName("redirect:./tourList");
 		}else {
 			
 		}
@@ -64,12 +85,6 @@ public class TourController {
 	
 	@GetMapping(value = "realCal")
 	public void realCal() throws Exception {
-
-	}
-	
-	@GetMapping(value = "tourGoods")
-	public void tourGoods(Model model) throws Exception {
-		
 
 	}
 	

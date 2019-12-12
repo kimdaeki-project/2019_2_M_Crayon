@@ -68,6 +68,7 @@
 			<div class="menu1">
 				<div class="m">상품일정 
 					<span class="mText" style="font-size: 15px; color: gray;">날짜별로 일정이 조금씩 다르므로 아래 일정 확인해주세요</span>
+					
 				</div>
 				<ul class="planList">
 					<li class="plan">
@@ -85,7 +86,42 @@
 			</div><!-- menu1 -->
 			<div class="menu2">
 				<div id="m2"></div>
-				<div class="m">포함사항</div>
+				<div class="m">투어 안내
+					<input type="text" name="${dto.num}" value="${dto.num}"> 
+					<div class="textCompared">
+						<h4>타업체비교불가</h4>
+						<span>${dto.compared}</span>
+					</div>
+					<div class="textInclude"> 
+						<h4>포함사항</h4>
+						<span>${dto.include}</span>
+					</div>
+					<div class="textExclude"> 
+						<h4>불포함사항</h4>
+						<span>${dto.exclude}</span>
+					</div>
+					<div class="textAlert"> 
+						<h4>안내사항</h4>
+						<span>${dto.alert}</span>
+					</div>
+					<div class="textPrepared"> 
+						<h4>준비사항</h4>
+						<span>${dto.prepared}</span>
+					</div>
+					<div class="textAttention"> 
+						<h4>주의사항</h4>
+						<span>${dto.attention}</span>
+					</div>
+					<div class="textRefund"> 
+						<h4>환불규정</h4>
+						<span>${dto.refund}</span>
+					</div>
+					<c:forEach items="${dto.files}" var="file" >
+						<div class="mySlides">
+     						<img src="/s5/resources/upload/tour/${file.fname}" style="width:720px; height: 900px;">
+						</div>
+					</c:forEach>
+				</div>
 			</div><!-- menu2 -->
 			<div class="menu3">
 				<div id="m3"></div>

@@ -1,5 +1,7 @@
 package com.nuri.s5.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -24,10 +26,12 @@ public class TourServiceImpl implements TourService {
 	@Inject
 	private FileSaver fs;
 	
-	
-	public int fileWrite(TourFilesVO tourFilesVO)throws Exception{
+///////////////////////	tour File ///////////////////////////////
+	public int fileWrite(TourFilesVO tourFilesVO) throws Exception{
 		return tourFilesDAO.fileWite(tourFilesVO);
 	}
+
+///////////////////////	tour 게시판 ///////////////////////////////	
 	
 	@Override
 	public int tourWrite(TourNoticeVO tourNoticeVO, MultipartFile[] file, HttpSession session) throws Exception {
@@ -48,6 +52,28 @@ public class TourServiceImpl implements TourService {
 		}
 		
 		return result;
+	}
+
+	@Override
+	public TourNoticeVO tourSelect(TourNoticeVO tourNoticeVO) throws Exception {
+		return tourDAOImpl.tourSelect(tourNoticeVO);
+	}
+
+	@Override
+	public List<TourNoticeVO> tourList(TourNoticeVO tourNoticeVO) throws Exception {
+		return tourDAOImpl.tourList(tourNoticeVO);
+	}
+
+	@Override
+	public int tourUpdate(TourNoticeVO tourNoticeVO, MultipartFile[] file, HttpSession session) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int tourDelete(TourNoticeVO tourNoticeVO) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
