@@ -248,3 +248,20 @@ div.header_2{
 .gocenterImg{
 	margin-top: 50px;
 }
+
+
+
+/* ==================== 넘기는거 css ==================== */
+.scheduleT{
+	border: 1px solid #cacaca;
+	width: 718px;
+	height: 70px;
+	font-size: 20px;
+	margin: auto;
+}
+
+.timeTableImg{
+	width: 100px;
+	height: 100px;
+	border-radius: 30px;
+}

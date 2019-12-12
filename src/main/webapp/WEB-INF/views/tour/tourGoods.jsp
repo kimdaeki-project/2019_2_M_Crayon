@@ -69,14 +69,18 @@
 			<div class="menu1">
 				<div class="m">상품일정 
 					<span class="mText" style="font-size: 15px; color: gray;">날짜별로 일정이 조금씩 다르므로 아래 일정 확인해주세요</span>
-					
+				</div>
+				<div style="width: 718px; height: 70px;">
+					<ul class="schedule" style="display: table-row;">
+						<li class="scheduleT">01/0aa1~12/31</li>
+					</ul>
 				</div>
 				<ul class="planList">
 					<li class="plan">
 						<div class="planLine">
 							<c:forEach items="${dto.files}" var="file">
 					   			<div class="mySlides">
-					      			<img src="/s5/resources/upload/tour/${file.fname}" style="width:720px; height: 900px;">
+					      			<img src="/s5/resources/upload/tour/${file.fname}" class="timeTableImg">
 					    		</div>
 							</c:forEach>
 							
