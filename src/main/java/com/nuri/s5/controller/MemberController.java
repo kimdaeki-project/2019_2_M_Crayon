@@ -32,10 +32,6 @@ public class MemberController {
 	
 	
 	
-	@GetMapping(value = "calcal")
-	public void calcal() throws Exception {
-
-	}
 	
 	
 	

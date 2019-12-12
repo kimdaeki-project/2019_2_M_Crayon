@@ -1,11 +1,22 @@
 @charset "UTF-8";
 
 #date {
-	width: 200px;
-	height: 32px;
+	width: 130px;
+	height: 25px;
 	border: 1px, #010101, solid;
 	font-size: 16px;
 	margin-left: 29px;
+}
+
+#datebn {
+	width: 50px;
+	height: 30px;
+	border-style: none;
+	background-color: #a36ae3;
+	margin-left: 10px;
+	color: white;
+	border-radius: 7px;
+	font-weight: 555;
 }
 
 .reserveDate_wrap {
@@ -69,9 +80,9 @@
 
 .select_btn {
 	width: 320px;
-	height: 60px;
+	height: 40px;
 	margin-left: 20px;
-	margin-top: 10px;
+	margin-top: 5px;
 	background-color: #a36ae3;
 	border-style: none;
 	font-size: 22px;
@@ -108,10 +119,10 @@
 
 #Nad {
 	width: 150px;
-	height: 30px; 
-	font-size : 16px;
+	height: 30px;
+	font-size: 16px;
 	font-weight: 555;
-	padding-left: 50px;
+	padding-left: 30px;
 	font-size: 16px;
 }
 
@@ -119,7 +130,7 @@
 	width: 150px;
 	height: 30px;
 	font-size: 16px;
-	padding-left: 50px;
+	padding-left: 30px;
 	font-weight: 555;
 }
 
@@ -127,6 +138,157 @@
 	width: 150px;
 	height: 30px;
 	font-size: 16px;
-	padding-left: 50px;
+	padding-left: 30px;
 	font-weight: 555;
+}
+
+#priceBtn {
+	width: 100px;
+	height: 30px;
+	border-style: none;
+	background-color: #a36ae3;
+	color: white;
+	border-radius: 7px;
+	font-weight: 555;
+	float: left;
+	margin-top: 10px;
+}
+
+.Allmoney {
+	width: 100px;
+	height: 30px;
+	border-style: none;
+	border-radius: 7px;
+	font-weight: 555;
+	float: left;
+	margin-top: 10px;
+	margin-left: 120px;
+	margin-right: 20px;
+}
+
+/*reservation*/
+#frm_1 {
+	width: 800px;
+	height: 960px;
+	margin: 0 auto;
+	border: 2px solid black;
+}
+
+.reservationTitle {
+	width: 800px;
+	height: 150px;
+}
+
+.ReserveT {
+	width: 800px;
+	height: 70px;
+	background-color: gray;
+	color: white;
+}
+
+.ReserveTN {
+	width: 800px;
+	height: 50px;
+}
+
+.ReserveP_PN {
+	width: 800px;
+	height: 50px;
+}
+
+.InputIN {
+	margin: 0 auto;
+	width: 600px;
+	height: 350px;
+}
+
+.RT {
+	margin-top: 20px;
+	width: 200px;
+	height: 20px;
+		margin-left: 30px;
+	
+}
+
+.RT2 {
+	margin-top: 10px;
+	width: 200px;
+	height: 20px;
+	margin-left: 30px;
+
+}
+.RN_wrap{
+	width: 300px;
+	height: 200px;
+	background-color: aqua;
+	float: left;
+	
+}
+.RN2_wrap{
+	width: 300px;
+	height: 200px;
+	background-color: gray;
+	float: left;
+	
+	
+	
+}
+.RN{
+	width: 80px;
+	height: 20px;
+	margin-top: 20px;
+	font-size: medium;
+	margin-left: 30px;
+	
+}
+
+.RN2{
+	width: 80px;
+	height: 20px;
+	margin-top: 30px;
+	font-size: medium;
+	margin-left: 30px;
+	
+}
+
+.RTT {
+	width: 600px;
+	height: 100px;
+
+	margin-top: 20px;
+}
+
+#Raccess {
+	width: 600px;
+	height: 200px;
+	margin: 0 auto;
+}
+
+#access {
+	width: 600px;
+	height: 100px;
+
+}
+
+.radioSelect {
+	width: 600px;
+	height: 70px;
+	background-color: yellow;
+}
+
+.reserveOK {
+	width: 250px;
+	height: 50px;
+	background-color: aqua;
+	margin-left: 150px;
+	border-style: none;
+	margin-top: 20px;
+}
+
+.NOreserve {
+	width: 250px;
+	height: 50px;
+	background-color: yellow;
+	border-style: none;
+	margin-top: 20px;
 }

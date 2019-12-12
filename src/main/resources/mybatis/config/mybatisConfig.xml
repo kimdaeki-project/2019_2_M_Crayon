@@ -11,5 +11,6 @@
   		<typeAlias type="com.nuri.s5.util.Pager" alias="Pager"/>
   		<typeAlias type="java.lang.Integer" alias="Integer"/>
   		<typeAlias type="com.nuri.s5.model.QnaVO" alias="QnaVO"/>
+  		<typeAlias type="com.nuri.s5.model.TourCalendarVO" alias="TourCalendarVO"/>
   	</typeAliases>
   </configuration>
