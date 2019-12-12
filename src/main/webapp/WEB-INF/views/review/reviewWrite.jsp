@@ -76,7 +76,6 @@
 		      <input type="hidden" class="form-control" id="hit" placeholder="your point" name="hit" value="0" readonly="readonly">
 		    </div>
 		    
-			
 			<div id="files">	   		
 		    	<div class="form-group" title="parent" id="a1">
 	      			<label class="control-label col-sm-2" for="file">File:</label>

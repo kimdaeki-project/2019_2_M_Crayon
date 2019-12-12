@@ -6,6 +6,6 @@
   <mapper namespace="tourFilesMapper">
   
   	<insert id="fileWrite" parameterType="TourFilesVO">
-	  	insert into files values(seq_tour.nextval, #{num}, #{fname}, #{oname})
+	  	insert into tourfiles values(seq_tour.nextval, #{num}, #{fname}, #{oname})
   	</insert>
   </mapper>

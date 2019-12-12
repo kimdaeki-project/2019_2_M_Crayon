@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,9 +28,9 @@
 <c:import url="../layout/nav.jsp"></c:import>
 	
 	<div class= "body">		
-		
 		<div class="body_main1">
-			<h3 class="goods_title">파리워킹투어</h3>
+			<h3 class="goods_title">${dto.tourNum}</h3>
+<%-- 			${dto.tourName}, --%>
 			<div class="goods_main_img" style="max-width:1100px">
 				<img class="mySlides" src="../resources/images/tour/TT4_1.jpg" style="width:100%">
 			 	<img class="mySlides" src="../resources/images/tour/TT4_2.jpg" style="width:100%">
@@ -74,12 +75,14 @@
 					<li class="plan">
 						<div class="planLine">
 							<c:forEach items="${dto.files}" var="file">
-								<div class="modal-content">
-						   			<div class="mySlides">
-						      			<img src="/s5/resources/upload/review/${file.fname}" style="width:720px; height: 900px;">
-						    		</div>
-						  		</div>
+					   			<div class="mySlides">
+					      			<img src="/s5/resources/upload/tour/${file.fname}" style="width:720px; height: 900px;">
+					    		</div>
 							</c:forEach>
+							
+	  						<span>${dto.time}</span>
+							<span>${dto.timeTable}</span>
+							
 						</div>
 					</li>
 				</ul>
@@ -114,7 +117,7 @@
 					</div>
 					<div class="textRefund"> 
 						<h4>환불규정</h4>
-						<span>${dto.refund}</span>
+						<span>${dto.refund}, ${fn:length(dto.files)} </span>
 					</div>
 					<c:forEach items="${dto.files}" var="file" >
 						<div class="mySlides">

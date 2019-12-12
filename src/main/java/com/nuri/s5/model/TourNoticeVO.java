@@ -12,23 +12,16 @@ public class TourNoticeVO {
 	private String attention;
 	private String refund;
 	private List<TourNoticeVO> files;
-	private String tourName;
-	private int price;
+	private String tourNum;
 	private String timeTable;
 	private String time;
 	
 	
-	public String getTourName() {
-		return tourName;
+	public String getTourNum() {
+		return tourNum;
 	}
-	public void setTourName(String tourName) {
-		this.tourName = tourName;
-	}
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
+	public void setTourNum(String tourNum) {
+		this.tourNum = tourNum;
 	}
 	public String getTimeTable() {
 		return timeTable;

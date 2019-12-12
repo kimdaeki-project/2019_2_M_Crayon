@@ -13,6 +13,28 @@
 	<h1>Tour Write Page</h1>
 	<form action="./tourWrite" enctype="multipart/form-data" method="post">
 <!-- 		<input type="hidden" name="num"> -->
+<!-- 		<div class="form-group"> -->
+<!-- 	  		<select id="tourName" name="tourName"> -->
+<!-- 	  			<option id="p1" class="tour" value="몽생미셸 (야경)투어">몽생미셸 (야경)투어</option> -->
+<!-- 	  			<option id="p2" class="tour" value="(소그룹 벤) 베르사유파리차량투어">(소그룹 벤) 베르사유파리차량투어</option> -->
+<!-- 	  			<option id="p3" class="tour" value="VIP맞춤투어">VIP맞춤투어</option> -->
+<!-- 	  			<option id="p4" class="tour" value="파리워킹투어">파리워킹투어</option> -->
+<!-- 	  			<option id="p5" class="tour" value="파리야경차량투어">파리야경차량투어</option> -->
+<!-- 	  			<option id="p6" class="tour" value="(소그룹 벤) 벨기에투어">(소그룹 벤) 벨기에투어</option> -->
+<!-- 	  			<option id="p1" class="tour" value="루브르 집중투어">루브르 집중투어</option> -->
+<!-- 	  			<option id="p1" class="tour" value="(소그룹 벤) 베르사유,지베르니,고흐투어">(소그룹 벤) 베르사유,지베르니,고흐투어</option> -->
+<!-- 	  			<option id="p1" class="tour" value="픽업%샌딩">픽업%샌딩</option> -->
+<!-- 	  		</select> -->
+<!-- 	  	</div> -->
+	  	
+	  	<input type="hidden" name="price" placeholder="price">
+	  	
+	  	<input type="text" name="tourNum" placeholder="tourNum">
+	  	
+	  	<input type="text" name="time" placeholder="time">
+	  	
+	  	<input type="text" name="timeTable" placeholder="timeTable">
+
 		
 		<h3>타업체비교불가</h3>
 		<textarea rows="5" cols="70" name="compared"></textarea>

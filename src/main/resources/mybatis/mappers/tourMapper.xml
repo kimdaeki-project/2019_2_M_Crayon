@@ -10,7 +10,7 @@
   			select seq_tour.nextval from dual		
   		</selectKey>
 	  	insert into tourNotice
-	  	values(#{num}, #{compared}, #{include}, #{exclude}, #{alert}, #{prepared}, #{attention}, #{refund})
+	  	values(#{num}, #{compared}, #{include}, #{exclude}, #{alert}, #{prepared}, #{attention}, #{refund}, #{timeTable}, #{time}, #{tourNum})
   	</insert>
   	
   	<select id="tourSelect" parameterType="TourNoticeVO" resultMap="tourFile">
@@ -29,6 +29,9 @@
 		<result property="prepared" column="prepared" />
 		<result property="attention" column="attention" />
 		<result property="refund" column="refund" />
+		<result property="timeTable" column="timeTable" />
+		<result property="time" column="time" />
+		<result property="tourNum" column="tourNum" />
 		<collection property="files" javaType="java.util.List" ofType="TourFilesVO">
 			<id property="fnum" column="fnum" />
 			<result property="fname" column="fname" />
