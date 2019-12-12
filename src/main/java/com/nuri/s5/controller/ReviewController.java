@@ -27,7 +27,6 @@ public class ReviewController {
 	private ReviewServiceImpl reviewServiceImpl;
 
 	
-	
 	@GetMapping(value="reviewResult")
 	public String reviewResult(Pager pager, Model model) throws Exception{
 		pager.setPerPage(10);
@@ -39,6 +38,14 @@ public class ReviewController {
 	}
 	
 	
+	@GetMapping(value="tourReview")
+	   public String tourReview(Pager pager, Model model) throws Exception{
+	      pager.setPerPage(5);
+	      List<ReviewVO> ar = reviewServiceImpl.reviewList(pager);
+	      model.addAttribute("list", ar);
+	      
+	      return "review/tourReview";
+	   }
 	
 /////////////////////////// review file ///////////////////////////////////
 	

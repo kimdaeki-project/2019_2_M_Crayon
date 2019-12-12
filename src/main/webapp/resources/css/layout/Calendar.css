@@ -292,3 +292,121 @@
 	border-style: none;
 	margin-top: 20px;
 }
+/* ==================================== */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 100px;
+}
+
+.pop-layer .pop-container {
+  padding: 20px 25px;
+}
+
+.pop-layer p.ctxt {
+  color: #666;
+  line-height: 25px;
+}
+
+.pop-layer .btn-r {
+  width: 100%;
+  margin: 10px 0 20px;
+  padding-top: 10px;
+  border-top: 1px solid #DDD;
+  text-align: right;
+}
+
+.pop-layer {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 640px;
+  background-color: #fff;
+  border: 5px solid #a36ae3;
+  z-index: 10;
+}
+
+.dim-layer {
+  display: none;
+  position: fixed;
+  _position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.dim-layer .dimBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+
+.dim-layer .pop-layer {
+  display: block;
+}
+
+a.btn-layerClose {
+  display: inline-block;
+  height: 55px;
+  width:100px;
+  padding: 0 14px 0;
+  background-color: #a36ae3;
+  font-size: 13px;
+  color: #fff;
+  line-height: 55px;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+}
+
+a.btn-layerClose:hover {
+  border: 1px solid #a36ae3;
+  background-color: #a36ae3;
+  color: #fff;
+  text-decoration: none;
+}
+.Test{
+width: 750px;
+height: 420px;
+margin: 0 auto;
+
+}
+
+
+select {
+	width:270px;
+	height: 30px;
+}
+
+
+
+/****/
+html, body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+  float: none;
+}
+
+/* ======== Calendar ======== */

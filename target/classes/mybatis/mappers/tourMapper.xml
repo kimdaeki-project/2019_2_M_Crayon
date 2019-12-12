@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="tourMapper">
+  
+  	<insert id="tourWrite" parameterType="TourNoticeVO">
+  		<selectKey order="BEFORE" resultType="Integer" keyProperty="num">
+  			select seq_tour.nextval from dual		
+  		</selectKey>
+	  	insert into tourNotice
+	  	values(#{num}, #{compared}, #{include}, #{exclude}, #{alert}, #{prepared}, #{attention}, #{refund})
+  	</insert>
+  	
+  	<select id="tourSelect" parameterType="TourNoticeVO" resultMap="tourFile">
+		select T.*, TF.fnum, TF.fname, TF.oname 
+			from tourNotice T full outer join tourFiles TF 
+				on T.num = TF.num
+		where T.num = #{num}
+  	</select>
+  	
+	<resultMap type="TourNoticeVO" id="tourFile">
+		<id property="num" column="num" />
+		<result property="compared" column="compared" />
+		<result property="include" column="include" />
+		<result property="exclude" column="exclude" />
+		<result property="alert" column="alert" />
+		<result property="prepared" column="prepared" />
+		<result property="attention" column="attention" />
+		<result property="refund" column="refund" />
+		<collection property="files" javaType="java.util.List" ofType="TourFilesVO">
+			<id property="fnum" column="fnum" />
+			<result property="fname" column="fname" />
+			<result property="oname" column="oname" />
+		</collection>
+	</resultMap>
+	
+	<select id="tourList" parameterType="TourNoticeVO" resultType="TourNoticeVO">
+		select * from tournotice order by num desc
+	</select>
+  	
+  </mapper>
