@@ -15,6 +15,8 @@
 	rel="stylesheet">
 	<link href="<c:url value="/resources/css/layout/review.css"/>"
 	rel="stylesheet">
+		<link href="<c:url value="/resources/css/layout/tour.css"/>"
+	rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <c:import url="/resources/bootStrap/bootStrap.jsp"></c:import>
@@ -38,48 +40,31 @@
 			<div class="body_inner">
  				<div class="contents">
 			
-					<table class="table table-striped">
-<!-- 				    <thead> -->
-<!-- 				      <tr> -->
-<!-- 				        <th></th><th>TOURNAME</th> -->
-<!-- 				      </tr> -->
-<!-- 				    </thead> -->
-				    <tbody>
+					
+				    		<div class="tour_MainForm">
 				    	<c:forEach items="${list}" var="dto" varStatus="st">
-				    		<a href="./tourGoods?num=${dto.num}">
-						      <span style="width: 320px; height: 290px;">
-						        <span style="width: 320px; height: 200px; line-height: 38px;">${dto.num}</span>
-						        <span style="width: 320px; height: 90px; line-height: 38px;">${dto.compared}</span>
-						      </span>
-						     </a>
+				    		<div class="tour_wrap">	
+				    			<div class="tourIMG_wrap">
+						      		<div class="tourIMG"></div>
+						      	</div>
+						      	<div class="TN_wrap">
+						      	<div class="tourNN_wrap">
+						        	<div class="tourNUM">${dto.num}</div>
+						        	<div class="tourNAME"><a href="./tourGoods?num=${dto.num}">${dto.compared}</a></div>					     
+						    	 </div>
+						    	 </div>
+						    </div><!--tour_wrap 끝-->
 				    	</c:forEach>
-				    </tbody>
-				  	</table>
+						    </div><!--tour_MainForm 끝-->
+				    	<a href="./tourWrite">글쓰기</a>
+				    
 				  	
 				</div>
 			</div>
 			
-			<a href="./tourWrite" class="btn btn-default" style="float: right; width: 100px;">글쓰기</a>
-		</div>
-	</div>
-	
-	<!-- --------footer -->			
-	<div class="footer">
-		<div class="footer_box">
-			<br><br><br>상호 : 파리크레파스 | 대표 : 김은경ㅣ<a href="#">[사업자 정보보기]</a>
-			<br>한국 주소 : 인천광역시 부평구 부일로19번길 8,1층 TEL : 070-4645-8279 | E-MAIL : PARISCRAYON@NAVER.COM
-			<br>한국 사업자 등록 번호 : 122-14-72077 ㅣ통신 판매업 등록번호 : 제 2014 인천부평 - 00850 호 ㅣ 한국 관광 등록 번호 : 제2015-000003호
-			<br><br>한국 인 허가 보증보험번호 : 제 100-000-2016 0161 1483 호
-			<br><br>프랑스 주소 : 9 RUE ANDRE PINGAT 51100 REIMS ㅣ프랑스 라인센스 번호 2015/21/0000464 | 프랑스 허가 번호 JEV 11 15 02414
-			<br>프랑스 사업자 번호 : SIRET:805 399 433 R.C.S REIMS
-			<br><br>COPYRIGHT(C)2008 PARIS CRAYON. ALL RIGHT RESERVED. CREATED BY PARISCRAYON.
-			<br><br>
-			<input type=button id="view1" value="이용약관">ㅣ<input type=button id="view2" value="개인정보 보호방침">
 			
 		</div>
-	
 	</div>
-	<!-- footer끝 -->
-	
+<c:import url="../layout/navFoot.jsp"></c:import>
 </body>
 </html>

@@ -23,10 +23,12 @@
 	width: 360px;
 	height: 560px;
 	border: 1px #010101 solid;
-	margin-left: 1300px;
+	float:right;
+	margin-right:200px;
 	margin-top: 200px;
-	position: fixed;
-	margin-left: 1300px;
+	position: sticky;
+	top: 160px;
+	
 }
 
 #adult_wrap {

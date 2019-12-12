@@ -13,17 +13,6 @@ public class TourCalendarController {
 
 	
 	
-	@GetMapping(value = "calcal")
-	public String calcal(TourCalendarVO tourCalendarVO,Model model) throws Exception {
-		model.addAttribute("dto", tourCalendarVO);
-		return "TourCal/calcal";
-	}
-	
-	@GetMapping(value = "Reservation")
-	public void Reservation() throws Exception {
-		
-	}
-	
 	
 	
 	

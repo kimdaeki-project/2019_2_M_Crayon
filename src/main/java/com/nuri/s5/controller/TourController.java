@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nuri.s5.model.MemberVO;
+import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourFilesVO;
 import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.service.TourServiceImpl;
@@ -24,6 +26,20 @@ public class TourController {
 	
 	@Inject
 	private TourServiceImpl tourServiceImpl;
+	
+	
+	/* tourCalendar 예약폼*/
+
+	
+	
+	@GetMapping(value = "Reservation")
+	public void Reservation() throws Exception {
+		
+	}
+	
+	
+	
+	
 	
 /////////////////////////// tour file ///////////////////////////////////
 	@GetMapping(value = "fileWrite")
@@ -47,10 +63,11 @@ public class TourController {
 	
 	
 	@GetMapping(value = "tourGoods")
-	public ModelAndView tourSelect(TourNoticeVO tourNoticeVO) throws Exception{
+	public ModelAndView tourSelect(TourNoticeVO tourNoticeVO, TourCalendarVO tourCalendarVO) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		tourNoticeVO = tourServiceImpl.tourSelect(tourNoticeVO);
 		mv.addObject("dto", tourNoticeVO);
+		mv.addObject("dto2", tourCalendarVO);
 		mv.setViewName("tour/tourGoods");
 		return mv;
 	}
