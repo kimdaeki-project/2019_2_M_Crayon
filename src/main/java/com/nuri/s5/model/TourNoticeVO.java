@@ -12,13 +12,14 @@ public class TourNoticeVO {
 	private String attention;
 	private String refund;
 	private List<TourNoticeVO> files;
-	private String tourNum;
+	private int tourNum;
 	
 	
-	public String getTourNum() {
+
+	public int getTourNum() {
 		return tourNum;
 	}
-	public void setTourNum(String tourNum) {
+	public void setTourNum(int tourNum) {
 		this.tourNum = tourNum;
 	}
 	public List<TourNoticeVO> getFiles() {

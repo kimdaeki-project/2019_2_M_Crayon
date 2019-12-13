@@ -28,7 +28,7 @@
 
 
 		<div class="body_main1">
-			<h3 class="goods_title">${dto.tourNum}</h3>
+			<h3 class="goods_title">${dto2.tourNum}</h3>
 <%-- 			${dto.tourName}, --%>
 			<div class="goods_main_img" style="max-width:1100px">
 				<img class="mySlides" src="../resources/images/tour/TT4_1.jpg" style="width:100%">
