@@ -17,6 +17,7 @@ import com.nuri.s5.model.MemberVO;
 import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourFilesVO;
 import com.nuri.s5.model.TourNoticeVO;
+import com.nuri.s5.service.TourCalendarServiceImpl;
 import com.nuri.s5.service.TourServiceImpl;
 
 
@@ -26,6 +27,8 @@ public class TourController {
 	
 	@Inject
 	private TourServiceImpl tourServiceImpl;
+	@Inject
+	private TourCalendarServiceImpl tourCalendarServiceImpl;
 	
 	/* tourCalendar 예약폼*/
 
@@ -63,7 +66,11 @@ public class TourController {
 	@GetMapping(value = "tourGoods")
 	public ModelAndView tourSelect(TourNoticeVO tourNoticeVO, TourCalendarVO tourCalendarVO) throws Exception{
 		ModelAndView mv = new ModelAndView();
+		tourCalendarVO = tourCalendarServiceImpl.calendarSelect(tourCalendarVO);
+		tourNoticeVO.setTourNum(tourCalendarVO.getTourNum());
+		System.out.println(tourNoticeVO.getTourNum());
 		tourNoticeVO = tourServiceImpl.tourSelect(tourNoticeVO);
+//		tourCalendarVO.setTourNum(tourNoticeVO.getTourNum());
 		mv.addObject("dto", tourNoticeVO);
 		mv.addObject("dto2", tourCalendarVO);
 		mv.setViewName("tour/tourGoods");
