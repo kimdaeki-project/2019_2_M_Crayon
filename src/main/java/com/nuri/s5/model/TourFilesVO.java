@@ -5,7 +5,21 @@ public class TourFilesVO {
 	private int num;
 	private String fname;
 	private String oname;
+	private String timeTable;
+	private String time;
 	
+	public String getTimeTable() {
+		return timeTable;
+	}
+	public void setTimeTable(String timeTable) {
+		this.timeTable = timeTable;
+	}
+	public String getTime() {
+		return time;
+	}
+	public void setTime(String time) {
+		this.time = time;
+	}
 	public int getFnum() {
 		return fnum;
 	}

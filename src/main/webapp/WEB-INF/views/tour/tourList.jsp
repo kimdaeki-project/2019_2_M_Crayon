@@ -77,8 +77,6 @@
 						</c:forEach>
 					</div>
 					<!--tour_MainForm 끝-->
-
-
 				</div>
 			</div>
 			<div class="tour_write_btn">

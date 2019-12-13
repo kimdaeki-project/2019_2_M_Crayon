@@ -31,14 +31,14 @@
 }
 
 .mySlides{
-	width: 1100px;
-	height: 580px;
+	width: 720px;
+	height: 630px;
 	
 }
 
 #m1{
 	width: 100%;
-	height: 100px;
+	height: 100%;
 	background: white;
 }
 
@@ -121,7 +121,7 @@ div.header_2{
 /**/
 .menu2{
 	width: 100%;
-	height: 300px;
+	height: 100%;
 	background: olive;
 }
 
@@ -247,4 +247,59 @@ div.header_2{
 
 .gocenterImg{
 	margin-top: 50px;
+}
+
+
+
+/* ==================== 넘기는거 css ==================== */
+.scheduleT{
+	border: 1px solid #cacaca;
+	width: 718px;
+	height: 70px;
+	font-size: 20px;
+	margin: auto;
+}
+
+.timeTableImg{
+	width: 120px;
+	height: 120px;
+	border-radius: 60px;
+}
+
+.timeTableWrap{
+	margin-bottom: 20px;
+}
+.timeTableBlank{
+	margin: auto;
+}
+
+.timeText{
+	font-size: 25px;
+	font-weight: bold;
+	margin-left: 50px;
+	vertical-align: top;
+	line-height: 5;
+}
+
+.tableText{
+	font-size: 18px;
+	line-height: 7;
+	vertical-align: top;
+	margin-left: 10px;
+}
+
+h4{
+	font-size: 24px;
+}
+
+.textWrap{
+	margin-bottom: 50px;
+}
+
+.textText{
+	padding-bottom: 30px;
+	margin-left: 10px;
+	line-height: 1.5;
+	font-size: 16px;
+	font-weight: 200;
 }

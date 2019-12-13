@@ -13,8 +13,6 @@ public class TourNoticeVO {
 	private String refund;
 	private List<TourNoticeVO> files;
 	private String tourNum;
-	private String timeTable;
-	private String time;
 	
 	
 	public String getTourNum() {
@@ -22,18 +20,6 @@ public class TourNoticeVO {
 	}
 	public void setTourNum(String tourNum) {
 		this.tourNum = tourNum;
-	}
-	public String getTimeTable() {
-		return timeTable;
-	}
-	public void setTimeTable(String timeTable) {
-		this.timeTable = timeTable;
-	}
-	public String getTime() {
-		return time;
-	}
-	public void setTime(String time) {
-		this.time = time;
 	}
 	public List<TourNoticeVO> getFiles() {
 		return files;

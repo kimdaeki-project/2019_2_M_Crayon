@@ -9,7 +9,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
-<body>
+<body style="height: 2500px;">
 	<h1>Tour Write Page</h1>
 	<form action="./tourWrite" enctype="multipart/form-data" method="post">
 <!-- 		<input type="hidden" name="num"> -->
@@ -29,12 +29,7 @@
 	  	
 	  	<input type="hidden" name="price" placeholder="price">
 	  	
-	  	<input type="text" name="tourNum" placeholder="tourNum">
-	  	
-	  	<input type="text" name="time" placeholder="time">
-	  	
-	  	<input type="text" name="timeTable" placeholder="timeTable">
-
+	  	<span>상품번호 : <input type="text" name="tourNum" placeholder="tourNum"></span>
 		
 		<h3>타업체비교불가</h3>
 		<textarea rows="5" cols="70" name="compared"></textarea>
@@ -57,11 +52,16 @@
 		<h3>환불규정</h3>
 		<textarea rows="5" cols="70" name="refund"></textarea>
 		
-		<div id="files">	   		
-	    	<div class="form-group" title="parent" id="a1">
-      			<label class="control-label col-sm-2" for="file">File:</label>
+		
+		<div id="files" style="">	   		
+	    	<div class="form-group" title="parent" id="a1" style="">
+      			<label class="control-label col-sm-6" for="file">File:</label>
       			<div class="col-sm-9">
       				<input type="file" class="form-control" id="file" name="file">
+   					<div id="timeBlank" style="width: 100px; height: 100px;" >
+					  	<span>시간 : <input type="text" name="time" placeholder="time" id="time"></span>
+					  	<span>일정 : <input type="text" name="timeTable" placeholder="timeTable" id="timeTable"></span>
+				  	</div>
       			</div>
 	    	<div class="col-sm-1">
       			<input type="button" name="file" value="del" class= "btn btn-danger del">
@@ -70,10 +70,10 @@
 		</div>
 		
 		<div class="btnAdd" style="height: 50px; margin-right: 100px; margin-bottom: 100px;">
-	   		<input type="button" value="add file" class="btn btn-default" id="btn" style="cursor: pointer;">
+	   		<input type="button" value="add file" class="btn btn-default" id="btn" style="cursor: pointer; float: right;">
 		</div>
 		
-		<button class= "proBtn">상품등록</button>
+		<button class= "proBtn" style="float: right;">상품등록</button>
 	</form>
 	
 	<script type="text/javascript">
@@ -81,12 +81,18 @@
 		var files = $("#files").html();
 		$("#files").empty();
 		
+		var time = $("#timeBlank").html();
+		$("#timeBlank").empty();
+		
 		$("#btn").click(function() {
 			$("#files").append(files);
+// 			$("#timeBlank").append(time);
 		});
 		
 		$("#files").on("click", ".del", function() {
 			$(this).parents(".form-group").remove();
+// 			$("#time").remove();
+// 			$("#timeTable").remove();
 		});
 	
 	</script>
