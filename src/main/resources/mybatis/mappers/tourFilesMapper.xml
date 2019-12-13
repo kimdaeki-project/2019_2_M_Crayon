@@ -8,4 +8,9 @@
   	<insert id="fileWrite" parameterType="TourFilesVO">
 	  	insert into tourfiles values(seq_tour.nextval, #{num}, #{fname}, #{oname}, #{timeTable}, #{time})
   	</insert>
+  	
+  	<select id="fileSelect" parameterType="TourFilesVO" resultType="java.util.List">
+		select * from tourfiles num = #{num}
+  	</select>
+  	
   </mapper>

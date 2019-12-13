@@ -27,7 +27,6 @@ public class TourController {
 	@Inject
 	private TourServiceImpl tourServiceImpl;
 	
-	
 	/* tourCalendar 예약폼*/
 
 	
@@ -36,9 +35,6 @@ public class TourController {
 	public void Reservation() throws Exception {
 		
 	}
-	
-	
-	
 	
 	
 /////////////////////////// tour file ///////////////////////////////////
@@ -81,7 +77,7 @@ public class TourController {
 //		MemberVO member = (MemberVO)session.getAttribute("member");
 //		mv.addObject("member", member);
 		return mv;
-	}
+	} 
 	
 	@PostMapping(value = "tourWrite")
 	public ModelAndView tourWrite(TourNoticeVO tourNoticeVO, MultipartFile [] file, HttpSession session, String [] time, String [] timeTable) throws Exception{

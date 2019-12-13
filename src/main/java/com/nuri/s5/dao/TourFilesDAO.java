@@ -1,5 +1,7 @@
 package com.nuri.s5.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -17,5 +19,9 @@ public class TourFilesDAO {
 	
 	public int fileWite(TourFilesVO tourFilesVO)throws Exception {
 		return sqlSession.insert(NAMESPACE+"fileWrite", tourFilesVO);
+	}
+	
+	public List<TourFilesVO> fileSelect(TourFilesVO tourFilesVO)throws Exception {
+		return sqlSession.selectList(NAMESPACE+"fileSelect", tourFilesVO);
 	}
 }

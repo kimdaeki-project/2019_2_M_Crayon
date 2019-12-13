@@ -31,6 +31,10 @@ public class TourServiceImpl implements TourService {
 	public int fileWrite(TourFilesVO tourFilesVO) throws Exception{
 		return tourFilesDAO.fileWite(tourFilesVO);
 	}
+	
+	public List<TourFilesVO> fileSelect(TourFilesVO tourFilesVO)throws Exception{
+		return tourFilesDAO.fileSelect(tourFilesVO);
+	}
 
 ///////////////////////	tour 게시판 ///////////////////////////////	
 	

@@ -26,9 +26,8 @@
 	
 	<div class= "body">	
 
-
 		<div class="body_main1">
-			<h3 class="goods_title">${dto.tourNum}</h3>
+			<h3 class="goods_title">${dto2.tourNum}</h3>
 <%-- 			${dto.tourName}, --%>
 			<div class="goods_main_img" style="max-width:1100px">
 				<img class="mySlides" src="../resources/images/tour/TT4_1.jpg" style="width:100%">
@@ -125,8 +124,6 @@
 
 	<!--Calendar 끝-->
 		
-		
-		
 		<div class="body_main2">
 			<div class="menu1">
 				<div class="m">상품일정 
@@ -185,7 +182,7 @@
 					</div>
 					<div class="textRefund textWrap"> 
 						<h4>환불규정</h4>
-						<span class="textText">${dto.refund}, ${fn:length(dto.files)} </span>
+						<span class="textText">${dto.refund}</span>
 					</div>
 					<c:forEach items="${dto.files}" var="file" >
 						<div class="">
