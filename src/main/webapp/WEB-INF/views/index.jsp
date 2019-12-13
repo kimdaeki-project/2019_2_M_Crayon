@@ -135,6 +135,10 @@
 										<div class="img_circle">
 										</div>
 										<div class="re_txtbox">
+											<div class="re_txtbox_title">
+												<div class="re_txtbox_title">
+												</div>
+											</div>
 										</div>
 									</div>
 									
@@ -397,6 +401,35 @@
 		})(jQuery);
 	
 	</script>
+	
+	
+	<script type="text/javascript">
+
+	$(document).ready(function() {
+		
+		$.ajax({
+			type:"Get",
+			url:"./review/reviewBest?num=156",
+			dataType:"text",
+			error: function() {
+				alert("통신실패")
+			},
+			success : function(data) {
+				$(".re_txtbox").html(data);
+				alert("데이터 전송 성공"+data);
+				
+			}
+			
+		});
+		
+		
+	});
+
+
+</script>
+	
+	
+	
 
 
 </body>

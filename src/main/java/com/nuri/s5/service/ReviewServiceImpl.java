@@ -101,5 +101,14 @@ public class ReviewServiceImpl implements ReviewService {
 	public int countUpdate(ReviewVO reviewVO) throws Exception {
 		return reviewDAOImpl.countUpdate(reviewVO);
 	}
+	
+	@Override
+	public ReviewVO reviewBest(ReviewVO reviewVO)throws Exception{
+		
+		return reviewDAOImpl.reviewBest(reviewVO);
+	}
+	
+
+	
 
 }

@@ -24,4 +24,8 @@ public interface ReviewDAO {
 	public int reviewWrite(ReviewVO reviewVO)throws Exception;
 	
 	public int countUpdate(ReviewVO reviewVO)throws Exception;
+	
+	public ReviewVO reviewBest(ReviewVO reviewVO)throws Exception;
+	
+
 }

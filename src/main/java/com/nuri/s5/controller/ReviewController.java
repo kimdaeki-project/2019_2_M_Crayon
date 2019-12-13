@@ -46,6 +46,9 @@ public class ReviewController {
 	      
 	      return "review/tourReview";
 	   }
+
+	
+	
 	
 /////////////////////////// review file ///////////////////////////////////
 	
@@ -109,6 +112,7 @@ public class ReviewController {
 	public ModelAndView reviewSelect(ReviewVO reviewVO) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		reviewVO = reviewServiceImpl.reviewSelect(reviewVO);
+		
 		mv.addObject("dto", reviewVO);
 		mv.setViewName("review/reviewSelect");
 		return mv;
@@ -123,6 +127,18 @@ public class ReviewController {
 		mv.setViewName("review/reviewList");
 		return mv;
 	}
+	
+	@GetMapping(value = "reviewBest")
+	public ModelAndView reviewBest(ReviewVO reviewVO)throws Exception{
+		reviewVO = reviewServiceImpl.reviewBest(reviewVO);
+		ModelAndView mv = new ModelAndView();
+		
+		mv.addObject("dto", reviewVO);
+		mv.setViewName("review/reviewBest");
+		return mv;
+	}
+
+	
 	
 
 }

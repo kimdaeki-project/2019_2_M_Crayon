@@ -17,6 +17,7 @@
 			<result property="title" column="title" />
 			<result property="writer" column="writer" />
 			<result property="contents" column="contents" />
+			<result property="hit" column="hit"/>
 			<result property="day" column="day" />
 			<collection property="files" javaType="java.util.List" ofType="ReviewFilesVO">
 				<id property="fnum" column="fnum" />
@@ -72,5 +73,18 @@
   			select count(num) from review
   			<include refid="searching"></include>
   		</select>
+  		
+  		
+  		<select id="reviewBest" resultType="ReviewVO" parameterType="ReviewVO">
+  			select num, title, contents, writer, day, hit from review where num=#{num}
+		<!-- 	select R.num, R.title, R.contents, R.writer,R.day,R.hit, rownum RN from
+				(select * from review
+				order by hit desc) R where rownum=1 -->
+  		</select>		
+  		
+  		
+  		
+  		
+  		
   		
   </mapper>

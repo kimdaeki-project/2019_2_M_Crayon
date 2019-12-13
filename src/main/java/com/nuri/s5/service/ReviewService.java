@@ -23,4 +23,7 @@ public interface ReviewService {
 	
 	public int countUpdate(ReviewVO reviewVO)throws Exception;
 
+	public ReviewVO reviewBest(ReviewVO reviewVO)throws Exception;
+
+
 }

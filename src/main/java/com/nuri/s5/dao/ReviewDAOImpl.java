@@ -53,5 +53,12 @@ public class ReviewDAOImpl implements ReviewDAO {
 	public int countUpdate(ReviewVO reviewVO) throws Exception {
 		return sqlsession.update(NAMESPACE+"countUpdate", reviewVO);
 	}
+	
+	@Override
+	public ReviewVO reviewBest(ReviewVO reviewVO)throws Exception{
+		return sqlsession.selectOne(NAMESPACE+"reviewBest",reviewVO);
+	}
+	
+
 
 }
