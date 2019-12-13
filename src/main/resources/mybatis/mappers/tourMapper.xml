@@ -5,6 +5,21 @@
   
   <mapper namespace="tourMapper">
   
+  	<!-- 좋아요 클릭 --> 
+  	<update id="like_check" parameterType="HashMap">
+  	update wishlike set likeCheck = likeCheck+1 
+  	where email=#{email} and tourNum=#{tourNum}
+  	</update>
+  	
+  	<!--좋아요 취소-->
+  
+  	<update id="like_check_cancle" parameterType="HashMap">
+  	update wishlike set likeCheck = 0
+  	where email=#{email} and tourNum =#{tourNum}
+  	</update>
+  
+  
+  
   	<insert id="tourWrite" parameterType="TourNoticeVO">
   		<selectKey order="BEFORE" resultType="Integer" keyProperty="num">
   			select seq_tour.nextval from dual		
@@ -39,8 +54,8 @@
 		</collection>
 	</resultMap>
 	
-	<select id="tourList" parameterType="TourNoticeVO" resultType="TourNoticeVO">
-		select * from tournotice order by num desc
+	<select id="tourList" parameterType="TourCalendarVO" resultType="TourCalendarVO">
+		select * from tour
 	</select>
   	
   </mapper>

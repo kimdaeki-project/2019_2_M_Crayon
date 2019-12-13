@@ -53,10 +53,12 @@ public class TourController {
 /////////////////////////// tour admin ///////////////////////////////////
 	
 	@GetMapping(value = "tourList")
-	public ModelAndView tourList(TourNoticeVO tourNoticeVO)throws Exception{
+	public ModelAndView tourList(TourCalendarVO tourCalendarVO)throws Exception{
 		ModelAndView mv = new ModelAndView();
-		List<TourNoticeVO> ar = tourServiceImpl.tourList(tourNoticeVO);
+		List<TourCalendarVO> ar = tourServiceImpl.tourList(tourCalendarVO);
 		mv.addObject("list", ar);
+		mv.addObject("dto", tourCalendarVO);
+		
 		mv.setViewName("tour/tourList");
 		return mv;
 	} 

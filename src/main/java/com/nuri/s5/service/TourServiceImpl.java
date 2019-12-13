@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.nuri.s5.dao.TourDAOImpl;
 import com.nuri.s5.dao.TourFilesDAO;
+import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourFilesVO;
 import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.util.FileSaver;
@@ -60,8 +61,8 @@ public class TourServiceImpl implements TourService {
 	}
 
 	@Override
-	public List<TourNoticeVO> tourList(TourNoticeVO tourNoticeVO) throws Exception {
-		return tourDAOImpl.tourList(tourNoticeVO);
+	public List<TourCalendarVO> tourList(TourCalendarVO tourCalendarVO) throws Exception {
+		return tourDAOImpl.tourList(tourCalendarVO);
 	}
 
 	@Override

@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourNoticeVO;
 
 public interface TourService {
@@ -14,7 +15,7 @@ public interface TourService {
 	
 	public TourNoticeVO tourSelect(TourNoticeVO tourNoticeVO)throws Exception;
 	
-	public List<TourNoticeVO> tourList(TourNoticeVO tourNoticeVO)throws Exception;
+	public List<TourCalendarVO> tourList(TourCalendarVO tourCalendarVO)throws Exception;
 	
 	public int tourUpdate(TourNoticeVO tourNoticeVO, MultipartFile [] file, HttpSession session)throws Exception;
 	
