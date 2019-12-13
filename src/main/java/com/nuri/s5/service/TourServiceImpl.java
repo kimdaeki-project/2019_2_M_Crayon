@@ -34,19 +34,21 @@ public class TourServiceImpl implements TourService {
 ///////////////////////	tour 게시판 ///////////////////////////////	
 	
 	@Override
-	public int tourWrite(TourNoticeVO tourNoticeVO, MultipartFile[] file, HttpSession session) throws Exception {
+	public int tourWrite(TourNoticeVO tourNoticeVO, MultipartFile[] file, HttpSession session, String [] time, String [] timeTable) throws Exception {
 		
 		String realPath = session.getServletContext().getRealPath("resources/upload/tour");
 		System.out.println(realPath);
 		TourFilesVO tourFilesVO = new TourFilesVO();
 		int result = tourDAOImpl.tourWrite(tourNoticeVO);
 		
-		for (MultipartFile multipartFile : file) {
-			if(multipartFile.getOriginalFilename() != "") {
-				String fileName = fs.fileSave(realPath, multipartFile);
+		for (int i=0; i<file.length;i++) {
+			if(file[i].getOriginalFilename() != "") {
+				String fileName = fs.fileSave(realPath, file[i]);
 				tourFilesVO.setNum(tourNoticeVO.getNum());
 				tourFilesVO.setFname(fileName);
-				tourFilesVO.setOname(multipartFile.getOriginalFilename());
+				tourFilesVO.setOname(file[i].getOriginalFilename());
+				tourFilesVO.setTime(time[i]);
+				tourFilesVO.setTimeTable(timeTable[i]);
 				tourFilesDAO.fileWite(tourFilesVO);
 			}
 		}

@@ -46,10 +46,10 @@
 <!-- 				    </thead> -->
 				    <tbody>
 				    	<c:forEach items="${list}" var="dto" varStatus="st">
-				    		<a href="./tourGoods?num=${dto.num}">
+				    		<a href="./tourGoods?num=${dto.tourNum}">
 						      <span style="width: 320px; height: 290px;">
-						        <span style="width: 320px; height: 200px; line-height: 38px;">${dto.num}</span>
-						        <span style="width: 320px; height: 90px; line-height: 38px;">${dto.compared}</span>
+						        <span style="width: 320px; height: 200px; line-height: 38px;">${dto.tourName}</span>
+						        <span style="width: 320px; height: 90px; line-height: 38px;">${dto.price}</span>
 						      </span>
 						     </a>
 				    	</c:forEach>

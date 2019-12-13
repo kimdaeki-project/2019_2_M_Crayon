@@ -10,11 +10,11 @@
   			select seq_tour.nextval from dual		
   		</selectKey>
 	  	insert into tourNotice
-	  	values(#{num}, #{compared}, #{include}, #{exclude}, #{alert}, #{prepared}, #{attention}, #{refund}, #{timeTable}, #{time}, #{tourNum})
+	  	values(#{num}, #{compared}, #{include}, #{exclude}, #{alert}, #{prepared}, #{attention}, #{refund}, #{tourNum})
   	</insert>
   	
   	<select id="tourSelect" parameterType="TourNoticeVO" resultMap="tourFile">
-		select T.*, TF.fnum, TF.fname, TF.oname 
+		select T.*, TF.fnum, TF.fname, TF.oname, TF.timeTable, TF.time
 			from tourNotice T full outer join tourFiles TF 
 				on T.num = TF.num
 		where T.num = #{num}
@@ -29,13 +29,13 @@
 		<result property="prepared" column="prepared" />
 		<result property="attention" column="attention" />
 		<result property="refund" column="refund" />
-		<result property="timeTable" column="timeTable" />
-		<result property="time" column="time" />
 		<result property="tourNum" column="tourNum" />
 		<collection property="files" javaType="java.util.List" ofType="TourFilesVO">
 			<id property="fnum" column="fnum" />
 			<result property="fname" column="fname" />
 			<result property="oname" column="oname" />
+			<result property="timeTable" column="timeTable" />
+			<result property="time" column="time" />
 		</collection>
 	</resultMap>
 	

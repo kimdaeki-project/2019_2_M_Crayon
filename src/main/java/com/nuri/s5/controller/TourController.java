@@ -65,9 +65,9 @@ public class TourController {
 	}
 	
 	@PostMapping(value = "tourWrite")
-	public ModelAndView tourWrite(TourNoticeVO tourNoticeVO, MultipartFile [] file, HttpSession session) throws Exception{
+	public ModelAndView tourWrite(TourNoticeVO tourNoticeVO, MultipartFile [] file, HttpSession session, String [] time, String [] timeTable) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		int result = tourServiceImpl.tourWrite(tourNoticeVO, file, session);
+		int result = tourServiceImpl.tourWrite(tourNoticeVO, file, session,time,timeTable);
 		mv.addObject("dto", tourNoticeVO);
 		if(result>0) {
 			mv.setViewName("redirect:./tourList");

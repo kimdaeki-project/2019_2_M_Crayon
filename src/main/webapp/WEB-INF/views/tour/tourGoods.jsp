@@ -78,54 +78,55 @@
 				<ul class="planList">
 					<li class="plan">
 						<div class="planLine">
-							<c:forEach items="${dto.files}" var="file">
-					   			<div class="mySlides">
-					      			<img src="/s5/resources/upload/tour/${file.fname}" class="timeTableImg">
+							<c:forEach items="${dto.files}" var="file" varStatus="table">
+					   			<div class="timeTableWrap">
+					      			<span class="timeTableBlank">
+						      			<img src="/s5/resources/upload/tour/${file.fname}" class="timeTableImg">
+						      			<span class="timeText">${file.time}</span>
+										<span class="tableText">${file.timeTable}</span>
+					      			</span>
 					    		</div>
 							</c:forEach>
 							
-	  						<span>${dto.time}</span>
-							<span>${dto.timeTable}</span>
 							
 						</div>
 					</li>
 				</ul>
 			</div><!-- menu1 -->
 			<div class="menu2">
-				<div id="m2"></div>
-				<div class="m">투어 안내
-					<input type="text" name="${dto.num}" value="${dto.num}"> 
-					<div class="textCompared">
+				<div class="m">
+					<input type="hidden" name="${dto.num}" value="${dto.num}"> 
+					<div class="textCompared textWrap">
 						<h4>타업체비교불가</h4>
-						<span>${dto.compared}</span>
+						<span class="textText">${dto.compared}</span>
 					</div>
-					<div class="textInclude"> 
+					<div class="textInclude textWrap"> 
 						<h4>포함사항</h4>
-						<span>${dto.include}</span>
+						<span class="textText">${dto.include}</span>
 					</div>
-					<div class="textExclude"> 
+					<div class="textExclude textWrap"> 
 						<h4>불포함사항</h4>
-						<span>${dto.exclude}</span>
+						<span class="textText">${dto.exclude}</span>
 					</div>
-					<div class="textAlert"> 
+					<div class="textAlert textWrap"> 
 						<h4>안내사항</h4>
-						<span>${dto.alert}</span>
+						<span class="textText">${dto.alert}</span>
 					</div>
-					<div class="textPrepared"> 
+					<div class="textPrepared textWrap"> 
 						<h4>준비사항</h4>
-						<span>${dto.prepared}</span>
+						<span class="textText">${dto.prepared}</span>
 					</div>
-					<div class="textAttention"> 
+					<div class="textAttention textWrap"> 
 						<h4>주의사항</h4>
-						<span>${dto.attention}</span>
+						<span class="textText">${dto.attention}</span>
 					</div>
-					<div class="textRefund"> 
+					<div class="textRefund textWrap"> 
 						<h4>환불규정</h4>
-						<span>${dto.refund}, ${fn:length(dto.files)} </span>
+						<span class="textText">${dto.refund}, ${fn:length(dto.files)} </span>
 					</div>
 					<c:forEach items="${dto.files}" var="file" >
-						<div class="mySlides">
-     						<img src="/s5/resources/upload/tour/${file.fname}" style="width:720px; height: 900px;">
+						<div class="">
+     						<img src="/s5/resources/upload/tour/${file.fname}" style="width:720px; height: 500px;">
 						</div>
 					</c:forEach>
 				</div>
