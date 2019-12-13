@@ -54,5 +54,9 @@
 	<select id="tourList" parameterType="TourCalendarVO" resultType="TourCalendarVO">
 		select * from tour
 	</select>
+	
+	<select id="tourImgList" parameterType="TourFilesVO" resultType="TourFilesVO">
+		select fname, num from tourfiles where fnum = (select max(fnum) from tourfiles)
+	</select>
   	
   </mapper>

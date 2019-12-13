@@ -47,8 +47,9 @@
 					<div class="tour_MainForm" style="overflow: auto; margin: auto;">
 						<c:forEach items="${list}" var="dto" varStatus="st">
 							<div class="tour_wrap">
-								<div class="tourIMG_wrap">
+								<div class="tourIMG_wrap">	
 									<div class="tourIMG">
+<%-- 										<img alt="NoImages" src="/s5/resources/upload/tour/${files.fname.[0]}"> --%>
 										<div class="tourLike">
 											<c:choose>
 												<c:when test="${sessionScope.member eq null}">
@@ -79,12 +80,12 @@
 					<!--tour_MainForm 끝-->
 				</div>
 			</div>
-			<div class="tour_write_btn">
-				<a href="./tourWrite">글쓰기</a>
-			</div>
 
 
 		</div>
+			<div class="tour_white_btn">
+				<a href="./tourWrite">글쓰기</a>
+			</div>
 	</div>
 
 

@@ -57,7 +57,7 @@ public class TourController {
 		List<TourCalendarVO> ar = tourServiceImpl.tourList(tourCalendarVO);
 		mv.addObject("list", ar);
 		mv.addObject("dto", tourCalendarVO);
-		
+		mv.addObject("files", ar);
 		mv.setViewName("tour/tourList");
 		return mv;
 	} 
@@ -91,6 +91,13 @@ public class TourController {
 	@PostMapping(value = "tourWrite")
 	public ModelAndView tourWrite(TourNoticeVO tourNoticeVO, MultipartFile [] file, HttpSession session, String [] time, String [] timeTable) throws Exception{
 		ModelAndView mv = new ModelAndView();
+		tourNoticeVO.setCompared(tourNoticeVO.getCompared().replace("\r\n", "<br>"));
+		tourNoticeVO.setInclude(tourNoticeVO.getInclude().replace("\r\n", "<br>"));
+		tourNoticeVO.setExclude(tourNoticeVO.getExclude().replace("\r\n", "<br>"));
+		tourNoticeVO.setAlert(tourNoticeVO.getAlert().replace("\r\n", "<br>"));
+		tourNoticeVO.setPrepared(tourNoticeVO.getPrepared().replace("\r\n", "<br>"));
+		tourNoticeVO.setAttention(tourNoticeVO.getAttention().replace("\r\n", "<br>"));
+		tourNoticeVO.setRefund(tourNoticeVO.getRefund().replace("\r\n", "<br>"));
 		int result = tourServiceImpl.tourWrite(tourNoticeVO, file, session,time,timeTable);
 		mv.addObject("dto", tourNoticeVO);
 		if(result>0) {
