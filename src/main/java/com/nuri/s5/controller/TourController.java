@@ -64,13 +64,15 @@ public class TourController {
 	
 	
 	@GetMapping(value = "tourGoods")
-	public ModelAndView tourSelect(TourNoticeVO tourNoticeVO, TourCalendarVO tourCalendarVO) throws Exception{
+	public ModelAndView tourSelect(TourNoticeVO tourNoticeVO, TourCalendarVO tourCalendarVO, TourFilesVO tourFilesVO) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		tourCalendarVO = tourCalendarServiceImpl.calendarSelect(tourCalendarVO);
 		tourNoticeVO.setTourNum(tourCalendarVO.getTourNum());
-		System.out.println(tourNoticeVO.getTourNum());
 		tourNoticeVO = tourServiceImpl.tourSelect(tourNoticeVO);
+		tourFilesVO.setNum(tourNoticeVO.getNum());
+		List<TourFilesVO> ar = tourServiceImpl.fileSelect(tourFilesVO);
 //		tourCalendarVO.setTourNum(tourNoticeVO.getTourNum());
+		mv.addObject("files", ar);
 		mv.addObject("dto", tourNoticeVO);
 		mv.addObject("dto2", tourCalendarVO);
 		mv.setViewName("tour/tourGoods");

@@ -28,7 +28,7 @@
 	  	values(#{num}, #{compared}, #{include}, #{exclude}, #{alert}, #{prepared}, #{attention}, #{refund}, #{tourNum})
   	</insert>
   	
-  	<select id="tourSelect" parameterType="TourNoticeVO" resultMap="TourNoticeVO">
+  	<select id="tourSelect" parameterType="TourNoticeVO" resultType="TourNoticeVO">
   		select * from tourNotice where tourNum =#{tourNum}
   	</select>
   	

@@ -45,6 +45,7 @@ public class TourServiceImpl implements TourService {
 		System.out.println(realPath);
 		TourFilesVO tourFilesVO = new TourFilesVO();
 		int result = tourDAOImpl.tourWrite(tourNoticeVO);
+		System.out.println(realPath);
 		
 		for (int i=0; i<file.length;i++) {
 			if(file[i].getOriginalFilename() != "") {

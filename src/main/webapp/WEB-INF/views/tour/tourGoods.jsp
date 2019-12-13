@@ -138,7 +138,7 @@
 				<ul class="planList">
 					<li class="plan">
 						<div class="planLine">
-							<c:forEach items="${dto.files}" var="file" varStatus="table">
+							<c:forEach items="${files}" var="file" varStatus="table">
 					   			<div class="timeTableWrap">
 					      			<span class="timeTableBlank">
 						      			<img src="/s5/resources/upload/tour/${file.fname}" class="timeTableImg">
@@ -184,7 +184,7 @@
 						<h4>환불규정</h4>
 						<span class="textText">${dto.refund}</span>
 					</div>
-					<c:forEach items="${dto.files}" var="file" >
+					<c:forEach items="${files}" var="file" >
 						<div class="">
      						<img src="/s5/resources/upload/tour/${file.fname}" style="width:720px; height: 500px;">
 						</div>
