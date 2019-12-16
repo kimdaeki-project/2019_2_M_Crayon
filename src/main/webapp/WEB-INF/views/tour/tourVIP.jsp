@@ -144,14 +144,6 @@
 						"서울 종로구 성균관로 31"	
 					];
 					
-					var myName=[
-						"경복궁",
-						"경희궁",
-						"덕수궁",
-						"창경궁",
-						"창덕궁",
-						"성균관"
-					]
 					
 					
 					var v2 = "";
@@ -166,6 +158,8 @@
 					
 					        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 							var v =result[0].road_address.building_name;
+							var b =result[0].road_address.main_building_no;
+							console.log(b);
 					        // 결과값으로 받은 위치를 마커로 표시합니다
 					        var marker = new kakao.maps.Marker({
 					            map: map,
@@ -174,7 +168,7 @@
 					
 					        // 인포윈도우로 장소에 대한 설명을 표시합니다
 					        var infowindow = new kakao.maps.InfoWindow({
-					            content: '<div style="width:150px;text-align:center;padding:6px 0;"><input type="checkbox" value="'+v+'"name="checkbox" class="ck_1" id="ck'+j+'">'+v+'</div>'
+					            content: '<div style="width:150px;text-align:center;padding:6px 0;"><input type="checkbox" value="'+v+'"name="checkbox" class="ck_1" id="ck'+b+'">'+v+'</div>'
 					        });
 					        infowindow.open(map, marker);
 					        
@@ -191,7 +185,7 @@
 					        	"Map5",
 					        	"Map6"
 					        ]
-			
+					        
 							// 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다
 							var iwContent = '<div style="padding:5px;"><img src="../resources/images/map/'+Map[j]+'.jpg\" style=\"width: 200px; height: 200px;background-color: transparent; border: none;\"</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
 							
@@ -212,22 +206,28 @@
 							    infowindow.close();
 							});
 							
+						
+							
 							$('.ck_1').on('click', function(){
+								$("#rv_inner").empty();
 								
-							if ($('input:checkbox[name="checkbox"]').is(":checked")){
-									
-									var names= [];
-									//$('.ck input:checked').each(function() {
-										alert($('#ck0').val());
-										//names.push($('.ck').val(););
-										
-									//});
-									
-									console.log(v); 
-									document.getElementById("rv_inner").innerHTML = v;
-								} 
+
 								
+								$('.ck_1').each(function(){
+									if($(this).prop("checked")){
+					
+										$("#rv_inner").append("<p>　* "+$(this).val()+"</p>");
+									}
+							
 									
+									});
+								
+								//console.log(e); */
+							
+							/* 	if ($('input[name="checkbox"]').is(":checked")){
+									$("#rv_inner").append(e);										
+									} */
+							
 							});
 							j++;							
 						}
