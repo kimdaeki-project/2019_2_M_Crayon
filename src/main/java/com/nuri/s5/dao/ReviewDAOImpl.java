@@ -55,8 +55,13 @@ public class ReviewDAOImpl implements ReviewDAO {
 	}
 	
 	@Override
-	public ReviewVO reviewBest(ReviewVO reviewVO)throws Exception{
-		return sqlsession.selectOne(NAMESPACE+"reviewBest",reviewVO);
+	public List<ReviewVO> reviewBest(ReviewVO reviewVO)throws Exception{
+		return sqlsession.selectList(NAMESPACE+"reviewBest",reviewVO);
+	}
+	
+	@Override
+	public List<ReviewVO> reviewPic(ReviewVO reviewVO)throws Exception{
+		return sqlsession.selectList(NAMESPACE+"reviewPic", reviewVO);
 	}
 	
 

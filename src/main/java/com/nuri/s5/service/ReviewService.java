@@ -13,6 +13,8 @@ public interface ReviewService {
 	
 	public List<ReviewVO> reviewList(Pager pager)throws Exception;
 	
+	public List<ReviewVO> reviewPic(ReviewVO reviewVO)throws Exception;
+	
 	public ReviewVO reviewSelect(ReviewVO reviewVO)throws Exception;
 	
 	public int reviewUpdate(ReviewVO reviewVO, MultipartFile [] file, HttpSession httpSession)throws Exception;
@@ -23,7 +25,7 @@ public interface ReviewService {
 	
 	public int countUpdate(ReviewVO reviewVO)throws Exception;
 
-	public ReviewVO reviewBest(ReviewVO reviewVO)throws Exception;
+	public List<ReviewVO> reviewBest(ReviewVO reviewVO)throws Exception;
 
 
 }

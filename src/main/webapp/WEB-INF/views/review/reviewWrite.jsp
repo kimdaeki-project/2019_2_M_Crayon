@@ -165,6 +165,12 @@
 				
 				});
 			}
+			
+			function uploadFile() {
+				var form = $("#file")[0];
+				var formData = new FormData(form);
+				formData.append("frm", $("file"))
+			}
 		
 		</script>
 </body>

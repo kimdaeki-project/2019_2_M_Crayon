@@ -15,8 +15,8 @@
 		<div class="reservationTitle">
 			<div class="ReserveT">예약자 정보</div><!--제목-->
 		
-			<div class="ReserveTN">예약상품</div><!--예약 상품-->
-			<div class="ReserveP_PN">투어날짜 /인원</div> <!--가격, 인원-->
+			<div class="ReserveTN">예약상품 : ddd</div><!--예약 상품-->
+			<div class="ReserveP_PN">투어날짜 /인원 : yy/mm/dd  / 20명</div> <!--가격, 인원-->
 			
 		</div><!-- Title의 끝-->
 		<div class="InputIN">

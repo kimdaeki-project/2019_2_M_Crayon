@@ -130,10 +130,10 @@ public class ReviewController {
 	
 	@GetMapping(value = "reviewBest")
 	public ModelAndView reviewBest(ReviewVO reviewVO)throws Exception{
-		reviewVO = reviewServiceImpl.reviewBest(reviewVO);
+		List<ReviewVO> ar = reviewServiceImpl.reviewPic(reviewVO);
 		ModelAndView mv = new ModelAndView();
 		
-		mv.addObject("dto", reviewVO);
+		mv.addObject("list", ar);
 		mv.setViewName("review/reviewBest");
 		return mv;
 	}

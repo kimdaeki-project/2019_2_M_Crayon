@@ -23,12 +23,11 @@
 	width: 360px;
 	height: 560px;
 	border: 1px #010101 solid;
-	float:right;
-	margin-right:200px;
+	float: right;
+	margin-right: 200px;
 	margin-top: 200px;
 	position: sticky;
 	top: 160px;
-	
 }
 
 #adult_wrap {
@@ -186,16 +185,24 @@
 	height: 70px;
 	background-color: gray;
 	color: white;
+	font-size: x-large;
+	line-height: 70px;
+	font-weight: bold;
+	padding-left: 30px;
 }
 
 .ReserveTN {
 	width: 800px;
 	height: 50px;
+	font-size: 22px;
+	padding-left: 50px;
 }
 
 .ReserveP_PN {
 	width: 800px;
 	height: 50px;
+	font-size: 22px;
+	padding-left: 50px;
 }
 
 .InputIN {
@@ -207,56 +214,52 @@
 .RT {
 	margin-top: 20px;
 	width: 200px;
-	height: 20px;
-		margin-left: 30px;
-	
+	height: 30px;
+	margin-left: 30px;
 }
 
 .RT2 {
 	margin-top: 10px;
 	width: 200px;
-	height: 20px;
+	height: 30px;
 	margin-left: 30px;
-
 }
-.RN_wrap{
+
+.RN_wrap {
 	width: 300px;
 	height: 200px;
 	background-color: aqua;
 	float: left;
-	
+	margin-top: 20px;
 }
-.RN2_wrap{
+
+.RN2_wrap {
 	width: 300px;
 	height: 200px;
 	background-color: gray;
 	float: left;
-	
-	
-	
+	margin-top: 20px;
 }
-.RN{
+
+.RN {
 	width: 80px;
 	height: 20px;
 	margin-top: 20px;
 	font-size: medium;
 	margin-left: 30px;
-	
 }
 
-.RN2{
+.RN2 {
 	width: 80px;
 	height: 20px;
 	margin-top: 30px;
 	font-size: medium;
 	margin-left: 30px;
-	
 }
 
 .RTT {
 	width: 600px;
 	height: 100px;
-
 	margin-top: 20px;
 }
 
@@ -269,12 +272,11 @@
 #access {
 	width: 600px;
 	height: 100px;
-
 }
 
 .radioSelect {
 	width: 600px;
-	height: 70px;
+	height: 90px;
 	background-color: yellow;
 }
 
@@ -292,123 +294,121 @@
 	height: 50px;
 	background-color: yellow;
 	border-style: none;
-	margin-top: 20px;
+	margin-top: 50px;
 }
 /* ==================================== */
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  margin: 100px;
+	margin: 100px;
 }
 
 .pop-layer .pop-container {
-  padding: 20px 25px;
+	padding: 20px 25px;
 }
 
 .pop-layer p.ctxt {
-  color: #666;
-  line-height: 25px;
+	color: #666;
+	line-height: 25px;
 }
 
 .pop-layer .btn-r {
-  width: 100%;
-  margin: 10px 0 20px;
-  padding-top: 10px;
-  border-top: 1px solid #DDD;
-  text-align: right;
+	width: 100%;
+	margin: 10px 0 20px;
+	padding-top: 10px;
+	border-top: 1px solid #DDD;
+	text-align: right;
 }
 
 .pop-layer {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 800px;
-  height: 640px;
-  background-color: #fff;
-  border: 5px solid #a36ae3;
-  z-index: 10;
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 800px;
+	height: 640px;
+	background-color: #fff;
+	border: 5px solid #a36ae3;
+	z-index: 10;
 }
 
 .dim-layer {
-  display: none;
-  position: fixed;
-  _position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
+	display: none;
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
 }
 
 .dim-layer .dimBg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  opacity: .5;
-  filter: alpha(opacity=50);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: .5;
+	filter: alpha(opacity = 50);
 }
 
 .dim-layer .pop-layer {
-  display: block;
+	display: block;
 }
 
 a.btn-layerClose {
-  display: inline-block;
-  height: 55px;
-  width:100px;
-  padding: 0 14px 0;
-  background-color: #a36ae3;
-  font-size: 13px;
-  color: #fff;
-  line-height: 55px;
-  text-decoration: none;
-  font-size: 20px;
-  text-align: center;
+	display: inline-block;
+	height: 55px;
+	width: 100px;
+	padding: 0 14px 0;
+	background-color: #a36ae3;
+	font-size: 13px;
+	color: #fff;
+	line-height: 55px;
+	text-decoration: none;
+	font-size: 20px;
+	text-align: center;
 }
 
 a.btn-layerClose:hover {
-  border: 1px solid #a36ae3;
-  background-color: #a36ae3;
-  color: #fff;
-  text-decoration: none;
-}
-.Test{
-width: 750px;
-height: 420px;
-margin: 0 auto;
-
+	border: 1px solid #a36ae3;
+	background-color: #a36ae3;
+	color: #fff;
+	text-decoration: none;
 }
 
+.Test {
+	width: 750px;
+	height: 420px;
+	margin: 0 auto;
+}
 
 select {
-	width:270px;
+	width: 270px;
 	height: 30px;
 }
 
-
-
 /****/
 html, body {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
+
 .clearfix:after {
-  content: '';
-  display: block;
-  clear: both;
-  float: none;
+	content: '';
+	display: block;
+	clear: both;
+	float: none;
 }
 
 /* ======== Calendar ======== */

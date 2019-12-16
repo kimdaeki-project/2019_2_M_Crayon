@@ -103,9 +103,12 @@ public class ReviewServiceImpl implements ReviewService {
 	}
 	
 	@Override
-	public ReviewVO reviewBest(ReviewVO reviewVO)throws Exception{
-		
+	public List<ReviewVO> reviewBest(ReviewVO reviewVO)throws Exception{
 		return reviewDAOImpl.reviewBest(reviewVO);
+	}
+	
+	public List<ReviewVO> reviewPic(ReviewVO reviewVO)throws Exception{
+		return reviewDAOImpl.reviewPic(reviewVO);
 	}
 	
 
