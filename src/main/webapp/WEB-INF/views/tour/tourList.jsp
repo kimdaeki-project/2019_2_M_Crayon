@@ -29,7 +29,9 @@
 </head>
 <body>
 
-	<c:import url="../layout/nav.jsp"></c:import>
+	<c:if test="${sessionScope.member.aCheck ne 1}">
+		<c:import url="../layout/nav.jsp"></c:import>
+	</c:if>
 
 	<div class="body">
 		<div class="body_head">
@@ -40,7 +42,7 @@
 		</div>
 		<!-- 넣을거 -->
 		<div class="body_main">
-			<div class="body_name">&nbsp;투어상품</div>
+			<div class="body_name">　투어상품</div>
 			<div class="body_inner" >
 				<div class="contents">
 

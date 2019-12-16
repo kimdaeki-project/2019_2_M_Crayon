@@ -1,28 +1,28 @@
 @charset "UTF-8";
 
 #date {
-	width: 130px;
-	height: 25px;
+	width: 153px;
+	height: 32px;
 	border: 1px, #010101, solid;
 	font-size: 16px;
-	margin-left: 29px;
+	margin-left: 37px;
 }
 
 #datebn {
 	width: 50px;
-	height: 30px;
+	height: 32px;
 	border-style: none;
 	background-color: #a36ae3;
-	margin-left: 10px;
+	float:right;
 	color: white;
-	border-radius: 7px;
-	font-weight: 555;
+	border-radius: 3px;
+	font-weight: 500;
 }
 
 .reserveDate_wrap {
 	width: 360px;
 	height: 560px;
-	border: 1px #010101 solid;
+	border: 1px #999 solid;
 	float:right;
 	margin-right:350px;
 	margin-top: 200px;
@@ -32,21 +32,19 @@
 }
 
 #adult_wrap {
-	width: 200px;
+	width: 205px;
 	height: 32px;
-	border-color: black;
-	margin-left: 65px;
+	float:right;
 	font-size: 15px;
-	border: 1px #010101 solid;
+	border: 1px #999 solid;
 }
 
 #child_wrap {
-	width: 200px;
+	width: 205px;
 	height: 32px;
-	border-color: black;
-	margin-left: 112px;
+	float:right;
 	font-size: 15px;
-	border: 1px #010101 solid;
+	border: 1px #999 solid;
 }
 
 .all_wrap {
@@ -54,41 +52,38 @@
 	height: 170px;
 	margin: 0 auto;
 	margin-top: 20px;
-	font-size: large;
-	font-weight: bold;
+	font-size: 18px;
+	font-weight:500;
 }
 
 .select_all {
 	width: 360px;
-	height: 50px;
-	border-bottom: 1px #010101 solid;
+	height: 61px;
+	border-bottom: 1px #999 solid;
 	margin: 0 auto;
-	margin-top: 20px;
-	font-size: large;
 	text-align: left;
-	line-height: 60px;
-	font-size: x-large;
-	font-weight: 555;
-	font-size: x-large;
+	line-height: 61px;
+	font-weight: lighter;
+	font-size: 21px;
+	letter-spacing: -2px;
 }
 
 .selectOption {
 	width: 320px;
 	height: 180px;
-	background-color: lightgray;
-	border: 1px #010101 solid;
+	background-color: #eeeeee;
+	border: 1px #999 solid;
 	margin: 0 auto;
 }
 
 .select_btn {
 	width: 320px;
-	height: 40px;
+	height: 60px;
 	margin-left: 20px;
-	margin-top: 5px;
+	margin-top: 10px;
 	background-color: #a36ae3;
 	border-style: none;
-	font-size: 22px;
-	font-weight: 555;
+	font-size: 21px;
 	color: white;
 }
 
@@ -111,12 +106,11 @@
 #Aresult {
 	width: 100px;
 	height: 50px;
-	font-size: 16px;
+	font-size: 18px;
 	margin-top: 20px;
 	margin-left: 20px;
-	font-weight: bold;
 	color: gray;
-	font-weight: bold;
+
 }
 
 #Nad {
@@ -150,8 +144,7 @@
 	border-style: none;
 	background-color: #a36ae3;
 	color: white;
-	border-radius: 7px;
-	font-weight: 555;
+	border-radius: 3px;
 	float: left;
 	margin-top: 10px;
 }
@@ -173,82 +166,98 @@
 	width: 800px;
 	height: 960px;
 	margin: 0 auto;
-	border: 2px solid black;
+	
 }
 
 .reservationTitle {
-	width: 800px;
-	height: 150px;
+	width: 756px;
+	height: 126px;
+	margin: 0 auto;
+	border-bottom: 2px solid #bababa;
+	
 }
 
 .ReserveT {
-	width: 800px;
-	height: 70px;
+	width: 798px;
+	height: 68px;
 	background-color: gray;
 	color: white;
+	font-size:26px;
+	line-height: 68px;
+	letter-spacing: -1px;
 }
 
 .ReserveTN {
-	width: 800px;
+	width: 756px;
 	height: 50px;
+	font-size:22px;
+	font-weight:520;
+	letter-spacing: -1px;
+	padding: 20px;
 }
 
 .ReserveP_PN {
-	width: 800px;
+	width: 756px;
 	height: 50px;
+	font-size:22px;
+	letter-spacing: -1px;
+	padding: 20px;
+	font-weight:520;
 }
 
 .InputIN {
 	margin: 0 auto;
+	margin-top:30px;
 	width: 600px;
 	height: 350px;
+	letter-spacing: -1px;
 }
 
 .RT {
 	margin-top: 20px;
-	width: 200px;
-	height: 20px;
+	width: 250px;
+	height: 33px;
 		margin-left: 30px;
 	
 }
 
 .RT2 {
-	margin-top: 10px;
-	width: 200px;
-	height: 20px;
+	margin-top: 20px;
+	width: 250px;
+	height: 33px;
 	margin-left: 30px;
 
 }
 .RN_wrap{
 	width: 300px;
 	height: 200px;
-	background-color: aqua;
+	border-right: 1px dashed #bababa;
 	float: left;
 	
 }
 .RN2_wrap{
 	width: 300px;
 	height: 200px;
-	background-color: gray;
+	
 	float: left;
 	
 	
 	
 }
 .RN{
-	width: 80px;
+	width: 180px;
 	height: 20px;
 	margin-top: 20px;
-	font-size: medium;
+	font-size: 18px;
 	margin-left: 30px;
 	
 }
 
 .RN2{
-	width: 80px;
+	width: 180px;
 	height: 20px;
-	margin-top: 30px;
-	font-size: medium;
+	margin-top: 20px;
+	font-size: 18px;
 	margin-left: 30px;
 	
 }
@@ -259,6 +268,8 @@
 
 	margin-top: 20px;
 }
+
+
 
 #Raccess {
 	width: 600px;

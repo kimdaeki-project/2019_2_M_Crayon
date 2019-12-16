@@ -16,7 +16,7 @@
            <img alt="" src="./resources/images/mainHome/logo.jpg"></a>
          </div>
          <div class="navigationWrap">
-            <a href="#">투어상품</a>
+            <a href="${pageContext.request.contextPath}/tour/tourList">투어상품</a>
             <a href="${pageContext.request.contextPath}/qna/qnaHome">FAQ</a>
             <a href="${pageContext.request.contextPath}/review/reviewList">여행리뷰</a>
             <a href="${pageContext.request.contextPath}/intro/company">회사소개</a>
@@ -30,8 +30,8 @@
          	</c:if>
          </div>
          <div class="snsWrap">
-            <img alt="" src="../resources/images/header/sns_instagram_sub.jpg" id="insta">
-            <img alt="" src="../resources/images/header/sns_kakao_sub.png" id="kakaplus">
+            <img alt="" src="./resources/images/header/sns_instagram_sub.jpg" id="insta">
+            <img alt="" src="./resources/images/header/sns_kakao_sub.png" id="kakaplus">
          </div>
 
       </div>

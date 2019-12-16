@@ -3,9 +3,20 @@
 .header {
 	height: 100px;
 }
-..navigationWrap > a:hover{
+.navigationWrap > a:hover{
 	text-decoration: none;
 }
+
+.body_head{
+	position:relative;
+	top:101px;
+	background-image: url("../../images/kategorie/review.jpg");
+	background-size:cover;
+	width:100%;
+	height: 320px;
+	z-index: 5;
+}
+
 
 .body_inner {
 	margin-top: 200px;

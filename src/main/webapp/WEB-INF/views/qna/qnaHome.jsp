@@ -102,7 +102,7 @@
 		<!-- 넣을거 -->
 		<div class="body_cover">
 			<div class="body_main">
-				<div class="body_name">자주 묻는 질문</div>
+				<div class="body_name">　고객 문의</div>
 				<form action="./qnaHome" id="frm">
 					<div class="body_inner">
 						<input type="hidden" id="curPage" value="1" name="curPage">

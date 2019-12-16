@@ -70,17 +70,17 @@
 	<div class="reserveDate_wrap">
 
 		<div class="select_all">
-			<div class="select_text">날짜/인원선택</div>
+			<div class="select_text">날짜 / 인원선택</div>
 		</div>
 		<div class="all_wrap">
-			투어날짜: <input type="text" id="date">
+			투어날짜  <input type="text" id="date">
 			<button id="datebn">선택</button>
 			
 			<form id="frm" action="./calcal" method="POST">
 			<input type="hidden" value="30000" id="calPrice">
 			</form>
 			
-			<br>인원: <select id="adult_wrap"
+			<br> 인원 <select id="adult_wrap"
 				onchange="AdultFunction()">
 				<option value=0>성인0명</option>
 				<option value=1>성인1명</option>
@@ -93,7 +93,7 @@
 				<option value=8>성인8명</option>
 				<option value=9>성인9명</option>
 				<option value=10>성인10명</option>
-			</select> <br> <br> <select id="child_wrap"
+			</select> <br> <br><select id="child_wrap"
 				onchange="ChildFunction()">
 				<option value=0>어린이0명</option>
 				<option value=1>어린이1명</option>
@@ -331,7 +331,7 @@
 			var price = $("#calPrice").val();
 			var tp = (adult*price)+(child*price);
 			var date = $("#date").val(); */
-			window.open("./Reservation", "","width=850,height=960,top=100, left=600");
+			window.open("./Reservation", "","width=800,height=960,top=100, left=600");
 		}); 
 	</script>
 	
