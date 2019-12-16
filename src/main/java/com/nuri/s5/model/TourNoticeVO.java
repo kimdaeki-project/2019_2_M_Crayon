@@ -10,7 +10,7 @@ public class TourNoticeVO {
 	private String alert;
 	private String prepared;
 	private String attention;
-	private String refund;
+	private String refund;     
 	private List<TourNoticeVO> files;
 	private int tourNum;
 	

@@ -118,8 +118,6 @@
 
 		<div class="Allmoney"></div><button id="priceBtn">총 가격 보기</button>
 		<input type="button" value="예약하기" class="select_btn">
-
-
 	</div>
 
 	<!--Calendar 끝-->

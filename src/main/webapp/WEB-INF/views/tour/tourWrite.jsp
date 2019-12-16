@@ -81,18 +81,13 @@
 		var files = $("#files").html();
 		$("#files").empty();
 		
-		var time = $("#timeBlank").html();
-		$("#timeBlank").empty();
 		
 		$("#btn").click(function() {
 			$("#files").append(files);
-// 			$("#timeBlank").append(time);
 		});
 		
 		$("#files").on("click", ".del", function() {
 			$(this).parents(".form-group").remove();
-// 			$("#time").remove();
-// 			$("#timeTable").remove();
 		});
 	
 	</script>

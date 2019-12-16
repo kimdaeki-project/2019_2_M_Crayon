@@ -1,5 +1,6 @@
 package com.nuri.s5.controller;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -52,12 +53,16 @@ public class TourController {
 /////////////////////////// tour admin ///////////////////////////////////
 	
 	@GetMapping(value = "tourList")
-	public ModelAndView tourList(TourCalendarVO tourCalendarVO)throws Exception{
+	public ModelAndView tourList(TourCalendarVO tourCalendarVO, TourFilesVO tourFilesVO)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		List<TourCalendarVO> ar = tourServiceImpl.tourList(tourCalendarVO);
+		tourFilesVO.setNum(ar.get(0).gettNum());
+		System.out.println(ar.get(0).gettNum());
+		List<TourFilesVO> list = tourServiceImpl.fileSelect(tourFilesVO);
 		mv.addObject("list", ar);
 		mv.addObject("dto", tourCalendarVO);
-		mv.addObject("files", ar);
+		mv.addObject("files", list);
+		
 		mv.setViewName("tour/tourList");
 		return mv;
 	} 

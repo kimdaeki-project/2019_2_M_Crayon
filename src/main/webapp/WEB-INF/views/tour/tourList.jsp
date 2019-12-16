@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,17 +40,18 @@
 		</div>
 		<!-- 넣을거 -->
 		<div class="body_main">
-			<div class="body_name">투어상품</div>
+			<div class="body_name">&nbsp;투어상품</div>
 			<div class="body_inner" >
 				<div class="contents">
-
 
 					<div class="tour_MainForm" style="overflow: auto; margin: auto;">
 						<c:forEach items="${list}" var="dto" varStatus="st">
 							<div class="tour_wrap">
 								<div class="tourIMG_wrap">	
+<%-- 									<img alt="NoImages" src="/s5/resources/upload/tour/${files[st.0].fname}" width="320px" height="200px"> --%>
+									<h1>${files[st.index].fname}</h1>
+									<img alt="NoImages" src="/s5/resources/upload/tour/${files[st.index].fname}" width="320px" height="200px">
 									<div class="tourIMG">
-<%-- 										<img alt="NoImages" src="/s5/resources/upload/tour/${files.fname.[0]}"> --%>
 										<div class="tourLike">
 											<c:choose>
 												<c:when test="${sessionScope.member eq null}">
@@ -69,7 +71,7 @@
 									<div class="tourNN_wrap">
 										<div class="tourNUM">${dto.tourName}</div>
 										<div class="tourNAME">
-											${dto.price}
+										<fmt:formatNumber type="number" value="${dto.price}"></fmt:formatNumber>원~
 										</div>
 									</div></a>
 								</div>
