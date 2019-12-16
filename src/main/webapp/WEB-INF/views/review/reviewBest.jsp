@@ -8,8 +8,11 @@
 	<div class="main_re" style="display: inline-block; width: 500px; height: 370px; margin-left: 10px;">
 		<div class="img_circle">
 			<c:forEach items="${vo.files}" var="ck" begin="0" end="0">
-				<img onerror="this.src='/s5/resources/upload/review/f34fe4cf-9d22-4919-9b0d-075c5d7a2fa7_jihyo.jpg'" src="/s5/resources/upload/review/${ck.fname}" width="170px" height="170px">
+				<c:if test="${not empty ck.fname}">
+					<img src="/s5/resources/upload/review/${ck.fname}" width="170px" height="170px">
+				</c:if>
 			</c:forEach>
+			<img src="http://www.pariscrayon.com/images/reviewImg.jpg" width="170px" height="170px">
 		</div>
 		<div class="re_txtbox"
 			 style="width: 500px; overflow: hidden; height: 278px; border: solid 1px #bbbbbb; display: inline-block; position: relative; top: -84px;">
