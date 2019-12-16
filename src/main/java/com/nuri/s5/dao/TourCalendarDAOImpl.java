@@ -20,10 +20,6 @@ public class TourCalendarDAOImpl implements TourCalendarDAO {
 		return sqlSession.selectOne(NAMESPACE+"calendarSelect", tourCalendarVO);
 	}
 
-	@Override
-	public int tourWrite(TourCalendarVO tourCalendarVO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
 
 }

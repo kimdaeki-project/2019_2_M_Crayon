@@ -27,7 +27,9 @@
 	<div class= "body">	
 
 		<div class="body_main1">
-			<h3 class="goods_title">${dto2.tourName}</h3>
+			<input type="hidden" class="goods_number" value="${dto2.tourNum}">
+			<input type="text" class="goods_title" value="${dto2.tourName}">
+			
 <%-- 			${dto.tourName}, --%>
 			<div class="goods_main_img" style="max-width:1100px">
 				<img class="mySlides" src="../resources/images/tour/TT4_1.jpg" style="width:100%">
@@ -117,8 +119,9 @@
 		</div>
 
 		<div class="Allmoney"></div><button id="priceBtn">총 가격 보기</button>
+		
 		<input type="button" value="예약하기" class="select_btn">
-
+		
 
 	</div>
 
@@ -324,19 +327,31 @@
 			})
 		
 	</script>
+	
+	
 		
 	
 	<script type="text/javascript">
 		
 	 $(".select_btn").click(function() {
-			/* var adult = document.getElementById("adult_wrap").value;
+			
+		 	var adult = document.getElementById("adult_wrap").value;
 			var child = document.getElementById("child_wrap").value;
+			var tnum = (adult*1)+(child*1)
 			var price = $("#calPrice").val();
 			var tp = (adult*price)+(child*price);
-			var date = $("#date").val(); */
-			window.open("./Reservation", "","width=850,height=960,top=100, left=600");
+			var date = $("#date").val(); 
+			var tn = $(".goods_title").val();
+			var tnumber = $(".goods_number").val();
 			
+			if(${sessionScope.member eq null}){
+				alert("로그인을 해주세요");
+				location.href="../member/memberLogin";
+			}else{
+			window.open("./Reservation?adult="+adult+'&child='+child+'&date='+date+'&tp='+tp+'&tn='+tn+'&tnum='+tnum+'&tnumber='+tnumber, "","width=850,height=960,top=100, left=600");	
 			
+			}
+				
 	}); 
 	
 			

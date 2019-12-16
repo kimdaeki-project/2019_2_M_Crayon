@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nuri.s5.model.MemberVO;
+import com.nuri.s5.model.ReservationVO;
 import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourFilesVO;
 import com.nuri.s5.model.TourNoticeVO;
@@ -40,6 +41,21 @@ public class TourController {
 	public void Reservation() throws Exception {
 		
 	}
+	
+	@PostMapping(value = "Reservation")
+	public ModelAndView Reservation(ReservationVO reservationVO) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result = tourServiceImpl.Reservation(reservationVO);
+		mv.addObject("dto", reservationVO);
+		if(result>0) {
+			mv.setViewName("redirect:./reserveFinish");
+		}else {
+			mv.setViewName("./");
+		}
+		return mv;
+	}
+	
+
 	
 	
 /////////////////////////// tour file ///////////////////////////////////

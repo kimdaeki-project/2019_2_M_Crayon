@@ -54,5 +54,12 @@
 	<select id="tourList" parameterType="TourCalendarVO" resultType="TourCalendarVO">
 		select * from tour
 	</select>
+	
+	
+	<insert id="Reservation" parameterType="ReservationVO">
+		insert into reservation values personNum=#{personNum}, name=#{name}, email=#{email}, phone=#{phone}, 
+		tourNum=#{tourNum}, ps=#{ps}, totalPrice=#{totalPrice}, tourName=#{tourName}
+	</insert>
+	
   	
   </mapper>

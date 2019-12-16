@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.nuri.s5.dao.TourDAOImpl;
 import com.nuri.s5.dao.TourFilesDAO;
+import com.nuri.s5.model.ReservationVO;
 import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourFilesVO;
 import com.nuri.s5.model.TourNoticeVO;
@@ -71,6 +72,12 @@ public class TourServiceImpl implements TourService {
 	public List<TourCalendarVO> tourList(TourCalendarVO tourCalendarVO) throws Exception {
 		return tourDAOImpl.tourList(tourCalendarVO);
 	}
+	
+	@Override
+	public int Reservation(ReservationVO reservationVO)throws Exception{
+		return tourDAOImpl.Reservation(reservationVO);
+	}
+	
 
 	@Override
 	public int tourUpdate(TourNoticeVO tourNoticeVO, MultipartFile[] file, HttpSession session) throws Exception {
