@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourNoticeVO;
+import com.nuri.s5.model.TourVO;
 
 @Repository
 public class TourDAOImpl implements TourDAO {
@@ -33,8 +34,8 @@ public class TourDAOImpl implements TourDAO {
 
 
 	@Override
-	public List<TourCalendarVO> tourList(TourCalendarVO tourCalendarVO) throws Exception {
-		return sqlSession.selectList(NAMESPACE+"tourList", tourCalendarVO);
+	public List<TourVO> tourList(TourVO tourVO) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"tourList", tourVO);
 	}
 
 

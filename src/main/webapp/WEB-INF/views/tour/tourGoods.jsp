@@ -28,14 +28,14 @@
 
 		<div class="body_main1">
 			<h3 class="goods_title">${dto2.tourName}</h3>
-<%-- 			${dto.tourName}, --%>
 			<div class="goods_main_img" style="max-width:1100px">
-				<img class="mySlides" src="../resources/images/tour/TT4_1.jpg" style="width:100%">
-			 	<img class="mySlides" src="../resources/images/tour/TT4_2.jpg" style="width:100%">
-			 	<img class="mySlides" src="../resources/images/tour/TT4_3.jpg" style="width:100%">
-			 	<img class="mySlides" src="../resources/images/tour/TT4_4.jpg" style="width:100%">
+				<c:forEach items="${files}" var="file" >
+					<div class="">
+     					<img class="mySlides" src="/s5/resources/upload/tour/${file.fname}" style="width:100%">
+					</div>
+				</c:forEach>
 			</div>
-			<script><!--이미지 슬라이드코드-->
+		<script><!--이미지 슬라이드코드-->
 			var myIndex = 0;
 			carousel();
 			
@@ -50,7 +50,7 @@
 			  x[myIndex-1].style.display = "block";  
 			  setTimeout(carousel, 5000);    
 			}
-			</script>		
+		</script>		
 			<div id="m1"></div>
 		</div><!-- body_main1끝 -->
 		<div class="header_2">
@@ -118,8 +118,6 @@
 
 		<div class="Allmoney"></div><button id="priceBtn">총 가격 보기</button>
 		<input type="button" value="예약하기" class="select_btn">
-
-
 	</div>
 
 	<!--Calendar 끝-->
@@ -129,60 +127,60 @@
 				<div class="m">상품일정 
 					<span class="mText" style="font-size: 15px; color: gray;">날짜별로 일정이 조금씩 다르므로 아래 일정 확인해주세요</span>
 				</div>
-				<div style="width: 718px; height: 70px;">
-					<ul class="schedule" style="display: table-row;">
-						<li class="scheduleT">01/0aa1~12/31</li>
-					</ul>
-				</div>
-				
-				<ul class="planList">
-					<li class="plan">
-						<div class="planLine">
-							<c:forEach items="${files}" var="file" varStatus="table">
-					   			<div class="timeTableWrap">
-					      			<span class="timeTableBlank">
-						      			<img src="/s5/resources/upload/tour/${file.fname}" class="timeTableImg">
-						      			<span class="timeText">${file.time}</span>
-										<span class="tableText">${file.timeTable}</span>
-					      			</span>
-					    		</div>
-							</c:forEach>
-							
-							
+					<div class="scheduleT">
+						<div class="scheduleText">2019.1.1 ~ 2019.12.31
+							<div class="scheduleText2">여행일정</div>
 						</div>
-					</li>
-				</ul>
+						<ul class="planList">
+							<li class="plan">
+								<div class="planLine">
+									<c:forEach items="${files}" var="file" varStatus="table">
+							   			<div class="timeTableWrap">
+							      			<span class="timeTableBlank">
+								      			<img src="/s5/resources/upload/tour/${file.fname}" class="timeTableImg">
+								      			<span class="timeText">${file.time}</span>
+												<span class="tableText">${file.timeTable}</span>
+							      			</span>
+							    		</div>
+									</c:forEach>
+									
+									
+								</div>
+							</li>
+						</ul>
+					</div>
+				
 			</div><!-- menu1 -->
 			<div class="menu2">
 				<div class="m">
 					<input type="hidden" name="${dto.num}" value="${dto.num}"> 
 					<div class="textCompared textWrap">
 						<h4>타업체비교불가</h4>
-						<span class="textText">${dto.compared}</span>
+						<span class="textText" style="width: 720px;height: 110px;">${dto.compared}</span>
 					</div>
 					<div class="textInclude textWrap"> 
 						<h4>포함사항</h4>
-						<span class="textText">${dto.include}</span>
+						<span class="textText" style="width: 720px;height: 110px;">${dto.include}</span>
 					</div>
 					<div class="textExclude textWrap"> 
 						<h4>불포함사항</h4>
-						<span class="textText">${dto.exclude}</span>
+						<span class="textText" style="width: 720px;height: 110px;">${dto.exclude}</span>
 					</div>
 					<div class="textAlert textWrap"> 
 						<h4>안내사항</h4>
-						<span class="textText">${dto.alert}</span>
+						<span class="textText" style="width: 720px;height: 110px;">${dto.alert}</span>
 					</div>
 					<div class="textPrepared textWrap"> 
 						<h4>준비사항</h4>
-						<span class="textText">${dto.prepared}</span>
+						<span class="textText" style="width: 720px;height: 110px;">${dto.prepared}</span>
 					</div>
 					<div class="textAttention textWrap"> 
 						<h4>주의사항</h4>
-						<span class="textText">${dto.attention}</span>
+						<span class="textText" style="width: 720px;height: 110px;">${dto.attention}</span>
 					</div>
 					<div class="textRefund textWrap"> 
 						<h4>환불규정</h4>
-						<span class="textText">${dto.refund}</span>
+						<span class="textText" style="width: 720px;height: 110px;">${dto.refund}</span>
 					</div>
 					<c:forEach items="${files}" var="file" >
 						<div class="">
@@ -205,7 +203,7 @@
 				<div id="m4"></div>
 				<div class="m m4_main">여행리뷰</div>
 				<div id="reviewT"></div>
-				<button id="reviewGO" class="gocenterBtn">모든 후기 보기</button>
+				<button id="reviewGO" class="gocenterBtn" style="cursor: pointer;">모든 후기 보기</button>
 				<script type="text/javascript">
 				var xhttp;
 			      if (XMLHttpRequest) {
@@ -227,13 +225,13 @@
 			<div class="menu5">
 				<div id="m5"></div>
 				<div class="m"></div>
-				<div class="ytb"><iframe id ="ytb_box" src='https://www.youtube.com/embed/Tj2W0o3h3OI' allowfullscreen="" frameborder="0"  width="640" height="360"></iframe></div>
+				<div class="ytb"><iframe id ="ytb_box" src='${dto.youTube}' allowfullscreen="" frameborder="0"  width="640" height="360"></iframe></div>
 			</div><!-- menu5 -->
 			<div class="menu6">
 				<div class="m" id="m6">고객센터</div>
 				<div class="gocenter">
-					<button id="qnaGO" class="gocenterBtn">상품 문의</button>
-					<button id="kakaoGO" class="gocenterBtn">1:1 맞춤 카카오톡</button>
+					<button id="qnaGO" class="gocenterBtn" style="cursor: pointer;">상품 문의</button>
+					<button id="kakaoGO" class="gocenterBtn" style="cursor: pointer;">1:1 맞춤 카카오톡</button>
 					<div class="gocenterImg"><img id ="instaGO" src="../resources/images/tour/insta_banner.jpg" style="width:100%"></div>
 				</div>
 				<script type="text/javascript">
@@ -327,23 +325,15 @@
 		
 	
 	<script type="text/javascript">
-		
-	 $(".select_btn").click(function() {
+		 $(".select_btn").click(function() {
 			/* var adult = document.getElementById("adult_wrap").value;
 			var child = document.getElementById("child_wrap").value;
 			var price = $("#calPrice").val();
 			var tp = (adult*price)+(child*price);
 			var date = $("#date").val(); */
 			window.open("./Reservation", "","width=850,height=960,top=100, left=600");
-			
-			
-	}); 
-	
-			
-	
-	
+		}); 
 	</script>
-	
 	
 	
 	

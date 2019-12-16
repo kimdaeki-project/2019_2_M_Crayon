@@ -1,5 +1,6 @@
 package com.nuri.s5.controller;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -17,6 +18,7 @@ import com.nuri.s5.model.MemberVO;
 import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourFilesVO;
 import com.nuri.s5.model.TourNoticeVO;
+import com.nuri.s5.model.TourVO;
 import com.nuri.s5.service.TourCalendarServiceImpl;
 import com.nuri.s5.service.TourServiceImpl;
 
@@ -54,12 +56,12 @@ public class TourController {
 /////////////////////////// tour admin ///////////////////////////////////
 	
 	@GetMapping(value = "tourList")
-	public ModelAndView tourList(TourCalendarVO tourCalendarVO)throws Exception{
+	public ModelAndView tourList(TourVO tourVO)throws Exception{
 		ModelAndView mv = new ModelAndView();
-		List<TourCalendarVO> ar = tourServiceImpl.tourList(tourCalendarVO);
+		List<TourVO> ar = tourServiceImpl.tourList(tourVO);
+//		tourFilesVO.setNum(ar.get(0).gettNum());
+//		List<TourFilesVO> list = tourServiceImpl.fileSelect(tourFilesVO);
 		mv.addObject("list", ar);
-		mv.addObject("dto", tourCalendarVO);
-		
 		mv.setViewName("tour/tourList");
 		return mv;
 	} 
@@ -93,6 +95,13 @@ public class TourController {
 	@PostMapping(value = "tourWrite")
 	public ModelAndView tourWrite(TourNoticeVO tourNoticeVO, MultipartFile [] file, HttpSession session, String [] time, String [] timeTable) throws Exception{
 		ModelAndView mv = new ModelAndView();
+		tourNoticeVO.setCompared(tourNoticeVO.getCompared().replace("\r\n", "<br>"));
+		tourNoticeVO.setInclude(tourNoticeVO.getInclude().replace("\r\n", "<br>"));
+		tourNoticeVO.setExclude(tourNoticeVO.getExclude().replace("\r\n", "<br>"));
+		tourNoticeVO.setAlert(tourNoticeVO.getAlert().replace("\r\n", "<br>"));
+		tourNoticeVO.setPrepared(tourNoticeVO.getPrepared().replace("\r\n", "<br>"));
+		tourNoticeVO.setAttention(tourNoticeVO.getAttention().replace("\r\n", "<br>"));
+		tourNoticeVO.setRefund(tourNoticeVO.getRefund().replace("\r\n", "<br>"));
 		int result = tourServiceImpl.tourWrite(tourNoticeVO, file, session,time,timeTable);
 		mv.addObject("dto", tourNoticeVO);
 		if(result>0) {

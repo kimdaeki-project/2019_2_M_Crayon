@@ -32,33 +32,36 @@
 	  	<span>상품번호 : <input type="text" name="tourNum" placeholder="tourNum"></span>
 		
 		<h3>타업체비교불가</h3>
-		<textarea rows="5" cols="70" name="compared"></textarea>
+		<textarea rows="5" cols="70" name="compared" class="textText"></textarea>
 		
 		<h3>포함사항</h3>
-		<textarea rows="5" cols="70" name="include"></textarea>
+		<textarea rows="5" cols="70" name="include" class="textText"></textarea>
 		
 		<h3>불포함사항</h3>
-		<textarea rows="5" cols="70" name="exclude"></textarea>
+		<textarea rows="5" cols="70" name="exclude" class="textText"></textarea>
 		
 		<h3>투어안내</h3>
-		<textarea rows="5" cols="70" name="alert"></textarea>
+		<textarea rows="5" cols="70" name="alert" class="textText"></textarea>
 		
 		<h3>준비사항</h3>
-		<textarea rows="5" cols="70" name="prepared"></textarea>
+		<textarea rows="5" cols="70" name="prepared" class="textText"></textarea>
 		
 		<h3>주의사항</h3>
-		<textarea rows="5" cols="70" name="attention"></textarea>
+		<textarea rows="5" cols="70" name="attention" class="textText"></textarea>
 		
 		<h3>환불규정</h3>
-		<textarea rows="5" cols="70" name="refund"></textarea>
+		<textarea rows="5" cols="70" name="refund" class="textText"></textarea>
+		
+		<h3>유튜브주소</h3>
+		<textarea rows="5" cols="70" name="youTube" class="textText"></textarea>
 		
 		
 		<div id="files" style="">	   		
 	    	<div class="form-group" title="parent" id="a1" style="">
       			<label class="control-label col-sm-6" for="file">File:</label>
-      			<div class="col-sm-9">
+      			<div class="col-sm-9" style="margin-bottom: 80px;">
       				<input type="file" class="form-control" id="file" name="file">
-   					<div id="timeBlank" style="width: 100px; height: 100px;" >
+   					<div id="timeBlank" style="width: 70px; height: 50px;" >
 					  	<span>시간 : <input type="text" name="time" placeholder="time" id="time"></span>
 					  	<span>일정 : <input type="text" name="timeTable" placeholder="timeTable" id="timeTable"></span>
 				  	</div>
@@ -69,7 +72,7 @@
 			</div>
 		</div>
 		
-		<div class="btnAdd" style="height: 50px; margin-right: 100px; margin-bottom: 100px;">
+		<div class="btnAdd" style="height: 50px; margin-right: 70px; margin-bottom: 70px;">
 	   		<input type="button" value="add file" class="btn btn-default" id="btn" style="cursor: pointer; float: right;">
 		</div>
 		
@@ -81,18 +84,13 @@
 		var files = $("#files").html();
 		$("#files").empty();
 		
-		var time = $("#timeBlank").html();
-		$("#timeBlank").empty();
 		
 		$("#btn").click(function() {
 			$("#files").append(files);
-// 			$("#timeBlank").append(time);
 		});
 		
 		$("#files").on("click", ".del", function() {
 			$(this).parents(".form-group").remove();
-// 			$("#time").remove();
-// 			$("#timeTable").remove();
 		});
 	
 	</script>

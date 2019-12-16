@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,15 +40,18 @@
 		</div>
 		<!-- 넣을거 -->
 		<div class="body_main">
-			<div class="body_name">투어상품</div>
+			<div class="body_name">&nbsp;투어상품</div>
 			<div class="body_inner" >
 				<div class="contents">
-
 
 					<div class="tour_MainForm" style="overflow: auto; margin: auto;">
 						<c:forEach items="${list}" var="dto" varStatus="st">
 							<div class="tour_wrap">
-								<div class="tourIMG_wrap">
+								<div class="tourIMG_wrap">	
+								<c:forEach items="${dto.files}" var="ck" begin="0" end="0">
+<%-- 									<img alt="NoImages" src="/s5/resources/upload/tour/${files[st.0].fname}" width="320px" height="200px"> --%>
+									<img alt="img" src="/s5/resources/upload/tour/${ck.fname}" width="320px" height="200px">
+								</c:forEach>
 									<div class="tourIMG">
 										<div class="tourLike">
 											<c:choose>
@@ -68,7 +72,7 @@
 									<div class="tourNN_wrap">
 										<div class="tourNUM">${dto.tourName}</div>
 										<div class="tourNAME">
-											${dto.price}
+										<fmt:formatNumber type="number" value="${dto.price}"></fmt:formatNumber>원~
 										</div>
 									</div></a>
 								</div>
@@ -79,12 +83,12 @@
 					<!--tour_MainForm 끝-->
 				</div>
 			</div>
-			<div class="tour_write_btn">
-				<a href="./tourWrite">글쓰기</a>
-			</div>
 
 
 		</div>
+			<div class="tour_white_btn">
+				<a href="./tourWrite">글쓰기</a>
+			</div>
 	</div>
 
 

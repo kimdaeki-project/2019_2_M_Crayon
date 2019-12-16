@@ -18,41 +18,49 @@
   	where email=#{email} and tourNum =#{tourNum}
   	</update>
   
-  
-  
   	<insert id="tourWrite" parameterType="TourNoticeVO">
   		<selectKey order="BEFORE" resultType="Integer" keyProperty="num">
   			select seq_tour.nextval from dual		
   		</selectKey>
 	  	insert into tourNotice
-	  	values(#{num}, #{compared}, #{include}, #{exclude}, #{alert}, #{prepared}, #{attention}, #{refund}, #{tourNum})
+	  	values(#{num}, #{compared}, #{include}, #{exclude}, #{alert}, #{prepared}, #{attention}, #{refund}, #{tourNum}, #{youTube})
   	</insert>
   	
   	<select id="tourSelect" parameterType="TourNoticeVO" resultType="TourNoticeVO">
   		select * from tourNotice where tourNum =#{tourNum}
   	</select>
   	
-<!-- 	<resultMap type="TourNoticeVO" id="tourFile"> -->
-<!-- 		<id property="num" column="num" /> -->
-<!-- 		<result property="compared" column="compared" /> -->
-<!-- 		<result property="include" column="include" /> -->
-<!-- 		<result property="exclude" column="exclude" /> -->
-<!-- 		<result property="alert" column="alert" /> -->
-<!-- 		<result property="prepared" column="prepared" /> -->
-<!-- 		<result property="attention" column="attention" /> -->
-<!-- 		<result property="refund" column="refund" /> -->
-<!-- 		<result property="tourNum" column="tourNum" /> -->
-<!-- 		<collection property="files" javaType="java.util.List" ofType="TourFilesVO"> -->
-<!-- 			<id property="fnum" column="fnum" /> -->
-<!-- 			<result property="fname" column="fname" /> -->
-<!-- 			<result property="oname" column="oname" /> -->
-<!-- 			<result property="timeTable" column="timeTable" /> -->
-<!-- 			<result property="time" column="time" /> -->
-<!-- 		</collection> -->
-<!-- 	</resultMap> -->
+	<resultMap type="TourVO" id="tourFile">
+		<id property="tourNum" column="tourNum" />
+		<result property="compared" column="compared" />
+		<result property="include" column="include" />
+		<result property="exclude" column="exclude" />
+		<result property="alert" column="alert" />
+		<result property="prepared" column="prepared" />
+		<result property="attention" column="attention" />
+		<result property="refund" column="refund" />
+		<result property="youTube" column="youTube"/>
+		<result property="tNum" column="tNum" />
+		<result property="tourName" column="tourName"/>
+		<result property="maxNum" column="maxNum"/>
+		<result property="price" column="price"/>
+		<result property="totalNum" column="totalNum"/>
+		<result property="num" column="num"/>
+		<collection property="files" javaType="java.util.List" ofType="TourFilesVO">
+			<id property="fnum" column="fnum" />
+			<result property="fname" column="fname" />
+			<result property="oname" column="oname" />
+			<result property="timeTable" column="timeTable" />
+			<result property="time" column="time" />
+		</collection>
+	</resultMap>
+
+	<select id="tourList" resultMap="tourFile">
+		select * from tour full outer join  tournotice using(tournum) full outer join tourfiles using(num) order by tourNum asc
+	</select>
 	
-	<select id="tourList" parameterType="TourCalendarVO" resultType="TourCalendarVO">
-		select * from tour
+	<select id="tourImgList" parameterType="TourFilesVO" resultType="TourFilesVO">
+		select fname, num from tourfiles where fnum = (select max(fnum) from tourfiles)
 	</select>
   	
   </mapper>

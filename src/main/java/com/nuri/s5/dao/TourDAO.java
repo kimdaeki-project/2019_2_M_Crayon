@@ -8,6 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourNoticeVO;
+import com.nuri.s5.model.TourVO;
 
 public interface TourDAO {
 	
@@ -15,7 +16,7 @@ public interface TourDAO {
 	
 	public TourNoticeVO tourSelect(TourNoticeVO tourNoticeVO)throws Exception;
 	
-	public List<TourCalendarVO> tourList(TourCalendarVO tourCalendarVO)throws Exception;
+	public List<TourVO> tourList(TourVO tourVO)throws Exception;
 	
 	public int tourUpdate(TourNoticeVO tourNoticeVO)throws Exception;
 	

@@ -103,13 +103,11 @@ div.header_2{
 .menu1{
 	width: 100%;
 	height: 800px;
-	background: green;
 }
 
 .plan{
 	width: 718px;
 	height: 130px;
-	background: pink;
 	padding: 10px 20px;
 	
 }
@@ -122,7 +120,6 @@ div.header_2{
 .menu2{
 	width: 100%;
 	height: 100%;
-	background: olive;
 }
 
 #m2{
@@ -144,6 +141,7 @@ div.header_2{
 }
 
 .m3{
+	margin-top: 40px;
 	width: 720px;
 	height: 400px;
 	background-color: #f6f6f6;	
@@ -169,7 +167,11 @@ div.header_2{
 }
 
 .menu3{
-	width: 100%;
+	margin-left: 20px;
+	margin-top: 20px;
+	width: 720px;
+	height: 450px;
+	border-top: 1.5px solid #cacaca;
 
 }
 
@@ -177,6 +179,7 @@ div.header_2{
 	font-size: 24px;
 	font-weight: normal;
 	letter-spacing: 1;
+
 }
 
 /**/
@@ -253,11 +256,17 @@ div.header_2{
 
 /* ==================== 넘기는거 css ==================== */
 .scheduleT{
-	border: 1px solid #cacaca;
-	width: 718px;
-	height: 70px;
-	font-size: 20px;
-	margin: auto;
+	width: 700px;
+	height: 700px;
+	border: 1px solid gray; 
+}
+.scheduleText{
+	line-height: 4;
+	margin-left: 270px;
+}
+.scheduleText2{
+	margin-top: -40px;
+	margin-left: 40px;
 }
 
 .timeTableImg{
@@ -278,12 +287,12 @@ div.header_2{
 	font-weight: bold;
 	margin-left: 50px;
 	vertical-align: top;
-	line-height: 5;
+	line-height: 4;
 }
 
 .tableText{
 	font-size: 18px;
-	line-height: 7;
+	line-height: 5.5;
 	vertical-align: top;
 	margin-left: 10px;
 }
@@ -299,7 +308,8 @@ h4{
 .textText{
 	padding-bottom: 30px;
 	margin-left: 10px;
-	line-height: 1.5;
+	line-height: 2;
 	font-size: 16px;
 	font-weight: 200;
+	display: block;
 }
