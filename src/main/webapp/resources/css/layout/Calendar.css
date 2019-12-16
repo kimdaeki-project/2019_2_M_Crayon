@@ -74,6 +74,7 @@
 	background-color: #eeeeee;
 	border: 1px #999 solid;
 	margin: 0 auto;
+	color:#888;
 }
 
 .select_btn {
@@ -100,7 +101,7 @@
 	line-height: 30px;
 	margin: 0 auto;
 	font-size: 16px;
-	font-weight: bold;
+
 }
 
 #Aresult {
