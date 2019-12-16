@@ -13,6 +13,7 @@ import com.nuri.s5.dao.TourFilesDAO;
 import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourFilesVO;
 import com.nuri.s5.model.TourNoticeVO;
+import com.nuri.s5.model.TourVO;
 import com.nuri.s5.util.FileSaver;
 
 @Service
@@ -68,8 +69,8 @@ public class TourServiceImpl implements TourService {
 	}
 
 	@Override
-	public List<TourCalendarVO> tourList(TourCalendarVO tourCalendarVO) throws Exception {
-		return tourDAOImpl.tourList(tourCalendarVO);
+	public List<TourVO> tourList(TourVO tourVO) throws Exception {
+		return tourDAOImpl.tourList(tourVO);
 	}
 
 	@Override

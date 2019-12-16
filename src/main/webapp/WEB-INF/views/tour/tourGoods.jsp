@@ -225,7 +225,7 @@
 			<div class="menu5">
 				<div id="m5"></div>
 				<div class="m"></div>
-				<div class="ytb"><iframe id ="ytb_box" src='https://www.youtube.com/embed/Tj2W0o3h3OI' allowfullscreen="" frameborder="0"  width="640" height="360"></iframe></div>
+				<div class="ytb"><iframe id ="ytb_box" src='${dto.youTube}' allowfullscreen="" frameborder="0"  width="640" height="360"></iframe></div>
 			</div><!-- menu5 -->
 			<div class="menu6">
 				<div class="m" id="m6">고객센터</div>

@@ -2,7 +2,7 @@ package com.nuri.s5.model;
 
 import java.util.List;
 
-public class TourNoticeVO {
+public class TourVO {
 	private int num;
 	private String compared;
 	private String include;
@@ -13,27 +13,18 @@ public class TourNoticeVO {
 	private String refund;     
 	private List<TourNoticeVO> files;
 	private int tourNum;
+	private int tNum;
+	private String tourName;
+	private int maxNum;
+	private int price; 
+	private int totalNum;
 	private String youTube;
 	
-	
-
 	public String getYouTube() {
 		return youTube;
 	}
 	public void setYouTube(String youTube) {
 		this.youTube = youTube;
-	}
-	public int getTourNum() {
-		return tourNum;
-	}
-	public void setTourNum(int tourNum) {
-		this.tourNum = tourNum;
-	}
-	public List<TourNoticeVO> getFiles() {
-		return files;
-	}
-	public void setFiles(List<TourNoticeVO> files) {
-		this.files = files;
 	}
 	public int getNum() {
 		return num;
@@ -83,7 +74,48 @@ public class TourNoticeVO {
 	public void setRefund(String refund) {
 		this.refund = refund;
 	}
-	
+	public List<TourNoticeVO> getFiles() {
+		return files;
+	}
+	public void setFiles(List<TourNoticeVO> files) {
+		this.files = files;
+	}
+	public int getTourNum() {
+		return tourNum;
+	}
+	public void setTourNum(int tourNum) {
+		this.tourNum = tourNum;
+	}
+	public int gettNum() {
+		return tNum;
+	}
+	public void settNum(int tNum) {
+		this.tNum = tNum;
+	}
+	public String getTourName() {
+		return tourName;
+	}
+	public void setTourName(String tourName) {
+		this.tourName = tourName;
+	}
+	public int getMaxNum() {
+		return maxNum;
+	}
+	public void setMaxNum(int maxNum) {
+		this.maxNum = maxNum;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public int getTotalNum() {
+		return totalNum;
+	}
+	public void setTotalNum(int totalNum) {
+		this.totalNum = totalNum;
+	}
 	
 	
 }

@@ -52,6 +52,9 @@
 		<h3>환불규정</h3>
 		<textarea rows="5" cols="70" name="refund" class="textText"></textarea>
 		
+		<h3>유튜브주소</h3>
+		<textarea rows="5" cols="70" name="youTube" class="textText"></textarea>
+		
 		
 		<div id="files" style="">	   		
 	    	<div class="form-group" title="parent" id="a1" style="">

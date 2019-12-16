@@ -48,9 +48,10 @@
 						<c:forEach items="${list}" var="dto" varStatus="st">
 							<div class="tour_wrap">
 								<div class="tourIMG_wrap">	
+								<c:forEach items="${dto.files}" var="ck" begin="0" end="0">
 <%-- 									<img alt="NoImages" src="/s5/resources/upload/tour/${files[st.0].fname}" width="320px" height="200px"> --%>
-									<h1>${files[st.index].fname}</h1>
-									<img alt="NoImages" src="/s5/resources/upload/tour/${files[st.index].fname}" width="320px" height="200px">
+									<img alt="img" src="/s5/resources/upload/tour/${ck.fname}" width="320px" height="200px">
+								</c:forEach>
 									<div class="tourIMG">
 										<div class="tourLike">
 											<c:choose>
