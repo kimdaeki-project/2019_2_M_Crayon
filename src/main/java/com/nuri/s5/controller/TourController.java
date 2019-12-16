@@ -21,9 +21,11 @@ import com.nuri.s5.service.TourCalendarServiceImpl;
 import com.nuri.s5.service.TourServiceImpl;
 
 
+
 @Controller
 @RequestMapping("/tour/**")
 public class TourController {
+
 	
 	@Inject
 	private TourServiceImpl tourServiceImpl;
@@ -111,5 +113,15 @@ public class TourController {
 	public void realCal() throws Exception {
 
 	}
+	
+	@GetMapping(value = "tourVIP")
+	   public void tourVIP() throws Exception {
+
+	   }
+	   
+	   @GetMapping(value = "tourGoods")
+	   public void tourGoods() throws Exception {
+
+	   }
 	
 }
