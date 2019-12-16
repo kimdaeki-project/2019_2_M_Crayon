@@ -118,10 +118,5 @@ public class TourController {
 	   public void tourVIP() throws Exception {
 
 	   }
-	   
-	   @GetMapping(value = "tourGoods")
-	   public void tourGoods() throws Exception {
 
-	   }
-	
 }

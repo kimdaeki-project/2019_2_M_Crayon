@@ -90,7 +90,7 @@
 		
 		<!-- 넣을거 -->
 		<div class="body_main">
-			<div class="body_name">  후기게시판</div>
+			<div class="body_name">　후기게시판</div>
 			<div class="body_inner">
 				<div class="contents">
 					<!-------- 여기부터 테이블 시작 ----------->

@@ -10,7 +10,7 @@
 	height: 100px;
 	background-color: lightgray;
 	position: fixed;
-	z-index: 1;
+	z-index: 999;
 }
 
 .adtopname {
