@@ -14,8 +14,6 @@
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/bodyMain.css"/>"
 	rel="stylesheet">
-<link href="<c:url value="/resources/css/layout/review.css"/>"
-	rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/tour.css"/>"
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/reset.css"/>"
@@ -96,7 +94,7 @@
 			<div class="tour_white_btn">
 				<a href="./tourWrite">글쓰기</a>
 			</div>
-	</div>
+	</div><!-- body끝 -->
 
 
 	<c:import url="../layout/navFoot.jsp"></c:import>
