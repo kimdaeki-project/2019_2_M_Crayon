@@ -333,7 +333,13 @@
 	
 
 	<script type="text/javascript">
-
+	
+	  $(".select_btn").click(function() {
+		  
+		  	var adult = document.getElementById("adult_wrap").value;
+			var child = document.getElementById("child_wrap").value;
+			var personNum = (adult*1)+(child*1)
+			var price = $("#calPrice").val();
 			var totalPrice = (adult*price)+(child*price);
 			var day = $("#date").val(); 
 			var tourName = $(".goods_title").val();
@@ -350,13 +356,12 @@
 					$("#adult_wrap").focus();
 				}else{
 					window.open("./Reservation?adult="+adult+'&child='+child+'&day='+day+'&totalPrice='+totalPrice+'&tourName='+tourName+'&personNum='+personNum+'&tourNum='+tourNum, "","width=850,height=960,top=100, left=600");	
-			
+					
 			}
-				
-	}); 
-	
 
-	
+	     }); 
+
+
 
 	</script>
 	

@@ -13,7 +13,7 @@ public class ReservationVO {
 	private int totalPrice;
 	private String tourName;
 	private String kakaoID;
-	private int totalNum;
+
 	
 	
 	

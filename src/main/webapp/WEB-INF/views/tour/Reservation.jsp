@@ -33,7 +33,7 @@
 		<div class="InputIN">
 				<div class="RN_wrap">
 				 <div class="RN">아이디</div><input type="text" id='email' name="email" readonly="readonly" value="${sessionScope.member.email}" class="RT"> 
-				 <div class="RN">카카오톡 아이디</div><input type="text" id='moneyMan' name="moneyMan" class="RT"> 
+				 <div class="RN">카카오톡 아이디</div><input type="text" id='kakaoID' name="kakaoID" class="RT"> 
 				</div>
 				<div class="RN2_wrap">
 				<div class="RN2">이름</div> <input type="text" id='name' readonly="readonly" class="RT2" value="${sessionScope.member.name}" name="name" class="RT2"> 
