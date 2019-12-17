@@ -1,4 +1,18 @@
 @charset "UTF-8";
+.vipgo{
+	background: url("../../images/kategorie/vip.jpg");
+	width:1038px;
+	height:260px;
+	background-size:cover;
+	margin-bottom: 40px;
+
+}
+
+.vg{
+	width: 1038px;
+	height: 40px;
+	border-top : 4px dotted #a36ae3;
+}
 
 .body_head{
 	position:relative;
@@ -43,8 +57,9 @@
 	border-right: 1px solid #dadada;
 }
 
-.TN_wrap :hover{
-/* 	border: 2px solid #dadada; */
+.TN_wrap a:hover{
+	text-decoration: none;
+	
 }
 
 .tourNUM {
@@ -53,7 +68,8 @@
 	padding-top:10px;
 	margin-left: 20px;
 	font-size: 19px;
-	font-weight: bold;
+	letter-spacing:-2px;
+	font-weight:550;
 	line-height: 2;
 	color: black;
 }

@@ -208,22 +208,22 @@
 
 .InputIN {
 	margin: 0 auto;
-	margin-top:30px;
+	margin-top:20px;
 	width: 600px;
 	height: 220px;
 	letter-spacing: -1px;
 }
 
 .RT {
-	margin-top: 20px;
+	margin-top: 10px;
 	width: 250px;
 	height: 33px;
-		margin-left: 30px;
+	margin-left: 30px;
 	
 }
 
 .RT2 {
-	margin-top: 20px;
+	margin-top: 10px;
 	width: 250px;
 	height: 33px;
 	margin-left: 30px;
@@ -266,51 +266,58 @@
 .RTT {
 	width: 600px;
 	height: 100px;
-
-	margin-top: 20px;
+	resize: none;
+	margin-top: 10px;
 }
 
 .pstxt{
+	font-size: 16px;
 	width: 600px;
 	margin: 0 auto;
 }
 
-#psRTT{
-	
-}
 
 #Raccess {
 	width: 600px;
-	height: 200px;
+	height: 150px;
 	margin: 0 auto;
+	margin-top: 20px;
 }
 
 #access {
 	width: 600px;
 	height: 100px;
+	resize: none;
+	margin-top: 10px;
 
 }
 
-.radioSelect {
+.checkSelect {
 	width: 600px;
-	height: 70px;
-	background-color: yellow;
+	height: 50px;
+	float: left;
 }
 
 .reserveOK {
 	width: 250px;
 	height: 50px;
-	background-color: aqua;
+	background-color: #a36ae3;
+	border-radius:3px;
+	font-size:18px;
 	margin-left: 150px;
 	border-style: none;
 	margin-top: 20px;
+	color:white;
 }
 
 .NOreserve {
 	width: 250px;
 	height: 50px;
-	background-color: yellow;
+	background-color: #a36ae3;
+	font-size:18px;
 	border-style: none;
+	border-radius:3px;
+	color:white;
 	margin-top: 20px;
 }
 /* ==================================== */
