@@ -12,6 +12,18 @@ public class ReservationVO {
 	private String ps;
 	private int totalPrice;
 	private String tourName;
+	private String kakaoID;
+	private int totalNum;
+	
+	
+	
+
+	public String getKakaoID() {
+		return kakaoID;
+	}
+	public void setKakaoID(String kakaoID) {
+		this.kakaoID = kakaoID;
+	}
 	public int getPersonNum() {
 		return personNum;
 	}

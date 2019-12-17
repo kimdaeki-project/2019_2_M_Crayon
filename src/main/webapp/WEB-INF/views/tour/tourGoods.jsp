@@ -337,25 +337,30 @@
 			
 		 	var adult = document.getElementById("adult_wrap").value;
 			var child = document.getElementById("child_wrap").value;
-			var tnum = (adult*1)+(child*1)
+			var personNum = (adult*1)+(child*1)
 			var price = $("#calPrice").val();
-			var tp = (adult*price)+(child*price);
-			var date = $("#date").val(); 
-			var tn = $(".goods_title").val();
-			var tnumber = $(".goods_number").val();
+			var totalPrice = (adult*price)+(child*price);
+			var day = $("#date").val(); 
+			var tourName = $(".goods_title").val();
+			var tourNum = $(".goods_number").val();
 			
 			if(${sessionScope.member eq null}){
 				alert("로그인을 해주세요");
 				location.href="../member/memberLogin";
-			}else{
-			window.open("./Reservation?adult="+adult+'&child='+child+'&date='+date+'&tp='+tp+'&tn='+tn+'&tnum='+tnum+'&tnumber='+tnumber, "","width=850,height=960,top=100, left=600");	
+				}else if($("#date").val() == "") {
+					alert("날짜를 선택하세요")
+					$("#date").focus();
+				} else if(($("#adult_wrap").val()+$("#child_wrap").val()) < 1){
+					alert("한명이상은 선택해주세요")
+					$("#adult_wrap").focus();
+				}else{
+					window.open("./Reservation?adult="+adult+'&child='+child+'&day='+day+'&totalPrice='+totalPrice+'&tourName='+tourName+'&personNum='+personNum+'&tourNum='+tourNum, "","width=850,height=960,top=100, left=600");	
 			
 			}
 				
 	}); 
 	
-			
-	
+
 	
 	</script>
 	

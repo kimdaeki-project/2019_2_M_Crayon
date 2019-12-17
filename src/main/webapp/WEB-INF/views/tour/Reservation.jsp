@@ -6,47 +6,65 @@
 <head>
 <meta charset="UTF-8">
 <title>Reservation</title>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link href="<c:url value="/resources/css/layout/Calendar.css"/>"
 	rel="stylesheet">
 </head>
 <body>
-	<form id="frm_1" action="./Reservation" method="POST">
 
-	
+	<form id="form11" action="./Reservation" method="POST">
+
 		<div class="reservationTitle">
 			<div class="ReserveT">예약자 정보</div>
 			<!--제목-->
 
-			<div class="ReserveTN">예약상품 : ${param.tn}</div>
-			<input type="hidden" value="${param.tournum}">
+			예약상품 : <input type="text" class="ReserveTN" id="tourName" name="tourName" value="${param.tourName}"> <!--tourName-->
+					<input type="hidden" id="tourNum" name="tourNum" value="${param.tourNum}"> <!--tourNum-->
+					
 			<!--예약 상품-->
-			<div class="ReserveP_PN">투어날짜 : ${param.date}
-				/성인:${param.adult} 명, 어린이:${param.child} 명   /총: ${param.tnum} 명 / 가격: ${param.tp}</div>
-			<!--가격, 인원-->
+			투어날짜 :<input type="text" id="day" name="day" class="ReserveP_PN" value="${param.day}"><!--day-->
+					<input type="hidden" value="${param.adult}"> 
+					<input type="hidden" value="${param.child}">
+				
+				
+				 총: <input type="text" id="personNum" name="personNum" value="${param.personNum}">명  <!--personNum-->
+				 가격: <input type="text" id="totalPrice" name="totalPrice" value="${param.totalPrice}"> 원 <!--totalPrice-->
+				<!--가격, 인원-->
 
-		</div>
+				</div>
+				
 		<!-- Title의 끝-->
 		<div class="InputIN">
 			<div class="RN_wrap">
+				
 				<div class="RN">ID</div>
-				<input type="text" id='email' name="email" class="RT" value="${sessionScope.member.email}">
-				<div class="RN">입금자</div>
-				<input type="text" id='moneyMan' name="moneyMan" class="RT">
+				<input type="text" id='email' name="email" class="RT" readonly="readonly" value="${sessionScope.member.email}"> <!--email-->
+				
+				<div class="RN">KaKaoID</div>
+				<input type="text" id='kakaoID' name="kakaoID" class="RT"><!--KaKaoID-->
 			</div>
+			
 			<div class="RN2_wrap">
+				
 				<div class="RN2">이름</div>
-				<input type="text" id='name' name="name" class="RT2" value="${sessionScope.member.name}">
+				<input type="text" id='name' name="name" readonly="readonly" class="RT2" value="${sessionScope.member.name}"><!--name-->
+				
 				<div class="RN2">전화번호</div>
-				<input type="text" id='phone' name="phone" class="RT2">
+				<input type="text" id='phone' name="phone" class="RT2"><!--phone-->
 			</div>
+		
+		<br>
 			<br>
-			<br>
-			<textarea id="ps" name="ps" class="RTT"></textarea>
+			
+			<textarea id="ps" name="ps" class="RTT"></textarea> <!--ps-->
 		</div>
 		<div id="Raccess">
 			<!-- 이용약관-->
 			사용자 이용약관
-			<textarea id="access" name="access">
+			<textarea id="access" >
 1. 개인정보의 처리 목적 
 파리크레파스(이하 '여행사')는 다음의 목적을 위하여 개인정보를 처리하고 있으며, 다음의 목적 이외의 용도로는 이용하지 않습니다.
 - 고객 가입의사 확인, 고객에 대한 서비스 제공에 따른 본인 식별.인증, 회원자격 유지.관리, 물품 또는 서비스 공급에 따른 금액 결제, 물품 또는 서비스의 공급.배송 등
@@ -92,16 +110,52 @@
 					</textarea>
 			<div class="radioSelect">
 				<div>동의</div>
-				<input type="radio">
+				<input type="radio" name="radioCheck" checked="checked">
 				<div>동의하지 않음</div>
-				<input type="radio">
+				<input type="radio" name="radioCheck">
 			</div>
 		</div>
 		<div class="ReserveButn">
-			<input type="button" class="reserveOK" value="예약"> <input
-				type="button" class="NOreserve" value="취소">
+			<input type="button" class="reserveOK" id="reserveOK" value="예약"> 
+			<input type="button" class="NOreserve" id="NOreserve" value="취소">
 		</div>
 	</form>
+	
+	
+	
+	
+	
+	<script type="text/javascript">
+		
+	$(".reserveOK").click(function() {
+		if ($("#kakaoID").val() == "") {
+			alert("kakaoID를 입력하세요!");
+			$("#kakaoID").focus();
+
+		} else if ($("#phone").val() == "") {
+			alert("전화번호를 입력하세요!")
+			$("#phone").focus();
+		} else {
+		
+			$("#form11").submit();
+			alert("예약성공");
+			window.self.close();
+			opener.location.replace('../');
+			
+			
+		}
+	});
+	
+	
+	$(".NOreserve").click(function() {
+		alert("예약 취소");
+		window.self.close();
+	});
+		
+	
+	
+	
+	</script>
 
 
 </body>

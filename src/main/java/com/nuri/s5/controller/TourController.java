@@ -35,23 +35,29 @@ public class TourController {
 	
 	/* tourCalendar 예약폼*/
 
-	
-	
+
 	@GetMapping(value = "Reservation")
-	public void Reservation() throws Exception {
+	public void Reservation(ReservationVO reservationVO) throws Exception {
 		
 	}
 	
 	@PostMapping(value = "Reservation")
-	public ModelAndView Reservation(ReservationVO reservationVO) throws Exception{
+	public ModelAndView Reservation(TourCalendarVO tourCalendarVO,ReservationVO reservationVO,HttpSession session) throws Exception{
+		
 		ModelAndView mv = new ModelAndView();
-		int result = tourServiceImpl.Reservation(reservationVO);
+		
+		reservationVO.setTourNum(tourCalendarVO.getTourNum());
+		
+		int result = tourServiceImpl.Reservation(reservationVO, session);
+		System.out.println(result);
 		mv.addObject("dto", reservationVO);
-		if(result>0) {
-			mv.setViewName("redirect:./reserveFinish");
-		}else {
-			mv.setViewName("./");
-		}
+		String msg = "Fail";
+		if (result > 0)
+			msg = "Success";
+
+		mv.addObject("msg", msg);
+		mv.addObject("path", "tour/tourList");
+		mv.setViewName("common/common_result");
 		return mv;
 	}
 	

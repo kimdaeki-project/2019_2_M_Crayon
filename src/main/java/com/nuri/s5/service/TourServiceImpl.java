@@ -74,7 +74,7 @@ public class TourServiceImpl implements TourService {
 	}
 	
 	@Override
-	public int Reservation(ReservationVO reservationVO)throws Exception{
+	public int Reservation(ReservationVO reservationVO,HttpSession session)throws Exception{
 		return tourDAOImpl.Reservation(reservationVO);
 	}
 	

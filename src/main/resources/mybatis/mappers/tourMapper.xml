@@ -2,64 +2,69 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
-  <mapper namespace="tourMapper">
-  
-  	<!-- 좋아요 클릭 --> 
-  	<update id="like_check" parameterType="HashMap">
-  	update wishlike set likeCheck = likeCheck+1 
-  	where email=#{email} and tourNum=#{tourNum}
-  	</update>
-  	
-  	<!--좋아요 취소-->
-  
-  	<update id="like_check_cancle" parameterType="HashMap">
-  	update wishlike set likeCheck = 0
-  	where email=#{email} and tourNum =#{tourNum}
-  	</update>
-  
-  
-  
-  	<insert id="tourWrite" parameterType="TourNoticeVO">
-  		<selectKey order="BEFORE" resultType="Integer" keyProperty="num">
-  			select seq_tour.nextval from dual		
-  		</selectKey>
-	  	insert into tourNotice
-	  	values(#{num}, #{compared}, #{include}, #{exclude}, #{alert}, #{prepared}, #{attention}, #{refund}, #{tourNum})
-  	</insert>
-  	
-  	<select id="tourSelect" parameterType="TourNoticeVO" resultType="TourNoticeVO">
-  		select * from tourNotice where tourNum =#{tourNum}
-  	</select>
-  	
-<!-- 	<resultMap type="TourNoticeVO" id="tourFile"> -->
-<!-- 		<id property="num" column="num" /> -->
-<!-- 		<result property="compared" column="compared" /> -->
-<!-- 		<result property="include" column="include" /> -->
-<!-- 		<result property="exclude" column="exclude" /> -->
-<!-- 		<result property="alert" column="alert" /> -->
-<!-- 		<result property="prepared" column="prepared" /> -->
-<!-- 		<result property="attention" column="attention" /> -->
-<!-- 		<result property="refund" column="refund" /> -->
-<!-- 		<result property="tourNum" column="tourNum" /> -->
-<!-- 		<collection property="files" javaType="java.util.List" ofType="TourFilesVO"> -->
-<!-- 			<id property="fnum" column="fnum" /> -->
-<!-- 			<result property="fname" column="fname" /> -->
-<!-- 			<result property="oname" column="oname" /> -->
-<!-- 			<result property="timeTable" column="timeTable" /> -->
-<!-- 			<result property="time" column="time" /> -->
-<!-- 		</collection> -->
-<!-- 	</resultMap> -->
-	
-	<select id="tourList" parameterType="TourCalendarVO" resultType="TourCalendarVO">
+
+<mapper namespace="tourMapper">
+
+	<!-- 좋아요 클릭 -->
+	<update id="like_check" parameterType="HashMap">
+		update wishlike set likeCheck = likeCheck+1
+		where email=#{email} and tourNum=#{tourNum}
+	</update>
+
+	<!--좋아요 취소 -->
+
+	<update id="like_check_cancle" parameterType="HashMap">
+		update wishlike set likeCheck = 0
+		where email=#{email} and tourNum =#{tourNum}
+	</update>
+
+
+
+	<insert id="tourWrite" parameterType="TourNoticeVO">
+		<selectKey order="BEFORE" resultType="Integer"
+			keyProperty="num">
+			select seq_tour.nextval from dual
+		</selectKey>
+		insert into tourNotice
+		values(#{num}, #{compared}, #{include}, #{exclude}, #{alert}, #{prepared},
+		#{attention}, #{refund}, #{tourNum})
+	</insert>
+
+	<select id="tourSelect" parameterType="TourNoticeVO"
+		resultType="TourNoticeVO">
+		select * from tourNotice where tourNum =#{tourNum}
+	</select>
+
+	<!-- <resultMap type="TourNoticeVO" id="tourFile"> -->
+	<!-- <id property="num" column="num" /> -->
+	<!-- <result property="compared" column="compared" /> -->
+	<!-- <result property="include" column="include" /> -->
+	<!-- <result property="exclude" column="exclude" /> -->
+	<!-- <result property="alert" column="alert" /> -->
+	<!-- <result property="prepared" column="prepared" /> -->
+	<!-- <result property="attention" column="attention" /> -->
+	<!-- <result property="refund" column="refund" /> -->
+	<!-- <result property="tourNum" column="tourNum" /> -->
+	<!-- <collection property="files" javaType="java.util.List" ofType="TourFilesVO"> -->
+	<!-- <id property="fnum" column="fnum" /> -->
+	<!-- <result property="fname" column="fname" /> -->
+	<!-- <result property="oname" column="oname" /> -->
+	<!-- <result property="timeTable" column="timeTable" /> -->
+	<!-- <result property="time" column="time" /> -->
+	<!-- </collection> -->
+	<!-- </resultMap> -->
+
+	<select id="tourList" parameterType="TourCalendarVO"
+		resultType="TourCalendarVO">
 		select * from tour
 	</select>
-	
-	
+
+
 	<insert id="Reservation" parameterType="ReservationVO">
-		insert into reservation values personNum=#{personNum}, name=#{name}, email=#{email}, phone=#{phone}, 
-		tourNum=#{tourNum}, ps=#{ps}, totalPrice=#{totalPrice}, tourName=#{tourName}
+		insert into reservation
+		values
+		(#{personNum}, #{name}, #{email}, #{phone}, #{day},
+		#{tourNum}, #{ps}, #{totalPrice}, #{tourName}, #{kakaoID})
 	</insert>
 	
-  	
-  </mapper>
+</mapper>
