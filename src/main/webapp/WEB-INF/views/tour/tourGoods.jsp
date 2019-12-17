@@ -139,23 +139,20 @@
 						<div class="scheduleText">2019.1.1 ~ 2019.12.31
 							<div class="scheduleText2">여행일정</div>
 						</div>
-						<ul class="planList">
-							<li class="plan">
+						
 								<div class="planLine">
 									<c:forEach items="${files}" var="file" varStatus="table">
 							   			<div class="timeTableWrap">
-							      			<span class="timeTableBlank">
+							      			
 								      			<img src="/s5/resources/upload/tour/${file.fname}" class="timeTableImg">
 								      			<span class="timeText">${file.time}</span>
 												<span class="tableText">${file.timeTable}</span>
-							      			</span>
+							      			
 							    		</div>
 									</c:forEach>
 									
-									
 								</div>
-							</li>
-						</ul>
+							
 					</div>
 				
 			</div><!-- menu1 -->
@@ -163,36 +160,36 @@
 				<div class="m">
 					<input type="hidden" name="${dto.num}" value="${dto.num}"> 
 					<div class="textCompared textWrap">
-						<h4>타업체비교불가</h4>
-						<span class="textText" style="width: 720px;height: 110px;">${dto.compared}</span>
+						<br><br><h4>타업체비교불가</h4><br>
+						<span class="textText" style="width: 720px;">${dto.compared}</span>
 					</div>
 					<div class="textInclude textWrap"> 
-						<h4>포함사항</h4>
-						<span class="textText" style="width: 720px;height: 110px;">${dto.include}</span>
+						<h4>포함사항</h4><br>
+						<span class="textText" style="width: 720px;">${dto.include}</span>
 					</div>
 					<div class="textExclude textWrap"> 
-						<h4>불포함사항</h4>
-						<span class="textText" style="width: 720px;height: 110px;">${dto.exclude}</span>
+						<h4>불포함사항</h4><br>
+						<span class="textText" style="width: 720px;">${dto.exclude}</span>
 					</div>
 					<div class="textAlert textWrap"> 
-						<h4>안내사항</h4>
-						<span class="textText" style="width: 720px;height: 110px;">${dto.alert}</span>
+						<h4>안내사항</h4><br>
+						<span class="textText" style="width: 720px;">${dto.alert}</span>
 					</div>
 					<div class="textPrepared textWrap"> 
-						<h4>준비사항</h4>
-						<span class="textText" style="width: 720px;height: 110px;">${dto.prepared}</span>
+						<h4>준비사항</h4><br>
+						<span class="textText" style="width: 720px;">${dto.prepared}</span>
 					</div>
 					<div class="textAttention textWrap"> 
-						<h4>주의사항</h4>
-						<span class="textText" style="width: 720px;height: 110px;">${dto.attention}</span>
+						<h4>주의사항</h4><br>
+						<span class="textText" style="width: 720px;">${dto.attention}</span>
 					</div>
 					<div class="textRefund textWrap"> 
-						<h4>환불규정</h4>
-						<span class="textText" style="width: 720px;height: 110px;">${dto.refund}</span>
+						<h4>환불규정</h4><br>
+						<span class="textText" style="width: 720px;">${dto.refund}</span>
 					</div>
 					<c:forEach items="${files}" var="file" >
 						<div class="">
-     						<img src="/s5/resources/upload/tour/${file.fname}" style="width:720px; height: 500px;">
+     						<img src="/s5/resources/upload/tour/${file.fname}" style="width:720px;">
 						</div>
 					</c:forEach>
 				</div>
@@ -340,6 +337,7 @@
 			var child = document.getElementById("child_wrap").value;
 			var personNum = (adult*1)+(child*1)
 			var price = $("#calPrice").val();
+
 			var totalPrice = (adult*price)+(child*price);
 			var day = $("#date").val(); 
 			var tourName = $(".goods_title").val();
@@ -360,7 +358,6 @@
 			}
 
 	     }); 
-
 
 
 	</script>

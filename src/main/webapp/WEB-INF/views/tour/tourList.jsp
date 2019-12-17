@@ -14,8 +14,6 @@
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/bodyMain.css"/>"
 	rel="stylesheet">
-<link href="<c:url value="/resources/css/layout/review.css"/>"
-	rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/tour.css"/>"
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/reset.css"/>"
@@ -32,7 +30,6 @@
 	<c:if test="${sessionScope.member.aCheck ne 1}">
 		<c:import url="../layout/nav.jsp"></c:import>
 	</c:if>
-
 	<div class="body">
 		<div class="body_head">
 			<div class="body_back">
@@ -44,16 +41,21 @@
 		<div class="body_main">
 			<div class="body_name">　투어상품</div>
 			<div class="body_inner" >
+			
+				<a href="./tourVIP"><div class="vipgo"></div></a>
+				<div class="vg"></div>
 				<div class="contents">
 
 					<div class="tour_MainForm" style="overflow: auto; margin: auto;">
 						<c:forEach items="${list}" var="dto" varStatus="st">
 							<div class="tour_wrap">
+								<a href="./tourGoods?tourNum=${dto.tourNum}">
 								<div class="tourIMG_wrap">	
 								<c:forEach items="${dto.files}" var="ck" begin="0" end="0">
 <%-- 									<img alt="NoImages" src="/s5/resources/upload/tour/${files[st.0].fname}" width="320px" height="200px"> --%>
 									<img alt="img" src="/s5/resources/upload/tour/${ck.fname}" width="320px" height="200px">
 								</c:forEach>
+								
 									<div class="tourIMG">
 										<div class="tourLike">
 											<c:choose>
@@ -69,6 +71,7 @@
 										</div>
 									</div>
 								</div>
+								</a>
 								<div class="TN_wrap">
 									<a href="./tourGoods?tourNum=${dto.tourNum}">
 									<div class="tourNN_wrap">
@@ -91,7 +94,7 @@
 			<div class="tour_white_btn">
 				<a href="./tourWrite">글쓰기</a>
 			</div>
-	</div>
+	</div><!-- body끝 -->
 
 
 	<c:import url="../layout/navFoot.jsp"></c:import>

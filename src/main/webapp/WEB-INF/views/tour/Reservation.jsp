@@ -30,6 +30,7 @@
 					<input type="hidden" value="${param.child}">　<!--가격, 인원-->
 			
 		</div><!-- Title의 끝-->
+		
 		<div class="InputIN">
 				<div class="RN_wrap">
 				 <div class="RN">아이디</div><input type="text" id='email' name="email" readonly="readonly" value="${sessionScope.member.email}" class="RT"> 
@@ -39,12 +40,13 @@
 				<div class="RN2">이름</div> <input type="text" id='name' readonly="readonly" class="RT2" value="${sessionScope.member.name}" name="name" class="RT2"> 
 				<div class="RN2">전화번호</div> <input type="text" id='phone' name="phone" class="RT2">
 				</div>
-				
-				<div class="pstxt"> 특이 사항
-				<textarea id="ps" name="ps" class="RTT"></textarea>
-				</div>
 		</div>
+			<div class="pstxt">※ 특이사항
+				<textarea id="ps" name="ps" class="RTT"></textarea>
+			</div>
+		
 				<div id="Raccess"><!-- 이용약관-->
+
 					사용자 이용약관<textarea id="access">
 					
 					
@@ -93,13 +95,13 @@
 여행사는 정보주체의 이용정보를 저장하고 수시로 불러오는 ‘쿠키’를 사용하지 않습니다.
                     
 					</textarea>
-					<div class="radioSelect">
-					<div>동의</div><input type="radio" name="radioCheck">
-					<div>동의하지 않음</div><input type="radio" name="radioCheck">
+					<div class="checkSelect">
+					<input type="checkbox" name="ckok"> 이용약관에 동의합니다
+
 					</div>
 				</div>
 				<div class="ReserveButn">
-					<input type="button" class="reserveOK" value="예약">
+					<input type="button" class="reserveOK" value="예약하기">
 					<input type="button" class="NOreserve" value="취소">
 				</div> 
 
