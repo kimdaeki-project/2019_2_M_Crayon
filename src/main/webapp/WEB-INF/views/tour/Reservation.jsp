@@ -29,7 +29,6 @@
 				<div class="RN2">이름</div> <input type="text" id='name' name="name" class="RT2"> 
 				<div class="RN2">전화번호</div> <input type="text" id='phone' name="phone" class="RT2">
 				</div>
-				<br><br>
 				
 				<div class="pstxt"> 특이 사항
 				<textarea id="ps" name="ps" class="RTT"></textarea>
@@ -38,8 +37,8 @@
 				<div id="Raccess"><!-- 이용약관-->
 					사용자 이용약관<textarea id="access" name="access"></textarea>
 					<div class="radioSelect">
-					<div>동의</div><input type="radio">
-					<div>동의하지 않음</div><input type="radio">
+					<div>동의</div><input type="radio" name="radioCheck">
+					<div>동의하지 않음</div><input type="radio" name="radioCheck">
 					</div>
 				</div>
 				<div class="ReserveButn">
