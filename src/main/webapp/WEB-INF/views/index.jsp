@@ -463,13 +463,13 @@
 <script type="text/javascript">
 
 $(function() {
-    $("#animateBtn").on("click", function() {
-        $("#divBox").animate(        // id가 "divBox"인 요소를
+    $(".re_prev_btn").on("click", function() {
+        $(".main_rebox_4_2").animate(        // id가 "divBox"인 요소를
             {
                 left: "+=100",        // 오른쪽으로 100픽셀 이동하고,
                 opacity: 0.2        // 투명도를 0.2로 변경함.
             }, 500, function() {    // 0.5초에 걸쳐서 이펙트 효과가 진행됨.
-                $("#text").html("사용자 정의 이펙트가 실행됐어요!");
+                $(".re_txtbox").html("");
             }
         );
     });
