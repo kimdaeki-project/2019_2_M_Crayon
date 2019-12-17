@@ -5,8 +5,6 @@
   
   <mapper namespace="memberMapper">
   
-  
-  
 		<select id="selectKakao" parameterType="MemberVO" resultType="MemberVO">
 			select * from member where email = #{email}			
 		</select>  
