@@ -331,7 +331,7 @@
 			var price = $("#calPrice").val();
 			var tp = (adult*price)+(child*price);
 			var date = $("#date").val(); */
-			window.open("./Reservation", "","width=800,height=960,top=100, left=600");
+			window.open("./Reservation", "","width=800,height=900,top=50, left=600");
 		}); 
 	</script>
 	

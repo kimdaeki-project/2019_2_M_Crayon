@@ -165,7 +165,7 @@
 /*reservation*/
 #frm_1 {
 	width: 800px;
-	height: 960px;
+	height: 880px;
 	margin: 0 auto;
 	
 }
@@ -210,7 +210,7 @@
 	margin: 0 auto;
 	margin-top:30px;
 	width: 600px;
-	height: 350px;
+	height: 220px;
 	letter-spacing: -1px;
 }
 
@@ -270,7 +270,14 @@
 	margin-top: 20px;
 }
 
+.pstxt{
+	width: 600px;
+	margin: 0 auto;
+}
 
+#psRTT{
+	
+}
 
 #Raccess {
 	width: 600px;

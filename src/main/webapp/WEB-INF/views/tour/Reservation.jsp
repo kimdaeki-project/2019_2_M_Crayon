@@ -20,6 +20,7 @@
 			<div class="ReserveP_PN">　투어날짜 / 인원 　　b</div> <!--가격, 인원-->
 			
 		</div><!-- Title의 끝-->
+		
 		<div class="InputIN">
 				<div class="RN_wrap">
 				 <div class="RN">아이디</div><input type="text" id='email' name="email" class="RT"> 
@@ -29,11 +30,11 @@
 				<div class="RN2">이름</div> <input type="text" id='name' name="name" class="RT2"> 
 				<div class="RN2">전화번호</div> <input type="text" id='phone' name="phone" class="RT2">
 				</div>
-				
-				<div class="pstxt"> 특이 사항
-				<textarea id="ps" name="ps" class="RTT"></textarea>
-				</div>
 		</div>
+			<div class="pstxt">* 특이 사항<br>
+				<textarea id="ps" name="ps" class="RTT"></textarea>
+			</div>
+		
 				<div id="Raccess"><!-- 이용약관-->
 					사용자 이용약관<textarea id="access" name="access"></textarea>
 					<div class="radioSelect">
