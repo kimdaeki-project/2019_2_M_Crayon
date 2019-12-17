@@ -91,5 +91,19 @@ public class TourServiceImpl implements TourService {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	@Override
+	public List<ReservationVO> ReservationList(ReservationVO reservationVO)throws Exception{
+		return tourDAOImpl.ReservationList(reservationVO);
+	}
+	
+	@Override
+	public int ReservationDelete(ReservationVO reservationVO)throws Exception{
+		return tourDAOImpl.ReservationDelete(reservationVO);
+	}
+	
+	@Override
+	public List<ReservationVO> ReservationResult(ReservationVO reservationVO)throws Exception{
+		return tourDAOImpl.ReservationResult(reservationVO);
+	}
 
 }

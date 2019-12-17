@@ -36,6 +36,14 @@ public class TourController {
 	private TourCalendarServiceImpl tourCalendarServiceImpl;
 	
 	/* tourCalendar 예약폼*/
+	@GetMapping(value = "ReservationResult")
+	public ModelAndView ReservationResult(ReservationVO reservationVO)throws Exception{
+	ModelAndView mv = new ModelAndView();
+	List<ReservationVO> ar = tourServiceImpl.ReservationResult(reservationVO);
+	mv.addObject("list", ar);
+	mv.setViewName("tour/ReservationResult");
+	return mv;
+	}
 
 
 	@GetMapping(value = "Reservation")
@@ -63,6 +71,23 @@ public class TourController {
 		return mv;
 	}
 	
+	@GetMapping(value = "ReservationDelete")
+	public ModelAndView ReservationDelete (ReservationVO reservationVO) throws Exception{
+		int result = tourServiceImpl.ReservationDelete(reservationVO);
+		String msg = "Fail";
+
+		ModelAndView mv = new ModelAndView();
+		if (result > 0) {
+			msg = "Success";
+		}
+
+		mv.addObject("msg", msg);
+		mv.addObject("path", "./");
+		mv.setViewName("common/common_result");
+		return mv;
+		
+	}
+	
 
 	
 	
@@ -87,6 +112,16 @@ public class TourController {
 		mv.setViewName("tour/tourList");
 		return mv;
 	} 
+	
+	@GetMapping(value = "ReservationList")
+	public ModelAndView reservationList(ReservationVO reservationVO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		List<ReservationVO> ar = tourServiceImpl.ReservationList(reservationVO);
+		mv.addObject("list", ar);
+		mv.setViewName("tour/ReservationList");
+		return mv;
+	}
+	
 	
 	
 	@GetMapping(value = "tourGoods")

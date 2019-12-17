@@ -73,4 +73,17 @@
 		#{tourNum}, #{ps}, #{totalPrice}, #{tourName}, #{kakaoID})
 	</insert>
 	
+	
+	<select id="ReservationList" parameterType="ReservationVO" resultType="ReservationVO">
+		select * from reservation 
+	</select>
+	
+	<select id="ReservationResult" parameterType="ReservationVO" resultType="ReservationVO">
+		select * from reservation 
+	</select>
+	
+	<delete id="ReservationDelete" parameterType="ReservationVO">
+		delete Reservation where email=#{email}	
+	</delete>
+	
 </mapper>

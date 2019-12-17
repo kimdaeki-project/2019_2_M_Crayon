@@ -51,7 +51,7 @@
 					</a>
 				</div>
 				<div class="adminTour">
-					<a href="#" style="color: white; font-size: 24px">Reservation <i
+					<a href="../tour/ReservationList" style="color: white; font-size: 24px">Reservation <i
 						class="fa fa-bus" style="font-size: 24px"></i></a>
 				</div>
 				<div class="adminWrite">
@@ -77,6 +77,7 @@
 
 				<div class="content2">
 					<div class="content2Ti">Reservation</div>
+					<div id="ReservationR"></div>
 				</div>
 
 				<div class="content3">
@@ -95,6 +96,28 @@
 
 
 	<script type="text/javascript">
+	/*ReservationList*/
+		
+		 $(document).ready(function() {
+		
+		$.ajax({
+			type:"Get",
+			url:"../tour/ReservationResult",
+			datatype:"text",
+			error: function() {
+				alert("통신실패")
+			},
+			success : function(data) {
+				$("#ReservationR").html(data);
+				alert("성공"+data)
+				
+			}
+		});
+	});
+	
+	
+
+	
 		/*ReviewList*/
 		var xhttp;
 		if (XMLHttpRequest) {
