@@ -19,7 +19,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.nuri.s5.model.MemberVO;
 import com.nuri.s5.model.ReviewVO;
+import com.nuri.s5.model.WishListVO;
 import com.nuri.s5.service.MemberServiceImpl;
+import com.nuri.s5.service.WishListService;
 import com.nuri.s5.util.Pager;
 
 @Controller
@@ -28,13 +30,36 @@ public class MemberController {
 
 	@Inject
 	private MemberServiceImpl memberServiceImpl;
+	@Inject
+	private WishListService wishListService;
 	
 	
+//	---------------- 위시리스트 추가
+	@GetMapping(value = "listInsert")
+	public ModelAndView listInsert(WishListVO wishListVO, HttpSession session) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		MemberVO memberVO = (MemberVO)session.getAttribute("member");
+		wishListVO.setEmail(memberVO.getEmail());
+		int result = wishListService.listInsert(wishListVO);
+		
+		mv.setViewName("common/common_ajaxResult");
+		return mv;
+	}
 	
+//	---------------- 위시리스트 삭제
 	
+	@GetMapping(value = "listDelete")
+	public ModelAndView listDelete(WishListVO wishListVO, HttpSession session)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		MemberVO memberVO = (MemberVO)session.getAttribute("member");
+		wishListVO.setEmail(memberVO.getEmail());
+		int result = wishListService.listDelete(wishListVO);
+		
+		mv.setViewName("common/common_ajaxResult");
+		return mv;
+	}
 	
-	
-	
+//	---------------- 멤버테이블 시작
 	
 	@GetMapping(value="memberResult")
 	public String memberResult(Pager pager, Model model) throws Exception{
@@ -46,10 +71,6 @@ public class MemberController {
 		return "member/memberResult";
 	}
 	
-	
-	
-	
-
 	// 카카오 회원가입
 	@PostMapping(value = "memberKakao")
 	public String memberKakao(MemberVO memberVO, HttpSession session) throws Exception {
@@ -136,18 +157,23 @@ public class MemberController {
 
 	// 마이페이지 폼
 
-	@RequestMapping(value = "memberMyPage")
-	public void memberMyPage() throws Exception {
-
+	@GetMapping(value = "memberMyPage")
+	public ModelAndView memberMyPage(WishListVO wishListVO, HttpSession session) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		MemberVO memberVO = (MemberVO)session.getAttribute("member");
+		wishListVO.setEmail(memberVO.getEmail());
+		List<WishListVO> ar = wishListService.listShow(wishListVO);
+		mv.addObject("list", ar);
+		
+		return mv;
 	}
 	
 	
 	// 관리자 폼
+	@RequestMapping(value = "adminPage")
+	public void adminPage() throws Exception {
 
-		@RequestMapping(value = "adminPage")
-		public void adminPage() throws Exception {
-
-		}
+	}
 	
 	
 

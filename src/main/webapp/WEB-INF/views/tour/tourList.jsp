@@ -39,7 +39,7 @@
 		</div>
 		<!-- 넣을거 -->
 		<div class="body_main">
-			<div class="body_name">　투어상품</div>
+			<div class="body_name">　투어상품2</div>
 			<div class="body_inner" >
 			
 				<a href="./tourVIP"><div class="vipgo"></div></a>
@@ -52,7 +52,6 @@
 								<a href="./tourGoods?tourNum=${dto.tourNum}">
 								<div class="tourIMG_wrap">	
 								<c:forEach items="${dto.files}" var="ck" begin="0" end="0">
-<%-- 									<img alt="NoImages" src="/s5/resources/upload/tour/${files[st.0].fname}" width="320px" height="200px"> --%>
 									<img alt="img" src="/s5/resources/upload/tour/${ck.fname}" width="320px" height="200px">
 								</c:forEach>
 								
@@ -60,12 +59,11 @@
 										<div class="tourLike">
 											<c:choose>
 												<c:when test="${sessionScope.member eq null}">
-													<a href='javascript: login_need();'><i
-														class="fa fa-heart-o" style="font-size: 28px;"></i></a>
+													<a href='../member/memberLogin'>
+													<i class="fa fa-heart-o" style="font-size: 28px;"></i></a>
 												</c:when>
 												<c:otherwise>
-													<a href='javascript: like_func();'><i
-														class="fa fa-heart-o" style="font-size: 28px;"></i></a>
+													<i class="fa fa-heart-o" style="font-size: 28px; color: red; cursor: pointer;" name="${dto.tourNum}"></i>
 												</c:otherwise>
 											</c:choose>
 										</div>
@@ -100,10 +98,38 @@
 	<c:import url="../layout/navFoot.jsp"></c:import>
 
 	<script type="text/javascript">
-		function like_func() {
-			var heart = $("#")
-			var tourNum =  $("#tourNum")
-		}
+		$('.fa-heart-o').click(function() {
+			
+			var tourNum = $(this).attr('name');
+			
+			if($(this).hasClass('fa-heart')){
+				$(this).removeClass('fa-heart');
+				$(this).addClass('fa-heart-o');
+				$.ajax({
+					url: '../member/listDelete?tourNum'+tourNum,
+					success:function(){
+						alert("success");
+					},
+					error:function(){
+						alert("fail");
+					}
+				})
+			}else{
+				$(this).addClass('fa-heart');
+				$(this).removeClass('fa-heart-o');
+				$.ajax({
+					url: '../member/listInsert?tourNum='+tourNum,
+					success:function(){
+						alert("success");
+					},
+					error:function(){
+						alert("fail");
+					}
+					
+				})
+				
+			}
+		});
 	</script>
 
 </body>
