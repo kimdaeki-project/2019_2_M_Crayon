@@ -41,7 +41,7 @@ public class MemberController {
 		MemberVO memberVO = (MemberVO)session.getAttribute("member");
 		wishListVO.setEmail(memberVO.getEmail());
 		int result = wishListService.listInsert(wishListVO);
-		
+		mv.addObject("result", result);
 		mv.setViewName("common/common_ajaxResult");
 		return mv;
 	}
@@ -54,7 +54,7 @@ public class MemberController {
 		MemberVO memberVO = (MemberVO)session.getAttribute("member");
 		wishListVO.setEmail(memberVO.getEmail());
 		int result = wishListService.listDelete(wishListVO);
-		
+		mv.addObject("result", result);
 		mv.setViewName("common/common_ajaxResult");
 		return mv;
 	}
@@ -164,6 +164,8 @@ public class MemberController {
 		wishListVO.setEmail(memberVO.getEmail());
 		List<WishListVO> ar = wishListService.listShow(wishListVO);
 		mv.addObject("list", ar);
+		
+//		mv.setViewName("common/common_ajaxResult");
 		
 		return mv;
 	}

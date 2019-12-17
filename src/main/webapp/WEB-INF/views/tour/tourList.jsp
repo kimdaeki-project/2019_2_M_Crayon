@@ -39,7 +39,7 @@
 		</div>
 		<!-- 넣을거 -->
 		<div class="body_main">
-			<div class="body_name">　투어상품2</div>
+			<div class="body_name">　투어상품</div>
 			<div class="body_inner" >
 			
 				<a href="./tourVIP"><div class="vipgo"></div></a>
@@ -52,9 +52,8 @@
 								<a href="./tourGoods?tourNum=${dto.tourNum}">
 								<div class="tourIMG_wrap">	
 								<c:forEach items="${dto.files}" var="ck" begin="0" end="0">
-									<img alt="img" src="/s5/resources/upload/tour/${ck.fname}" width="320px" height="200px">
+									<img alt="img" src="/s5/resources/upload/tour/${ck.fname}" width="320px" height="200px"></a>
 								</c:forEach>
-								
 									<div class="tourIMG">
 										<div class="tourLike">
 											<c:choose>
@@ -69,7 +68,7 @@
 										</div>
 									</div>
 								</div>
-								</a>
+			
 								<div class="TN_wrap">
 									<a href="./tourGoods?tourNum=${dto.tourNum}">
 									<div class="tourNN_wrap">
@@ -80,8 +79,8 @@
 									</div></a>
 								</div>
 							</div>
-							<!--tour_wrap 끝-->
 						</c:forEach>
+							<!--tour_wrap 끝-->
 					</div>
 					<!--tour_MainForm 끝-->
 				</div>
@@ -101,36 +100,40 @@
 		$('.fa-heart-o').click(function() {
 			
 			var tourNum = $(this).attr('name');
+			alert(tourNum);
 			
 			if($(this).hasClass('fa-heart')){
+				
 				$(this).removeClass('fa-heart');
 				$(this).addClass('fa-heart-o');
 				$.ajax({
-					url: '../member/listDelete?tourNum'+tourNum,
-					success:function(){
-						alert("success");
-					},
-					error:function(){
-						alert("fail");
+					url: '../member/listDelete?tourNum='+tourNum,
+					success:function(d){
+						d = d.trim();
+						if(d == 1){
+							alert("Delete success");
+						}else{
+							alert("Delete fail");
+						}
 					}
-				})
+				});
 			}else{
 				$(this).addClass('fa-heart');
 				$(this).removeClass('fa-heart-o');
+				
 				$.ajax({
 					url: '../member/listInsert?tourNum='+tourNum,
-					success:function(){
-						alert("success");
-					},
-					error:function(){
-						alert("fail");
+					success:function(d){
+						d = d.trim();
+						if(d == 1){
+							alert("Insert success");
+						}else{
+							alert("Insert fail");
+						}
 					}
-					
-				})
-				
+				});
 			}
 		});
-	</script>
-
+</script>		
 </body>
 </html>

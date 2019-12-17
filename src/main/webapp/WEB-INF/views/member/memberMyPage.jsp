@@ -65,7 +65,7 @@
 												<i class="fa fa-heart-o" style="font-size: 28px; color: red;"></i></a>
 											</c:when>
 											<c:otherwise>
-												<i class="fa fa-heart-o" style="font-size: 28px; color: red; cursor: pointer;" name="${dto.tourNum}"></i>
+												<i class="fa fa-heart" style="font-size: 28px; color: red; cursor: pointer;" name="${dto.tourNum}"></i>
 											</c:otherwise>
 										</c:choose>
 									</div>
@@ -113,10 +113,27 @@
 </script>
 
 <script type="text/javascript">
-	$('.fa-heart-o').click(function() {
+	$('.fa-heart').click(function() {
+		
+		var tourNum = $(this).attr('name');
+		alert(tourNum);
+		
 		if($(this).hasClass('fa-heart')){
 			$(this).removeClass('fa-heart');
 			$(this).addClass('fa-heart-o');
+			$.ajax({
+				type: 'GET',
+				url:'./listDelete?tourNum='+tourNum,
+				success: function(d){
+					d = d.trim();
+					if(d == 1){
+						alert("delete success");
+						location.reload();
+					}else{
+						alert("delete fail");
+					}
+				}
+			});
 		}else{
 			$(this).addClass('fa-heart');
 			$(this).removeClass('fa-heart-o');
