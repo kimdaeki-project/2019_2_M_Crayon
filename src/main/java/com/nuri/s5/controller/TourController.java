@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nuri.s5.model.MemberVO;
+import com.nuri.s5.model.ReservationVO;
 import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourFilesVO;
 import com.nuri.s5.model.TourNoticeVO;
@@ -36,12 +37,33 @@ public class TourController {
 	
 	/* tourCalendar 예약폼*/
 
-	
-	
+
 	@GetMapping(value = "Reservation")
-	public void Reservation() throws Exception {
+	public void Reservation(ReservationVO reservationVO) throws Exception {
 		
 	}
+	
+	@PostMapping(value = "Reservation")
+	public ModelAndView Reservation(TourCalendarVO tourCalendarVO,ReservationVO reservationVO,HttpSession session) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		
+		reservationVO.setTourNum(tourCalendarVO.getTourNum());
+		
+		int result = tourServiceImpl.Reservation(reservationVO, session);
+		System.out.println(result);
+		mv.addObject("dto", reservationVO);
+		String msg = "Fail";
+		if (result > 0)
+			msg = "Success";
+
+		mv.addObject("msg", msg);
+		mv.addObject("path", "tour/tourList");
+		mv.setViewName("common/common_result");
+		return mv;
+	}
+	
+
 	
 	
 /////////////////////////// tour file ///////////////////////////////////

@@ -2,6 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
   
   <mapper namespace="tourMapper">
   
@@ -61,6 +62,15 @@
 	
 	<select id="tourImgList" parameterType="TourFilesVO" resultType="TourFilesVO">
 		select fname, num from tourfiles where fnum = (select max(fnum) from tourfiles)
+
 	</select>
-  	
-  </mapper>
+
+
+	<insert id="Reservation" parameterType="ReservationVO">
+		insert into reservation
+		values
+		(#{personNum}, #{name}, #{email}, #{phone}, #{day},
+		#{tourNum}, #{ps}, #{totalPrice}, #{tourName}, #{kakaoID})
+	</insert>
+	
+</mapper>

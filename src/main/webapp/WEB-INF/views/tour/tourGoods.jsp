@@ -27,7 +27,12 @@
 	<div class= "body">	
 
 		<div class="body_main1">
-			<h3 class="goods_title">${dto2.tourName}</h3>
+
+			<input type="hidden" class="goods_number" value="${dto2.tourNum}">
+			<input type="text" class="goods_title" value="${dto2.tourName}">
+			
+<%-- 			${dto.tourName}, --%>
+
 			<div class="goods_main_img" style="max-width:1100px">
 				<c:forEach items="${files}" var="file" >
 					<div class="">
@@ -117,7 +122,10 @@
 		</div>
 
 		<div class="Allmoney"></div><button id="priceBtn">총 가격 보기</button>
+		
 		<input type="button" value="예약하기" class="select_btn">
+
+		
 	</div>
 
 	<!--Calendar 끝-->
@@ -322,17 +330,34 @@
 			})
 		
 	</script>
-		
 	
+
 	<script type="text/javascript">
-		 $(".select_btn").click(function() {
-			/* var adult = document.getElementById("adult_wrap").value;
-			var child = document.getElementById("child_wrap").value;
-			var price = $("#calPrice").val();
-			var tp = (adult*price)+(child*price);
-			var date = $("#date").val(); */
-			window.open("./Reservation", "","width=800,height=960,top=100, left=600");
-		}); 
+
+			var totalPrice = (adult*price)+(child*price);
+			var day = $("#date").val(); 
+			var tourName = $(".goods_title").val();
+			var tourNum = $(".goods_number").val();
+			
+			if(${sessionScope.member eq null}){
+				alert("로그인을 해주세요");
+				location.href="../member/memberLogin";
+				}else if($("#date").val() == "") {
+					alert("날짜를 선택하세요")
+					$("#date").focus();
+				} else if(($("#adult_wrap").val()+$("#child_wrap").val()) < 1){
+					alert("한명이상은 선택해주세요")
+					$("#adult_wrap").focus();
+				}else{
+					window.open("./Reservation?adult="+adult+'&child='+child+'&day='+day+'&totalPrice='+totalPrice+'&tourName='+tourName+'&personNum='+personNum+'&tourNum='+tourNum, "","width=850,height=960,top=100, left=600");	
+			
+			}
+				
+	}); 
+	
+
+	
+
 	</script>
 	
 	

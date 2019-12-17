@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.nuri.s5.model.ReservationVO;
 import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.model.TourVO;
@@ -36,6 +37,12 @@ public class TourDAOImpl implements TourDAO {
 	@Override
 	public List<TourVO> tourList(TourVO tourVO) throws Exception {
 		return sqlSession.selectList(NAMESPACE+"tourList", tourVO);
+	}
+	
+	
+	@Override
+	public int Reservation(ReservationVO reservationVO)throws Exception{
+		return sqlSession.insert(NAMESPACE+"Reservation", reservationVO);
 	}
 
 
