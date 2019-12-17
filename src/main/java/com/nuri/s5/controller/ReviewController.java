@@ -46,6 +46,9 @@ public class ReviewController {
 	      
 	      return "review/tourReview";
 	   }
+
+	
+	
 	
 
 /////////////////////////// review file ///////////////////////////////////
@@ -61,62 +64,81 @@ public class ReviewController {
    
    
 /////////////////////////// review board ///////////////////////////////////
-   
-   @GetMapping(value = "reviewPhoto")
-   public void reviewPhoto() throws Exception{
-      
-   }
-   
-   @GetMapping(value = "reviewWrite")
-   public ModelAndView reviewWrite(HttpSession session) throws Exception{
-      ModelAndView mv = new ModelAndView();
-      MemberVO member = (MemberVO)session.getAttribute("member");
-      mv.addObject("member", member);
-      return mv;
-   }
-   
-   @PostMapping(value = "reviewWrite")
-   public ModelAndView reviewWrite(ReviewVO reviewVO, MultipartFile [] file, HttpSession httpSession)throws Exception{
-      ModelAndView mv = new ModelAndView();
-      int result = reviewServiceImpl.reviewWrite(reviewVO, file, httpSession);
-      mv.addObject("dto", reviewVO);
-      if(result>0) {
-         mv.setViewName("redirect:./reviewList");
-      }else {
-         
-      }
-      return mv;
-   }
-   
-   
-   @GetMapping(value = "reviewDelete")
-   public String reviewDelete(ReviewVO reviewVO) throws Exception{
-      int result = reviewServiceImpl.reviewDelete(reviewVO);
-      return "redirect:./reviewList";
-   }
-   
-   @GetMapping(value = "reviewSelect")
-   public ModelAndView reviewSelect(ReviewVO reviewVO) throws Exception {
-      ModelAndView mv = new ModelAndView();
-      reviewVO = reviewServiceImpl.reviewSelect(reviewVO);
-      mv.addObject("dto", reviewVO);
-      int hit = reviewVO.getHit();   
-      hit = hit+1;
-      reviewVO.setHit(hit);
-      int count = reviewServiceImpl.countUpdate(reviewVO);
-      mv.setViewName("review/reviewSelect");
-      return mv;
-   }
-   
-   @GetMapping(value = "reviewList")
-   public ModelAndView reviewList(Pager pager)throws Exception{
-      List<ReviewVO> ar = reviewServiceImpl.reviewList(pager);
-      ModelAndView mv = new ModelAndView();
-      mv.addObject("list", ar);
-      mv.addObject("pager", pager);
-      mv.setViewName("review/reviewList");
-      return mv;
-   }
-   
+
+	
+	@GetMapping(value = "reviewPhoto")
+	public void reviewPhoto() throws Exception{
+		
+	}
+	
+	@GetMapping(value = "reviewWrite")
+	public ModelAndView reviewWrite(HttpSession session) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		mv.addObject("member", member);
+		return mv;
+	}
+	
+	@PostMapping(value = "reviewWrite")
+	public ModelAndView reviewWrite(ReviewVO reviewVO, MultipartFile [] file, HttpSession httpSession)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result = reviewServiceImpl.reviewWrite(reviewVO, file, httpSession);
+		mv.addObject("dto", reviewVO);
+		if(result>0) {
+			mv.setViewName("redirect:./reviewList");
+		}else {
+			
+		}
+		return mv;
+	}
+	
+	
+	@GetMapping(value = "reviewDelete")
+	public String reviewDelete(ReviewVO reviewVO) throws Exception{
+		int result = reviewServiceImpl.reviewDelete(reviewVO);
+		
+		String msg = "Fail";
+		ModelAndView mv = new ModelAndView();
+		if (result > 0) {
+			msg = "Success";
+		}
+
+		mv.addObject("msg", msg);
+		mv.addObject("path", "./");
+		mv.setViewName("common/common_result");
+		
+		return "redirect:./reviewList";
+	}
+	
+	@GetMapping(value = "reviewSelect")
+	public ModelAndView reviewSelect(ReviewVO reviewVO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		reviewVO = reviewServiceImpl.reviewSelect(reviewVO);
+		
+		mv.addObject("dto", reviewVO);
+		mv.setViewName("review/reviewSelect");
+		return mv;
+	}
+	
+	@GetMapping(value = "reviewList")
+	public ModelAndView reviewList(Pager pager)throws Exception{
+		List<ReviewVO> ar = reviewServiceImpl.reviewList(pager);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("list", ar);
+		mv.addObject("pager", pager);
+		mv.setViewName("review/reviewList");
+		return mv;
+	}
+	
+	@GetMapping(value = "reviewBest")
+	public ModelAndView reviewBest(ReviewVO reviewVO)throws Exception{
+		List<ReviewVO> ar = reviewServiceImpl.reviewPic(reviewVO);
+		ModelAndView mv = new ModelAndView();
+		
+		mv.addObject("list", ar);
+		mv.setViewName("review/reviewBest");
+		return mv;
+	}
+
 
 }

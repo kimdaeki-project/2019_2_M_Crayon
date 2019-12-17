@@ -13,8 +13,8 @@ public class ReviewVO {
 	private int hit;
 	private String tourName;
 	private List<ReviewFilesVO> files;
-	
-	
+
+
 	public String getTourName() {
 		return tourName;
 	}
@@ -64,7 +64,6 @@ public class ReviewVO {
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
-	
 	
 	
 
