@@ -31,5 +31,7 @@ public interface TourService {
 	
 	public List<ReservationVO> ReservationResult(ReservationVO reservationVO)throws Exception;
 	
+	public int ReservationCut(ReservationVO reservationVO)throws Exception;
+	
 	
 }

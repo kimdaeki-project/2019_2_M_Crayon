@@ -12,7 +12,9 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link href="<c:url value="/resources/css/layout/Calendar.css"/>"
 	rel="stylesheet">
-
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -28,6 +30,13 @@
 				<div class="pn">가격 <input type="text" id="totalPrice" name="totalPrice" value="${param.totalPrice}" readonly="readonly" style="text-align: right; border:none; font-size:20px"> 원 <!--totalPrice--></div>
 					<input type="hidden" value="${param.adult}"> 
 					<input type="hidden" value="${param.child}">　<!--가격, 인원-->
+					
+			<div class="form-group">
+  <label for="tourEmail">이메일:</label>
+  <input type="email" class="form-control" id="tourEmail" name="tourEmail">
+</div>
+			
+			
 			
 		</div><!-- Title의 끝-->
 		
@@ -91,7 +100,7 @@
                     
 					</textarea>
 					<div class="checkSelect">
-					<input type="checkbox" name="ckok"> 이용약관에 동의합니다
+					<input type="checkbox" > 이용약관에 동의합니다
 
 					</div>
 				</div>
@@ -116,12 +125,16 @@
 		} else if ($("#phone").val() == "") {
 			alert("전화번호를 입력하세요!")
 			$("#phone").focus();
+		}else if
+			($("#tourEmail").val()==""){
+			alert("이메일을 입력하세요!")				
+			$("#tourEmail").focus();
 		} else {
 		
 			$("#form11").submit();
 			alert("예약성공");
 			window.self.close();
-			opener.location.replace('../');
+			opener.location.replace('../'); 
 			
 			
 		}

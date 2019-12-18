@@ -29,8 +29,10 @@
 		<div class="body_main1">
 
 			<input type="hidden" class="goods_number" value="${dto2.tourNum}">
-
-			<h1 class="goods_title">${dto2.tourName}</h1>
+			
+			<input type="text" class="linum" value="${limit}">
+			<input type="text" value="${dto2.tourName}" class="goods_title" readonly="readonly"> 
+	
 			
 <%-- 			${dto.tourName}, --%>
 
@@ -350,6 +352,7 @@
 				}else if($("#date").val() == "") {
 					alert("날짜를 선택하세요")
 					$("#date").focus();
+					
 				} else if(($("#adult_wrap").val()+$("#child_wrap").val()) < 1){
 					alert("한명이상은 선택해주세요")
 					$("#adult_wrap").focus();

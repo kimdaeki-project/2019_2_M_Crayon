@@ -106,6 +106,11 @@ public class TourServiceImpl implements TourService {
 		return tourDAOImpl.ReservationResult(reservationVO);
 	}
 	
+	@Override
+	public int ReservationCut(ReservationVO reservationVO)throws Exception{
+		return tourDAOImpl.ReservationCut(reservationVO);
+	}
+	
 
 
 }

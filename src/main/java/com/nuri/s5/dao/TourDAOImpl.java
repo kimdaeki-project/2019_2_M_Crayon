@@ -74,6 +74,10 @@ public class TourDAOImpl implements TourDAO {
 		return sqlSession.selectList(NAMESPACE+"ReservationResult",reservationVO);
 	}
 	
+	@Override
+	public int ReservationCut(ReservationVO reservationVO)throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"ReservationCut",reservationVO);
+	}
 
 
 

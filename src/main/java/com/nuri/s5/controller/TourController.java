@@ -48,6 +48,13 @@ public class TourController {
 
 	@GetMapping(value = "Reservation")
 	public void Reservation(ReservationVO reservationVO) throws Exception {
+		/*
+		 * ModelAndView mv = new ModelAndView();
+		 * reservationVO.setTourNum(tourCalendarVO.getTourNum()); int person
+		 * =tourServiceImpl.ReservationCut(reservationVO);
+		 * 
+		 * mv.addObject("limit", person); mv.setViewName("tour/Reservation");
+		 */
 		
 	}
 	
@@ -82,12 +89,19 @@ public class TourController {
 		}
 
 		mv.addObject("msg", msg);
-		mv.addObject("path", "../");
+		mv.addObject("path", "ReservationList");
 		mv.setViewName("common/common_result");
 		return mv;
 		
 	}
 	
+	/*
+	 * @GetMapping(value="ReservationCut") public ModelAndView
+	 * ReservationCut(ReservationVO reservationVO)throws Exception{ reservationVO =
+	 * tourServiceImpl.ReservationCut(reservationVO); ModelAndView mv = new
+	 * ModelAndView(); mv.addObject("limit", reservationVO);
+	 * mv.setViewName("Reservation"); return mv; }
+	 */
 
 	
 	
@@ -125,13 +139,20 @@ public class TourController {
 	
 	
 	@GetMapping(value = "tourGoods")
-	public ModelAndView tourSelect(TourNoticeVO tourNoticeVO, TourCalendarVO tourCalendarVO, TourFilesVO tourFilesVO) throws Exception{
+	public ModelAndView tourSelect(ReservationVO reservationVO,TourNoticeVO tourNoticeVO, TourCalendarVO tourCalendarVO, TourFilesVO tourFilesVO) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		tourCalendarVO = tourCalendarServiceImpl.calendarSelect(tourCalendarVO);
 		tourNoticeVO.setTourNum(tourCalendarVO.getTourNum());
 		tourNoticeVO = tourServiceImpl.tourSelect(tourNoticeVO);
 		tourFilesVO.setNum(tourNoticeVO.getNum());
 		List<TourFilesVO> ar = tourServiceImpl.fileSelect(tourFilesVO);
+		
+		//실험중 인원 제한, 여기 4줄 지우면 select 됨
+		reservationVO.setTourNum(tourCalendarVO.getTourNum());
+		System.out.println("wow");
+		int person = tourServiceImpl.ReservationCut(reservationVO);
+		mv.addObject("limit", person);
+		
 //		tourCalendarVO.setTourNum(tourNoticeVO.getTourNum());
 		mv.addObject("files", ar);
 		mv.addObject("dto", tourNoticeVO);

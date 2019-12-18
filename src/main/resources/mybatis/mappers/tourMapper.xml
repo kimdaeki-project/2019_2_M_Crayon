@@ -57,8 +57,8 @@
 	<insert id="Reservation" parameterType="ReservationVO">
 		insert into reservation
 		values
-		(#{personNum}, #{name}, #{email}, #{phone}, #{day},
-		#{tourNum}, #{ps}, #{totalPrice}, #{tourName}, #{kakaoID})
+		(vip_seq.nextval,#{personNum}, #{name}, #{email}, #{phone}, #{day},
+		#{tourNum}, #{ps}, #{totalPrice}, #{tourName}, #{kakaoID},#{tourEmail})
 	</insert>
 	
 	
@@ -71,8 +71,18 @@
 	</select>
 	
 	<delete id="ReservationDelete" parameterType="ReservationVO">
-		delete Reservation where email=#{email}	
+		delete Reservation where reNum=#{reNum}
 	</delete>
+	
+	<!--인원 제한-->
+	<select id="ReservationCut" parameterType="ReservationVO" resultType="Integer">
+		select sum (personNum) personTotal from 
+		(select RV.tourNum, RV.personNum, TR.maxNum
+		from Reservation RV 
+		full outer join tour TR
+		on RV.tourNum = TR.tourNum)
+		where tourNum=#{tourNum}
+	</select>
 	
 
 	

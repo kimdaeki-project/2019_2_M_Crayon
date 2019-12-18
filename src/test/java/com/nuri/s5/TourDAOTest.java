@@ -16,7 +16,7 @@ public class TourDAOTest extends TestAbstractCase{
 	private TourDAOImpl tourDAOImpl;
 	
 	
-	@Test
+	//@Test
 		public void Reservation()throws Exception {
 			ReservationVO reservationVO = new ReservationVO();
 			
@@ -33,6 +33,18 @@ public class TourDAOTest extends TestAbstractCase{
 			
 			int result = tourDAOImpl.Reservation(reservationVO);
 			assertEquals(1, result);
+			
+			
+		}
+		@Test
+		public void limit() throws Exception{
+			ReservationVO reservationVO = new ReservationVO();
+			reservationVO.setTourNum(1);
+			
+			int result = tourDAOImpl.ReservationCut(reservationVO);
+			System.out.println(result);
+			assertNotNull(result);
+			
 		}
 
 }

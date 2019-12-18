@@ -25,6 +25,8 @@
 	</c:if>
 	<div class="body_in">
 	<h1>Tour Write Page</h1>
+	<a href="../member/memberMyPage" style="color: black;">MyPage <i
+						class="fa fa-user" style="font-size: 24px"></i></a>
 	<form action="./tourWrite" enctype="multipart/form-data" method="post">
 	  	
 	  	<input type="hidden" name="price" placeholder="price">
