@@ -81,9 +81,10 @@ public class ReviewServiceImpl implements ReviewService {
 		
 		// 1. 글쓰기 파일 첨부를 위한 설정 : realPath
 		String realPath = httpSession.getServletContext().getRealPath("resources/upload/review");
-		System.out.println(realPath);
 		ReviewFilesVO reviewFilesVO = new ReviewFilesVO();
+		System.out.println(realPath);
 		int result = reviewDAOImpl.reviewWrite(reviewVO);
+		
 		
 		for (MultipartFile multipartFile : file) {
 			if(multipartFile.getOriginalFilename() != "") {
@@ -92,6 +93,12 @@ public class ReviewServiceImpl implements ReviewService {
 				reviewFilesVO.setFname(fileName);
 				reviewFilesVO.setOname(multipartFile.getOriginalFilename());
 				reviewFilesDAO.fileWite(reviewFilesVO);
+//				reviewFilesVO = new ReviewFilesVO();
+//				String gname = reviewFilesVO.getFname();
+//				gname = gname.substring(gname.lastIndexOf(".")+1);
+//				if(gname != "jpg") {
+//					System.out.println("첨부할 수 없는 확장자입니다.");
+//				}
 			}
 		}
 		return result;
