@@ -47,6 +47,10 @@
 			<div class="rv_inner" id="rv_inner"></div>
 			<button class="rv_inner_btn">예약하기</button>
 		</div>
+        
+
+        
+        
          <div class="menu2">
             <div id="m2"></div>
             <div class="m">투어 안내</div>

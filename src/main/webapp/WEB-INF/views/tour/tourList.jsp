@@ -39,7 +39,7 @@
 		</div>
 		<!-- 넣을거 -->
 		<div class="body_main">
-			<div class="body_name">　투어상품2</div>
+			<div class="body_name">　투어상품</div>
 			<div class="body_inner" >
 			
 				<a href="./tourVIP"><div class="vipgo"></div></a>

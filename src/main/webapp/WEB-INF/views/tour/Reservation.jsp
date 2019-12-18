@@ -20,12 +20,12 @@
 		<div class="ReserveT">　예약자 정보</div><!--제목-->
 		<div class="reservationTitle">
 			
-		
-			예약상품 <input type="text" class="ReserveTN" id="tourName" name="tourName" value="${param.tourName}"><!--예약 상품-->
-			<input type="hidden" id="tourNum" name="tourNum" value="${param.tourNum}"> <!--tourNum-->
-			투어날짜: 　<input type="text" id="day" name="day" class="ReserveP_PN" value="${param.day}"><!--day-->
-				 총 인원: <input type="text" id="personNum" name="personNum" value="${param.personNum}">명  <!--personNum-->
-				 가격: <input type="text" id="totalPrice" name="totalPrice" value="${param.totalPrice}"> 원 <!--totalPrice-->
+			<br>
+			예약상품 <input type="text" class="ReserveTN" id="tourName" name="tourName" value="${param.tourName}" readonly="readonly"><!--예약 상품-->
+			<input type="hidden" id="tourNum" name="tourNum" value="${param.tourNum}" readonly="readonly"> <!--tourNum-->
+			투어날짜 　<input type="text" id="day" name="day" class="ReserveP_PN" value="${param.day}" readonly="readonly"><!--day-->
+				 <div class="pn">총 인원 <input type="text" id="personNum" name="personNum" value="${param.personNum}" readonly="readonly" style="text-align: right; border:none; font-size:20px">명  <!--personNum--></div>
+				<div class="pn">가격 <input type="text" id="totalPrice" name="totalPrice" value="${param.totalPrice}" readonly="readonly" style="text-align: right; border:none; font-size:20px"> 원 <!--totalPrice--></div>
 					<input type="hidden" value="${param.adult}"> 
 					<input type="hidden" value="${param.child}">　<!--가격, 인원-->
 			
@@ -33,7 +33,7 @@
 		
 		<div class="InputIN">
 				<div class="RN_wrap">
-				 <div class="RN">아이디</div><input type="text" id='email' name="email" readonly="readonly" value="${sessionScope.member.email}" class="RT"> 
+				 <div class="RN">아이디</div><input type="text" readonly="readonly" id='email' name="email" readonly="readonly" value="${sessionScope.member.email}" class="RT"> 
 				 <div class="RN">카카오톡 아이디</div><input type="text" id='kakaoID' name="kakaoID" class="RT"> 
 				</div>
 				<div class="RN2_wrap">
@@ -47,12 +47,7 @@
 		
 				<div id="Raccess"><!-- 이용약관-->
 
-					사용자 이용약관<textarea id="access">
-					
-					
-
-	
-1. 개인정보의 처리 목적 
+					사용자 이용약관<textarea id="access">1. 개인정보의 처리 목적 
 파리크레파스(이하 '여행사')는 다음의 목적을 위하여 개인정보를 처리하고 있으며, 다음의 목적 이외의 용도로는 이용하지 않습니다.
 - 고객 가입의사 확인, 고객에 대한 서비스 제공에 따른 본인 식별.인증, 회원자격 유지.관리, 물품 또는 서비스 공급에 따른 금액 결제, 물품 또는 서비스의 공급.배송 등
 

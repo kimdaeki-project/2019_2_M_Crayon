@@ -29,7 +29,7 @@
 		<div class="body_main1">
 
 			<input type="hidden" class="goods_number" value="${dto2.tourNum}">
-			<input type="text" class="goods_title" value="${dto2.tourName}">
+			<input type="text" class="goods_title" value="${dto2.tourName}" readonly="readonly" style="border:none">
 			
 <%-- 			${dto.tourName}, --%>
 
@@ -353,7 +353,7 @@
 					alert("한명이상은 선택해주세요")
 					$("#adult_wrap").focus();
 				}else{
-					window.open("./Reservation?adult="+adult+'&child='+child+'&day='+day+'&totalPrice='+totalPrice+'&tourName='+tourName+'&personNum='+personNum+'&tourNum='+tourNum, "","width=850,height=960,top=100, left=600");	
+					window.open("./Reservation?adult="+adult+'&child='+child+'&day='+day+'&totalPrice='+totalPrice+'&tourName='+tourName+'&personNum='+personNum+'&tourNum='+tourNum, "","width=800,height=979, left=600");	
 					
 			}
 

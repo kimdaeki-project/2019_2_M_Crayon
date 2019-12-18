@@ -129,7 +129,6 @@ div.header_2{
 	background-color: transparent;
 }
 
-
 /**/
 #m3{
 	position: relative;
@@ -300,7 +299,8 @@ div.header_2{
 }
 
 h4{
-	font-size: 24px;
+	font-size: 23px;
+	letter-spacing: -2px;
 }
 
 .textWrap{
