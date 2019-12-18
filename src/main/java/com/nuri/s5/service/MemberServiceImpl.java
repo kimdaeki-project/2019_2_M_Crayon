@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.nuri.s5.dao.MemberDAOImpl;
 import com.nuri.s5.model.MemberVO;
+import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.util.Pager;
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -89,6 +90,16 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int memberCountUpdate(MemberVO memberVO)throws Exception{
 		return memberDAOImpl.memberCountUpdate(memberVO);
+	}
+	
+	//투어 추가
+	@Override
+	public int touradd(TourCalendarVO tourCalendarVO)throws Exception{
+		return memberDAOImpl.touradd(tourCalendarVO);
+	}
+	@Override
+	public int tourDelete(TourCalendarVO tourCalendarVO)throws Exception{
+		return memberDAOImpl.tourDelete(tourCalendarVO);
 	}
 	
 

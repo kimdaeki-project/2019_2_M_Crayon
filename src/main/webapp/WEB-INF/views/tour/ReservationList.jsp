@@ -62,7 +62,7 @@
 				</a>
 			</div>
 			<div class="adminAdd">
-				<a href="#" style="color: white; font-size: 24px">AddTour <i
+				<a href="../tour/tourWrite" style="color: white; font-size: 24px">TourWrite <i
 					class="fa fa-plus-square-o" style="font-size: 28px"></i></a>
 			</div>
 			<div class="adminAdd">
@@ -82,7 +82,7 @@
 				<div class="contents">
 					<!-------- 여기부터 테이블 시작 ----------->
 
-					<form action="./ReservationList" id="frm">
+					<form action="./ReservationList" id="frm" style="width:1300px;">
 
 						<table class="table table-striped">
 							<thead>
@@ -116,7 +116,7 @@
 										<td style="width: 100px; height: 56px; line-height: 38px;">${vo.totalPrice}</td>
 										<td style="width: 100px; height: 56px; line-height: 38px;">${vo.kakaoID}</td>
 
-										<td><a href="./reviewDelete?email=${vo.email}"><input
+										<td><a href="./ReservationDelete?email=${vo.email}"><input
 												type="button" value="예약 삭제" class="btn btn-dark"></a></td>
 
 									</tr>

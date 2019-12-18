@@ -82,7 +82,7 @@ public class TourController {
 		}
 
 		mv.addObject("msg", msg);
-		mv.addObject("path", "./");
+		mv.addObject("path", "../");
 		mv.setViewName("common/common_result");
 		return mv;
 		
@@ -184,5 +184,8 @@ public class TourController {
 	   public void tourVIP() throws Exception {
 
 	   }
+	
+	
+	
 
 }

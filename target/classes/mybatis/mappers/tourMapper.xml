@@ -6,19 +6,6 @@
   
   <mapper namespace="tourMapper">
   
-  	<!-- 좋아요 클릭 --> 
-  	<update id="like_check" parameterType="HashMap">
-  	update wishlike set likeCheck = likeCheck+1 
-  	where email=#{email} and tourNum=#{tourNum}
-  	</update>
-  	
-  	<!--좋아요 취소-->
-  
-  	<update id="like_check_cancle" parameterType="HashMap">
-  	update wishlike set likeCheck = 0
-  	where email=#{email} and tourNum =#{tourNum}
-  	</update>
-  
   	<insert id="tourWrite" parameterType="TourNoticeVO">
   		<selectKey order="BEFORE" resultType="Integer" keyProperty="num">
   			select seq_tour.nextval from dual		
@@ -66,6 +53,7 @@
 	</select>
 
 
+<!--예약-->
 	<insert id="Reservation" parameterType="ReservationVO">
 		insert into reservation
 		values
@@ -85,5 +73,7 @@
 	<delete id="ReservationDelete" parameterType="ReservationVO">
 		delete Reservation where email=#{email}	
 	</delete>
+	
+
 	
 </mapper>

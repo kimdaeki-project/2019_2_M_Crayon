@@ -105,5 +105,7 @@ public class TourServiceImpl implements TourService {
 	public List<ReservationVO> ReservationResult(ReservationVO reservationVO)throws Exception{
 		return tourDAOImpl.ReservationResult(reservationVO);
 	}
+	
+
 
 }

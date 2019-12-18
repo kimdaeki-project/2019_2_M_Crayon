@@ -76,4 +76,17 @@
   			<include refid="searching"></include>
   		</select> 
 		
+			
+	<!--관리자 추가-->
+	
+	<insert id="touradd" parameterType="TourCalendarVO">
+		insert into tour values (tour_seq.nextval,#{tourNum},#{tourName},#{maxNum},#{price},0)
+	</insert>
+	
+	<!--관리자 삭제-->
+
+	<delete id="tourDelete" parameterType="TourCalendarVO">
+		delete tour where tourNum=#{tourNum}	
+	</delete>		
+		
   </mapper>

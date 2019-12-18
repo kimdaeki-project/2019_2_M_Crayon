@@ -27,14 +27,14 @@
 </head>
 <body>
 
-	<c:if test="${sessionScope.member.aCheck ne 1}">
 		<c:import url="../layout/nav.jsp"></c:import>
+	<c:if test="${sessionScope.member.aCheck ne 1}">
 	</c:if>
 	<div class="body">
 		<div class="body_head">
 			<div class="body_back">
-				<div class="body_h_txt">“파리크레파스 리얼후기”</div>
-				<div class="body_h_txt2">생생한 리뷰를 들려주세요!</div>
+				<div class="body_h_txt">“파리크레파스 투어상품”</div>
+				<div class="body_h_txt2">특별한 도시 파리, 파리크레파스와 함께 즐거운 여행 되세요</div>
 			</div>
 		</div>
 		<!-- 넣을거 -->

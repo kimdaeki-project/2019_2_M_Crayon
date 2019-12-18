@@ -30,4 +30,6 @@ public interface TourService {
 	public int ReservationDelete(ReservationVO reservationVO)throws Exception;
 	
 	public List<ReservationVO> ReservationResult(ReservationVO reservationVO)throws Exception;
+	
+	
 }
