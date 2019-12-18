@@ -73,4 +73,10 @@
 		#{tourNum}, #{ps}, #{totalPrice}, #{tourName}, #{kakaoID})
 	</insert>
 	
+	<insert id="vReservation" parameterType="vReservationVO">
+		insert into vreservation
+		values
+		(vip_seq.nextval(),#{name}, #{email},#{kakaoID},#{content},#{vday},#{vprice},#{tourEmail})
+	</insert>
+	
 </mapper>

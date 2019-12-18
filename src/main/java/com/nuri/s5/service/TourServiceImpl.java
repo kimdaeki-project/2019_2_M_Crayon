@@ -15,6 +15,7 @@ import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourFilesVO;
 import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.model.TourVO;
+import com.nuri.s5.model.VReservationVO;
 import com.nuri.s5.util.FileSaver;
 
 @Service
@@ -88,6 +89,12 @@ public class TourServiceImpl implements TourService {
 
 	@Override
 	public int tourDelete(TourNoticeVO tourNoticeVO) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int vReservation(VReservationVO vReservationVO, HttpSession session) throws Exception {
 		// TODO Auto-generated method stub
 		return 0;
 	}

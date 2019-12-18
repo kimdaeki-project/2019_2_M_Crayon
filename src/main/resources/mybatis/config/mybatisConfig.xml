@@ -18,6 +18,7 @@
   		<typeAlias type="com.nuri.s5.model.TourCalendarVO" alias="TourCalendarVO"/>
 		<typeAlias type="java.util.HashMap" alias="HashMap"/>
 		<typeAlias type="com.nuri.s5.model.ReservationVO" alias="ReservationVO"/>
+		<typeAlias type="com.nuri.s5.model.VReservationVO" alias="vReservationVO"/>
   	</typeAliases>
   </configuration>
   

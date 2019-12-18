@@ -48,7 +48,30 @@
 			<button class="rv_inner_btn">예약하기</button>
 		</div>
         
+      <script type="text/javascript">
+    	
+  	  $(".rv_inner_btn").click(function() {
+  		  
+  		  	var rv = document.getElementById("rv_inner").value;
+			
+  			if(${sessionScope.member eq null}){
+  				alert("로그인을 해주세요");
+  				location.href="../member/memberLogin";
+  				} else if($("input[class='ck_1']:checked").length <3){
+  					alert("세 곳이상 선택해주세요")
+				
+  				}else{
+  					window.open("./vReservation?vprice="+price, "","width=800,height=979, left=600");		
+  				}
 
+  	     });
+  	  
+  	  
+  	  
+
+
+  	</script>
+        
         
         
          <div class="menu2">
@@ -127,6 +150,7 @@
 			<script>
 			var i = 0;
 			var j=0;
+			var price =0;
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			    mapOption = {
 			        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
@@ -214,24 +238,33 @@
 							
 							$('.ck_1').on('click', function(){
 								$("#rv_inner").empty();
-								
+								if($("input[class='ck_1']:checked").length==3){
+									price = 150000;
+				  					$("#rv_inner").append("<input type='hidden'value='"+price+"' id='vprice'>");
+				  				}else if($("input[class='ck_1']:checked").length==4){
+				  					price = 170000;
+				  					$("#rv_inner").append("<input type='hidden'value='"+price+"' id='vprice'>");
+				  					window.open("./vReservation", "","width=800,height=979, left=600");		
+				  				}else if($("input[class='ck_1']:checked").length==5){
+				  					price = 190000;
+				  					$("#rv_inner").append("<input type='hidden'value='"+price+"' id='vprice'>");
+				  					window.open("./vReservation", "","width=800,height=979, left=600");		
+				  				}else if($("input[class='ck_1']:checked").length==6){
+				  					price = 200000;
+				  					$("#rv_inner").append("<input type='hidden'value='"+price+"' id='vprice'>");
+				  					window.open("./vReservation", "","width=800,height=979, left=600");		
+				  				}
 
 								
 								$('.ck_1').each(function(){
 									if($(this).prop("checked")){
-					
+										
 										$("#rv_inner").append("<p>　* "+$(this).val()+"</p>");
 									}
-							
 									
 									});
 								
-								//console.log(e); */
-							
-							/* 	if ($('input[name="checkbox"]').is(":checked")){
-									$("#rv_inner").append(e);										
-									} */
-							
+			
 							});
 							j++;							
 						}
