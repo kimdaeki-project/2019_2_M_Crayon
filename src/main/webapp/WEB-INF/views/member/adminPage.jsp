@@ -51,7 +51,7 @@
 					</a>
 				</div>
 				<div class="adminTour">
-					<a href="#" style="color: white; font-size: 24px">Reservation <i
+					<a href="../tour/ReservationList" style="color: white; font-size: 24px">Reservation <i
 						class="fa fa-bus" style="font-size: 24px"></i></a>
 				</div>
 				<div class="adminWrite">
@@ -60,7 +60,7 @@
 						class="fa fa-pencil-square-o" style="font-size: 28px"></i></a>
 				</div>
 				<div class="adminAdd">
-					<a href="#" style="color: white; font-size: 24px">AddTour <i
+					<a href="../tour/tourWrite" style="color: white; font-size: 24px">TourWrite <i
 						class="fa fa-plus-square-o" style="font-size: 28px"></i></a>
 				</div>
 				<div class="adminAdd">
@@ -77,6 +77,7 @@
 
 				<div class="content2">
 					<div class="content2Ti">Reservation</div>
+					<div id="ReservationR"></div>
 				</div>
 
 				<div class="content3">
@@ -84,17 +85,70 @@
 					<div id="reviewR"></div>
 				</div>
 
+
 				<div class="content4">
-					<div class="content4Ti">Tour 추가</div>
-					<input type="text" class="touraddInput"> <input
-						type="button" value="입력" class="tabtn">
+					<div class="content4Ti">TourList 추가 및 삭제</div>
+					<div id="addR" style="width: 1000px; float: left;" ></div>
+						
+						<input type="button" value="투어 리스트 삭제" class="tabdel" style="float:left; 
+						margin-top:30px; margin-left: 20px; width: "> 
 				</div>
+
 			</div>
 		</div>
 	</div>
 
 
 	<script type="text/javascript">
+	
+	$(".tabdel").click(function() {
+		window.open("./tourDelete", "",
+		"width=500,height=230,top=200, left=600");
+	});
+	
+	
+	
+	/*tourAdd*/
+	$(document).ready(function() {
+			
+			$.ajax({
+				type:"Get",
+				url:"./touradd",
+				datatype:"text",
+				error: function() {
+					alert("통신실패")
+				},
+				success : function(data) {
+					$("#addR").html(data);
+				
+					
+				}
+			});
+		});
+	
+	
+	/*ReservationList*/
+		
+		 $(document).ready(function() {
+		
+		$.ajax({
+			type:"Get",
+			url:"../tour/ReservationResult",
+			datatype:"text",
+			error: function() {
+				alert("통신실패")
+			},
+			success : function(data) {
+				$("#ReservationR").html(data);
+			
+				
+			}
+		});
+	});
+	
+	
+
+	
 		/*ReviewList*/
 		var xhttp;
 		if (XMLHttpRequest) {

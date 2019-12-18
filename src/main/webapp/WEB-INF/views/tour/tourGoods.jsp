@@ -83,7 +83,7 @@
 			<button id="datebn">선택</button>
 			
 			<form id="frm" action="./calcal" method="POST">
-			<input type="hidden" value="30000" id="calPrice">
+			<input type="hidden" value="${dto2.price}" id="calPrice">
 			</form>
 			
 			<br> 인원 <select id="adult_wrap"

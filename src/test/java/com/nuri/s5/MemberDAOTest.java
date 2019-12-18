@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import com.nuri.s5.dao.MemberDAOImpl;
 import com.nuri.s5.model.MemberVO;
+import com.nuri.s5.model.TourCalendarVO;
 
 public class MemberDAOTest extends TestAbstractCase{
 
@@ -51,7 +52,7 @@ public class MemberDAOTest extends TestAbstractCase{
 		assertEquals(1, result);
 	}
 	
-	@Test
+	//@Test
 	public void selectKakao() throws Exception{
 		MemberVO memberVO = new MemberVO();
 		memberVO.setEmail("wlsckdrb323@naver.com");
@@ -60,6 +61,17 @@ public class MemberDAOTest extends TestAbstractCase{
 		assertNotNull(memberVO);
 	}
 	
+	//@Test
+	public void addtour() throws Exception{
+		TourCalendarVO tourCalendarVO = new TourCalendarVO();
+		tourCalendarVO.setTourNum(9);
+		tourCalendarVO.setTourName("지윤투어");
+		tourCalendarVO.setMaxNum(20);
+		tourCalendarVO.setPrice(90000);
+		
+		int result = memberDAOImpl.touradd(tourCalendarVO);
+		assertEquals(1, result);
+	}
 	
 	
 }

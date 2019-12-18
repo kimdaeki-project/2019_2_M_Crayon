@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.nuri.s5.model.MemberVO;
+import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.util.Pager;
 
 	@Repository
@@ -90,6 +91,15 @@ import com.nuri.s5.util.Pager;
 	@Override
 	public int memberCountUpdate(MemberVO memberVO)throws Exception{
 		return sqlSession.update(NAMESPACE+"memberCountUpdate", memberVO);
+	}
+	
+	@Override
+	public int touradd(TourCalendarVO tourCalendarVO)throws Exception{
+		return sqlSession.insert(NAMESPACE+"touradd", tourCalendarVO);
+	}
+	@Override
+	public int tourDelete(TourCalendarVO tourCalendarVO)throws Exception{
+		return sqlSession.delete(NAMESPACE+"tourDelete", tourCalendarVO);
 	}
 	
 	}

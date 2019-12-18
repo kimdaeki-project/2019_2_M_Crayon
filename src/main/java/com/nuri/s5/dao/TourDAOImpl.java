@@ -44,6 +44,11 @@ public class TourDAOImpl implements TourDAO {
 	public int Reservation(ReservationVO reservationVO)throws Exception{
 		return sqlSession.insert(NAMESPACE+"Reservation", reservationVO);
 	}
+	
+	@Override
+	public List<ReservationVO> ReservationList(ReservationVO reservationVO)throws Exception{
+		return sqlSession.selectList(NAMESPACE+"ReservationList", reservationVO);
+	}
 
 
 	@Override
@@ -58,6 +63,18 @@ public class TourDAOImpl implements TourDAO {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	@Override
+	public int ReservationDelete(ReservationVO reservationVO)throws Exception{
+		return sqlSession.delete(NAMESPACE+"ReservationDelete", reservationVO);
+	}
+	
+	@Override
+	public List<ReservationVO> ReservationResult(ReservationVO reservationVO)throws Exception{
+		return sqlSession.selectList(NAMESPACE+"ReservationResult",reservationVO);
+	}
+	
+
 
 
 

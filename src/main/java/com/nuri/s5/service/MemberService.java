@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import com.nuri.s5.model.MemberVO;
+import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.util.Pager;
 
 public interface MemberService {
@@ -38,5 +39,9 @@ public interface MemberService {
 		public int memberCount(Pager pager) throws Exception;
 		//adminCountUpdate
 		public int memberCountUpdate(MemberVO memberVO)throws Exception;
+		//touradd
+		public int touradd(TourCalendarVO tourCalendarVO)throws Exception;
+		//tourDelete
+		public int tourDelete(TourCalendarVO tourCalendarVO)throws Exception;
 		
 }

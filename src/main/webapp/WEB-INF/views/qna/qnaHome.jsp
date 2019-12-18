@@ -76,7 +76,7 @@
 					</a>
 				</div>
 				<div class="adminTour">
-					<a href="#" style="color: white; font-size: 24px">Reservation <i
+					<a href="../tour/ReservationList" style="color: white; font-size: 24px">Reservation <i
 						class="fa fa-bus" style="font-size: 24px"></i>
 					</a>
 				</div>
@@ -86,7 +86,7 @@
 						class="fa fa-pencil-square-o" style="font-size: 28px"></i></a>
 				</div>
 				<div class="adminAdd">
-					<a href="#" style="color: white; font-size: 24px">AddTour <i
+					<a href="../tour/tourWrite" style="color: white; font-size: 24px">TourWrite <i
 						class="fa fa-plus-square-o" style="font-size: 28px"></i></a>
 				</div>
 				<div class="adminAdd">
