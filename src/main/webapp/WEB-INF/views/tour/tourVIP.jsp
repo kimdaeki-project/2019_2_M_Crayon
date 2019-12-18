@@ -259,7 +259,7 @@
 								$('.ck_1').each(function(){
 									if($(this).prop("checked")){
 										
-										$("#rv_inner").append("<p>　* "+$(this).val()+"</p>");
+										$("#rv_inner").append("<p class='content'>　* "+$(this).val()+"</p>");
 									}
 									
 									});

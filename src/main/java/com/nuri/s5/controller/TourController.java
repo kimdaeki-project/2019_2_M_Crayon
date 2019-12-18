@@ -44,9 +44,11 @@ public class TourController {
 	}
 	
 	@PostMapping(value="vReservation")
-	public void vReservation(VReservationVO vreservationVO,HttpSession session) throws Exception {
+	public void vReservation(VReservationVO vReservationVO,HttpSession session) throws Exception {
 		ModelAndView mv =  new ModelAndView();
 		
+		int result = tourServiceImpl.vReservation(vReservationVO, session);
+		System.out.println(result);
 		
 	}
 	
