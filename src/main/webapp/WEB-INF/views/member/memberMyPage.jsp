@@ -40,7 +40,7 @@
 			<a href="./memberUpdate"><input type="submit" id="update" value="회원정보 수정" class="btns_p"></a> 
 			</c:if>
 			<a href="./memberLogout"><input type="submit" id="logout" value="로그아웃" class="btns"></a> 
-			<input type="button" id="delete" value="Delete" class="btns">
+			<input type="button" id="delete" value="회원탈퇴" class="btns">
 			
 		</div>
 	</div>
