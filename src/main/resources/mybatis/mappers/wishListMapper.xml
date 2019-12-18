@@ -33,6 +33,6 @@
 	</insert>
 	
 	<delete id="listDelete" parameterType="wishListVO">
-		delete wishList where num = #{num} and tourNum = #{tourNum}
+		delete wishList where tourNum = #{tourNum}
 	</delete>
   </mapper>

@@ -29,7 +29,8 @@
 		<div class="body_main1">
 
 			<input type="hidden" class="goods_number" value="${dto2.tourNum}">
-			<input type="text" class="goods_title" value="${dto2.tourName}" readonly="readonly" style="border:none">
+
+			<h1 class="goods_title">${dto2.tourName}</h1>
 			
 <%-- 			${dto.tourName}, --%>
 
