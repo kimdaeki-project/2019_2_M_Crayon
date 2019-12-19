@@ -54,6 +54,10 @@
 					<a href="../tour/ReservationList" style="color: white; font-size: 24px">Reservation <i
 						class="fa fa-bus" style="font-size: 24px"></i></a>
 				</div>
+				<div class="adminTour">
+					<a href="../tour/VReservationList" style="color: white; font-size: 24px">VIP <i
+						class="fa fa-money" style="font-size: 24px"></i></a>
+				</div>
 				<div class="adminWrite">
 					<a href="../review/reviewList"
 						style="color: white; font-size: 24px">Review <i

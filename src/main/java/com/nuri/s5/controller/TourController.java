@@ -47,6 +47,10 @@ public class TourController {
 	return mv;
 	}
 
+	@RequestMapping("VReservationList")
+	public void VReservationList() throws Exception{
+		
+	}
 
 	
 	@GetMapping(value = "vReservation")

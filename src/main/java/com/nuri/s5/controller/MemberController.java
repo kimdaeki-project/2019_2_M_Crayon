@@ -179,7 +179,6 @@ public class MemberController {
 
 	}
 	
-	
 
 	// 업데이트 폼
 	@GetMapping(value = "memberUpdate")
