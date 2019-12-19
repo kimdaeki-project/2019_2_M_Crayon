@@ -9,7 +9,21 @@ public class VReservationVO {
 	private String vday;
 	private int vprice;
 	private String tourEmail;
+	private String ac;
+	private String vps;
 	
+	public String getVps() {
+		return vps;
+	}
+	public void setVps(String vps) {
+		this.vps = vps;
+	}
+	public String getAc() {
+		return ac;
+	}
+	public void setAc(String ac) {
+		this.ac = ac;
+	}
 	public String getTourEmail() {
 		return tourEmail;
 	}

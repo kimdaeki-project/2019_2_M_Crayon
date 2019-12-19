@@ -6,12 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Reservation</title>
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<%-- <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link href="<c:url value="/resources/css/layout/Calendar.css"/>"
-	rel="stylesheet">
+	rel="stylesheet"> --%>
 
 </head>
 <body>
@@ -23,12 +23,12 @@
 			<br>
 			예약상품 <input type="text" class="ReserveTN" id="tourName" name="tourName" value="맞춤투어" readonly="readonly"><!--예약 상품-->
 			이메일 <input type="email" class="ReserveTN" id="tourEmail" name="tourEmail" placeholder="견적서를 받을 이메일을 입력해주세요.">
-			선택한 위치 <input type="text" class="ReserveTN" id="content" name="content" placeholder="견적서를 받을 이메일을 입력해주세요.">
-			<input type="hidden" id="tourNum" name="tourNum" value="${param.tourNum}" readonly="readonly"> <!--tourNum-->
-			투어날짜 　<input type="text" id="date" name="day" class="ReserveP_PN" value="${param.day}" readonly="readonly"><!--day-->
-				
-				<div class="pn">예상 가격 <input type="text" id="vprice" name="vprice" value="${param.vprice}" readonly="readonly" style="text-align: right; border:none; font-size:20px"> 원 <!--totalPrice--></div>
+			선택한 위치 <input type="text" class="ReserveTN" id="content" name="content" readonly="readonly" value="${content}">
+			<div class="pn">예상 가격 <input type="text" id="vprice" name="vprice" value="${param.vprice}" readonly="readonly" style="text-align: right; border:none; font-size:20px"> 원 <!--totalPrice--></div>
 					
+			<div class="pn">투어날짜 　<input type="text" id="date" name="vday" class="ReserveP_PN" value="${param.day}" readonly="readonly"><!--day-->
+			</div>	
+				
 			
 		</div><!-- Title의 끝-->
 		
@@ -66,7 +66,7 @@
 				</div>
 		</div>
 			<div class="pstxt">※ 특이사항
-				<textarea id="ps" name="ps" class="RTT"></textarea>
+				<textarea id="vps" name="vps" class="RTT"></textarea>
 			</div>
 		
 				<div id="Raccess"><!-- 이용약관-->
@@ -121,7 +121,7 @@
 				</div>
 				<div class="ReserveButn">
 					<input type="button" class="reserveOK" value="신청서 보내기">
-					<input type="button" class="NOreserve" value="취소">
+					<input type="button" class="NOreserve" data-dismiss="modal" value="취소">
 				</div> 
 
 	</form>
@@ -133,14 +133,19 @@
 	<script type="text/javascript">
 		
 	$(".reserveOK").click(function() {
-		if ($("#kakaoID").val() == "") {
+		
+		if($("#tourEmail").val()==""){
+			alert("Email을 입력하세요!");
+			$("#tourEmail").focus();
+			
+		}else if ($("#kakaoID").val() == "") {
 			alert("kakaoID를 입력하세요!");
 			$("#kakaoID").focus();
 
 		} else if ($("#phone").val() == "") {
 			alert("전화번호를 입력하세요!")
 			$("#phone").focus();
-		} else {
+		}else {
 		
 			$("#form11").submit();
 			alert("신청서 작성을 완료하였습니다.");

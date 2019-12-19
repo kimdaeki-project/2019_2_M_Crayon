@@ -64,7 +64,7 @@ public class TourDAOImpl implements TourDAO {
 	@Override
 	public int vReservation(VReservationVO vReservationVO) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.insert(NAMESPACE+"VReservation",vReservationVO);
 	}
 
 

@@ -39,17 +39,22 @@ public class TourController {
 	/* tourCalendar 예약폼*/
 	
 	@GetMapping(value = "vReservation")
-	public void vReservation() throws Exception {
+	public ModelAndView vReservation(VReservationVO vReservationVO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		String content =vReservationVO.getContent();
+		mv.addObject("content",content);
 		
+		return mv;
 	}
 	
 	@PostMapping(value="vReservation")
-	public void vReservation(VReservationVO vReservationVO,HttpSession session) throws Exception {
+	public ModelAndView vReservation(VReservationVO vReservationVO,HttpSession session) throws Exception {
 		ModelAndView mv =  new ModelAndView();
-		
 		int result = tourServiceImpl.vReservation(vReservationVO, session);
 		System.out.println(result);
 		
+		mv.setViewName("redirect:../");
+		return mv;
 	}
 	
 

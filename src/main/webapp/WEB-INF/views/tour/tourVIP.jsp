@@ -15,8 +15,21 @@
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/tourVIP.css"/>"
 	rel="stylesheet">
+<link href="<c:url value="/resources/css/layout/Calendar.css"/>"
+	rel="stylesheet">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ba0b2e0894b510063b292edfad86999&libraries=services"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<link href="<c:url value="/resources/css/layout/Calendar.css"/>"
+	rel="stylesheet">
 
 </head>
 <body>
@@ -45,12 +58,29 @@
 	<div class="body_main2">
          <div class="rv">
 			<div class="rv_inner" id="rv_inner"></div>
-			<button class="rv_inner_btn">예약하기</button>
+			<!-- <button class="rv_inner_btn">예약하기</button> -->
+			<button type="button" class="rv_inner_btn" data-toggle="modal" data-target="#myModal">예약하기</button>
 		</div>
+		
+		<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+      
+    </div>
+  </div>
         
       <script type="text/javascript">
-    	
-  	  $(".rv_inner_btn").click(function() {
+      var content="";
+  	  $(".rv_inner_btn").click(function(e) {
   		  
   		  	var rv = document.getElementById("rv_inner").value;
 			
@@ -59,14 +89,35 @@
   				location.href="../member/memberLogin";
   				} else if($("input[class='ck_1']:checked").length <3){
   					alert("세 곳이상 선택해주세요")
-				
-  				}else{
-  					window.open("./vReservation?vprice="+price, "","width=800,height=979, left=600");		
+  					e.stopPropagation();
+  					$(".modal-header").empty();
+  				}else if($("input[class='ck_1']:checked").length >= 3){	
+  					
+  					$.ajax({
+  						url:"./vReservation",
+  						type:'GET',
+  						data:{
+  							"content":content,
+  							"vprice":price
+  						},
+  						success : function(data) {
+  				            $(".modal-header").html(data);
+  				      
+  				            
+  				         },
+  						error:function(){
+  							alert("실패");
+  						}
+  						
+  						
+  					});
+  					
+  				
   				}
 
   	     });
   	  
-  	  
+  	
   	  
 
 
@@ -196,7 +247,7 @@
 					
 					        // 인포윈도우로 장소에 대한 설명을 표시합니다
 					        var infowindow = new kakao.maps.InfoWindow({
-					            content: '<div style="width:150px;text-align:center;padding:6px 0;"><input type="checkbox" value="'+v+'"name="checkbox" class="ck_1" id="ck'+b+'">'+v+'</div>'
+					            content: '<div style="width:150px;text-align:center;padding:6px 0;"><label for = "ck'+b+'"><input type="checkbox" value="'+v+'"name="checkbox" class="ck_1" id="ck'+b+'">'+v+'</label></div>'
 					        });
 					        infowindow.open(map, marker);
 					        
@@ -244,22 +295,23 @@
 				  				}else if($("input[class='ck_1']:checked").length==4){
 				  					price = 170000;
 				  					$("#rv_inner").append("<input type='hidden'value='"+price+"' id='vprice'>");
-				  					window.open("./vReservation", "","width=800,height=979, left=600");		
+				  						
 				  				}else if($("input[class='ck_1']:checked").length==5){
 				  					price = 190000;
 				  					$("#rv_inner").append("<input type='hidden'value='"+price+"' id='vprice'>");
-				  					window.open("./vReservation", "","width=800,height=979, left=600");		
+				  						
 				  				}else if($("input[class='ck_1']:checked").length==6){
 				  					price = 200000;
 				  					$("#rv_inner").append("<input type='hidden'value='"+price+"' id='vprice'>");
-				  					window.open("./vReservation", "","width=800,height=979, left=600");		
+				  						
 				  				}
 
 								
 								$('.ck_1').each(function(){
 									if($(this).prop("checked")){
-										
 										$("#rv_inner").append("<p class='content'>　* "+$(this).val()+"</p>");
+										content=$(".content").text();
+										console.log(content);
 									}
 									
 									});
@@ -270,7 +322,7 @@
 						}
 					});
 					}
-				
+					
 					
 					
 			</script>

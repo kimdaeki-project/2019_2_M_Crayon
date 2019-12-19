@@ -96,7 +96,7 @@ public class TourServiceImpl implements TourService {
 	@Override
 	public int vReservation(VReservationVO vReservationVO, HttpSession session) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
+		return tourDAOImpl.vReservation(vReservationVO);
 	}
 
 }
