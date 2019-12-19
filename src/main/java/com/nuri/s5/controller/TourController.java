@@ -20,6 +20,7 @@ import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourFilesVO;
 import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.model.TourVO;
+import com.nuri.s5.model.VReservationVO;
 import com.nuri.s5.service.TourCalendarServiceImpl;
 import com.nuri.s5.service.TourServiceImpl;
 
@@ -36,6 +37,7 @@ public class TourController {
 	private TourCalendarServiceImpl tourCalendarServiceImpl;
 	
 	/* tourCalendar 예약폼*/
+
 	@GetMapping(value = "ReservationResult")
 	public ModelAndView ReservationResult(ReservationVO reservationVO)throws Exception{
 	ModelAndView mv = new ModelAndView();
@@ -44,6 +46,28 @@ public class TourController {
 	mv.setViewName("tour/ReservationResult");
 	return mv;
 	}
+
+
+	
+	@GetMapping(value = "vReservation")
+	public ModelAndView vReservation(VReservationVO vReservationVO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		String content =vReservationVO.getContent();
+		mv.addObject("content",content);
+		
+		return mv;
+	}
+	
+	@PostMapping(value="vReservation")
+	public ModelAndView vReservation(VReservationVO vReservationVO,HttpSession session) throws Exception {
+		ModelAndView mv =  new ModelAndView();
+		int result = tourServiceImpl.vReservation(vReservationVO, session);
+		System.out.println(result);
+		
+		mv.setViewName("redirect:../");
+		return mv;
+	}
+	
 
 
 	@GetMapping(value = "Reservation")

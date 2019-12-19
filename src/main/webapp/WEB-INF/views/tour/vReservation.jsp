@@ -6,31 +6,54 @@
 <head>
 <meta charset="UTF-8">
 <title>Reservation</title>
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<%-- <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link href="<c:url value="/resources/css/layout/Calendar.css"/>"
-	rel="stylesheet">
+	rel="stylesheet"> --%>
 
 </head>
 <body>
 
-	<form id="form11" action="./Reservation" method="POST">
+	<form id="form11" action="./vReservation" method="POST">
 		<div class="ReserveT">　예약자 정보</div><!--제목-->
 		<div class="reservationTitle">
 			
 			<br>
-			예약상품 <input type="text" class="ReserveTN" id="tourName" name="tourName" value="${param.tourName}" readonly="readonly"><!--예약 상품-->
-			<input type="hidden" id="tourNum" name="tourNum" value="${param.tourNum}" readonly="readonly"> <!--tourNum-->
-			투어날짜 　<input type="text" id="day" name="day" class="ReserveP_PN" value="${param.day}" readonly="readonly"><!--day-->
-			이메일 <input type="email" class="ReserveTN" id="tourEmail" name="tourEmail" placeholder="예약내역을 받을 이메일을 입력해주세요.">
-				 <div class="pn">총 인원 <input type="text" id="personNum" name="personNum" value="${param.personNum}" readonly="readonly" style="text-align: right; border:none; font-size:20px">명  <!--personNum--></div>
-				<div class="pn">가격 <input type="text" id="totalPrice" name="totalPrice" value="${param.totalPrice}" readonly="readonly" style="text-align: right; border:none; font-size:20px"> 원 <!--totalPrice--></div>
-					<input type="hidden" value="${param.adult}"> 
-					<input type="hidden" value="${param.child}">　<!--가격, 인원-->
+			예약상품 <input type="text" class="ReserveTN" id="tourName" name="tourName" value="맞춤투어" readonly="readonly"><!--예약 상품-->
+			이메일 <input type="email" class="ReserveTN" id="tourEmail" name="tourEmail" placeholder="견적서를 받을 이메일을 입력해주세요.">
+			선택한 위치 <input type="text" class="ReserveTN" id="content" name="content" readonly="readonly" value="${content}">
+			<div class="pn">예상 가격 <input type="text" id="vprice" name="vprice" value="${param.vprice}" readonly="readonly" style="text-align: right; border:none; font-size:20px"> 원 <!--totalPrice--></div>
+					
+			<div class="pn">투어날짜 　<input type="text" id="date" name="vday" class="ReserveP_PN" value="${param.day}" readonly="readonly"><!--day-->
+			</div>	
+				
 			
 		</div><!-- Title의 끝-->
+		
+		
+		<script type="text/javascript">
+		$(function() {
+			$("#date").datepicker(
+					{
+						dateFormat : "yy/mm/dd",
+						
+						minDate: 3,
+						maxDate: new Date('2020-12-31'),
+						onSelect : function(day) {
+
+							var date = new Date($("#date").datepicker({
+								dateFormat : "yy / mm / dd"
+							}).val());
+
+						}
+
+					});
+
+		});
+	</script>
+		
 		
 		<div class="InputIN">
 				<div class="RN_wrap">
@@ -43,7 +66,7 @@
 				</div>
 		</div>
 			<div class="pstxt">※ 특이사항
-				<textarea id="ps" name="ps" class="RTT"></textarea>
+				<textarea id="vps" name="vps" class="RTT"></textarea>
 			</div>
 		
 				<div id="Raccess"><!-- 이용약관-->
@@ -97,8 +120,8 @@
 					</div>
 				</div>
 				<div class="ReserveButn">
-					<input type="button" class="reserveOK" value="예약하기">
-					<input type="button" class="NOreserve" value="취소">
+					<input type="button" class="reserveOK" value="신청서 보내기">
+					<input type="button" class="NOreserve" data-dismiss="modal" value="취소">
 				</div> 
 
 	</form>
@@ -110,19 +133,24 @@
 	<script type="text/javascript">
 		
 	$(".reserveOK").click(function() {
-		if ($("#kakaoID").val() == "") {
+		
+		if($("#tourEmail").val()==""){
+			alert("Email을 입력하세요!");
+			$("#tourEmail").focus();
+			
+		}else if ($("#kakaoID").val() == "") {
 			alert("kakaoID를 입력하세요!");
 			$("#kakaoID").focus();
 
 		} else if ($("#phone").val() == "") {
 			alert("전화번호를 입력하세요!")
 			$("#phone").focus();
-		} else {
+		}else {
 		
 			$("#form11").submit();
-			alert("예약성공");
+			alert("신청서 작성을 완료하였습니다.");
 			window.self.close();
-			opener.location.replace('../pay/kakaoPay');
+			opener.location.replace('../');
 			
 			
 		}

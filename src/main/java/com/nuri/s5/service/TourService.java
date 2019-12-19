@@ -10,6 +10,7 @@ import com.nuri.s5.model.ReservationVO;
 import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.model.TourVO;
+import com.nuri.s5.model.VReservationVO;
 
 public interface TourService {
 	
@@ -31,5 +32,6 @@ public interface TourService {
 	
 	public List<ReservationVO> ReservationResult(ReservationVO reservationVO)throws Exception;
 	
-	
+	public int vReservation(VReservationVO vReservationVO,HttpSession session)throws Exception;
+
 }

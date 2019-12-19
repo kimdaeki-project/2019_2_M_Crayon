@@ -13,6 +13,7 @@ import com.nuri.s5.model.ReservationVO;
 import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.model.TourVO;
+import com.nuri.s5.model.VReservationVO;
 
 @Repository
 public class TourDAOImpl implements TourDAO {
@@ -75,6 +76,13 @@ public class TourDAOImpl implements TourDAO {
 	}
 	
 
+
+
+	@Override
+	public int vReservation(VReservationVO vReservationVO) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.insert(NAMESPACE+"VReservation",vReservationVO);
+	}
 
 
 

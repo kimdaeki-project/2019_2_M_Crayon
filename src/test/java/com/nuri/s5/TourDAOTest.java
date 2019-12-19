@@ -9,6 +9,7 @@ import org.junit.Test;
 import com.nuri.s5.dao.TourDAOImpl;
 import com.nuri.s5.model.MemberVO;
 import com.nuri.s5.model.ReservationVO;
+import com.nuri.s5.model.VReservationVO;
 
 public class TourDAOTest extends TestAbstractCase{
 
@@ -17,6 +18,22 @@ public class TourDAOTest extends TestAbstractCase{
 	
 	
 	@Test
+	public void vRe() throws Exception{
+		VReservationVO vreVO = new VReservationVO();
+
+		vreVO.setContent("AA");
+		vreVO.setEmail("qq123");
+		vreVO.setName("qq");
+		vreVO.setTourEmail("q@a.com");
+		vreVO.setVprice(154000);
+		vreVO.setKakaoID("H");
+		vreVO.setVday("2019/12/31");
+		
+		int result = tourDAOImpl.vReservation(vreVO);
+		assertEquals(1, result);
+	}
+	
+	//@Test
 		public void Reservation()throws Exception {
 			ReservationVO reservationVO = new ReservationVO();
 			
