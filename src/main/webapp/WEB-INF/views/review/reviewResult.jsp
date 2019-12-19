@@ -7,8 +7,8 @@
 <c:forEach items="${list}" var="vo">
  <div class="reviewList" style="width: 410px; 
  height: 50px; margin: 0 auto; margin-top: 10px; text-align: center; line-height: 50px;
- font-size: medium; font-weight: bold;" >
- 	<div  class="reviewList1">제목: ${vo.title}  / 작성자: ${vo.writer}  / 날짜: ${vo.day}</div>
+ " >
+ 	<div  class="reviewList1" style="font-size:16px; letter-spacing:-1.5px"> 제목: ${vo.title} * 작성자: ${vo.writer}  *  ${vo.day}</div>
  </div>
 
  </c:forEach>

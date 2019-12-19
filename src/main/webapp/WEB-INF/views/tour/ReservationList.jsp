@@ -56,6 +56,10 @@
 					class="fa fa-bus" style="font-size: 24px"></i>
 				</a>
 			</div>
+			<div class="adminTour">
+					<a href="../tour/VReservationList" style="color: white; font-size: 24px">VIP <i
+						class="fa fa-money" style="font-size: 24px"></i></a>
+				</div>
 			<div class="adminWrite">
 				<a href="../review/reviewList" style="color: white; font-size: 24px">Review
 					<i class="fa fa-pencil-square-o" style="font-size: 28px"></i>
@@ -77,7 +81,7 @@
 
 		<!-- 넣을거 -->
 		<div class="body_main">
-			<div class="body_name"> 예약 관리페이지</div>
+			<div class="body_name">　예약 관리페이지</div>
 			<div class="body_inner">
 				<div class="contents">
 					<!-------- 여기부터 테이블 시작 ----------->

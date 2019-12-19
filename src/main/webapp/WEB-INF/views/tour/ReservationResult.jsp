@@ -5,12 +5,12 @@
 
 <c:forEach items="${list}" var="vo" varStatus="str">
 	<div>
-		
-				<div>예약 인원수 : ${vo.personNum} || 예약자 이름 : ${vo.name}</div>
-				<div>예약자 아이디 : ${vo.email} || 예약자 전화번호: ${vo.phone}</div>
-				<div>예약 날짜 : ${vo.day} || 투어 번호 : ${vo.tourNum}</div>
-				<div>요구사항 : ${vo.ps} || 총 금액 : ${vo.totalPrice}</div>
-				<div>투어 이름 : ${vo.tourName} || 카카오 아이디 : ${vo.kakaoID}</div>
+				<div style="font-size:18px; letter-spacing:-2px;text-align:center; font-weight:500;">${vo.tourName} * 예약자 아이디 : ${vo.email}</div>
+				<div style="font-size:16px; letter-spacing:-1.5px">* 예약자 이름 : ${vo.name}</div>
+				<div style="font-size:16px; letter-spacing:-1.5px">* 예약자 전화번호: ${vo.phone}</div>
+				<div style="font-size:16px; letter-spacing:-1.5px">* 예약 날짜 : ${vo.day}</div>
+				<div style="font-size:16px; letter-spacing:-1.5px">* 총 금액 : ${vo.totalPrice}</div>
+				
 			
 	</div>
 	<hr>
