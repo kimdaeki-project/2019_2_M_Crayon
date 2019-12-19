@@ -78,7 +78,7 @@
 	<!--관리자 추가-->
 	
 	<insert id="touradd" parameterType="TourCalendarVO">
-		insert into tour values (tour_seq.nextval,#{tourNum},#{tourName},#{maxNum},#{price},0)
+		insert into tour values (tour_seq.nextval,#{tourNum},#{tourName},#{maxNum},#{price})
 	</insert>
 	
 	<!--관리자 삭제-->
