@@ -212,13 +212,22 @@
 	margin-left: 100px;
 }
 .touraddInput{
-	width: 1000px;
+	width: 200px;
 	height: 30px;
 	margin-top: 30px;
-	margin-left: 200px;
+	margin-left: 20px;
 }
 .tabtn{
 	width: 50px;
+	height: 30px;
+	background-color: #414141;
+	color: white;
+	border-radius: 10px;
+	border-style: none;
+}
+
+.tabdel{
+	width: 150px;
 	height: 30px;
 	background-color: #414141;
 	color: white;

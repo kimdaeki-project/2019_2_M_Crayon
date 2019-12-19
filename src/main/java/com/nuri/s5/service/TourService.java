@@ -24,4 +24,12 @@ public interface TourService {
 	public int tourDelete(TourNoticeVO tourNoticeVO)throws Exception;
 	
 	public int Reservation(ReservationVO reservationVO,HttpSession session)throws Exception;
+	
+	public List<ReservationVO> ReservationList(ReservationVO reservationVO)throws Exception;
+	
+	public int ReservationDelete(ReservationVO reservationVO)throws Exception;
+	
+	public List<ReservationVO> ReservationResult(ReservationVO reservationVO)throws Exception;
+	
+	
 }

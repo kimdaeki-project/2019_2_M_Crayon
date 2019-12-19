@@ -3,6 +3,7 @@ package com.nuri.s5.dao;
 import java.util.List;
 
 import com.nuri.s5.model.MemberVO;
+import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.util.Pager;
 
 public interface MemberDAO {
@@ -37,5 +38,9 @@ public interface MemberDAO {
 	public int memberCount(Pager pager) throws Exception;
 	//adminCountUpdate
 	public int memberCountUpdate(MemberVO memberVO)throws Exception;
+	//touradd
+	public int touradd(TourCalendarVO tourCalendarVO)throws Exception;
+	//tourDelete
+	public int tourDelete(TourCalendarVO tourCalendarVO)throws Exception;
 	
 }

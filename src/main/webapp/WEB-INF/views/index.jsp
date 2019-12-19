@@ -452,7 +452,7 @@
 			},
 			success : function(data) {
 				$(".main_rebox_4_2").html(data);
-				alert("데이터 전송 성공"+data);
+				/* alert("데이터 전송 성공"+data); */
 			}
 		});
 	});

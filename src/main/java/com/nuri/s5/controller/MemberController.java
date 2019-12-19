@@ -20,6 +20,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.nuri.s5.model.MemberVO;
 import com.nuri.s5.model.ReviewVO;
 import com.nuri.s5.model.WishListVO;
+import com.nuri.s5.model.TourCalendarVO;
+
 import com.nuri.s5.service.MemberServiceImpl;
 import com.nuri.s5.service.WishListService;
 import com.nuri.s5.util.Pager;
@@ -319,5 +321,56 @@ public class MemberController {
 		mv.setViewName("member/memberList");
 		return mv;
 	}
+	
+	
+	//투어 추가 
+	
+	@GetMapping(value="touradd")
+	public void touradd()throws Exception{
+		
+	}
+	
+		@PostMapping(value="touradd")
+		public ModelAndView touradd(TourCalendarVO tourCalendarVO)throws Exception{
+			int result = memberServiceImpl.touradd(tourCalendarVO);
+			System.out.println("tt");
+			ModelAndView mv = new ModelAndView();
+			String msg = "Fail";
+			if (result > 0)
+				msg = "Success";
+
+		
+		  mv.addObject("msg", msg); mv.addObject("path", "./adminPage");
+		  mv.setViewName("common/common_result");
+		 
+			return mv;
+			
+		}
+		
+	//투어 삭제 
+		@GetMapping(value = "tourDelete")
+		public void tourDelete ()throws Exception{
+			
+		}
+		
+		@PostMapping(value = "tourDelete")
+		public ModelAndView tourDelete(TourCalendarVO tourCalendarVO)throws Exception{
+			int result = memberServiceImpl.tourDelete(tourCalendarVO);
+			ModelAndView mv = new ModelAndView();
+			String msg = "Fail";
+			if (result > 0) {
+				msg = "Success";
+				}
+
+		
+		  mv.addObject("msg", msg); 
+		  mv.addObject("path", "./adminPage");
+		  mv.setViewName("common/common_result");
+		 
+			return mv;
+			
+		}
+	
+	
 
 }

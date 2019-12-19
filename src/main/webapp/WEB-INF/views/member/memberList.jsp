@@ -45,13 +45,13 @@
 					<a href="./memberList" style="color: white; font-size: 24px;">Member <i class="fa fa-address-book" style="font-size: 24px"></i></a>
 				</div>
 				<div class="adminTour">
-				<a href="#" style="color: white; font-size: 24px;">Reservation <i class="fa fa-bus" style="font-size: 24px"></i></a>
+				<a href="../tour/ReservationList" style="color: white; font-size: 24px;">Reservation <i class="fa fa-bus" style="font-size: 24px"></i></a>
 				</div>
 				<div class="adminWrite">
 					<a href="../review/reviewList" style="color: white; font-size: 24px;">Review <i class="fa fa-pencil-square-o" style="font-size: 28px"></i></a>
 				</div>
 				<div class="adminAdd">
-					<a href="#" style="color: white; font-size: 24px; ">AddTour <i class="fa fa-plus-square-o" style="font-size:28px"></i></a>
+					<a href="../tour/tourWrite" style="color: white; font-size: 24px; ">TourWrite <i class="fa fa-plus-square-o" style="font-size:28px"></i></a>
 				</div>
 				<div class="adminAdd">
 					<a href="../qna/qnaHome" style="color: white; font-size: 24px">Qna <i
