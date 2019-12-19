@@ -58,11 +58,7 @@ public class TourDAOImpl implements TourDAO {
 	}
 
 
-	@Override
-	public int tourDelete(TourNoticeVO tourNoticeVO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
 	
 	@Override
 	public int ReservationDelete(ReservationVO reservationVO)throws Exception{

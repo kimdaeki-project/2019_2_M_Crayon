@@ -14,6 +14,10 @@
 	  	values(#{num}, #{compared}, #{include}, #{exclude}, #{alert}, #{prepared}, #{attention}, #{refund}, #{tourNum}, #{youTube})
   	</insert>
   	
+
+  	
+ 
+  	
   	<select id="tourSelect" parameterType="TourNoticeVO" resultType="TourNoticeVO">
   		select * from tourNotice where tourNum =#{tourNum}
   	</select>
@@ -76,14 +80,9 @@
 	
 	<!--인원 제한-->
 	<select id="ReservationCut" parameterType="ReservationVO" resultType="Integer">
-		select sum (personNum) personTotal from 
-		(select RV.tourNum, RV.personNum, TR.maxNum
-		from Reservation RV 
-		full outer join tour TR
-		on RV.tourNum = TR.tourNum)
-		where tourNum=#{tourNum}
+		select maxnum - (select sum(personnum) from reservation where day = #{day})as cnt from tour where tourName = #{tourName}
 	</select>
-	
+	 
 
 	
 </mapper>

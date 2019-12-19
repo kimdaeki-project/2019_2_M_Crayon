@@ -27,6 +27,7 @@
 </head>
 <body>
 
+
 	<div class="adminMain">
 		<div class="admintop">
 			<div class="adtopname">Paris Crayon administration</div>
@@ -66,6 +67,10 @@
 				<div class="adminAdd">
 					<a href="../qna/qnaHome" style="color: white; font-size: 24px">Qna <i
 						class="fa fa-question-circle-o" style="font-size: 24px"></i></a>
+				</div>
+				<div class="adminAdd">
+					<a href="../tour/tourList" style="color: white; font-size: 24px">Tour Update & Delete <i
+						class="fa fa-stack-overflow" style="font-size: 24px"></i></a>
 				</div>
 
 			</div>
@@ -184,6 +189,8 @@
 			}
 		};
 	</script>
+	
+	
 
 
 </body>

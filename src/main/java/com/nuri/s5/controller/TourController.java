@@ -147,11 +147,10 @@ public class TourController {
 		tourFilesVO.setNum(tourNoticeVO.getNum());
 		List<TourFilesVO> ar = tourServiceImpl.fileSelect(tourFilesVO);
 		
-		//실험중 인원 제한, 여기 4줄 지우면 select 됨
-		reservationVO.setTourNum(tourCalendarVO.getTourNum());
-		System.out.println("wow");
-		int person = tourServiceImpl.ReservationCut(reservationVO);
-		mv.addObject("limit", person);
+		//실험중
+		
+		//int result = tourServiceImpl.ReservationCut(reservationVO);
+		//mv.addObject("limit", reservationVO);
 		
 //		tourCalendarVO.setTourNum(tourNoticeVO.getTourNum());
 		mv.addObject("files", ar);
@@ -160,6 +159,9 @@ public class TourController {
 		mv.setViewName("tour/tourGoods");
 		return mv;
 	}
+	
+	
+	
 	
 	
 	@GetMapping(value = "tourWrite")

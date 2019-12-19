@@ -6,20 +6,25 @@
 <html>
 <head>
 <title>TourGoods</title>
+<!--프로젝트 내 css-->
 <link href="<c:url value="/resources/css/layout/tourGoods.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/header.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/reset.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/footer.css"/>" rel="stylesheet">
+<link href="<c:url value="/resources/css/layout/Calendar.css"/>" rel="stylesheet">
+
+<!--font, bootstrap-->
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+<!--datePicker-->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link href="<c:url value="/resources/css/layout/Calendar.css"/>" rel="stylesheet">
-<meta charset="UTF-8">
 
+<meta charset="UTF-8">
 </head>
 <body>
 <c:import url="../layout/nav.jsp"></c:import>
@@ -30,7 +35,7 @@
 
 			<input type="hidden" class="goods_number" value="${dto2.tourNum}">
 			
-			<input type="text" class="linum" value="${limit}">
+			<input type="text" class="linum" value="${limit.personNum}">
 			<input type="text" value="${dto2.tourName}" class="goods_title" readonly="readonly"> 
 	
 			

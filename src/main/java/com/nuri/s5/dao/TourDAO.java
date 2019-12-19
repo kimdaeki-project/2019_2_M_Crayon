@@ -21,7 +21,6 @@ public interface TourDAO {
 	
 	public int tourUpdate(TourNoticeVO tourNoticeVO)throws Exception;
 	
-	public int tourDelete(TourNoticeVO tourNoticeVO)throws Exception;
 	
 	public int Reservation(ReservationVO reservationVO)throws Exception;
 	
@@ -32,7 +31,6 @@ public interface TourDAO {
 	public List<ReservationVO> ReservationResult(ReservationVO reservationVO)throws Exception;
 	
 	public int ReservationCut(ReservationVO reservationVO)throws Exception;
-	
 	
 	
 }
