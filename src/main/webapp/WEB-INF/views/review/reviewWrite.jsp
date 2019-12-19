@@ -49,9 +49,9 @@
 		  			<option id="p4" class="tour" value="파리워킹투어">파리워킹투어</option>
 		  			<option id="p5" class="tour" value="파리야경차량투어">파리야경차량투어</option>
 		  			<option id="p6" class="tour" value="(소그룹 벤) 벨기에투어">(소그룹 벤) 벨기에투어</option>
-		  			<option id="p1" class="tour" value="루브르 집중투어">루브르 집중투어</option>
-		  			<option id="p1" class="tour" value="(소그룹 벤) 베르사유,지베르니,고흐투어">(소그룹 벤) 베르사유,지베르니,고흐투어</option>
-		  			<option id="p1" class="tour" value="픽업%샌딩">픽업%샌딩</option>
+		  			<option id="p7" class="tour" value="루브르 집중투어">루브르 집중투어</option>
+		  			<option id="p8" class="tour" value="(소그룹 벤) 베르사유,지베르니,고흐투어">(소그룹 벤) 베르사유,지베르니,고흐투어</option>
+		  			<option id="p9" class="tour" value="픽업%샌딩">픽업%샌딩</option>
 		  		</select>
 		  	</div>
 		  	
@@ -76,11 +76,11 @@
 		      <input type="hidden" class="form-control" id="hit" placeholder="your point" name="hit" value="0" readonly="readonly">
 		    </div>
 		    
-			<div id="files">	   		
+			<div id="files" class="files">	   		
 		    	<div class="form-group" title="parent" id="a1">
 	      			<label class="control-label col-sm-2" for="file">File:</label>
 	      			<div class="col-sm-9">
-	      				<input type="file" class="form-control" id="file" name="file">
+	      				<input type="file" class="form-control file" id="file" name="file" accept="image/gif, image/jpeg, image/png">
 	      			</div>
 		    	<div class="col-sm-1">
 	      			<input type="button" name="file" value="del" class= "btn btn-danger del">
@@ -96,8 +96,6 @@
 			    <button class="btn btn-default" id="submit">SUBMIT</button>
 				<a href="./reviewList" class="btn btn-default">LIST</a>
 	   		</div>
-		    
-		    
 		  </form>
 		</div>
 		</div>
@@ -108,69 +106,51 @@
 <!-------------------------------- java Script ---------------------------------------->
 
 		<script type="text/javascript">
+		
 			$("#tourName").change(function() {
 				alert($(this).val());
 			});
 			
-			var files = $("#files").html();
-			$("#files").empty();
+			var files = $(".files").html();
+			$(".files").empty();
 			var count = 0;
 			
 			$("#btn").click(function() {
 				if(count<5){
-					$("#files").append(files);
+					$(".files").append(files);
 					count ++;
 				}else{
 					alert("첨부파일은 5개를 초과할 수 없습니다.")
 				}
 			});
 			
-			$("#files").on("click", ".del", function() {
+			$(".files").on("click", ".del", function() {
 				$(this).parents(".form-group").remove();
 				count --;
 			});
+
 			
-			
-			<!---------------------- summerNote --------------------->
-			
-// 			$("#contents").summernote({
-// 				height: 300,
-// 				callback: {
-// 					onImageUpload: function(files, editor) {
-// 						uploadFile(files[0], this);
-// 					}, // upload end point
-// 					onMediaDelete: function(files, editor) {
-// 						deleteFile(files[0], this);
-// 					} // delete end point
-// 				} // callback end point
-// 			}); // summernote end point
-			
-			
-			function uploadFile(file, editor) {
-				var formData = new FormData();
-				formData.append('file', file);
-				$.ajax({
-					data:formData,
-					type:"POST",
-					url:"./summerFile",
-					enctype:"multipart/form-data",
-					contentType:false,
-					cache:false,
-					processData:false,
-					success:function(data){
-						data = data.trim();
-						data = '../resources/upload/summerFile/'+data;
-						$(editor).summernote('insertImage', data);
-					}
+			$(".files").on("change", ".file", function() {
 				
-				});
-			}
+		         if(count<5){
+		            var filename = $('.file').val();
+		            var extension = filename.replace(/^.*\./, '');
+		            if (extension == filename) {
+		                 extension = '';
+		            }else {
+		            	extension = extension.toLowerCase();
+		            }
+		            if((extension != 'jpg') && (extension != 'png')){
+		            	alert('.jpg, .png 파일만 첨부 가능합니다.');
+		            	$(this).val("");
+		            }else{
+		            	alert('첨부가능');	
+		            }
+		         }else{
+		            alert('더 이상 첨부할 수 없습니다.');
+		         }
+		      });
 			
-			function uploadFile() {
-				var form = $("#file")[0];
-				var formData = new FormData(form);
-				formData.append("frm", $("file"))
-			}
 		
 		</script>
 </body>

@@ -6,6 +6,8 @@ import java.util.UUID;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.nuri.s5.model.ReviewFilesVO;
+
 @Component
 public class FileSaver {
 	
@@ -30,6 +32,7 @@ public class FileSaver {
 		// UUID 사용
 		String fileName = UUID.randomUUID().toString();
 		fileName = fileName+"_"+multipartFile.getOriginalFilename();
+			
 		
 		file = new File(realPath, fileName);
 		multipartFile.transferTo(file);
