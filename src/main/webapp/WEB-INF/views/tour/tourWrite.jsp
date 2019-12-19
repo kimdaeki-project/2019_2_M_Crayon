@@ -9,8 +9,6 @@
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/reset.css"/>"
 	rel="stylesheet">
-<link href="<c:url value="/resources/css/layout/footer.css"/>"
-	rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/tourWrite.css"/>"
 	rel="stylesheet">
 <title>Tour Write Page</title>
@@ -25,7 +23,7 @@
 	</c:if>
 	<div class="body_in">
 	<h1>Tour Write Page</h1>
-	<form action="./tourWrite" enctype="multipart/form-data" method="post">
+	<form action="./tourWrite" enctype="multipart/form-data" method="post" id="formwrite">
 	  	
 	  	<input type="hidden" name="price" placeholder="price">
 	  	<br>
@@ -66,13 +64,14 @@
 					  	<span>일정 : <input type="text" name="timeTable" placeholder="timeTable" id="timeTable"></span>
 				  	</div>
       			</div>
+      			
 	    	<div class="col-sm-1">
       			<input type="button" name="file" value="del" class= "btn btn-danger del">
    			</div>
 			</div>
 		</div>
 		
-		<div class="btnAdd" style="height: 50px; margin-right: 70px; margin-bottom: 70px;">
+		<div class="btnAdd" style="height:50px; margin-right: 70px; margin-bottom: 70px;">
 	   		<input type="button" value="add file" class="btn btn-default" id="btn" style="cursor: pointer; float: right;">
 		</div>
 		
@@ -81,7 +80,7 @@
 	
 	</div>
 	
-		<c:import url="../layout/navFoot.jsp"></c:import>
+		<%-- <c:import url="../layout/navFoot.jsp"></c:import> --%>
 	<script type="text/javascript">
 	
 		var files = $("#files").html();
@@ -95,6 +94,8 @@
 		$("#files").on("click", ".del", function() {
 			$(this).parents(".form-group").remove();
 		});
+		
+		
 	
 	</script>
 </body>
