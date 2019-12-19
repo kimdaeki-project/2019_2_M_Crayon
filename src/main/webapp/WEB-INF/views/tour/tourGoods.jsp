@@ -13,6 +13,7 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -240,6 +241,7 @@
 					<button id="kakaoGO" class="gocenterBtn" style="cursor: pointer;">1:1 맞춤 카카오톡</button>
 					<div class="gocenterImg"><img id ="instaGO" src="../resources/images/tour/insta_banner.jpg" style="width:100%"></div>
 				</div>
+			
 				<script type="text/javascript">
 				$("#kakaoGO").click(function(){
 					open("http://pf.kakao.com/_vVuQT","_blank","resizable=yes,width=550,height=900px")
@@ -258,6 +260,19 @@
 				});
 				</script>
 			</div><!-- menu6 -->
+			
+			<div>
+				<c:if test="${sessionScope.member.aCheck ne 1}">
+					<a href="./tourUpdate?tourNum=${dto.tourNum}">
+						<input type="submit" id="adminPage" value="상품수정" class="btns_p btn btn-default" name="${dto.tourNum}">
+					</a>
+					<a href="./tourDelete?tourNum=${dto.tourNum}">
+						<input type="submit" id="update" value="상품삭제" class="btns_p btn btn-default" name="${dto.tourNum}">
+					</a>
+				</c:if>
+			</div>
+			
+			
 			<script type="text/javascript">
 			 $(document).on('click','.goods_menu a',function(event){
 				  var headerHeight = $('.header_2').outerHeight();

@@ -23,8 +23,6 @@ import com.nuri.s5.model.TourVO;
 import com.nuri.s5.service.TourCalendarServiceImpl;
 import com.nuri.s5.service.TourServiceImpl;
 
-
-
 @Controller
 @RequestMapping("/tour/**")
 public class TourController {
@@ -62,9 +60,9 @@ public class TourController {
 		System.out.println(result);
 		mv.addObject("dto", reservationVO);
 		String msg = "Fail";
-		if (result > 0)
+		if (result > 0) {
 			msg = "Success";
-
+		}
 		mv.addObject("msg", msg);
 		mv.addObject("path", "tour/tourList");
 		mv.setViewName("common/common_result");
@@ -89,8 +87,6 @@ public class TourController {
 	}
 	
 
-	
-	
 /////////////////////////// tour file ///////////////////////////////////
 	@GetMapping(value = "fileWrite")
 	public ModelAndView fileWrite(TourFilesVO tourFilesVO) throws Exception{
@@ -101,6 +97,58 @@ public class TourController {
 		return mv;
 	}
 /////////////////////////// tour admin ///////////////////////////////////
+	
+	@GetMapping(value = "tourDelete")
+	public ModelAndView tourDelete(TourNoticeVO tourNoticeVO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result = tourServiceImpl.tourDelete(tourNoticeVO);
+		if(result > 0) {
+			mv.setViewName("common/common_result");
+			mv.addObject("msg", "삭제 성공");
+			mv.addObject("path", "../member/adminPage");
+		}else {
+			mv.setViewName("common/common_result");
+			mv.addObject("msg", "삭제 실패");
+			mv.addObject("path", "../member/adminPage");
+		}
+		return mv;
+	}
+	
+	@GetMapping(value = "tourUpdate")
+	public ModelAndView tourUpdate(TourNoticeVO tourNoticeVO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		tourNoticeVO = tourServiceImpl.tourSelect(tourNoticeVO);
+		mv.addObject("dto", tourNoticeVO);
+		
+		return mv;
+	}
+	
+	@PostMapping(value = "tourUpdate")
+	public ModelAndView tourUpdate(TourNoticeVO tourNoticeVO, HttpSession session, MultipartFile [] file, String [] time, String [] timeTable)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		tourNoticeVO.setCompared(tourNoticeVO.getCompared().replace("\r\n", "<br>"));
+		tourNoticeVO.setInclude(tourNoticeVO.getInclude().replace("\r\n", "<br>"));
+		tourNoticeVO.setExclude(tourNoticeVO.getExclude().replace("\r\n", "<br>"));
+		tourNoticeVO.setAlert(tourNoticeVO.getAlert().replace("\r\n", "<br>"));
+		tourNoticeVO.setPrepared(tourNoticeVO.getPrepared().replace("\r\n", "<br>"));
+		tourNoticeVO.setAttention(tourNoticeVO.getAttention().replace("\r\n", "<br>"));
+		tourNoticeVO.setRefund(tourNoticeVO.getRefund().replace("\r\n", "<br>"));
+		tourNoticeVO.setYouTube(tourNoticeVO.getYouTube().replace("\r\n", "<br>"));
+		int result = tourServiceImpl.tourUpdate(tourNoticeVO, file, session, time, timeTable);
+		mv.addObject("dto", tourNoticeVO);
+		
+		if(result > 0) {
+			mv.setViewName("common/common_result");
+			mv.addObject("msg", "업데이트 성공");
+			mv.addObject("path", "./tourUpdate");
+		}else {
+			mv.setViewName("common/common_result");
+			mv.addObject("msg", "업데이트 실패");
+			mv.addObject("path", "../");
+		}
+		return mv;
+	}
+	
 	
 	@GetMapping(value = "tourList")
 	public ModelAndView tourList(TourVO tourVO)throws Exception{
@@ -159,12 +207,10 @@ public class TourController {
 		tourNoticeVO.setPrepared(tourNoticeVO.getPrepared().replace("\r\n", "<br>"));
 		tourNoticeVO.setAttention(tourNoticeVO.getAttention().replace("\r\n", "<br>"));
 		tourNoticeVO.setRefund(tourNoticeVO.getRefund().replace("\r\n", "<br>"));
-		int result = tourServiceImpl.tourWrite(tourNoticeVO, file, session,time,timeTable);
+		int result = tourServiceImpl.tourWrite(tourNoticeVO, file, session, time, timeTable);
 		mv.addObject("dto", tourNoticeVO);
 		if(result>0) {
 			mv.setViewName("redirect:./tourList");
-		}else {
-			
 		}
 		return mv;
 	}

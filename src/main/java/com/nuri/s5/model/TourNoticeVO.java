@@ -14,8 +14,6 @@ public class TourNoticeVO {
 	private List<TourNoticeVO> files;
 	private int tourNum;
 	private String youTube;
-	
-	
 
 	public String getYouTube() {
 		return youTube;

@@ -34,10 +34,10 @@
 		<div class="btnsBox">
 			<input type="hidden" value="${member.kCheck}" id="kCheck">
 			<c:if test="${sessionScope.member.aCheck eq 1}">
-			<a href="./adminPage"><input type="submit" id="adminPage" value="관리자 페이지" class="btns_p"></a>
+				<a href="./adminPage"><input type="submit" id="adminPage" value="관리자 페이지" class="btns_p"></a>
 			</c:if>
 			<c:if test="${sessionScope.member.aCheck ne 1}">
-			<a href="./memberUpdate"><input type="submit" id="update" value="회원정보 수정" class="btns_p"></a> 
+				<a href="./memberUpdate"><input type="submit" id="update" value="회원정보 수정" class="btns_p"></a> 
 			</c:if>
 			<a href="./memberLogout"><input type="submit" id="logout" value="로그아웃" class="btns"></a> 
 			<input type="button" id="delete" value="회원탈퇴" class="btns">

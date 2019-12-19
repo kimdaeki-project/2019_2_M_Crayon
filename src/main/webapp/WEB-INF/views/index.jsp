@@ -53,7 +53,7 @@
 								<nav class="slides-nav__nav">
 									<button class="slides-nav__prev js-prev">Prev</button>
 									<button class="slides-nav__next js-next">Next</button>
-									<button>All</button>
+									<a href="./tour/tourList"><button>All</button></a>
 								</nav>
 							</section>
 
@@ -61,7 +61,7 @@
 								<div class="slide__content">
 									<figure class="slide__figure">
 										<div class="slide__img">
-											<a href="#"><img class="test" alt=""
+											<a href="./tour/tourGoods?tourNum=4"><img class="test" alt=""
 												src="./resources/images/mainHome/T4.jpg"
 												style="width: 900px; height: 540px;"></a>
 										</div>
@@ -79,7 +79,7 @@
 								<div class="slide__content">
 									<figure class="slide__figure">
 										<div class="slide__img">
-											<a href="#"><img alt=""
+											<a href="./tour/tourGoods?tourNum=6"><img alt=""
 												src="./resources/images/mainHome/T6.jpg"
 												style="width: 900px; height: 540px;"></a>
 										</div>
@@ -97,7 +97,7 @@
 								<div class="slide__content">
 									<figure class="slide__figure">
 										<div class="slide__img">
-											<a href="#"><img alt=""
+											<a href="./tour/tourGoods?tourNum=7"><img alt=""
 												src="./resources/images/mainHome/T7.jpg"
 												style="width: 900px; height: 540px;"></a>
 										</div>
@@ -115,8 +115,9 @@
 								<div class="slide__content">
 									<figure class="slide__figure">
 										<div class="slide__img">
-											<img alt="" src="./resources/images/mainHome/T8.jpg"
-												style="width: 900px; height: 540px;">
+											<a href="./tour/tourGoods?tourNum=8"><img alt=""
+												src="./resources/images/mainHome/T8.jpg"
+												style="width: 900px; height: 540px;"></a>
 										</div>
 									</figure>
 									<header class="slide__header">
@@ -144,10 +145,8 @@
 							</div>
 							<!-- rebox2 끝 -->
 							<div class="main_rebox_3">
-								<button class="re_prev_btn"></button>
-								<button class="re_next_btn"></button>
-								<!-- <img alt="" src="./resources/images/mainHome/left_btn.jpg">
-									<img alt="" src="./resources/images/mainHome/right_btn.jpg"> -->
+								<button class="re_prev_btn" style="cursor: pointer;"></button>
+								<button class="re_next_btn" style="cursor: pointer;"></button>
 							</div>
 							<!-- rebox3 끝 -->
 						</div>
@@ -211,7 +210,7 @@
 									<p>해 드리고있습니다)</p>
 								</div>
 								<br>
-								<div class="txt_insta" id="insta"></div>
+								<a href="https://www.instagram.com/pariscrapas/"><div class="txt_insta" id="insta"></div></a>
 							</div>
 						</div>
 
@@ -445,7 +444,7 @@
 	 $(document).ready(function() {
 		
 		$.ajax({
-			type:"Get",
+			type:"GET",
 			url:"./review/reviewBest",
 			error: function() {
 				alert("통신실패")
@@ -455,6 +454,7 @@
 				/* alert("데이터 전송 성공"+data); */
 			}
 		});
+		
 	});
 
 
@@ -475,7 +475,11 @@ $(function() {
     });
 });  
 
-
+	$('.re_prev_btn').click(function() {
+		type:"GET",
+		url:"./review/reviewBest"
+		
+	});
 
 </script>
 

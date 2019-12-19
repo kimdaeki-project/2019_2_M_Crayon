@@ -19,7 +19,7 @@ public interface TourService {
 	
 	public List<TourVO> tourList(TourVO tourVO)throws Exception;
 	
-	public int tourUpdate(TourNoticeVO tourNoticeVO, MultipartFile [] file, HttpSession session)throws Exception;
+	public int tourUpdate(TourNoticeVO tourNoticeVO, MultipartFile [] file, HttpSession session, String [] time, String [] timeTable)throws Exception;
 	
 	public int tourDelete(TourNoticeVO tourNoticeVO)throws Exception;
 	

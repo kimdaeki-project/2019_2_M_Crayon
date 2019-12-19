@@ -23,44 +23,48 @@
 	<c:if test="${sessionScope.member.aCheck ne 1}">
 		<c:import url="../layout/nav.jsp"></c:import>
 	</c:if>
+	
 	<div class="body_in">
 	<h1>Tour Write Page</h1>
-	<form action="./tourWrite" enctype="multipart/form-data" method="post">
+	<form action="./tourUpdate?tourNum=${dto.tourNum}" enctype="multipart/form-data" method="post">
 	  	
+	  	<input type="hidden" name="num" value="${dto.num}">
 	  	<input type="hidden" name="price" placeholder="price">
 	  	<br>
-	  	<span style="font-size:20px; letter-spacing:-2px">상품번호　  <input type="text" id="tourNum" name="tourNum" placeholder="tourNum"></span>
+	  	<span style="font-size:20px; letter-spacing:-2px">상품번호
+	  		<input type="text" id="tourNum" name="tourNum" placeholder="tourNum" value="${dto.tourNum}" readonly="readonly">
+	  	</span>
 		
 		<h3>타업체비교불가</h3>
-		<textarea rows="5" cols="70" name="compared" class="textText" style="resize: none;"></textarea>
+		<textarea rows="5" cols="70" name="compared" class="textText" style="resize: none;">${dto.compared}</textarea>
 		
 		<h3>포함사항</h3>
-		<textarea rows="5" cols="70" name="include" class="textText" style="resize: none;"></textarea>
+		<textarea rows="5" cols="70" name="include" class="textText" style="resize: none;">${dto.include}</textarea>
 		
 		<h3>불포함사항</h3>
-		<textarea rows="5" cols="70" name="exclude" class="textText" style="resize: none;"></textarea>
+		<textarea rows="5" cols="70" name="exclude" class="textText" style="resize: none;">${dto.exclude}</textarea>
 		
 		<h3>투어안내</h3>
-		<textarea rows="5" cols="70" name="alert" class="textText" style="resize: none;"></textarea>
+		<textarea rows="5" cols="70" name="alert" class="textText" style="resize: none;">${dto.alert}</textarea>
 		
 		<h3>준비사항</h3>
-		<textarea rows="5" cols="70" name="prepared" class="textText" style="resize: none;"></textarea>
+		<textarea rows="5" cols="70" name="prepared" class="textText" style="resize: none;">${dto.prepared}</textarea>
 		
 		<h3>주의사항</h3>
-		<textarea rows="5" cols="70" name="attention" class="textText" style="resize: none;"></textarea>
+		<textarea rows="5" cols="70" name="attention" class="textText" style="resize: none;">${dto.attention}</textarea>
 		
 		<h3>환불규정</h3>
-		<textarea rows="5" cols="70" name="refund" class="textText" style="resize: none;"></textarea>
+		<textarea rows="5" cols="70" name="refund" class="textText" style="resize: none;">${dto.refund}</textarea>
 		
 		<h3>유튜브주소</h3>
-		<textarea rows="1" cols="70" name="youTube" class="textText" style="resize: none;"></textarea>
+		<textarea rows="1" cols="70" name="youTube" class="textText" style="resize: none;">${dto.youTube}</textarea>
 		
 		
-		<div id="files" style="">	   		
+		<div id="files">	   		
 	    	<div class="form-group" title="parent" id="a1" style="">
       			<label class="control-label col-sm-6" for="file">File:</label>
       			<div class="col-sm-9" style="margin-bottom: 80px;">
-      				<input type="file" class="form-control" id="file" name="file" value="${file}">
+      				<input type="file" class="form-control" id="file" name="file">
    					<div id="timeBlank" style="width: 70px; height: 50px;" >
 					  	<span>시간 : <input type="text" name="time" placeholder="time" id="time"></span>
 					  	<span>일정 : <input type="text" name="timeTable" placeholder="timeTable" id="timeTable"></span>
@@ -76,7 +80,7 @@
 	   		<input type="button" value="add file" class="btn btn-default" id="btn" style="cursor: pointer; float: right;">
 		</div>
 		
-		<button class= "proBtn" style="float: right;">상품등록</button>
+		<button class="proBtn" style="float: right;">수정등록</button>
 	</form>
 	
 	</div>

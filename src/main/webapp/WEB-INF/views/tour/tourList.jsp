@@ -88,9 +88,6 @@
 
 
 		</div>
-			<div class="tour_white_btn">
-				<a href="./tourWrite">글쓰기</a>
-			</div>
 	</div><!-- body끝 -->
 
 

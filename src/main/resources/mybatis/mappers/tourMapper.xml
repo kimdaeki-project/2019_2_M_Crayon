@@ -6,6 +6,15 @@
   
   <mapper namespace="tourMapper">
   
+  	<update id="tourUpdate" parameterType="TourNoticeVO">
+  		update tourNotice set compared=#{compared}, include=#{include}, exclude=#{exclude}, alert=#{alert}, prepared=#{prepared}, attention=#{attention}, refund=#{refund}, youTube=#{youTube}
+  		where tourNum = #{tourNum}
+  	</update>
+  
+  	<delete id="tourDelete" parameterType="TourNoticeVO">
+  		delete tourNotice where tourNum = #{tourNum}
+  	</delete>
+  
   	<insert id="tourWrite" parameterType="TourNoticeVO">
   		<selectKey order="BEFORE" resultType="Integer" keyProperty="num">
   			select seq_tour.nextval from dual		

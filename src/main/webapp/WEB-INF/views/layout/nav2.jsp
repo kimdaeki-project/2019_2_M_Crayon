@@ -30,8 +30,8 @@
          	</c:if>
          </div>
          <div class="snsWrap">
-            <img alt="" src="./resources/images/header/sns_instagram_sub.jpg" id="insta">
-            <img alt="" src="./resources/images/header/sns_kakao_sub.png" id="kakaplus">
+            <img alt="" src="./resources/images/header/sns_instagram_sub.jpg" id="insta" style="cursor: pointer;">
+            <img alt="" src="./resources/images/header/sns_kakao_sub.png" id="kakaplus" style="cursor: pointer;">
          </div>
 
       </div>

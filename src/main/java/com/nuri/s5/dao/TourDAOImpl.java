@@ -53,15 +53,13 @@ public class TourDAOImpl implements TourDAO {
 
 	@Override
 	public int tourUpdate(TourNoticeVO tourNoticeVO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.update(NAMESPACE+"tourUpdate", tourNoticeVO);
 	}
 
 
 	@Override
 	public int tourDelete(TourNoticeVO tourNoticeVO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.delete(NAMESPACE+"tourDelete", tourNoticeVO);
 	}
 	
 	@Override

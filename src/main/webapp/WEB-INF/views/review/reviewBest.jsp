@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link href="<c:url value="/resources/css/layout/main.css"/>"
 	rel="stylesheet">
+<link href="<c:url value="/resources/css/layout/reviewBest.css"/>"
+	rel="stylesheet">
 
 <c:forEach items="${list}" var="vo" varStatus="str">
 	<div class="main_re" style="display: inline-block; width: 500px; height: 370px; margin-left: 10px;">
@@ -14,15 +16,16 @@
 			</c:forEach>
 			<img src="http://www.pariscrayon.com/images/reviewImg.jpg" width="170px" height="170px">
 		</div>
-		<div class="re_txtbox"
-			 style="width: 500px; overflow: hidden; height: 278px; border: solid 1px #bbbbbb; display: inline-block; position: relative; top: -84px;">
-			<div class="re_txtbox_title">
-				<div class="re_txtbox_title" style=" font-size:20px; font-weight:bold; height: 30px; width: 450px; margin-top:90px; margin-left: 50px; " >${vo.title}</div>
-				<div style=" font-size:16px; height:100px; width: 450px;  margin-left: 50px;">${vo.contents}</div>
-				<div style="height: 30px; width: 450px; margin-left: 50px;">
-				<div style="font-weight: bold; font-size: 14px;">${vo.day} | ${vo.writer} </div>
+		<div class="re_txtbox">
+			<a href="./review/reviewSelect?num=${vo.num}">
+				<div class="re_txtbox_title">
+					<div class="re_txtbox_title1">${vo.title}</div>
+					<div class="re_txtbox_title2">${vo.contents}</div>
+					<div class="re_txtbox_title3">
+						<div style="font-weight: bold; font-size: 14px;">작성일 : ${vo.day} | 작성자 : ${vo.writer} | 조회수 : ${vo.hit} </div>
+					</div>
 				</div>
-			</div>
+			</a>
 		</div>
 	</div>
 </c:forEach>
