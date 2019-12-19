@@ -22,6 +22,7 @@ import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.model.TourVO;
 import com.nuri.s5.service.TourCalendarServiceImpl;
 import com.nuri.s5.service.TourServiceImpl;
+import com.nuri.s5.util.Pager;
 
 @Controller
 @RequestMapping("/tour/**")

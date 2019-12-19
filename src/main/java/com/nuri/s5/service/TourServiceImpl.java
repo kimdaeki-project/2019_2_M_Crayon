@@ -16,6 +16,7 @@ import com.nuri.s5.model.TourFilesVO;
 import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.model.TourVO;
 import com.nuri.s5.util.FileSaver;
+import com.nuri.s5.util.Pager;
 
 @Service
 public class TourServiceImpl implements TourService {
