@@ -6,7 +6,7 @@
 	rel="stylesheet">
 	<c:import url="/resources/bootStrap/bootStrap.jsp"></c:import>
 				
-				<div class="Reservation_tB_title" style="border-left: 3px solid black; font-size: 28px;">　맞춤투어 예약 내역</div>
+				<div class="VReservation_tB_title" style="border-left: 3px solid black; font-size: 28px;">　맞춤투어 예약 내역</div>
 				<br>
 				<div class="table table-striped" style="margin-bottom: 150px;">
 						
