@@ -39,12 +39,11 @@
 				<h3>결제일시 : ${info.approved_at}</h3><br/>
 				<h3>주문번호 : ${info.partner_order_id}</h3><br/>
 				<h3>결제일시 : ${info.approved_at}</h3><br/>
-				<h3>주문번호 : ${info.partner_order_id}<br/>
-				<h3>상품명 : ${info.item_name}<br/>
-				<h3>상품수량 : ${info.quantity}<br/>
-				<h3>결제금액 : ${info.amount.total}<br/>
-				<h3>결제방법 : ${info.payment_method_type}<br/>
-				 
+				<h3>주문번호 : ${info.partner_order_id}</h3><br/>
+				<h3>상품명 : ${info.item_name}</h3><br/>
+				<h3>상품수량 : ${info.quantity}</h3><br/>
+				<h3>결제금액 : ${info.amount.total}</h3><br/>
+				<h3>결제방법 : ${info.payment_method_type}</h3><br/>
 				 
 				 
 				<h2>쌍용크레파스를 이용해주셔서 감사합니다</h2>
