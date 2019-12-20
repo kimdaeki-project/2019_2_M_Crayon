@@ -54,7 +54,6 @@ public class ReviewServiceImpl implements ReviewService {
 
 	@Override
 	public int reviewUpdate(ReviewVO reviewVO, MultipartFile [] file, HttpSession httpSession) throws Exception {
-		
 		String realPath = httpSession.getServletContext().getRealPath("resources/upload/review");
 		int result = reviewDAOImpl.reviewUpdate(reviewVO);
 		ReviewFilesVO reviewFilesVO = new ReviewFilesVO();

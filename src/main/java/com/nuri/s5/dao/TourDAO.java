@@ -10,7 +10,11 @@ import com.nuri.s5.model.ReservationVO;
 import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.model.TourVO;
+
 import com.nuri.s5.model.VReservationVO;
+
+import com.nuri.s5.util.Pager;
+
 
 public interface TourDAO {
 	

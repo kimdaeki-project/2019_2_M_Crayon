@@ -10,7 +10,11 @@ import com.nuri.s5.model.ReservationVO;
 import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.model.TourVO;
+
 import com.nuri.s5.model.VReservationVO;
+
+import com.nuri.s5.util.Pager;
+
 
 public interface TourService {
 	
@@ -20,7 +24,7 @@ public interface TourService {
 	
 	public List<TourVO> tourList(TourVO tourVO)throws Exception;
 	
-	public int tourUpdate(TourNoticeVO tourNoticeVO, MultipartFile [] file, HttpSession session)throws Exception;
+	public int tourUpdate(TourNoticeVO tourNoticeVO, MultipartFile [] file, HttpSession session, String [] time, String [] timeTable)throws Exception;
 	
 	public int tourDelete(TourNoticeVO tourNoticeVO)throws Exception;
 	

@@ -30,7 +30,7 @@
 		<c:import url="../layout/nav.jsp"></c:import>
 	<c:if test="${sessionScope.member.aCheck ne 1}">
 	</c:if>
-	<div class="body">
+
 		<div class="body_head">
 			<div class="body_back">
 				<div class="body_h_txt">“파리크레파스 투어상품”</div>
@@ -44,9 +44,9 @@
 			
 				<a href="./tourVIP"><div class="vipgo"></div></a>
 				<div class="vg"></div>
-				<div class="contents">
+				<div class="contents" style="height: 1000px;">
 
-					<div class="tour_MainForm" style="overflow: auto; margin: auto;">
+					<div class="tour_MainForm" >
 						<c:forEach items="${list}" var="dto" varStatus="st">
 							<div class="tour_wrap">
 								<a href="./tourGoods?tourNum=${dto.tourNum}">
@@ -81,6 +81,8 @@
 							</div>
 						</c:forEach>
 							<!--tour_wrap 끝-->
+							
+				
 					</div>
 					<!--tour_MainForm 끝-->
 				</div>
@@ -88,10 +90,7 @@
 
 
 		</div>
-			<div class="tour_white_btn">
-				<a href="./tourWrite">글쓰기</a>
-			</div>
-	</div><!-- body끝 -->
+<!-- body끝 -->
 
 
 	<c:import url="../layout/navFoot.jsp"></c:import>

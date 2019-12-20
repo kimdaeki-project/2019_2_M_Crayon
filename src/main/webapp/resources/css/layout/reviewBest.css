@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.re_txtbox{
+	width: 500px; 
+	overflow: hidden; 
+	height: 278px;
+	border: solid 1px #bbbbbb; 
+	display: inline-block; 
+	position: relative; 
+	top: -84px;
+}
+
+.re_txtbox_title1{
+	font-size:20px;
+	font-weight:bold;
+	height: 30px;
+	width: 450px;
+	margin-top: 90px;
+	margin-left: 50px; 
+	color: black;
+}
+.re_txtbox_title2{
+	font-size:16px;
+	height:100px;
+	width: 450px;
+	margin-left: 50px;
+	color: black;
+}
+.re_txtbox_title3{
+	height: 30px;
+	width: 450px;
+	margin-left: 50px;
+	color: black;
+}
+
+.re_txtbox : hover{
+	border: 2px solid red;
+}

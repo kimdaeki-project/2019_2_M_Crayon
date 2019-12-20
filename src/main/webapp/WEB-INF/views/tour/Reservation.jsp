@@ -121,8 +121,8 @@
 		
 			$("#form11").submit();
 			alert("예약성공");
-			window.self.close();
-			opener.location.replace('../pay/kakaoPay');
+			/* window.self.close();
+			opener.location.replace('../pay/kakaoPay'); */
 			
 			
 		}

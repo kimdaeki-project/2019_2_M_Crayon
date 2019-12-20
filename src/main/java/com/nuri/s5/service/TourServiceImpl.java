@@ -17,6 +17,7 @@ import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.model.TourVO;
 import com.nuri.s5.model.VReservationVO;
 import com.nuri.s5.util.FileSaver;
+import com.nuri.s5.util.Pager;
 
 @Service
 public class TourServiceImpl implements TourService {
@@ -82,15 +83,28 @@ public class TourServiceImpl implements TourService {
 	
 
 	@Override
-	public int tourUpdate(TourNoticeVO tourNoticeVO, MultipartFile[] file, HttpSession session) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+	public int tourUpdate(TourNoticeVO tourNoticeVO, MultipartFile[] file, HttpSession session, String [] time, String [] timeTable) throws Exception {
+		String realPath = session.getServletContext().getRealPath("resource/upload/notice");
+		int result = tourDAOImpl.tourUpdate(tourNoticeVO);
+		TourFilesVO tourFilesVO = new TourFilesVO();
+			
+			for (int i=0; i<file.length;i++) {
+				if(file[i].getOriginalFilename() != "") {
+					String fileName = fs.fileSave(realPath, file[i]);
+					tourFilesVO.setNum(tourNoticeVO.getNum());
+					tourFilesVO.setFname(fileName);
+					tourFilesVO.setOname(file[i].getOriginalFilename());
+					tourFilesVO.setTime(time[i]);
+					tourFilesVO.setTimeTable(timeTable[i]);
+					tourFilesDAO.fileWite(tourFilesVO);
+				}
+			}
+		return tourDAOImpl.tourUpdate(tourNoticeVO);
 	}
 
 	@Override
 	public int tourDelete(TourNoticeVO tourNoticeVO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return tourDAOImpl.tourDelete(tourNoticeVO);
 	}
 	@Override
 	public List<ReservationVO> ReservationList(ReservationVO reservationVO)throws Exception{

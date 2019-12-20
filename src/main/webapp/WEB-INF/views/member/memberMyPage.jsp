@@ -34,10 +34,10 @@
 		<div class="btnsBox">
 			<input type="hidden" value="${member.kCheck}" id="kCheck">
 			<c:if test="${sessionScope.member.aCheck eq 1}">
-			<a href="./adminPage"><input type="submit" id="adminPage" value="관리자 페이지" class="btns_p"></a>
+				<a href="./adminPage"><input type="submit" id="adminPage" value="관리자 페이지" class="btns_p"></a>
 			</c:if>
 			<c:if test="${sessionScope.member.aCheck ne 1}">
-			<a href="./memberUpdate"><input type="submit" id="update" value="회원정보 수정" class="btns_p"></a> 
+				<a href="./memberUpdate"><input type="submit" id="update" value="회원정보 수정" class="btns_p"></a> 
 			</c:if>
 			<a href="./memberLogout"><input type="submit" id="logout" value="로그아웃" class="btns"></a> 
 			<input type="button" id="delete" value="회원탈퇴" class="btns">
@@ -84,6 +84,39 @@
 						<!--tour_wrap 끝-->
 					</c:forEach>
 				</div>
+				
+				<div class="Reservation_tB" style="background-color: aqua; width: 100%; overflow: auto;">						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>예약번호</th>
+									<th>예약 인원</th>
+									<th>투어이름</th>
+									<th>이메일</th>
+									<th>KakaoID</th>
+									<th>ID</th>
+									<th>이름</th>
+									<th>총 가격</th>
+									<th>날짜</th>
+									<th>추신</th>
+								</tr>
+							</thead>
+							<tbody>
+								<%-- <c:forEach items="${list}" var="dto" varStatus="st">
+									<tr>
+										<td style="width: 55px; height: 56px; line-height: 38px;">${dto.email}</td>
+										<td style="width: 350px; height: 56px; line-height: 38px;">${dto.pw}</td>
+										<td style="width: 300px; height: 56px; line-height: 38px;">${dto.name}</td>
+										<td style="width: 120px; height: 56px; line-height: 38px;">${dto.birth}</td>
+										<td style="width: 120px; height: 56px; line-height: 38px;">${dto.kCheck}</td>
+										<td style="width: 120px; height: 56px; line-height: 38px;">${dto.aCheck}</td>
+										<td><input type="hidden" value="${dto.mnum}"></td>
+										<td><a href="./memberAdminDelete?mnum=${dto.mnum}"><input type="button" value="회원 삭제" class="btn btn-dark"></a></td>
+									</tr>
+								</c:forEach> --%>
+							</tbody>
+						</table>
+
+				</div><!--예약정보 테이블 끝-->
 			
 			</div>
 	</div>
