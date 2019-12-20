@@ -26,9 +26,9 @@ public class KakaoPayController {
     }
     
     @PostMapping("/kakaoPay")
-    public String kakaoPay(String tourName, String day) {
+    public String kakaoPay(String tourName, int totalPrice, int reNum) {
         
-        return "redirect:" + kakaopay.kakaoPayReady(tourName);
+        return "redirect:" + kakaopay.kakaoPayReady(tourName, totalPrice, reNum);
  
     }
     
