@@ -8,9 +8,23 @@ import org.springframework.stereotype.Component;
 public class KakaoPayApprovalVO {
     
     //response
-    private String aid, tid, cid, sid;
+	private int payNum;
+    public int getPayNum() {
+		return payNum;
+	}
+	public void setPayNum(int payNum) {
+		this.payNum = payNum;
+	}
+	public ReservationVO getReservationVO() {
+		return reservationVO;
+	}
+	public void setReservationVO(ReservationVO reservationVO) {
+		this.reservationVO = reservationVO;
+	}
+	private String aid, tid, cid, sid;
     private String partner_order_id, partner_user_id, payment_method_type;
-    private AmountVO amount;
+    private ReservationVO reservationVO;
+	private AmountVO amount;
     private CardVO card_info;
     private String item_name, item_code, payload;
     private Integer quantity, tax_free_amount, vat_amount;

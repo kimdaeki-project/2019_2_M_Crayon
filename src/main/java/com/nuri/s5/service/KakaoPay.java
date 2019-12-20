@@ -16,6 +16,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.nuri.s5.model.KakaoPayApprovalVO;
 import com.nuri.s5.model.KakaoPayReadyVO;
+import com.nuri.s5.model.ReservationVO;
+import com.nuri.s5.model.TourNoticeVO;
 
 @Service
 public class KakaoPay {
@@ -26,6 +28,8 @@ public class KakaoPay {
     private KakaoPayReadyVO kakaoPayReadyVO;
     @Inject
     private KakaoPayApprovalVO kakaoPayApprovalVO;
+    @Inject
+    private ReservationVO reservationVO;
     
     public String kakaoPayReady() {
  
@@ -38,11 +42,13 @@ public class KakaoPay {
         headers.add("Content-Type", MediaType.APPLICATION_FORM_URLENCODED_VALUE + ";charset=UTF-8");
         
         // 서버로 요청할 Body
-        MultiValueMap<String, String> params = new LinkedMultiValueMap<String, String>();
+        MultiValueMap<Object, Object> params = new LinkedMultiValueMap<Object, Object>();
+        kakaoPayApprovalVO.setPayNum(reservationVO.getReNum());
+        params.add("payNum", kakaoPayApprovalVO.getPayNum());
         params.add("cid", "TC0ONETIME");
         params.add("partner_order_id", "1001");
         params.add("partner_user_id", "gorany");
-        params.add("item_name", "갤럭시S9");
+        params.add("item_name", kakaoPayApprovalVO.getReservationVO().getTourName());
         params.add("quantity", "1");
         params.add("total_amount", "2100");
         params.add("tax_free_amount", "100");
@@ -50,7 +56,7 @@ public class KakaoPay {
         params.add("cancel_url", "http://localhost:8080/kakaoPayCancel");
         params.add("fail_url", "http://localhost:8080/kakaoPaySuccessFail");
  
-         HttpEntity<MultiValueMap<String, String>> body = new HttpEntity<MultiValueMap<String, String>>(params, headers);
+         HttpEntity<MultiValueMap<Object, Object>> body = new HttpEntity<MultiValueMap<Object, Object>>(params, headers);
  
         try {
             kakaoPayReadyVO = restTemplate.postForObject(new URI(HOST + "/v1/payment/ready"), body, KakaoPayReadyVO.class);
