@@ -125,6 +125,23 @@ public class TourController {
 		return mv;
 	}
 	
+
+	@GetMapping(value = "ReservationListMy")
+	public ModelAndView memberMyPage(HttpSession session,ReservationVO reservationVO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		MemberVO memberVO = (MemberVO)session.getAttribute("member");
+		reservationVO.setEmail(memberVO.getEmail());
+		List<ReservationVO> rr = tourServiceImpl.ReservationListMy(reservationVO);
+		mv.addObject("list2", rr);
+		mv.addObject("dto", reservationVO);
+		
+		mv.setViewName("tour/ReservationListMy");
+		
+		return mv;
+	}
+	
+	
+	
 	
 
 /////////////////////////// tour file ///////////////////////////////////

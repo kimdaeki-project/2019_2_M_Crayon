@@ -18,11 +18,13 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.nuri.s5.model.MemberVO;
+import com.nuri.s5.model.ReservationVO;
 import com.nuri.s5.model.ReviewVO;
 import com.nuri.s5.model.WishListVO;
 import com.nuri.s5.model.TourCalendarVO;
 
 import com.nuri.s5.service.MemberServiceImpl;
+import com.nuri.s5.service.TourServiceImpl;
 import com.nuri.s5.service.WishListService;
 import com.nuri.s5.util.Pager;
 
@@ -34,6 +36,7 @@ public class MemberController {
 	private MemberServiceImpl memberServiceImpl;
 	@Inject
 	private WishListService wishListService;
+
 	
 	
 //	---------------- 위시리스트 추가
@@ -60,6 +63,7 @@ public class MemberController {
 		mv.setViewName("common/common_ajaxResult");
 		return mv;
 	}
+	
 	
 //	---------------- 멤버테이블 시작
 	
@@ -166,11 +170,12 @@ public class MemberController {
 		wishListVO.setEmail(memberVO.getEmail());
 		List<WishListVO> ar = wishListService.listShow(wishListVO);
 		mv.addObject("list", ar);
-		
+
 //		mv.setViewName("common/common_ajaxResult");
 		
 		return mv;
 	}
+	
 	
 	
 	// 관리자 폼

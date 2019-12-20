@@ -77,7 +77,7 @@
 	</select>
 	
 	<select id="ReservationListMy" parameterType="ReservationVO" resultType="ReservationVO">
-		select * from reservation where 
+		select * from reservation where email=#{email}
 	</select>
 	
 	<select id="ReservationResult" parameterType="ReservationVO" resultType="ReservationVO">

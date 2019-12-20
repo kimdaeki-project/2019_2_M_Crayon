@@ -25,6 +25,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <c:import url="/resources/bootStrap/bootStrap.jsp"></c:import>
 </head>
 <body>
 <c:import url="../layout/nav.jsp"></c:import>
@@ -83,46 +84,42 @@
 						</div>
 						<!--tour_wrap 끝-->
 					</c:forEach>
-				</div>
-				
-				<div class="Reservation_tB" style="background-color: aqua; width: 100%; overflow: auto;">						<table class="table table-striped">
-							<thead>
-								<tr>
-									<th>예약번호</th>
-									<th>예약 인원</th>
-									<th>투어이름</th>
-									<th>이메일</th>
-									<th>KakaoID</th>
-									<th>ID</th>
-									<th>이름</th>
-									<th>총 가격</th>
-									<th>날짜</th>
-									<th>추신</th>
-								</tr>
-							</thead>
-							<tbody>
-								<%-- <c:forEach items="${list}" var="dto" varStatus="st">
-									<tr>
-										<td style="width: 55px; height: 56px; line-height: 38px;">${dto.email}</td>
-										<td style="width: 350px; height: 56px; line-height: 38px;">${dto.pw}</td>
-										<td style="width: 300px; height: 56px; line-height: 38px;">${dto.name}</td>
-										<td style="width: 120px; height: 56px; line-height: 38px;">${dto.birth}</td>
-										<td style="width: 120px; height: 56px; line-height: 38px;">${dto.kCheck}</td>
-										<td style="width: 120px; height: 56px; line-height: 38px;">${dto.aCheck}</td>
-										<td><input type="hidden" value="${dto.mnum}"></td>
-										<td><a href="./memberAdminDelete?mnum=${dto.mnum}"><input type="button" value="회원 삭제" class="btn btn-dark"></a></td>
-									</tr>
-								</c:forEach> --%>
-							</tbody>
-						</table>
-
-				</div><!--예약정보 테이블 끝-->
+					<br>
+					<br>
+				<!--예약 페이지-->
 			
+				<div class="Reservation_tB" style="width: 100%; overflow: auto; height: 300px;"></div>
+			
+				
+				
+				
+				
 			</div>
 	</div>
 </div>
 
 <c:import url="../layout/navFoot.jsp"></c:import>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$.ajax({
+		type:"GET",
+		url:"../tour/ReservationListMy",
+		error: function() {
+			alert("통신실패")
+		},
+		success : function(data) {
+			$(".Reservation_tB").html(data);
+			/*  alert("데이터 전송 성공"+data);  */
+		}
+	});
+	
+});
+
+</script>
 
 
 <script type="text/javascript">

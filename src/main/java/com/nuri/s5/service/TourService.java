@@ -37,5 +37,7 @@ public interface TourService {
 	public List<ReservationVO> ReservationResult(ReservationVO reservationVO)throws Exception;
 	
 	public int vReservation(VReservationVO vReservationVO,HttpSession session)throws Exception;
+	
+	public List<ReservationVO> ReservationListMy(ReservationVO reservationVO)throws Exception;
 
 }

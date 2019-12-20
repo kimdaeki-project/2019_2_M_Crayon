@@ -121,6 +121,11 @@ public class TourServiceImpl implements TourService {
 		return tourDAOImpl.ReservationResult(reservationVO);
 	}
 	
+	
+	public List<ReservationVO> ReservationListMy(ReservationVO reservationVO)throws Exception{
+		return tourDAOImpl.ReservationListMy(reservationVO);
+	}
+	
 
 
 	@Override
