@@ -205,6 +205,12 @@ div.header_2 {
 	float: left;
 }
 
+.vr_input{
+	width: 100px;
+	height: 70px;
+	border: none;
+}
+
 #goMoney {
 	width: 100px;
 	height: 43px;

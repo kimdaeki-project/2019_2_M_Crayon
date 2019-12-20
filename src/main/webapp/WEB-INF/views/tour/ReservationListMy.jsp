@@ -21,11 +21,13 @@
 								<div >
 								
 									<div class="vr_wrap_cell">예약 번호
+									
 									</div>
 									<div class="vr_wrap_cell">예약 인원수
+									
 									</div>
-									<div class="vr_wrap_cell">
-									<input type="text" name="tourName"> 투어이름
+									<div class="vr_wrap_cell">투어이름
+
 									</div>
 									<div class="vr_wrap_cell">이메일
 									</div>
@@ -39,12 +41,12 @@
 									</div>
 									
 							
-									<div class=vr_wrap_mini>${vo.reNum}</div>
-									<div class=vr_wrap_mini>${vo.personNum}</div>
-									<div class=vr_wrap_mini>${vo.tourName}</div>
-									<div class=vr_wrap_mini>${vo.tourEmail}</div>
-									<div class=vr_wrap_mini>${vo.totalPrice}</div>
-									<div class=vr_wrap_mini>${vo.email}</div>
+									<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="reNum" value="${vo.reNum}"></div>
+									<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="personNum" value="${vo.personNum}"></div>
+									<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="tourName" value="${vo.tourName}"></div>
+									<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="tourEmail" value="${vo.tourEmail}"></div>
+									<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="totalPrice" value="${vo.totalPrice}"></div>
+									<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="email" value="${vo.email}"></div>
 									<%-- <c:if test="${dto2.ac eq '예약 확정 결제 대기'}"> --%>
 									<div class=vr_wrap_mini></div>
 									
