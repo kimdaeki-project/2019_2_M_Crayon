@@ -10,9 +10,10 @@
 				<br>
 				<div class="table table-striped" style="margin-bottom: 150px;">
 						
+						
 							<div class="vr_wrap">
 								<c:forEach items="${list3}" var="vvo" varStatus="str">
-									<div >
+									<div>
 									
 										<div class="vr_wrap_cell">예약 번호
 										</div>
@@ -40,23 +41,32 @@
 										<div class=vr_wrap_mini>${vvo.tourEmail}</div>
 										<div class=vr_wrap_mini>${vvo.name}</div>
 										<div class=vr_wrap_mini>${vvo.email}</div>
-										<%-- <c:if test="${dto2.ac eq '예약 확정 결제 대기'}"> --%>
 										<div class=vr_wrap_mini>
-										<input type="button" value="예약 결제"  id="goMoney"></div>
-										<%-- </c:if>	 --%>
+										
+										<c:if test="${vvo.ac eq '예약 확정 결제 대기'}"> 
+										<input type="button" value="예약 결제"  id="goMoney">
+										 </c:if>
+										 
+										 
+										</div>
 										
 										<div class="vr_wrap_mini">
-										<input type="button" value="예약 취소"  id="byeMoney"></div>
+										<input type="button" value="예약 취소" id="byeMoney"></div>
 									
 									</div>
 								</c:forEach>
 							</div>
+							
 						</div>
 
-						<script type="text/javascript">
-							$("#goMoney").click(function() {
+						 <script type="text/javascript">
+							$("#byeMoney").click(function() {
 								var result = confirm("정말 예약을 취소하시겠습니까?");
-								if(result)
+								if(result>0){
+									alert("예약이 취소되었습니다")
+								}else{
+									
+								}
 							});
 						</script>
 					

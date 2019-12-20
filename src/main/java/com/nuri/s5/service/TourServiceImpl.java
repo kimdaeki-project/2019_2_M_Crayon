@@ -138,5 +138,10 @@ public class TourServiceImpl implements TourService {
 		return tourDAOImpl.vReservationMy(vReservationVO);
 	}
 	
+	@Override
+	public int VReservationDelete(VReservationVO vReservationVO)throws Exception{
+		return tourDAOImpl.VReservationDelete(vReservationVO);
+	}
+	
 
 }

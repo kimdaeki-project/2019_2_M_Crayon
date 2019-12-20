@@ -148,10 +148,10 @@ public class TourController {
 		List<VReservationVO> vr = tourServiceImpl.vReservationMy(vReservationVO);
 		mv.addObject("list3", vr);
 		mv.addObject("dto2", vReservationVO);
-		
 		mv.setViewName("tour/vReservationMy");
 		return mv;
 	}
+	
 	
 	
 	

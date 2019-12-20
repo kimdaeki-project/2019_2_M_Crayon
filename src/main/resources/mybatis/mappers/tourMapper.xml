@@ -97,6 +97,11 @@
 	<select id="VReservationMy" parameterType="vReservationVO" resultType="vReservationVO">
 		select * from vreservation where email=#{email}
 	</select>
+	
+	<delete id="VReservationDelete" parameterType="ReservationVO">
+		delete Reservation where vipno=#{vipno}	
+	</delete>
+	
 
 	
 </mapper>

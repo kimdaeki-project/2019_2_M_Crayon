@@ -91,6 +91,11 @@ public class TourDAOImpl implements TourDAO {
 	public List<VReservationVO> vReservationMy(VReservationVO vReservationVO)throws Exception{
 		return sqlSession.selectList(NAMESPACE+"VReservationMy", vReservationVO);
 	}
+	
+	@Override
+	public int VReservationDelete(VReservationVO vReservationVO)throws Exception{
+		return sqlSession.delete(NAMESPACE+"VReservationDelete", vReservationVO);
+	}
 
 
 

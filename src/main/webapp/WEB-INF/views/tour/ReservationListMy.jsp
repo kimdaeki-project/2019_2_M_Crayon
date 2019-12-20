@@ -26,8 +26,11 @@
 										</div>
 										<div class="vr_wrap_cell">아이디
 										</div>
+										
 										<div class="vr_wrap_cell">
+										
 										</div>
+										
 										<div class="vr_wrap_cell">
 										</div>
 										
@@ -38,10 +41,10 @@
 										<div class=vr_wrap_mini>${vo.tourEmail}</div>
 										<div class=vr_wrap_mini>${vo.totalPrice}</div>
 										<div class=vr_wrap_mini>${vo.email}</div>
-										<%-- <c:if test="${dto2.ac eq '예약 확정 결제 대기'}"> --%>
+										
 										<div class=vr_wrap_mini></div>
 										
-										<%-- </c:if>	 --%>
+										 	
 										
 										<div class="vr_wrap_mini"></div>
 									
@@ -50,13 +53,6 @@
 							</div>
 						</div>
 
-						<script type="text/javascript">
-							$("#goMoney").click(function() {
-								var result = confirm("정말 예약을 취소하시겠습니까?");
-								if(result)
-							});
-						</script>
-					
 				
 				
 				

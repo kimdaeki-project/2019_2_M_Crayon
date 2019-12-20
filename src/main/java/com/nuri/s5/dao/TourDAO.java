@@ -45,6 +45,8 @@ public interface TourDAO {
 	
 	public List<VReservationVO> vReservationMy(VReservationVO vReservationVO)throws Exception;
 	
+	public int VReservationDelete(VReservationVO vReservationVO)throws Exception;
+	
 	
 	
 
