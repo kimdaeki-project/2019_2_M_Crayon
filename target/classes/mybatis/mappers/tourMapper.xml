@@ -66,13 +66,17 @@
 	<insert id="Reservation" parameterType="ReservationVO">
 		insert into reservation
 		values
-		(#{personNum}, #{name}, #{email}, #{phone}, #{day},
+		(vip_seq.nextval,#{personNum}, #{name}, #{email}, #{phone}, #{day},
 		#{tourNum}, #{ps}, #{totalPrice}, #{tourName}, #{kakaoID})
 	</insert>
 	
 	
 	<select id="ReservationList" parameterType="ReservationVO" resultType="ReservationVO">
 		select * from reservation 
+	</select>
+	
+	<select id="ReservationListMy" parameterType="ReservationVO" resultType="ReservationVO">
+		select * from reservation where 
 	</select>
 	
 	<select id="ReservationResult" parameterType="ReservationVO" resultType="ReservationVO">

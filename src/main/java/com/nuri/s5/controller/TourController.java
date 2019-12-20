@@ -87,6 +87,17 @@ public class TourController {
 		
 	}
 	
+	
+	@GetMapping(value = "ReservationList")
+	public ModelAndView reservationList(ReservationVO reservationVO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		List<ReservationVO> ar = tourServiceImpl.ReservationList(reservationVO);
+		mv.addObject("list", ar);
+		mv.setViewName("tour/ReservationList");
+		return mv;
+	}
+	
+	
 
 /////////////////////////// tour file ///////////////////////////////////
 	@GetMapping(value = "fileWrite")
@@ -162,15 +173,7 @@ public class TourController {
 		return mv;
 	} 
 	
-	@GetMapping(value = "ReservationList")
-	public ModelAndView reservationList(ReservationVO reservationVO)throws Exception{
-		ModelAndView mv = new ModelAndView();
-		List<ReservationVO> ar = tourServiceImpl.ReservationList(reservationVO);
-		mv.addObject("list", ar);
-		mv.setViewName("tour/ReservationList");
-		return mv;
-	}
-	
+
 	
 	
 	@GetMapping(value = "tourGoods")

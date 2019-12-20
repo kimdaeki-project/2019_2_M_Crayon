@@ -3,6 +3,9 @@ package com.nuri.s5.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -111,9 +114,35 @@ public class ReviewController {
 	}
 	
 	@GetMapping(value = "reviewSelect")
-	public ModelAndView reviewSelect(ReviewVO reviewVO) throws Exception {
+	public ModelAndView reviewSelect(ReviewVO reviewVO,HttpServletRequest request,HttpServletResponse response) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		reviewVO = reviewServiceImpl.reviewSelect(reviewVO);
+		
+		/*
+		 * //쿠키를 받아오기 Cookie [] cookies = request.getCookies(); //새 쿠키 생성 Cookie
+		 * viewCookie =null; if(cookies != null && cookies.length>0) { for(int i =0;
+		 * i<cookies.length; i++) {
+		 * if(cookies[i].getName().equals("cookies"+reviewVO.getNum())){
+		 * System.out.println("처음으로 쿠키가 생성된 뒤에 들어오는 곳 "); viewCookie = cookies[i]; } } }
+		 * if(reviewVO != null) { System.out.println("리뷰 select 페이지로 넘어감");
+		 * mv.addObject("review", reviewVO); }
+		 * 
+		 * //만약 viewCookie가 null인 경우 쿠키를 생성해서 조회수 증가를 처리 if(viewCookie == null) {
+		 * System.out.println("cookie 없음 오예");
+		 * 
+		 * //쿠키 하나 생성(이름, 값) Cookie newCookie = new
+		 * Cookie("cookie"+reviewVO.getNum(),reviewVO.getTourName());
+		 * 
+		 * //쿠키 추가 response.addCookie(newCookie); //쿠키 추가 및 조회수 증가 int result =
+		 * reviewServiceImpl.countUpdate(reviewVO);
+		 * 
+		 * if(result>0) { System.out.println("조회수 증가"); }else{
+		 * System.out.println("증가 되어야 하는데 안됨"); } } //viewCookie가 null이 아닐 경우 쿠키가 있으므로
+		 * 조회수 증가 안함 else { System.out.println("쿠키 있음");
+		 * 
+		 * String value = viewCookie.getValue(); System.out.println("cookie값:"+ value);
+		 * }
+		 */
 		
 		mv.addObject("dto", reviewVO);
 		mv.setViewName("review/reviewSelect");
