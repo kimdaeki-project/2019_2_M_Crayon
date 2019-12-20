@@ -51,7 +51,7 @@
 		<div class="body_name">　관심상품</div>
 			<div class="body_inner" >
 			
-				<div class="tour_MainForm" style="overflow: auto; margin: auto;">
+				<div class="tour_MainForm" style="overflow:hidden; height: auto">
 					<c:forEach items="${list}" var="dto" varStatus="st">
 						<div class="tour_wrap">
 							<div class="tourIMG_wrap">	
@@ -88,8 +88,8 @@
 					<br>
 				<!--예약 페이지-->
 			
-				<div class="Reservation_tB" style="width: 100%; overflow: auto; height: 300px;"></div>
-			
+				<div class="Reservation_tB" style="width: 100%; overflow:hidden; height: auto"></div>
+			<div class="VReservation_tB" style="width: 100%; overflow:hidden; height: auto"></div>
 				
 				
 				
@@ -118,6 +118,24 @@ $(document).ready(function() {
 	});
 	
 });
+
+
+$(document).ready(function() {
+	
+	$.ajax({
+		type:"GET",
+		url:"../tour/vReservationMy",
+		error: function() {
+			alert("통신실패")
+		},
+		success : function(data) {
+			$(".VReservation_tB").html(data);
+			  /* alert("데이터 전송 성공"+data);  */ 
+		}
+	});
+	
+});
+
 
 </script>
 

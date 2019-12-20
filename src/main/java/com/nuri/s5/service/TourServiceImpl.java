@@ -133,5 +133,10 @@ public class TourServiceImpl implements TourService {
 		// TODO Auto-generated method stub
 		return tourDAOImpl.vReservation(vReservationVO);
 	}
+	@Override
+	public List<VReservationVO> vReservationMy(VReservationVO vReservationVO)throws Exception{
+		return tourDAOImpl.vReservationMy(vReservationVO);
+	}
+	
 
 }

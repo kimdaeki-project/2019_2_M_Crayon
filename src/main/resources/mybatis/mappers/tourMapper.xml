@@ -70,8 +70,6 @@
 		#{tourNum}, #{ps}, #{totalPrice}, #{tourName}, #{kakaoID},#{tourEmail})
 	</insert>
 	
-
-	
 	<select id="ReservationList" parameterType="ReservationVO" resultType="ReservationVO">
 		select * from reservation 
 	</select>
@@ -85,14 +83,20 @@
 	</select>
 	
 	<delete id="ReservationDelete" parameterType="ReservationVO">
-		delete Reservation where email=#{email}	
+		delete Reservation where reNum=#{reNum}	
 	</delete>
 
-	<insert id="VReservation" parameterType="vReservationVO">
+<!--맞춤투어 예약-->
+
+	<insert id="VReservation" parameterType="vReservationVO" >
 		insert into vreservation
 		values
 		(vip_seq.nextval,#{name}, #{email},#{kakaoID},#{content},#{vday},#{vprice},#{tourEmail},'관리자 승인 대기',#{vps})
 	</insert>
+	
+	<select id="VReservationMy" parameterType="vReservationVO" resultType="vReservationVO">
+		select * from vreservation where email=#{email}
+	</select>
 
 	
 </mapper>

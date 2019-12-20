@@ -30,14 +30,22 @@ public interface TourDAO {
 	
 	public int Reservation(ReservationVO reservationVO)throws Exception;
 	
+	
+	//예약
 	public List<ReservationVO> ReservationList(ReservationVO reservationVO)throws Exception;
 	
 	public int ReservationDelete(ReservationVO reservationVO)throws Exception;
 	
 	public List<ReservationVO> ReservationResult(ReservationVO reservationVO)throws Exception;
 	
+	public List<ReservationVO> ReservationListMy(ReservationVO reservationVO)throws Exception;
+	
+	//맞춤투어 예약
 	public int vReservation(VReservationVO vReservationVO)throws Exception;
 	
-	public List<ReservationVO> ReservationListMy(ReservationVO reservationVO)throws Exception;
+	public List<VReservationVO> vReservationMy(VReservationVO vReservationVO)throws Exception;
+	
+	
+	
 
 }

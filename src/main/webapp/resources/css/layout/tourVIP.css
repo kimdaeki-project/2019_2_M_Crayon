@@ -1,85 +1,85 @@
 @charset "UTF-8";
 
-#map{
-	width:1100px;
-	height:700px;
+#map {
+	width: 1100px;
+	height: 700px;
 	margin-top: 180px;
 }
-.body_main{
+
+.body_main {
 	height: 100%;
 }
-.body_main2{
-  	width: 1100px;
-  	margin: 0 auto;
+
+.body_main2 {
+	width: 1100px;
+	margin: 0 auto;
 }
 
 /**/
-div.header_2{
-   width:100%;
-   height:60px;
-   position: -webkit-sticky;
-   position: sticky;
-   border-top: 1px solid #c0c0c0;
-   border-bottom: 1px solid #c0c0c0;
-   background-color:white;
-   top:100px;
-   z-index: 56;
-   
+div.header_2 {
+	width: 100%;
+	height: 60px;
+	position: -webkit-sticky;
+	position: sticky;
+	border-top: 1px solid #c0c0c0;
+	border-bottom: 1px solid #c0c0c0;
+	background-color: white;
+	top: 100px;
+	z-index: 56;
 }
 
-.header_2inner{
-   width: 1100px;
-   height: 100%;
-   margin: 0 auto;
+.header_2inner {
+	width: 1100px;
+	height: 100%;
+	margin: 0 auto;
 }
 
-.goods_menu{
-   float:left;
-   width: 125.61px;
-   height:60px;
-   text-align: center;
-   color:#BFBFBF;
-   font-size: 20px;
-   line-height: 60px;
+.goods_menu {
+	float: left;
+	width: 125.61px;
+	height: 60px;
+	text-align: center;
+	color: #BFBFBF;
+	font-size: 20px;
+	line-height: 60px;
 }
 
-.goods_menu> a{
-   color:#BFBFBF;
+.goods_menu>a {
+	color: #BFBFBF;
 }
 
-.goods_menu a:hover{
-   color:black;
+.goods_menu a:hover {
+	color: black;
 }
 
-.goods_menu:hover{
-   color:black;
-   height:60px;
-   border-bottom: 3px solid #a36ae3;
+.goods_menu:hover {
+	color: black;
+	height: 60px;
+	border-bottom: 3px solid #a36ae3;
 }
 
 /**/
-.rv{
-	width:360px;
+.rv {
+	width: 360px;
 	height: 330px;
-	border: 1px solid #999; 
+	border: 1px solid #999;
 	position: -webkit-sticky;
 	position: sticky;
 	z-index: 55;
 	float: right;
-	top:160px;
+	top: 160px;
 }
 
-.rv_inner{
+.rv_inner {
 	width: 300px;
 	margin: 0 auto;
-	margin-top:30px;
+	margin-top: 30px;
 	background: #e8e8e8;
 	height: 200px;
 	margin-bottom: 20px;
-	
 }
 
-.rv_inner_btn{
+.rv_inner_btn {
 	background: #a36ae3;
 	border: none;
 	height: 60px;
@@ -87,102 +87,143 @@ div.header_2{
 	margin: 0 auto;
 	margin-left: 30px;
 	border-radius: 5px;
-	color:white;
+	color: white;
 	font-size: 20px;
 }
 
-
-.m{
-   font-size: 24px;
-   padding: 20px;
-   font-weight: normal;
-   width: 720px;
+.m {
+	font-size: 24px;
+	padding: 20px;
+	font-weight: normal;
+	width: 720px;
 }
 
 /**/
-
-#m2{
-   position: relative;
-   top: -150px;
-   height: 1px;
-   width: 1px;
-   background-color: transparent;
+#m2 {
+	position: relative;
+	top: -150px;
+	height: 1px;
+	width: 1px;
+	background-color: transparent;
 }
 
-.m2_inner{
+.m2_inner {
 	width: 720px;
 	height: 350px;
 	border-bottom: 1px #cacaca solid;
 	font-weight: 200;
-	
 }
 /**/
-.menu4{
-   width: 100%;
-   
+.menu4 {
+	width: 100%;
 }
 
-#m4{
-   position: relative;
-   top: -150px;
-   height: 1px;
-   width: 1px;
-   background-color: transparent;
+#m4 {
+	position: relative;
+	top: -150px;
+	height: 1px;
+	width: 1px;
+	background-color: transparent;
 }
 
-#reviewT{
-   width: 720px;
-
+#reviewT {
+	width: 720px;
 }
 
-.m4_main{
-   font-size: 24px;
-   letter-spacing: -1;
-   font-weight: normal;
-   padding-bottom: 1px;
+.m4_main {
+	font-size: 24px;
+	letter-spacing: -1;
+	font-weight: normal;
+	padding-bottom: 1px;
 }
 /**/
-.menu5{
-   width: 100%;
-   height: 400px;
-   
+.menu5 {
+	width: 100%;
+	height: 400px;
 }
 
-#m5{
-   position: relative;
-   top: -150px;
-   height: 1px;
-   width: 1px;
-   background-color: transparent;
+#m5 {
+	position: relative;
+	top: -150px;
+	height: 1px;
+	width: 1px;
+	background-color: transparent;
 }
-
-
 
 /**/
-.menu6{
-   width: 100%;
-   height: 450px;
+.menu6 {
+	width: 100%;
+	height: 450px;
+}
+
+.gocenter {
+	width: 720px;
+	height: 100px;
+	border-top: 1px solid #cacaca;
+}
+
+.gocenterBtn {
+	width: 240px;
+	height: 50px;
+	padding: 10px;
+	margin-top: 20px;
+	border-radius: 5px;
+	background-color: white;
+	border: 1px solid black;
+	font-size: 18px;
+}
+
+.gocenterImg {
+	margin-top: 50px;
+}
+
+/*vReservationMy*/
+.vr_wrap {
+	width: 880px;
+	height: 300px;
+}
+
+.vr_wrap_cell {
+	width: 110px;
+	height: 38px;
+	font-size: 18px;
+	text-align: center;
+	float: left;
+	letter-spacing: -2px;
+	line-height: 38px;
+	border-bottom: 2px solid #cacaca;
+}
+
+.vr_wrap_mini {
+	width: 110px;
+	height: 70px;
+	font-size: 16px;
+	text-align: center;
+	/* border-bottom: 2px solid #cacaca; */
+	line-height: 70px;
+	letter-spacing: -2px;
+	float: left;
+}
+
+#goMoney {
+	width: 100px;
+	height: 43px;
+	line-height: 43px;
+	border: none;
+	background-color: #a36ae3;
+	border-radius:3px;
+	font-size: 16px;
+	color:white;
 
 }
 
-
-.gocenter{
-   width: 720px;
-   height: 100px;
-   border-top: 1px solid #cacaca;
-}
-
-.gocenterBtn{
-   width: 240px;
-   height: 50px;
-   padding: 10px;
-   margin-top: 20px;
-   border-radius: 5px;
-   background-color: white;
-   border: 1px solid black;
-   font-size: 18px;
-}
-
-.gocenterImg{
-   margin-top: 50px;
+#byeMoney {
+width: 100px;
+	height: 43px;
+	line-height: 43px;
+	border: none;
+	background-color: #a36ae3;
+	border-radius:3px;
+	font-size: 16px;
+	color:white;
 }

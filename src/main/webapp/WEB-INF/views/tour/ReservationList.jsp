@@ -116,7 +116,7 @@
 										<td style="width: 100px; height: 56px; line-height: 38px;">${vo.totalPrice}</td>
 										<td style="width: 100px; height: 56px; line-height: 38px;">${vo.kakaoID}</td>
 
-										<td><a href="./ReservationDelete?email=${vo.email}"><input
+										<td><a href="./ReservationDelete?reNum=${vo.reNum}"><input
 												type="button" value="예약 삭제" class="btn btn-dark"></a></td>
 
 									</tr>
