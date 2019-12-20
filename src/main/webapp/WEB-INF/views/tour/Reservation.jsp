@@ -119,12 +119,9 @@
 			alert("전화번호를 입력하세요!")
 			$("#phone").focus();
 		} else {
-		
 			$("#form11").submit();
 			alert("예약성공");
-			/* window.self.close();
-			opener.location.replace('../pay/kakaoPay'); */
-			
+			window.self.close();
 			
 		}
 	});
