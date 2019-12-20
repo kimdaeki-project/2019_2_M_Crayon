@@ -13,11 +13,27 @@ public class ReservationVO {
 	private int totalPrice;
 	private String tourName;
 	private String kakaoID;
+	private int	reNum;
+	private String tourEmail;
+	
+	
 
 	
 	
 	
 
+	public String getTourEmail() {
+		return tourEmail;
+	}
+	public void setTourEmail(String tourEmail) {
+		this.tourEmail = tourEmail;
+	}
+	public int getReNum() {
+		return reNum;
+	}
+	public void setReNum(int reNum) {
+		this.reNum = reNum;
+	}
 	public String getKakaoID() {
 		return kakaoID;
 	}

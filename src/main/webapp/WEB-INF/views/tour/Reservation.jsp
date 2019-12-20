@@ -23,6 +23,7 @@
 			<br>
 			예약상품 <input type="text" class="ReserveTN" id="tourName" name="tourName" value="${param.tourName}" readonly="readonly"><!--예약 상품-->
 			<input type="hidden" id="tourNum" name="tourNum" value="${param.tourNum}" readonly="readonly"> <!--tourNum-->
+		
 			투어날짜 　<input type="text" id="day" name="day" class="ReserveP_PN" value="${param.day}" readonly="readonly"><!--day-->
 			이메일 <input type="email" class="ReserveTN" id="tourEmail" name="tourEmail" placeholder="예약내역을 받을 이메일을 입력해주세요.">
 				 <div class="pn">총 인원 <input type="text" id="personNum" name="personNum" value="${param.personNum}" readonly="readonly" style="text-align: right; border:none; font-size:20px">명  <!--personNum--></div>
@@ -92,7 +93,7 @@
                     
 					</textarea>
 					<div class="checkSelect">
-					<input type="checkbox" name="ckok"> 이용약관에 동의합니다
+					<input type="checkbox"> 이용약관에 동의합니다
 
 					</div>
 				</div>

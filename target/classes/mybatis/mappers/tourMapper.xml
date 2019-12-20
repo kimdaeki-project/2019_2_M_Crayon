@@ -67,7 +67,7 @@
 		insert into reservation
 		values
 		(vip_seq.nextval,#{personNum}, #{name}, #{email}, #{phone}, #{day},
-		#{tourNum}, #{ps}, #{totalPrice}, #{tourName}, #{kakaoID})
+		#{tourNum}, #{ps}, #{totalPrice}, #{tourName}, #{kakaoID},#{tourEmail})
 	</insert>
 	
 

@@ -93,7 +93,7 @@ public class TourController {
 			msg = "Success";
 		}
 		mv.addObject("msg", msg);
-		mv.addObject("path", "tour/tourList");
+		mv.addObject("path", "../pay/kakaoPay");
 		mv.setViewName("common/common_result");
 		return mv;
 	}
