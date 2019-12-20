@@ -14,11 +14,9 @@
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/bodyMain.css"/>"
 	rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <link href="<c:url value="/resources/css/layout/tour.css"/>"
 	rel="stylesheet">
-<link href="<c:url value="/resources/css/layout/reset.css"/>"
-	rel="stylesheet">
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet"
