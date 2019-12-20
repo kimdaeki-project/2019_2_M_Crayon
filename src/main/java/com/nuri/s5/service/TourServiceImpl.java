@@ -115,4 +115,16 @@ public class TourServiceImpl implements TourService {
 		return tourDAOImpl.vReservation(vReservationVO);
 	}
 
+	@Override
+	public List<VReservationVO> vReservationList(VReservationVO vReservationVO) throws Exception {
+		// TODO Auto-generated method stub
+		return tourDAOImpl.vReservationList(vReservationVO);
+	}
+
+	@Override
+	public int vReservationUpdate1(VReservationVO vReservationVO) throws Exception {
+		// TODO Auto-generated method stub
+		return tourDAOImpl.vReservationUpdate1(vReservationVO);
+	}
+
 }

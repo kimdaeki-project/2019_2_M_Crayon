@@ -32,7 +32,10 @@ public interface TourDAO {
 	
 	public List<ReservationVO> ReservationResult(ReservationVO reservationVO)throws Exception;
 	
-
 	public int vReservation(VReservationVO vReservationVO)throws Exception;
+
+	public List<VReservationVO> vReservationList(VReservationVO vReservationVO) throws Exception;
+	
+	public int vReservationUpdate1(VReservationVO vReservationVO) throws Exception; 
 
 }

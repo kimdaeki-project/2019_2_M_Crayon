@@ -85,5 +85,20 @@ public class TourDAOImpl implements TourDAO {
 	}
 
 
+	@Override
+	public List<VReservationVO> vReservationList(VReservationVO vReservationVO) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList(NAMESPACE+"VReservationList",vReservationVO);
+	}
+
+	
+	//admin에서 예약승인으로 변경, 금액 변경
+	@Override
+	public int vReservationUpdate1(VReservationVO vReservationVO) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.update(NAMESPACE+"VReservationUpdate1",vReservationVO);
+	}
+
+
 
 }

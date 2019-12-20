@@ -78,8 +78,15 @@
 	<insert id="VReservation" parameterType="vReservationVO">
 		insert into vreservation
 		values
-		(vip_seq.nextval,#{name}, #{email},#{kakaoID},#{content},#{vday},#{vprice},#{tourEmail},'관리자 승인 대기',#{vps})
+		(vip_seq.nextval,#{name}, #{email},#{kakaoID},#{content},#{vday},#{vprice},#{tourEmail},'관리자 승인 대기',#{vps},#{vphone})
 	</insert>
-
+	
+	<select id="VReservationList" parameterType="vReservationVO" resultType="vReservationVO">
+	select * from vreservation
+	</select>
+	
+	<update id="VReservationUpdate1" parameterType="vReservationVO">
+	update vreservation set ac='예약 확정 결제 대기', vprice=#{vprice} where vipno=#{vipno}
+	</update>
 	
 </mapper>

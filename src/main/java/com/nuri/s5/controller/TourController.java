@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -38,6 +39,18 @@ public class TourController {
 	
 	/* tourCalendar 예약폼*/
 
+	@ResponseBody
+	@PostMapping(value="VReservationUpdate1")
+	public int VReservationUpdate1(VReservationVO vReservationVO) throws Exception{
+		System.out.println(vReservationVO.getVipno());
+		System.out.println(vReservationVO.getVprice());
+		
+
+		int result = tourServiceImpl.vReservationUpdate1(vReservationVO);
+		
+		return result;
+	}
+	
 	@GetMapping(value = "ReservationResult")
 	public ModelAndView ReservationResult(ReservationVO reservationVO)throws Exception{
 	ModelAndView mv = new ModelAndView();
@@ -47,9 +60,14 @@ public class TourController {
 	return mv;
 	}
 
-	@RequestMapping("VReservationList")
-	public void VReservationList() throws Exception{
+	@GetMapping("VReservationList")
+	public ModelAndView VReservationList(VReservationVO vReservationVO) throws Exception{
+		ModelAndView mv= new ModelAndView();
+		List<VReservationVO> ar = tourServiceImpl.vReservationList(vReservationVO);
+		mv.addObject("list",ar);
+		mv.setViewName("tour/VReservationList");
 		
+		return mv;
 	}
 
 	

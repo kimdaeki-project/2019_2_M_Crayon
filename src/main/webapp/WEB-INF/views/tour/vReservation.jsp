@@ -62,7 +62,7 @@
 				</div>
 				<div class="RN2_wrap">
 				<div class="RN2">이름</div> <input type="text" id='name' readonly="readonly" class="RT2" value="${sessionScope.member.name}" name="name" class="RT2"> 
-				<div class="RN2">전화번호</div> <input type="text" id='phone' name="phone" class="RT2">
+				<div class="RN2">전화번호</div> <input type="text" id='vphone' name="vphone" class="RT2">
 				</div>
 		</div>
 			<div class="pstxt">※ 특이사항
