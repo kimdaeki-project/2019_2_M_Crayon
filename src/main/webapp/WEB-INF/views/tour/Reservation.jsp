@@ -21,12 +21,12 @@
 		<div class="reservationTitle">
 			
 			<br>
-			예약상품 <input type="text" class="ReserveTN" id="tourName" name="tourName" value="${param.tourName}" readonly="readonly"><!--예약 상품-->
+			예약상품 <input type="text" class="ReserveTN sendKakao" id="tourName" name="tourName" value="${param.tourName}" readonly="readonly"><!--예약 상품-->
 			<input type="hidden" id="tourNum" name="tourNum" value="${param.tourNum}" readonly="readonly"> <!--tourNum-->
-			투어날짜 　<input type="text" id="day" name="day" class="ReserveP_PN" value="${param.day}" readonly="readonly"><!--day-->
-			이메일 <input type="email" class="ReserveTN" id="tourEmail" name="tourEmail" placeholder="예약내역을 받을 이메일을 입력해주세요.">
-				 <div class="pn">총 인원 <input type="text" id="personNum" name="personNum" value="${param.personNum}" readonly="readonly" style="text-align: right; border:none; font-size:20px">명  <!--personNum--></div>
-				<div class="pn">가격 <input type="text" id="totalPrice" name="totalPrice" value="${param.totalPrice}" readonly="readonly" style="text-align: right; border:none; font-size:20px"> 원 <!--totalPrice--></div>
+			투어날짜 　<input type="text" id="day" name="day" class="ReserveP_PN sendKakao" value="${param.day}" readonly="readonly"><!--day-->
+			이메일 <input type="email" class="ReserveTN sendKakao" id="tourEmail" name="tourEmail" placeholder="예약내역을 받을 이메일을 입력해주세요.">
+				 <div class="pn">총 인원 <input type="text" id="personNum" name="personNum" value="${param.personNum}" readonly="readonly" style="text-align: right; border:none; font-size:20px" class="sendKakao">명  <!--personNum--></div>
+				<div class="pn">가격 <input type="text" id="totalPrice" name="totalPrice" value="${param.totalPrice}" readonly="readonly" style="text-align: right; border:none; font-size:20px" class="sendKakao"> 원 <!--totalPrice--></div>
 					<input type="hidden" value="${param.adult}"> 
 					<input type="hidden" value="${param.child}">　<!--가격, 인원-->
 			
@@ -34,16 +34,16 @@
 		
 		<div class="InputIN">
 				<div class="RN_wrap">
-				 <div class="RN">아이디</div><input type="text" readonly="readonly" id='email' name="email" readonly="readonly" value="${sessionScope.member.email}" class="RT"> 
-				 <div class="RN">카카오톡 아이디</div><input type="text" id='kakaoID' name="kakaoID" class="RT"> 
+				 <div class="RN">아이디</div><input type="text" readonly="readonly" id='email' name="email" readonly="readonly" value="${sessionScope.member.email}" class="RT sendKakao"> 
+				 <div class="RN">카카오톡 아이디</div><input type="text" id='kakaoID' name="kakaoID" class="RT sendKakao"> 
 				</div>
 				<div class="RN2_wrap">
-				<div class="RN2">이름</div> <input type="text" id='name' readonly="readonly" class="RT2" value="${sessionScope.member.name}" name="name" class="RT2"> 
-				<div class="RN2">전화번호</div> <input type="text" id='phone' name="phone" class="RT2">
+				<div class="RN2">이름</div> <input type="text" id='name' readonly="readonly" class="RT2 sendKakao" value="${sessionScope.member.name}" name="name" class="RT2 sendKakao"> 
+				<div class="RN2">전화번호</div> <input type="text" id='phone' name="phone" class="RT2 sendKakao">
 				</div>
 		</div>
 			<div class="pstxt">※ 특이사항
-				<textarea id="ps" name="ps" class="RTT"></textarea>
+				<textarea id="ps" name="ps" class="RTT sendKakao"></textarea>
 			</div>
 		
 				<div id="Raccess"><!-- 이용약관-->
@@ -108,7 +108,13 @@
 	
 	
 	<script type="text/javascript">
-		
+	
+	$('.sendKakao').click(function() {
+		alert($(this).val());
+	});
+	var tourName = $('#tourName').attr('name');
+	
+	
 	$(".reserveOK").click(function() {
 		if ($("#kakaoID").val() == "") {
 			alert("kakaoID를 입력하세요!");
@@ -122,9 +128,11 @@
 			$("#form11").submit();
 			alert("예약성공");
 			window.self.close();
-			opener.location.replace('../pay/kakaoPay');
-			
-			
+// 			opener.location.replace('../pay/kakaoPay');
+			$.ajax({
+				url: '../pay/kakaoPay?tourName='
+			});
+		
 		}
 	});
 	
