@@ -32,20 +32,23 @@
 		</div>
 		<!-- 넣을거 -->
 		<div class="body_main">
-			<div class="body_name">　결제완료</div>
+			<div class="body_name">　결제완료</div>	
 			<div class="body_inner">
-				<h2>파리크레파스 "${info.item_name}" 결제가 정상적으로 처리되었습니다.</h2>
-				 
-				<h3>결제일시 : ${info.approved_at}</h3><br/>
-				<h3>예약번호 : ${info.partner_order_id}</h3><br/>
-				<h3>예약인원 : ${info.quantity}</h3><br/>
-				<h3>상품명 : ${info.item_name}</h3><br/>
-				<h3>결제금액 : ${info.amount.total}</h3><br/>
-				<h3>결제방법 : ${info.payment_method_type}</h3><br/>
-				 
-				 
-				<h2>쌍용크레파스를 이용해주셔서 감사합니다</h2>
-			
+				
+				<div class="inner2">
+					<div class="katxt">결제일시 : ${info.approved_at}</div><br/>
+					<div class="katxt">예약번호 : ${info.partner_order_id}</div><br/>
+					<div class="katxt">예약인원 : ${info.quantity}</div><br/>
+					<div class="katxt">상품명 : ${info.item_name}</div><br/>
+					<div class="katxt">결제금액 : ${info.amount.total}</div><br/>
+					<div class="katxt">결제방법 : ${info.payment_method_type}</div><br/>
+					<div class="katxt"> 파리크레파스 "${info.item_name}" </div>
+					<div class="katxt">결제가 정상적으로 처리되었습니다.</div>
+				</div>
+				<br>
+				<br>
+				<div style="text-align: center;font-size:20px; font-weight: 600; letter-spacing:-2px;">쌍용크레파스를 이용해주셔서 감사합니다.</div>
+				
 			</div>
 		</div>
  

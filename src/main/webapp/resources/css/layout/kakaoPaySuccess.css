@@ -2,8 +2,12 @@
 
 .body_inner {
 	margin-top: 200px;
-	width: 100%;
+	width: 500px;
+	margin: 0 auto;
 	height: 100%;
+	padding: 20px;
+	margin-bottom:30px;
+	border: 13px solid #fee434;
 }
 .body_head{
 	position:relative;
@@ -27,5 +31,26 @@
 	height:auto;
 	overflow: hidden;
 	background-color: transparent;
+	margin-top: 100px;
 }
 
+.body_name {
+	top:50px;
+}
+
+.katxt{
+	font-size:18px;
+	letter-spacing: -2px;
+}
+
+.inner2{
+
+	border-bottom: 1px solid #fee434;
+}
+
+.kakaf{
+	width:1100px;
+	margin: 0 auto;
+	height:500px;
+	background: pink;
+}
