@@ -40,12 +40,13 @@
 				<div class="katxt">상품명 : ${info.item_name}</div><br/>
 				<div class="katxt">결제금액 : ${info.amount.total}</div><br/>
 				<div class="katxt">결제방법 : ${info.payment_method_type}</div><br/>
-				<div class="katxt">파리크레파스 * 쌍용크레파스 VIP 맞춤투어 </div>
+				<div class="katxt">쌍용크레파스 VIP 맞춤투어 </div>
 				<div class="katxt">결제가 정상적으로 처리되었습니다.</div>
 				</div>
 				<br>
 				<br> 
 				<div style="text-align: center;font-size:20px; font-weight: 600; letter-spacing:-2px;">쌍용크레파스를 이용해주셔서 감사합니다</div>
+
 			
 			</div>
 		</div>
