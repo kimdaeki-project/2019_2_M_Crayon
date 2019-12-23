@@ -41,7 +41,7 @@
 										<div class=vr_wrap_mini>${vvo.tourEmail}</div>
 										<div class=vr_wrap_mini>${vvo.name}</div>
 										<div class=vr_wrap_mini>${vvo.email}</div>
-										<div class=vr_wrap_mini>
+										<div class=vr_wrap_mini> 
 										
 										<c:if test="${vvo.ac eq '예약 확정 결제 대기'}"> 
 										<input type="button" value="예약 결제"  id="goMoney">
