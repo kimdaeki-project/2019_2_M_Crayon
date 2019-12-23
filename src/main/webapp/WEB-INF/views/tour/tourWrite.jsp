@@ -75,7 +75,7 @@
 	   		<input type="button" value="add file" class="btn btn-default" id="btn" style="cursor: pointer; float: right;">
 		</div>
 		
-		<button class= "proBtn" style="float: right;">상품등록</button>
+		<button class= "proBtn" style="float: right; font-size:18px; letter-spacing:-2px; background:white; padding:10px; border:1px solid #999;border-radius:4px;margin-top:10px;">상품등록</button>
 	</form>
 	
 	</div>
