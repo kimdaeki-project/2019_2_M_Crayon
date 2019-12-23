@@ -38,6 +38,7 @@
 				 
 				<h3>결제일시 : ${info.approved_at}</h3><br/>
 				<h3>예약번호 : ${info.partner_order_id}</h3><br/>
+				<h3>예약인원 : ${info.quantity}</h3><br/>
 				<h3>상품명 : ${info.item_name}</h3><br/>
 				<h3>결제금액 : ${info.amount.total}</h3><br/>
 				<h3>결제방법 : ${info.payment_method_type}</h3><br/>
