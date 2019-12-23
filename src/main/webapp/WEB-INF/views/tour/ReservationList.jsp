@@ -7,8 +7,6 @@
 <meta charset="UTF-8">
 <link href="<c:url value="/resources/css/layout/header.css"/>"
 	rel="stylesheet">
-<link href="<c:url value="/resources/css/layout/admin.css"/>"
-	rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/reset.css"/>"
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/footer.css"/>"
@@ -16,6 +14,8 @@
 <link href="<c:url value="/resources/css/layout/bodyMain.css"/>"
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/layout/review.css"/>"
+	rel="stylesheet">
+<link href="<c:url value="/resources/css/layout/admin.css"/>"
 	rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script
@@ -93,16 +93,16 @@
 							<thead>
 								<tr>
 									
-									<th>예약 인원수</th>
-									<th>예약자 아이디</th>
+									<th>인원수</th>
+									<th>아이디</th>
 									<th>예약 날짜</th>
 									<th>요구사항</th>
 									<th>투어 이름</th>
-									<th>예약자 이름</th>
-									<th>예약자 전화번호</th>
-									<th>투어 번호</th>
+									<th>성함</th>
+									<th>연락처</th>
+									<th>No.</th>
 									<th>총 금액</th>
-									<th>카카오 아이디</th>
+									<th>카카오 ID</th>
 										<th></th>
 								
 								</tr>
@@ -114,7 +114,7 @@
 										<td style="width: 150px; height: 56px; line-height: 38px;">${vo.email}</td>
 										<td style="width: 150px; height: 56px; line-height: 38px;">${vo.day}</td>
 										<td style="width: 150px; height: 56px; line-height: 38px;">${vo.ps}</td>
-										<td style="width: 150px; height: 56px; line-height: 38px;">${vo.tourName}</td>
+										<td style="width: 370px; height: 56px; line-height: 38px;">${vo.tourName}</td>
 										<td style="width: 150px; height: 56px; line-height: 38px;">${vo.name}</td>
 										<td style="width: 150px; height: 56px; line-height: 38px;">${vo.phone}</td>
 										<td style="width: 150px; height: 56px; line-height: 38px;">${vo.tourNum}</td>
