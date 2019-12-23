@@ -40,7 +40,7 @@
 	<div class="body">
 		
 		<div class="body_main">
-		<div class="body_name">　맞춤 투어</div>
+		<div class="body_name">　VIP 단독차량 맞춤 투어</div>
 		
 		<div id="map"></div>
 		<div class="">
@@ -135,7 +135,7 @@
 			　파리시내 VIP단독차량투어 (에펠탑,노틀담,계선문)<br>
 			　파리 야경 VIP단독차량투어 (에펠탑,몽마르트,유람선)<br>
 			　비지니스 VIP 맞춤투어 (통역,패션워크,박람회)<br><br>
-			　위사항은 예시입니다.<br><br>
+			　*** 위사항은 예시입니다.<br><br>
 			-　VIP단독차량맞춤투어는 고객님이 계신 숙소로 모시러가고 투어마치고 모셔다드립니다.<br>
 			<div class="m">주의 사항</div>
 			
@@ -230,11 +230,9 @@
 						
 					// 주소로 좌표를 검색합니다
 					geocoder.addressSearch(myAddress[i], function(result, status) {		
-			
 							
 					    // 정상적으로 검색이 완료됐으면 
 					     if (status === kakao.maps.services.Status.OK) {
-					
 					        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 							var v =result[0].road_address.building_name;
 							var b =result[0].road_address.main_building_no;
@@ -316,12 +314,11 @@
 									
 									});
 								
-			
 							});
 							j++;							
 						}
 					});
-					}
+				}
 					
 					
 					

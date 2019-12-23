@@ -262,7 +262,7 @@
 			</div><!-- menu6 -->
 			
 			<div>
-				<c:if test="${sessionScope.member.aCheck ne 1}">
+				<c:if test="${sessionScope.member.aCheck eq 1}">
 					<a href="./tourUpdate?tourNum=${dto.tourNum}">
 						<input type="submit" id="adminPage" value="상품수정" class="btns_p btn btn-default" name="${dto.tourNum}">
 					</a>
