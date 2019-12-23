@@ -56,7 +56,9 @@ public class TourController {
 	    final String password = "sscrayon!!"; //네이버 이메일 비밀번호를 입력해주세요. 
 	    int port=465; //포트번호 
 	    
-	    String name = vReservationVO.getName(); 
+	    String name = vReservationVO.getName();
+	    int price = vReservationVO.getVprice();
+	    
 	    String goods_name = "파리 VIP 맞춤 여행";
 	    
 	    String recipient = vReservationVO.getTourEmail(); //받는 사람의 메일주소를 입력해주세요. 
@@ -65,6 +67,7 @@ public class TourController {
 		    
 		"\r\n"+
 		goods_name+"예약이 확정되어 바우처를 보내드립니다.\r\n" +
+		"고객님의 VIP가격은 "+price+"입니다.\r\n"+
 		"\r\n"+
 		"해당 상품을 이용하기 위해 필요한 정보는 마이페이지에 안내되어 있으니 이용전에 꼭 확인해주세요.\r\n"+
 		"\r\n"+
@@ -81,6 +84,7 @@ public class TourController {
 		"\r\n"+
 		"고맙습니다.\r\n"+
 		"\r\n"+
+		
 		"localhost/s5/member/memberLogin\r\n"; //메일 내용 입력해주세요. 
 		
 		Properties props = System.getProperties(); // 정보를 담기 위한 객체 생성 
