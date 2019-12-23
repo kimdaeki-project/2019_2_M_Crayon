@@ -27,7 +27,8 @@ public class KakaoPay {
     @Inject
     private KakaoPayApprovalVO kakaoPayApprovalVO;
     
-    public String kakaoPayReady(String tourName, int totalPrice, int reNum) {
+
+    public Object kakaoPayReady(String tourName, int totalPrice, int reNum) {
  
         RestTemplate restTemplate = new RestTemplate();
  
@@ -38,7 +39,7 @@ public class KakaoPay {
         headers.add("Content-Type", MediaType.APPLICATION_FORM_URLENCODED_VALUE + ";charset=UTF-8");
         
         // 서버로 요청할 Body
-        MultiValueMap<String, String> params = new LinkedMultiValueMap<String, String>();
+        MultiValueMap<Object, Object> params = new LinkedMultiValueMap<Object, Object>();
         params.add("cid", "TC0ONETIME");
         params.add("partner_order_id", reNum);
         params.add("partner_user_id", "gorany");
@@ -50,7 +51,7 @@ public class KakaoPay {
         params.add("cancel_url", "http://localhost:8080/kakaoPayCancel");
         params.add("fail_url", "http://localhost:8080/kakaoPaySuccessFail");
  
-         HttpEntity<MultiValueMap<String, String>> body = new HttpEntity<MultiValueMap<String, String>>(params, headers);
+         HttpEntity<MultiValueMap<Object, Object>> body = new HttpEntity<MultiValueMap<Object, Object>>(params, headers);
  
         try {
             kakaoPayReadyVO = restTemplate.postForObject(new URI(HOST + "/v1/payment/ready"), body, KakaoPayReadyVO.class);
