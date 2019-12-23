@@ -290,18 +290,18 @@
 							$('.ck_1').on('click', function(){
 								$("#rv_inner").empty();
 								if($("input[class='ck_1']:checked").length==3){
-									price = 150000;
+									price = 300000;
 				  					$("#rv_inner").append("<input type='hidden'value='"+price+"' id='vprice'>");
 				  				}else if($("input[class='ck_1']:checked").length==4){
-				  					price = 170000;
+				  					price = 400000;
 				  					$("#rv_inner").append("<input type='hidden'value='"+price+"' id='vprice'>");
 				  						
 				  				}else if($("input[class='ck_1']:checked").length==5){
-				  					price = 190000;
+				  					price = 500000;
 				  					$("#rv_inner").append("<input type='hidden'value='"+price+"' id='vprice'>");
 				  						
 				  				}else if($("input[class='ck_1']:checked").length==6){
-				  					price = 200000;
+				  					price = 550000;
 				  					$("#rv_inner").append("<input type='hidden'value='"+price+"' id='vprice'>");
 				  						
 				  				}
