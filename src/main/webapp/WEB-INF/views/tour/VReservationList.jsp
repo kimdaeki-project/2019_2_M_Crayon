@@ -85,7 +85,7 @@
 		
 
 		<div class="body_main">
-			<div class="body_name">　VIP 예약 관리페이지1</div>
+			<div class="body_name">　VIP 예약 관리페이지</div>
 			<div class="body_inner">
 				<div class="contents">
 					<!-------- 여기부터 테이블 시작 ----------->
