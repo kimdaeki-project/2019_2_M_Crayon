@@ -26,10 +26,14 @@ public class KakaoPay {
     private KakaoPayReadyVO kakaoPayReadyVO;
     @Inject
     private KakaoPayApprovalVO kakaoPayApprovalVO;
-    
+    int price;
+    int num;
+    int person;
 
-    public String kakaoPayReady(String tourName) {
- 
+    public String kakaoPayReady(String tourName, int totalPrice, int reNum, int personNum) {
+    	price = totalPrice;
+    	num = reNum;
+    	person = personNum;
         RestTemplate restTemplate = new RestTemplate();
  
         // 서버로 요청할 Header
@@ -41,11 +45,11 @@ public class KakaoPay {
         // 서버로 요청할 Body
         MultiValueMap<String, String> params = new LinkedMultiValueMap<String, String>();
         params.add("cid", "TC0ONETIME");
-        params.add("partner_order_id", "d");
+        params.add("partner_order_id", String.valueOf(reNum));
         params.add("partner_user_id", "gorany");
         params.add("item_name", tourName);
-        params.add("quantity", "1");
-        params.add("total_amount", "g");
+        params.add("quantity", String.valueOf(personNum));
+        params.add("total_amount", String.valueOf(totalPrice));
         params.add("tax_free_amount", "100");
         params.add("approval_url", "http://localhost/s5/pay/kakaoPaySuccess");
         params.add("cancel_url", "http://localhost:8080/kakaoPayCancel");
@@ -72,7 +76,7 @@ public class KakaoPay {
     }
     
     public KakaoPayApprovalVO kakaoPayInfo(String pg_token) {
-    	 
+ 
         
         RestTemplate restTemplate = new RestTemplate();
  
@@ -86,10 +90,11 @@ public class KakaoPay {
         MultiValueMap<String, String> params = new LinkedMultiValueMap<String, String>();
         params.add("cid", "TC0ONETIME");
         params.add("tid", kakaoPayReadyVO.getTid());
-        params.add("partner_order_id", "1001");
+        params.add("partner_order_id", String.valueOf(num));
         params.add("partner_user_id", "gorany");
         params.add("pg_token", pg_token);
-        params.add("total_amount", "2100");
+        params.add("total_amount", String.valueOf(price));
+        params.add("quantity", String.valueOf(person));
         
         HttpEntity<MultiValueMap<String, String>> body = new HttpEntity<MultiValueMap<String, String>>(params, headers);
         
