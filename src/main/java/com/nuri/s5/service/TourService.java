@@ -12,6 +12,7 @@ import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.model.TourVO;
 
 import com.nuri.s5.model.VReservationVO;
+import com.nuri.s5.util.Pager;
 
 import com.nuri.s5.util.Pager;
 
@@ -30,7 +31,7 @@ public interface TourService {
 	
 	public int Reservation(ReservationVO reservationVO,HttpSession session)throws Exception;
 	
-	public List<ReservationVO> ReservationList(ReservationVO reservationVO)throws Exception;
+	public List<ReservationVO> ReservationList(Pager pager)throws Exception;
 	
 	public int ReservationDelete(ReservationVO reservationVO)throws Exception;
 	
@@ -38,8 +39,11 @@ public interface TourService {
 	
 	public int vReservation(VReservationVO vReservationVO,HttpSession session)throws Exception;
 	
-	public List<ReservationVO> ReservationListMy(ReservationVO reservationVO)throws Exception;
-	
 	public List<VReservationVO> vReservationMy(VReservationVO vReservationVO)throws Exception;
+
+	public List<VReservationVO> vReservationList(VReservationVO vReservationVO,Pager pager)throws Exception;
+	
+	public int vReservationUpdate1(VReservationVO vReservationVO) throws Exception;
+
 
 }

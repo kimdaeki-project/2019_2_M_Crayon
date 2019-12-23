@@ -56,6 +56,10 @@
 					class="fa fa-bus" style="font-size: 24px"></i>
 				</a>
 			</div>
+			<div class="adminTour">
+					<a href="../tour/VReservationList" style="color: white; font-size: 24px">VIP <i
+						class="fa fa-money" style="font-size: 24px"></i></a>
+				</div>
 			<div class="adminWrite">
 				<a href="../review/reviewList" style="color: white; font-size: 24px">Review
 					<i class="fa fa-pencil-square-o" style="font-size: 28px"></i>
@@ -77,13 +81,14 @@
 
 		<!-- 넣을거 -->
 		<div class="body_main">
-			<div class="body_name"> 예약 관리페이지</div>
+			<div class="body_name">　예약 관리페이지</div>
 			<div class="body_inner">
 				<div class="contents">
 					<!-------- 여기부터 테이블 시작 ----------->
 
 					<form action="./ReservationList" id="frm" style="width:1300px;">
-
+					<input type="hidden" id="curPage" value="1" name="curPage">
+					</form>
 						<table class="table table-striped">
 							<thead>
 								<tr>
@@ -123,9 +128,25 @@
 								</c:forEach>
 							</tbody>
 						</table>
-						</form>
+						
+						
+						
+						<ul class="pagination">
+								<c:if test="${pager.curBlock gt 1}">
+									<li><span id="${pager.startNum-1}" class="list">이전</span></li>
+								</c:if>
+								<c:forEach begin="${pager.startNum}" end="${pager.lastNum}"
+									var="i">
+									<li><span id="${i}" class="list">${i}</span></li>
+								</c:forEach>
+								<c:if test="${pager.curBlock lt pager.totalBlock}">
+									<li><span id="${pager.lastNum+1}" class="list">다음</span></li>
+								</c:if>
+						</ul>
 						
 				</div>
+				
+				
 			</div>
 		</div>
 	</div>

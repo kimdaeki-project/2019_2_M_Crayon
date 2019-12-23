@@ -70,13 +70,24 @@
 		#{tourNum}, #{ps}, #{totalPrice}, #{tourName}, #{kakaoID},#{tourEmail})
 	</insert>
 	
-	<select id="ReservationList" parameterType="ReservationVO" resultType="ReservationVO">
-		select * from reservation 
-	</select>
 	
 	<select id="ReservationListMy" parameterType="ReservationVO" resultType="ReservationVO">
 		select * from reservation where email=#{email}
 	</select>
+
+	
+	<select id="ReservationList" parameterType="Pager" resultType="ReservationVO">	
+		select * from 
+  				(select R.*, rownum RN from
+		  			(select * from reservation
+		  			order by renum desc) R)
+		  	where RN between #{startRow} and #{lastRow}
+	</select>
+	
+	<select id="ReservationCount" resultType="Integer" parameterType="Pager">
+  			select count(renum) from reservation
+  		</select> 
+
 	
 	<select id="ReservationResult" parameterType="ReservationVO" resultType="ReservationVO">
 		select * from reservation 
@@ -91,12 +102,21 @@
 	<insert id="VReservation" parameterType="vReservationVO" >
 		insert into vreservation
 		values
-		(vip_seq.nextval,#{name}, #{email},#{kakaoID},#{content},#{vday},#{vprice},#{tourEmail},'관리자 승인 대기',#{vps})
+		(vip_seq.nextval,#{name}, #{email},#{kakaoID},#{content},#{vday},#{vprice},#{tourEmail},'관리자 승인 대기',#{vps},#{vphone})
 	</insert>
 	
+
 	<select id="VReservationMy" parameterType="vReservationVO" resultType="vReservationVO">
 		select * from vreservation where email=#{email}
 	</select>
 
+
+	<select id="VReservationList" parameterType="vReservationVO" resultType="vReservationVO">
+	select * from vreservation order by vipno desc
+	</select>
 	
+	<update id="VReservationUpdate1" parameterType="vReservationVO">
+	update vreservation set ac='예약 확정 결제 대기', vprice=#{vprice} where vipno=#{vipno}
+	</update>
+
 </mapper>

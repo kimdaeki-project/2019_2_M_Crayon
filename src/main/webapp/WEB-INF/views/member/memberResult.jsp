@@ -5,8 +5,8 @@
 <c:forEach items="${list}" var="vo">
  <div class="memberList" style="width: 410px; 
  height: 50px; margin: 0 auto; margin-top: 10px; text-align: center; line-height: 50px;
- font-size: medium; font-weight: bold;" >
- 	<div class="memberList1">ID : ${vo.email}  / PW : ${vo.pw}  / Name : ${vo.name}</div>
+ font-size: 18px; letter-spacing:-1px; " >
+ 	<div class="memberList1">ID : ${vo.email}  * PW : ${vo.pw}  * Name : ${vo.name}</div>
  </div>
 
  </c:forEach>

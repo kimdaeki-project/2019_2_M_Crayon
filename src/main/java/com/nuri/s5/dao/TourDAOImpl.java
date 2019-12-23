@@ -15,6 +15,7 @@ import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.model.TourVO;
 
 import com.nuri.s5.model.VReservationVO;
+import com.nuri.s5.util.Pager;
 
 import com.nuri.s5.util.Pager;
 
@@ -51,8 +52,8 @@ public class TourDAOImpl implements TourDAO {
 	}
 	
 	@Override
-	public List<ReservationVO> ReservationList(ReservationVO reservationVO)throws Exception{
-		return sqlSession.selectList(NAMESPACE+"ReservationList", reservationVO);
+	public List<ReservationVO> ReservationList(Pager pager)throws Exception{
+		return sqlSession.selectList(NAMESPACE+"ReservationList", pager);
 	}
 
 
@@ -90,6 +91,28 @@ public class TourDAOImpl implements TourDAO {
 	@Override
 	public List<VReservationVO> vReservationMy(VReservationVO vReservationVO)throws Exception{
 		return sqlSession.selectList(NAMESPACE+"VReservationMy", vReservationVO);
+	}
+
+
+	@Override
+	public List<VReservationVO> vReservationList(VReservationVO vReservationVO,Pager pager) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList(NAMESPACE+"VReservationList",pager);
+	}
+
+	
+	//admin에서 예약승인으로 변경, 금액 변경
+	@Override
+	public int vReservationUpdate1(VReservationVO vReservationVO) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.update(NAMESPACE+"VReservationUpdate1",vReservationVO);
+	}
+
+
+	@Override
+	public int ReservationCount(Pager pager) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(NAMESPACE+"ReservationCount",pager);
 	}
 
 

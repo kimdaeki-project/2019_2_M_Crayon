@@ -12,6 +12,7 @@ import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.model.TourVO;
 
 import com.nuri.s5.model.VReservationVO;
+import com.nuri.s5.util.Pager;
 
 import com.nuri.s5.util.Pager;
 
@@ -31,13 +32,13 @@ public interface TourDAO {
 	public int Reservation(ReservationVO reservationVO)throws Exception;
 	
 	
-	//예약
-	public List<ReservationVO> ReservationList(ReservationVO reservationVO)throws Exception;
+	public List<ReservationVO> ReservationList(Pager pager)throws Exception;
+
 	
 	public int ReservationDelete(ReservationVO reservationVO)throws Exception;
 	
 	public List<ReservationVO> ReservationResult(ReservationVO reservationVO)throws Exception;
-	
+
 	public List<ReservationVO> ReservationListMy(ReservationVO reservationVO)throws Exception;
 	
 	//맞춤투어 예약
@@ -48,4 +49,9 @@ public interface TourDAO {
 	
 	
 
+	public List<VReservationVO> vReservationList(VReservationVO vReservationVO,Pager pager) throws Exception;
+	
+	public int vReservationUpdate1(VReservationVO vReservationVO) throws Exception; 
+	
+	public int ReservationCount(Pager pager) throws Exception;
 }

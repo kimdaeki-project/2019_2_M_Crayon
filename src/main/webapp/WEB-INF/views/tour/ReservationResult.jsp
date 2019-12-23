@@ -3,7 +3,6 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
  
 
-	
 				<table class="table table-striped">
 							<thead>
 								<tr>
@@ -19,15 +18,16 @@
 							<tbody>
 								<c:forEach items="${list}" var="vo" varStatus="str">
 									<tr>
-										<td style="width: 100px; height: 56px; line-height: 38px;">${vo.reNum}</td>
-										<td style="width: 100px; height: 56px; line-height: 38px;">${vo.personNum}</td>
-										<td style="width: 100px; height: 56px; line-height: 38px;">${vo.tourName}</td>
-										<td style="width: 100px; height: 56px; line-height: 38px;">${vo.name}</td>
-										<td style="width: 100px; height: 56px; line-height: 38px;">${vo.tourEmail}</td>
-										<td style="width: 100px; height: 56px; line-height: 38px;">${vo.totalPrice}</td>
+										<td style="width: 100px; height: 56px; line-height: 38px; font-size:18px; letter-spacing:-2px;text-align:center; font-weight:500;">${vo.reNum}</td>
+										<td style="width: 100px; height: 56px; line-height: 38px; font-size:18px; letter-spacing:-2px;text-align:center; font-weight:500;">${vo.personNum}</td>
+										<td style="width: 100px; height: 56px; line-height: 38px; font-size:18px; letter-spacing:-2px;text-align:center; font-weight:500;">${vo.tourName}</td>
+										<td style="width: 100px; height: 56px; line-height: 38px; font-size:18px; letter-spacing:-2px;text-align:center; font-weight:500;">${vo.name}</td>
+										<td style="width: 100px; height: 56px; line-height: 38px;font-size:18px; letter-spacing:-2px;text-align:center; font-weight:500;">${vo.tourEmail}</td>
+										<td style="width: 100px; height: 56px; line-height: 38px;font-size:18px; letter-spacing:-2px;text-align:center; font-weight:500;">${vo.totalPrice}</td>
 										
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
-			
+
+

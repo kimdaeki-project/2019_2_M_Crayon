@@ -11,7 +11,14 @@ public class VReservationVO {
 	private String tourEmail;
 	private String ac;
 	private String vps;
+	private String vphone;
 	
+	public String getVphone() {
+		return vphone;
+	}
+	public void setVphone(String vphone) {
+		this.vphone = vphone;
+	}
 	public String getVps() {
 		return vps;
 	}
