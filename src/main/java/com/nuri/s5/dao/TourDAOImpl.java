@@ -14,6 +14,7 @@ import com.nuri.s5.model.TourCalendarVO;
 import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.model.TourVO;
 import com.nuri.s5.model.VReservationVO;
+import com.nuri.s5.util.Pager;
 
 @Repository
 public class TourDAOImpl implements TourDAO {
@@ -47,8 +48,8 @@ public class TourDAOImpl implements TourDAO {
 	}
 	
 	@Override
-	public List<ReservationVO> ReservationList(ReservationVO reservationVO)throws Exception{
-		return sqlSession.selectList(NAMESPACE+"ReservationList", reservationVO);
+	public List<ReservationVO> ReservationList(Pager pager)throws Exception{
+		return sqlSession.selectList(NAMESPACE+"ReservationList", pager);
 	}
 
 
@@ -86,9 +87,9 @@ public class TourDAOImpl implements TourDAO {
 
 
 	@Override
-	public List<VReservationVO> vReservationList(VReservationVO vReservationVO) throws Exception {
+	public List<VReservationVO> vReservationList(VReservationVO vReservationVO,Pager pager) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList(NAMESPACE+"VReservationList",vReservationVO);
+		return sqlSession.selectList(NAMESPACE+"VReservationList",pager);
 	}
 
 	
@@ -97,6 +98,13 @@ public class TourDAOImpl implements TourDAO {
 	public int vReservationUpdate1(VReservationVO vReservationVO) throws Exception {
 		// TODO Auto-generated method stub
 		return sqlSession.update(NAMESPACE+"VReservationUpdate1",vReservationVO);
+	}
+
+
+	@Override
+	public int ReservationCount(Pager pager) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(NAMESPACE+"ReservationCount",pager);
 	}
 
 

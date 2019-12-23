@@ -17,6 +17,7 @@ import com.nuri.s5.model.TourNoticeVO;
 import com.nuri.s5.model.TourVO;
 import com.nuri.s5.model.VReservationVO;
 import com.nuri.s5.util.FileSaver;
+import com.nuri.s5.util.Pager;
 
 @Service
 public class TourServiceImpl implements TourService {
@@ -93,8 +94,10 @@ public class TourServiceImpl implements TourService {
 		return 0;
 	}
 	@Override
-	public List<ReservationVO> ReservationList(ReservationVO reservationVO)throws Exception{
-		return tourDAOImpl.ReservationList(reservationVO);
+	public List<ReservationVO> ReservationList(Pager pager)throws Exception{
+		pager.makeRow();
+		pager.makePage(tourDAOImpl.ReservationCount(pager));
+		return tourDAOImpl.ReservationList(pager);
 	}
 	
 	@Override
@@ -116,9 +119,9 @@ public class TourServiceImpl implements TourService {
 	}
 
 	@Override
-	public List<VReservationVO> vReservationList(VReservationVO vReservationVO) throws Exception {
+	public List<VReservationVO> vReservationList(VReservationVO vReservationVO,Pager pager) throws Exception {
 		// TODO Auto-generated method stub
-		return tourDAOImpl.vReservationList(vReservationVO);
+		return tourDAOImpl.vReservationList(vReservationVO,pager);
 	}
 
 	@Override

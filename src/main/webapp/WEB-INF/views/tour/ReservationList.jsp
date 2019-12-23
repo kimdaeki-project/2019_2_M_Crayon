@@ -87,7 +87,8 @@
 					<!-------- 여기부터 테이블 시작 ----------->
 
 					<form action="./ReservationList" id="frm" style="width:1300px;">
-
+					<input type="hidden" id="curPage" value="1" name="curPage">
+					</form>
 						<table class="table table-striped">
 							<thead>
 								<tr>
@@ -127,9 +128,25 @@
 								</c:forEach>
 							</tbody>
 						</table>
-						</form>
+						
+						
+						
+						<ul class="pagination">
+								<c:if test="${pager.curBlock gt 1}">
+									<li><span id="${pager.startNum-1}" class="list">이전</span></li>
+								</c:if>
+								<c:forEach begin="${pager.startNum}" end="${pager.lastNum}"
+									var="i">
+									<li><span id="${i}" class="list">${i}</span></li>
+								</c:forEach>
+								<c:if test="${pager.curBlock lt pager.totalBlock}">
+									<li><span id="${pager.lastNum+1}" class="list">다음</span></li>
+								</c:if>
+						</ul>
 						
 				</div>
+				
+				
 			</div>
 		</div>
 	</div>

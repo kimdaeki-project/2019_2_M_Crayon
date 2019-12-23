@@ -164,7 +164,14 @@
 										
 										<td><a href="./vReservationDelete?email=${vo.email}"><input
 												type="button" value="예약 취소" class="btn btn-dark"></a></td>
-										<td id="ds"><input type="button" class="btn btn-dark vobtn" value="예약 승인" id="${vo.vipno}"></td>
+										<td id="ds">
+											<c:if test="${vo.ac eq '관리자 승인 대기'}">
+											<input type="button" class="btn btn-dark vobtn" value="예약 승인" id="${vo.vipno}">
+											</c:if>
+											<c:if test="${vo.ac eq '예약 확정 결제 대기'}">
+											<input type="button" class="btn btn-dark vobtn2" value="이메일 전송" id="${vo.tourEmail}">	
+											</c:if>
+										</td>
 														
 									</tr>
 									
@@ -172,6 +179,21 @@
 								</c:forEach>
 							</tbody>
 						</table>
+						
+						<ul class="pagination">
+								<c:if test="${pager.curBlock gt 1}">
+									<li><span id="${pager.startNum-1}" class="list">이전</span></li>
+								</c:if>
+								<c:forEach begin="${pager.startNum}" end="${pager.lastNum}"
+									var="i">
+									<li><span id="${i}" class="list">${i}</span></li>
+								</c:forEach>
+								<c:if test="${pager.curBlock lt pager.totalBlock}">
+									<li><span id="${pager.lastNum+1}" class="list">다음</span></li>
+								</c:if>
+							</ul>
+						
+						
 						</form>
 						
 				</div>
@@ -180,20 +202,15 @@
 	</div>
 
 										<script type="text/javascript">
+											
+										function refreshMemList(){
+											location.reload();
+										}
 										
 											$(".vobtn").click(function(){
-												/* var vipno = $(this).parents('#e3').html(); */
 												var vipno = $(this).parent().parent().children("td:eq(0)").text();
 												var vprice = $(this).parent().parent().children("td:eq(4)").children("input").val();
-												/* alert(e1); */
-												/* alert(e10); */
-												
-							/* 					var vipno = $(this).attr('id');
-												var vprice = $(this).attr('name');
-												console.log(vipno);
-												console.log(e1); */
-											
-												
+				
 												$.ajax({
 													type:'post',
 													url:"./VReservationUpdate1",
@@ -202,8 +219,35 @@
 														vprice:vprice
 													},
 												    success : function(data) {
-												    	alert(data);
-												        alert("success!");
+												        alert("예약을 승인하였습니다.");
+												    }
+
+													
+												});
+												refreshMemList();
+												
+											});
+											
+											
+											$(".vobtn2").click(function(){
+												var vipno = $(this).parent().parent().children("td:eq(0)").text();
+												var vprice = $(this).parent().parent().children("td:eq(4)").children("input").val();
+												var tourEmail = $(this).attr('id');
+												var name = $(this).parent().parent().children("td:eq(3)").text();
+												var name = $(this).parent().parent().children("td:eq(3)").text();
+												var content = 
+												$.ajax({
+													type:'get',
+													url:"./VReservationUpdate2",
+													data:{
+														vipno:vipno,
+														vprice:vprice,
+														tourEmail:tourEmail,
+														name:name
+													},
+												    success : function(data) {
+												    	
+												        alert("견적서 이메일 발송.");
 												    }
 
 													

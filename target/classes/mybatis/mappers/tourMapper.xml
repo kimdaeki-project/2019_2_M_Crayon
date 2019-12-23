@@ -61,11 +61,18 @@
 		#{tourNum}, #{ps}, #{totalPrice}, #{tourName}, #{kakaoID})
 	</insert>
 	
-
 	
-	<select id="ReservationList" parameterType="ReservationVO" resultType="ReservationVO">
-		select * from reservation 
+	<select id="ReservationList" parameterType="Pager" resultType="ReservationVO">	
+		select * from 
+  				(select R.*, rownum RN from
+		  			(select * from reservation
+		  			order by renum desc) R)
+		  	where RN between #{startRow} and #{lastRow}
 	</select>
+	
+	<select id="ReservationCount" resultType="Integer" parameterType="Pager">
+  			select count(renum) from reservation
+  		</select> 
 	
 	<select id="ReservationResult" parameterType="ReservationVO" resultType="ReservationVO">
 		select * from reservation 
@@ -82,7 +89,7 @@
 	</insert>
 	
 	<select id="VReservationList" parameterType="vReservationVO" resultType="vReservationVO">
-	select * from vreservation
+	select * from vreservation order by vipno desc
 	</select>
 	
 	<update id="VReservationUpdate1" parameterType="vReservationVO">
