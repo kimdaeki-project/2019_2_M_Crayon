@@ -34,7 +34,7 @@
 		<div class="body_main">
 			<div class="body_name">　결제완료</div>
 			<div class="body_inner">
-				<h2>파리크레파스 "${info.item_name}" 결제가 정상적으로 처리되었습니다.</h2>
+				<h2>쌍용크레파스 "${info.item_name}" 상품 결제가 정상적으로 처리되었습니다.</h2>
 				 
 				<h3>결제일시 : ${info.approved_at}</h3><br/>
 				<h3>예약번호 : ${info.partner_order_id}</h3><br/>
