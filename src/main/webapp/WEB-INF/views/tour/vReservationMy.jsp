@@ -56,7 +56,7 @@
 											</c:if>	
 											
 											<div class="vr_wrap_mini">
-												<input type="button" value="예약 취소"  id="byeMoney">
+												<a href="../tour/VReservationDelete?vipno=${vvo.vipno}"><input type="button" value="예약 취소"  id="byeMoney"></a>
 											</div>
 									</form>
 								</c:forEach>
@@ -66,9 +66,14 @@
 						</div>
 
 						<script type="text/javascript">
-							$("#goMoney").click(function() {
+							$("#byeMoney").click(function() {
 								var result = confirm("정말 예약을 취소하시겠습니까?");
-								if(result)
+								if(result){
+									alert("예약이 취소되었습니다.")
+																		
+								}else{
+									
+								}
 							});
 			
 						</script>

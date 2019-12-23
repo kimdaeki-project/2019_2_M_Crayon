@@ -48,14 +48,14 @@
 										<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="tourEmail" value="${vo.tourEmail}"></div>
 										<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="totalPrice" value="${vo.totalPrice}"></div>
 										<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="email" value="${vo.email}"></div>
-										<%-- <c:if test="${dto2.ac eq '예약 확정 결제 대기'}"> --%>
+										
 										
 										<div class=vr_wrap_mini>
 											<input type="submit" value="예약 결제"  id="goMoney" class="pay">
 										</div>
 											
 										<div class="vr_wrap_mini">
-											<input type="button" value="예약 취소"  id="byeMoney">
+											<a href="../tour/ReservationDelete?reNum=${vo.reNum}"><input type="button" value="예약 취소"  id="byeMoney"></a>
 										</div>
 									</form>
 								</c:forEach>
@@ -66,9 +66,15 @@
 				</div>
 
 			<script type="text/javascript">
-				$("#byeMoney").click(function() {
-					var result = confirm("정말 예약을 취소하시겠습니까?");
-				});
+							$("#byeMoney").click(function() {
+								var result = confirm("정말 예약을 취소하시겠습니까?");
+								if(result){
+									alert("예약이 취소되었습니다.")
+																		
+								}else{
+									
+								}
+							});
 			</script>
 			
 			<script type="text/javascript">  
