@@ -14,7 +14,7 @@
 				<div class="table table-striped" style="margin-bottom: 150px;">
 						
 							<div class="vr_wrap">
-									<div>
+									<div >
 									
 										<div class="vr_wrap_cell">예약 번호
 										</div>
@@ -22,7 +22,7 @@
 										</div>
 										<div class="vr_wrap_cell">예상 가격
 										</div>
-										<div class="vr_wrap_cellE">이메일
+										<div class="vr_wrap_cell">이메일
 										</div>
 										<div class="vr_wrap_cell">이름
 										</div>
@@ -35,30 +35,30 @@
 										</div>
 										
 								
-
 								<c:forEach items="${list3}" var="vvo" varStatus="str">
 									<form action="../pay/vkakaoPay" method="post" id="frm">
-									
+											<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="vipno" value="${vvo.vipno}"></div>
+											<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="vday" value="${vvo.vday}"></div>
+											<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="vprice" value="${vvo.vprice}"></div>
+											<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="tourEmail" value="${vvo.tourEmail}"></div>
+											<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="name" value="${vvo.name}"></div>
+											<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="reNum" value="${vvo.email}"></div>
+											
+											<c:if test="${vvo.ac eq '예약 확정 결제 대기'}">
+												<div class=vr_wrap_mini>
+													<input type="submit" value="예약 결제"  id="goMoney">
+												</div>
+											</c:if>	
+											<c:if test="${vvo.ac ne '예약 확정 결제 대기'}">
+												<div class=vr_wrap_mini>
+													<input type="hidden" value="예약 결제"  id="goMoney" >
+												</div>
+											</c:if>	
+											
+											<div class="vr_wrap_mini">
+												<input type="button" value="예약 취소"  id="byeMoney">
+											</div>
 									</form>
-
-										
-										<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="vipno" value="${vvo.vipno}"></div>
-										<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="vday" value="${vvo.vday}"></div>
-										<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="vprice" value="${vvo.vprice}"></div>
-										<div class=vr_wrap_miniE><input type="text" class="vr_inputE" readonly="readonly" name="tourEmail" value="${vvo.tourEmail}" ></div>
-										<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="name" value="${vvo.name}"></div>
-										<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="reNum" value="${vvo.email}"></div>
-										
-										<c:if test="${dto2.ac eq '예약 확정 결제 대기'}">
-										<div class=vr_wrap_mini>
-										<input type="submit" value="예약 결제"  id="goMoney"></div>
-										</c:if>
-										
-										<div class="vr_wrap_mini">
-										<input type="button" value="예약 취소"  id="byeMoney"></div>
-									
-									</div>
-
 								</c:forEach>
 									
 								</div>
@@ -73,4 +73,4 @@
 			
 						</script>
 </body>
-</html>			
+</html>		

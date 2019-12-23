@@ -63,7 +63,7 @@ public class KakaoPay {
             
             return kakaoPayReadyVO.getNext_redirect_pc_url();
  
-        } catch (RestClientException e) {
+        } catch (RestClientException e) {	
             // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (URISyntaxException e) {
