@@ -179,12 +179,22 @@ div.header_2 {
 
 /*vReservationMy*/
 .vr_wrap {
-	width: 880px;
+	width: 1040px;
 	height: 300px;
 }
 
 .vr_wrap_cell {
-	width: 110px;
+	width: 120px;
+	height: 38px;
+	font-size: 18px;
+	text-align: center;
+	float: left;
+	letter-spacing: -2px;
+	line-height: 38px;
+	border-bottom: 2px solid #cacaca;
+}
+.vr_wrap_cellE{
+	width: 200px;
 	height: 38px;
 	font-size: 18px;
 	text-align: center;
@@ -194,8 +204,15 @@ div.header_2 {
 	border-bottom: 2px solid #cacaca;
 }
 
+.vr_inputE{
+	width: 200px;
+	height: 70px;
+	border: none;
+	text-align: center;
+}
+
 .vr_wrap_mini {
-	width: 110px;
+	width: 120px;
 	height: 70px;
 	font-size: 16px;
 	text-align: center;
@@ -205,10 +222,23 @@ div.header_2 {
 	float: left;
 }
 
+.vr_wrap_miniE {
+	width: 200px;
+	height: 70px;
+	font-size: 16px;
+	text-align: center;
+	/* border-bottom: 2px solid #cacaca; */
+	line-height: 70px;
+	letter-spacing: -2px;
+	float: left;
+}
+
+
 .vr_input{
-	width: 100px;
+	width: 120px;
 	height: 70px;
 	border: none;
+	text-align: center;
 }
 
 #goMoney {

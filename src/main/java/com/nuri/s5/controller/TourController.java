@@ -127,9 +127,10 @@ public class TourController {
 	}
 	
 	@GetMapping(value = "ReservationResult")
-	public ModelAndView ReservationResult(ReservationVO reservationVO)throws Exception{
+	public ModelAndView ReservationResult(Pager pager, ReservationVO reservationVO)throws Exception{
+	pager.setPerPage(4);
 	ModelAndView mv = new ModelAndView();
-	List<ReservationVO> ar = tourServiceImpl.ReservationResult(reservationVO);
+	List<ReservationVO> ar = tourServiceImpl.ReservationList(pager);
 	mv.addObject("list", ar);
 	mv.setViewName("tour/ReservationResult");
 	return mv;
@@ -209,6 +210,30 @@ public class TourController {
 		return mv;
 		
 	}
+	
+	
+	@GetMapping(value = "VReservationDelete")
+	public ModelAndView VReservationDelete (VReservationVO vReservationVO) throws Exception{
+		int result = tourServiceImpl.VReservationDelete(vReservationVO);
+		String msg = "Fail";
+
+		ModelAndView mv = new ModelAndView();
+		if (result > 0) {
+			msg = "Success";
+		}
+
+		mv.addObject("msg", msg);
+		mv.addObject("path", "../");
+		mv.setViewName("common/common_result");
+		return mv;
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 

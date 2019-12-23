@@ -90,8 +90,9 @@
 				<div class="contents">
 					<!-------- 여기부터 테이블 시작 ----------->
 
-					<form action="./vReservationList" id="frm" style="width:1300px;">
-
+					<form action="./VReservationList" id="frm" style="width:1300px;">
+					<input type="hidden" id="curPage" value="1" name="curPage">
+						</form>
 						<table class="table table-striped">
 							<thead>
 								<tr>
@@ -162,7 +163,7 @@
 										</td>
 										
 										
-										<td><a href="./vReservationDelete?email=${vo.email}"><input
+										<td><a href="./VReservationDelete?vipno=${vo.vipno}"><input
 												type="button" value="예약 취소" class="btn btn-dark"></a></td>
 										<td id="ds">
 											<c:if test="${vo.ac eq '관리자 승인 대기'}">
@@ -194,7 +195,7 @@
 							</ul>
 						
 						
-						</form>
+					
 						
 				</div>
 			</div>
@@ -255,6 +256,17 @@
 												
 											});
 										</script>
+
+
+
+<script type="text/javascript">
+	
+		$(".list").click(function() {
+			$("#curPage").val($(this).attr("id"));
+			$("#frm").submit();
+		});
+	</script>
+
 
 
 

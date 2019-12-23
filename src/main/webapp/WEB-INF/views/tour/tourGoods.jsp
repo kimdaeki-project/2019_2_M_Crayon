@@ -31,7 +31,7 @@
 
 			<input type="hidden" class="goods_number" value="${dto2.tourNum}">
 
-			<input type="text" class="goods_title" value="${dto2.tourName}">
+			<input type="text" class="goods_title" value="${dto2.tourName}" style="border: none;">
 			
 <%-- 			${dto.tourName}, --%>
 

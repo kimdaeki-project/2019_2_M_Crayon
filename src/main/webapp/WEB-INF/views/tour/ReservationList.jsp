@@ -151,7 +151,13 @@
 		</div>
 	</div>
 
-
+<script type="text/javascript">
+	
+		$(".list").click(function() {
+			$("#curPage").val($(this).attr("id"));
+			$("#frm").submit();
+		});
+	</script>
 
 
 

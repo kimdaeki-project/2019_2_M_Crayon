@@ -112,11 +112,28 @@
 
 
 	<select id="VReservationList" parameterType="vReservationVO" resultType="vReservationVO">
-	select * from vreservation order by vipno desc
+	select * from 
+  				(select VR.*, rownum VRN from
+		  			(select * from vreservation
+		  			order by vipno desc) VR)
+		  	where VRN between #{startRow} and #{lastRow}
+	
 	</select>
 	
 	<update id="VReservationUpdate1" parameterType="vReservationVO">
 	update vreservation set ac='예약 확정 결제 대기', vprice=#{vprice} where vipno=#{vipno}
 	</update>
+	
+	
+		<select id="VReservationCount" resultType="Integer" parameterType="Pager">
+  			select count(vipno) from vreservation
+  		</select> 
+  		
+  		
+  		
+  			<delete id="VReservationDelete" parameterType="vReservationVO">
+		delete vReservation where vipno=#{vipno}	
+		</delete>
+  		
 
 </mapper>
