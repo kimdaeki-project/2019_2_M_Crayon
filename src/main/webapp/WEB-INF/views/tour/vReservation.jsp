@@ -65,7 +65,7 @@
 				<div class="RN2">전화번호</div> <input type="text" id='vphone' name="vphone" class="RT2">
 				</div>
 		</div>
-			<div class="pstxt">※ 특이사항
+			<div class="pstxt">※ 요구사항
 				<textarea id="vps" name="vps" class="RTT"></textarea>
 			</div>
 		
@@ -145,6 +145,9 @@
 		} else if ($("#phone").val() == "") {
 			alert("전화번호를 입력하세요!")
 			$("#phone").focus();
+		} else if ($("#date").val() == "") {
+			alert("날짜를 선택해주세요!")
+			$("#date").focus();
 		}else {
 		
 			$("#form11").submit();

@@ -44,6 +44,9 @@ public interface TourService {
 	public List<VReservationVO> vReservationList(VReservationVO vReservationVO,Pager pager)throws Exception;
 	
 	public int vReservationUpdate1(VReservationVO vReservationVO) throws Exception;
+	
+	public int VReservationDelete(VReservationVO vReservationVO)throws Exception;
+	
 
 
 }

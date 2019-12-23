@@ -114,6 +114,14 @@ public class TourDAOImpl implements TourDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne(NAMESPACE+"ReservationCount",pager);
 	}
+	
+	public int VReservationCount(Pager pager) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"VReservationCount", pager);
+	}
+	@Override
+	public int VReservationDelete(VReservationVO vReservationVO)throws Exception{
+		return sqlSession.delete(NAMESPACE+"VReservationDelete", vReservationVO);
+	}
 
 
 

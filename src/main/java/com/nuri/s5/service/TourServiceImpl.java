@@ -144,6 +144,8 @@ public class TourServiceImpl implements TourService {
 	@Override
 	public List<VReservationVO> vReservationList(VReservationVO vReservationVO,Pager pager) throws Exception {
 		// TODO Auto-generated method stub
+		pager.makeRow();
+		pager.makePage(tourDAOImpl.VReservationCount(pager));
 		return tourDAOImpl.vReservationList(vReservationVO,pager);
 	}
 
@@ -152,5 +154,11 @@ public class TourServiceImpl implements TourService {
 		// TODO Auto-generated method stub
 		return tourDAOImpl.vReservationUpdate1(vReservationVO);
 	}
+	
+	@Override
+	public int VReservationDelete(VReservationVO vReservationVO)throws Exception{
+		return tourDAOImpl.VReservationDelete(vReservationVO);
+	}
+	
 
 }
