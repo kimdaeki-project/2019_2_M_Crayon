@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 
 <html>
 <head>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link href="<c:url value="/resources/css/layout/tourVIP.css"/>"
 	rel="stylesheet">
 </head>
@@ -49,28 +51,27 @@
 									<div class=vr_wrap_mini><input type="text" class="vr_input" readonly="readonly" name="email" value="${vo.email}"></div>
 									<%-- <c:if test="${dto2.ac eq '예약 확정 결제 대기'}"> --%>
 									<div class=vr_wrap_mini>
-									
-									
-										<input type="button" value="예약 결제"  id="goMoney" class="pay"></div>
-										
-										
-										<div class="vr_wrap_mini">
-										<input type="button" value="예약 취소"  id="byeMoney"></div>
+										<input type="button" value="예약 결제"  id="goMoney" class="pay">
 									</div>
+										
+									<div class="vr_wrap_mini">
+										<input type="button" value="예약 취소"  id="byeMoney">
+									</div>
+									
+								</div>
 								
 								
 							</c:forEach>
-								</div>
 						</div>
-					</div>
-				</form>
+				</div>
+			</form>
 
 			<script type="text/javascript">
-				$("#goMoney").click(function() {
+				$("#byeMoney").click(function() {
 					var result = confirm("정말 예약을 취소하시겠습니까?");
-					if(result)
 				});
 			</script>
+			
 			<script type="text/javascript"> 
 				$('.pay').click(function() {
 					$('#frm').submit();
