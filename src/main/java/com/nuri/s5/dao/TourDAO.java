@@ -59,5 +59,9 @@ public interface TourDAO {
 	
 	public int VReservationDelete(VReservationVO vReservationVO)throws Exception;
 	
+	public int ReservationCount() throws Exception;
+	public int VReservationCount() throws Exception;
+	public int rprice() throws Exception;
+	public int vprice() throws Exception;
 	
 }

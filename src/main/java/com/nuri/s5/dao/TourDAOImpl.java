@@ -124,5 +124,33 @@ public class TourDAOImpl implements TourDAO {
 	}
 
 
+	@Override
+	public int ReservationCount() throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(NAMESPACE+"ReservationCount");
+	}
+
+
+	@Override
+	public int VReservationCount() throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(NAMESPACE+"VReservationCount");
+	}
+
+
+	@Override
+	public int rprice() throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(NAMESPACE+"rPrice");
+	}
+
+
+	@Override
+	public int vprice() throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(NAMESPACE+"vPrice");
+	}
+
+
 
 }

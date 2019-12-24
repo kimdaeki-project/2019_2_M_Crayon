@@ -32,7 +32,7 @@ public class ReviewController {
 	
 	@GetMapping(value="reviewResult")
 	public String reviewResult(Pager pager, Model model) throws Exception{
-		pager.setPerPage(10);
+		pager.setPerPage(5);
 		List<ReviewVO> ar = reviewServiceImpl.reviewList(pager);
 		
 		model.addAttribute("list", ar);

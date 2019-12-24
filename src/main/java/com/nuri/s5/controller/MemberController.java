@@ -36,7 +36,8 @@ public class MemberController {
 	private MemberServiceImpl memberServiceImpl;
 	@Inject
 	private WishListService wishListService;
-
+	@Inject
+	private TourServiceImpl tourServiceImpl;
 	
 	
 //	---------------- 위시리스트 추가
@@ -180,8 +181,19 @@ public class MemberController {
 	
 	// 관리자 폼
 	@RequestMapping(value = "adminPage")
-	public void adminPage() throws Exception {
-
+	public ModelAndView adminPage() throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		int rnum = tourServiceImpl.ReservationCount();
+		int vnum = tourServiceImpl.VReservationCount();
+		int rprice = tourServiceImpl.rprice();
+		int vprice = tourServiceImpl.vprice();
+		
+		mv.addObject("rnum",rnum);
+		mv.addObject("vnum",vnum);
+		mv.addObject("rprice",rprice);
+		mv.addObject("vprice",vprice);
+		return mv;
 	}
 	
 
