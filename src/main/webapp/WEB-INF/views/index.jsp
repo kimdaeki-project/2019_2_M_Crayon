@@ -476,7 +476,7 @@ $(function() {
 });  
 
 	$('.re_prev_btn').click(function() {
-		type:"GET",
+		type:"GET"
 		url:"./review/reviewBest"
 		
 	});
