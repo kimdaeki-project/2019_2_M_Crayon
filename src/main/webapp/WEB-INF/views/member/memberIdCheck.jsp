@@ -57,12 +57,12 @@
 		});
 		
 		
-		var pattern = /[^가-힣a-z0-9\s,.!~()?]/;
+		var pattern = /[^A-Za-z0-9\s,.!~()?]/;
 		$("#email").blur(
 				function() {
 
 					if (pattern.test($('#email').val()) == true) {
-						alert('특수문자를 제외하고 입력해주세요.')
+						alert('한글이나 특수문자를 제외하고 입력해주세요.')
 						$('#email').val("");
 						$('#email').focus();
 						return;
