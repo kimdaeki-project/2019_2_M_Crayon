@@ -79,13 +79,13 @@
 			    		
 						<!-- 	이전 / 다음  이동하는 a태그 -->			    
 					</div>
-<!-- 				</div> -->
 							
 				<div class="reviewFile">
 					<span class="certificationList row">
 						<c:forEach items="${dto.files}" var="file">
 							<span class="imgWrap column">
-								<img alt="images" src="/s5/resources/upload/review/${file.fname}" width="100px" height="150px" onclick="openModal();" class="hover-shadow cursor">
+								<img alt="images" src="/s5/resources/upload/review/${file.fname}" width="100px" height="150px"
+								 onclick="openModal();" class="hover-shadow cursor">
 							</span>
 						</c:forEach>
 					</span>
@@ -94,7 +94,7 @@
 				
 					<div class="reviewBtns">
 							<a href="./reviewList">LIST</a>
-							<c:if test="${sessionScope.member.name eq dto.writer}">
+							<c:if test="${sessionScope.review.writer eq dto.writer}">
 							<a href="./reviewDelete?num=${dto.num}">DELETE</a> 
 							<a href="./reviewUpdate?num=${dto.num}">UPDATE</a> 
 							</c:if>
