@@ -206,7 +206,6 @@
 .content3 {
 	float: left;
 	width: 450px;
-	height: 670px;
 	border: 2px solid black;
 	border-radius:7px;
 	margin-top: 50px;
@@ -244,4 +243,18 @@
 	color: white;
 	border-radius: 10px;
 	border-style: none;
+}
+
+/**/
+
+.cou{
+	width: 225px;
+	float:left;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.re{
+	font-size:20px;
+	letter-spacing: -2px;
 }

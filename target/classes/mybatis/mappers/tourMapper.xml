@@ -6,6 +6,13 @@
   
   <mapper namespace="tourMapper">
   
+  	<select id="rPrice" resultType="Integer">
+	  	select sum(totalprice) from reservation
+  	</select>
+  	<select id="vPrice" resultType="Integer">
+	  	select sum(vprice) from vreservation
+  	</select>
+  	
   	<update id="tourUpdate" parameterType="TourNoticeVO">
   		update tourNotice set compared=#{compared}, include=#{include}, exclude=#{exclude}, alert=#{alert}, prepared=#{prepared}, attention=#{attention}, refund=#{refund}, youTube=#{youTube}
   		where tourNum = #{tourNum}

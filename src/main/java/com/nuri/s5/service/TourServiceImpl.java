@@ -159,6 +159,30 @@ public class TourServiceImpl implements TourService {
 	public int VReservationDelete(VReservationVO vReservationVO)throws Exception{
 		return tourDAOImpl.VReservationDelete(vReservationVO);
 	}
+
+	@Override
+	public int ReservationCount() throws Exception {
+		// TODO Auto-generated method stub
+		return tourDAOImpl.ReservationCount();
+	}
+
+	@Override
+	public int VReservationCount() throws Exception {
+		// TODO Auto-generated method stub
+		return tourDAOImpl.VReservationCount();
+	}
+
+	@Override
+	public int rprice() throws Exception {
+		// TODO Auto-generated method stub
+		return tourDAOImpl.rprice();
+	}
+
+	@Override
+	public int vprice() throws Exception {
+		// TODO Auto-generated method stub
+		return tourDAOImpl.vprice();
+	}
 	
 
 }

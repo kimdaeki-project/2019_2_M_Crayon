@@ -88,6 +88,22 @@
 					<div class="content3Ti">Review</div>
 					<div id="reviewR"></div>
 				</div>
+				<div class="content3" style="margin-top:25px">
+					<div class="content3Ti">Sales</div>
+					<div class="cou" ><div style="font-size:50px;letter-spacing:-5px; width:150px; ">R ${rnum}</div>
+							<div style="font-size:50px;letter-spacing:-5px; width:150px;">V ${vnum}</div>
+					
+					</div>
+					<div class="cou"><div style="font-size:50px;letter-spacing:-5px;"><span id="r"></span></div>
+							<div style="font-size:50px;letter-spacing:-5px;"><span id="v"></span></div>
+					</div>
+					<div style="font-size:50px;letter-spacing:-2px; margin-left:90px;margin-top:40px;">\ <span id="t"></span></div>
+					
+					<input type="hidden" value="${rprice}" id="rprice">
+					<input type="hidden" value="${vprice}" id="vprice">
+					<input type="hidden" value="${rnum}" id="rnum">
+					<input type="hidden" value="${vnum}" id="vnum">
+				</div>
 
 
 				<div class="content4">
@@ -104,6 +120,22 @@
 
 
 	<script type="text/javascript">
+	
+	var rp = $("#rprice").val();
+	var vp = $("#vprice").val();
+
+	rp =parseInt(rp);
+	vp =parseInt(vp);
+	var total = rp +vp
+	console.log(total);
+	
+	function numberWithCommas(x) {
+	    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+	
+	$("#r").html(numberWithCommas(rp));
+	$("#v").html(numberWithCommas(vp));
+	$("#t").html(numberWithCommas(total));
 	
 	$(".tabdel").click(function() {
 		window.open("./tourDelete", "",
