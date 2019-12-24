@@ -26,6 +26,7 @@
 		<interceptor>
 			<mapping path="/member/adminPage"/>
 			<mapping path="/member/memberList"/>
+			<mapping path="/member/touradd"/>
 			<mapping path="/member/tourDelete"/>
 			<mapping path="/tour/VReservationList"/>
 			<mapping path="/tour/ReservationList"/>
@@ -49,7 +50,8 @@
 	
 	<interceptors>
 		<interceptor>
-			<mapping path="/member/*"/>
+			<mapping path="/member/memberMyPage"/>
+			<mapping path="/member/memberUpdate"/>
 			<exclude-mapping path="/member/memberLogin"/>
 			<beans:bean class="com.nuri.s5.interceptors.LoginInterceptor"/>
 		</interceptor>
