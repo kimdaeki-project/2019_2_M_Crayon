@@ -21,6 +21,24 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/member/adminPage"/>
+			<mapping path="/member/memberList"/>
+			<mapping path="/member/tourDelete"/>
+			<mapping path="/tour/VReservationList"/>
+			<mapping path="/tour/ReservationList"/>
+			<mapping path="/tour/ReservationResult"/>
+			<mapping path="/tour/tourWrite"/>
+			<mapping path="/tour/tourUpdate"/>
+			<mapping path="/qna/qnaQuestion"/>
+			<mapping path="/member/memberResult"/>
+			<mapping path="/review/reviewResult"/>
+			<beans:bean class="com.nuri.s5.interceptors.AdminInterceptor"/>
+		</interceptor>
+	</interceptors>
+	
 	<interceptors>
 		<interceptor>
 			<mapping path="/qna/*"/>

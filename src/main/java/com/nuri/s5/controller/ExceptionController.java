@@ -17,7 +17,7 @@ public class ExceptionController {
 			return mv;
 		}
 		
-		@ExceptionHandler(NullPointerException.class)
+		@ExceptionHandler(Exception.class)
 		public ModelAndView getNull() {
 			ModelAndView mv = new ModelAndView();
 			mv.setViewName("error/common_400_error");
