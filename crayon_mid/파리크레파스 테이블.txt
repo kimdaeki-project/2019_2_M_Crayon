@@ -1,0 +1,421 @@
+Oracle Table 정리 
+
+
+--------------------------------------------------------
+--  DDL for Table FILES
+--------------------------------------------------------
+
+  CREATE TABLE "CRAYON"."FILES" 
+   (	"FNUM" NUMBER(8,0), 
+	"NUM" NUMBER(8,0), 
+	"FNAME" VARCHAR2(400 BYTE), 
+	"ONAME" VARCHAR2(400 BYTE)
+   ) 
+--------------------------------------------------------
+--  DDL for Index FILE_FNUM_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CRAYON"."FILE_FNUM_PK" ON "CRAYON"."FILES" ("FNUM") 
+--------------------------------------------------------
+--  Constraints for Table FILES
+--------------------------------------------------------
+
+  ALTER TABLE "CRAYON"."FILES" ADD CONSTRAINT "FILE_FNUM_PK" PRIMARY KEY ("FNUM")
+  ALTER TABLE "CRAYON"."FILES" MODIFY ("ONAME" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."FILES" MODIFY ("FNAME" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."FILES" MODIFY ("NUM" NOT NULL ENABLE);
+
+--------------------------------------------------------
+--  DDL for Table MEMBER
+--------------------------------------------------------
+
+  CREATE TABLE "CRAYON"."MEMBER" 
+   (	"EMAIL" VARCHAR2(400 BYTE), 
+	"PW" VARCHAR2(400 BYTE), 
+	"NAME" VARCHAR2(400 BYTE), 
+	"BIRTH" VARCHAR2(400 BYTE), 
+	"KCHECK" NUMBER(1,0), 
+	"ACHECK" NUMBER(1,0), 
+	"MNUM" NUMBER(8,0)
+   ) 
+--------------------------------------------------------
+--  DDL for Index MEMBER_EMAIL_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CRAYON"."MEMBER_EMAIL_PK" ON "CRAYON"."MEMBER" ("EMAIL") 
+--------------------------------------------------------
+--  Constraints for Table MEMBER
+--------------------------------------------------------
+
+  ALTER TABLE "CRAYON"."MEMBER" ADD CONSTRAINT "MEMBER_EMAIL_PK" PRIMARY KEY ("EMAIL")
+  ALTER TABLE "CRAYON"."MEMBER" MODIFY ("MNUM" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."MEMBER" MODIFY ("ACHECK" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."MEMBER" MODIFY ("KCHECK" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."MEMBER" MODIFY ("NAME" NOT NULL ENABLE);
+
+
+
+
+
+
+
+
+--------------------------------------------------------
+--  DDL for Table QNA
+--------------------------------------------------------
+
+  CREATE TABLE "CRAYON"."QNA" 
+   (	"QNUM" NUMBER(5,0), 
+	"QUESTION" VARCHAR2(4000 BYTE), 
+	"ANSWER" VARCHAR2(4000 BYTE), 
+	"EMAIL" VARCHAR2(400 BYTE)
+   )
+--------------------------------------------------------
+--  DDL for Index QNA_QNUM_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CRAYON"."QNA_QNUM_PK" ON "CRAYON"."QNA" ("QNUM") 
+
+--------------------------------------------------------
+--  Constraints for Table QNA
+--------------------------------------------------------
+
+  ALTER TABLE "CRAYON"."QNA" ADD CONSTRAINT "QNA_QNUM_PK" PRIMARY KEY ("QNUM")
+  ALTER TABLE "CRAYON"."QNA" MODIFY ("ANSWER" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."QNA" MODIFY ("QUESTION" NOT NULL ENABLE);
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------
+--  DDL for Table RESERVATION
+--------------------------------------------------------
+
+  CREATE TABLE "CRAYON"."RESERVATION" 
+   (	"RENUM" NUMBER(8,0), 
+	"PERSONNUM" NUMBER(8,0), 
+	"NAME" VARCHAR2(400 BYTE), 
+	"EMAIL" VARCHAR2(400 BYTE), 
+	"PHONE" VARCHAR2(400 BYTE), 
+	"DAY" VARCHAR2(400 BYTE), 
+	"TOURNUM" VARCHAR2(400 BYTE), 
+	"PS" VARCHAR2(400 BYTE), 
+	"TOTALPRICE" NUMBER(20,0), 
+	"TOURNAME" VARCHAR2(400 BYTE), 
+	"KAKAOID" VARCHAR2(400 BYTE), 
+	"TOUREMAIL" VARCHAR2(200 BYTE)
+   ) 
+--------------------------------------------------------
+--  DDL for Index RESERVATION_RENUM_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CRAYON"."RESERVATION_RENUM_PK" ON "CRAYON"."RESERVATION" ("RENUM") 
+ 
+--------------------------------------------------------
+--  Constraints for Table RESERVATION
+--------------------------------------------------------
+
+  ALTER TABLE "CRAYON"."RESERVATION" ADD CONSTRAINT "RESERVATION_RENUM_PK" PRIMARY KEY ("RENUM")
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------
+--  DDL for Table REVIEW
+--------------------------------------------------------
+
+  CREATE TABLE "CRAYON"."REVIEW" 
+   (	"NUM" NUMBER(8,0), 
+	"TITLE" VARCHAR2(400 BYTE), 
+	"WRITER" VARCHAR2(400 BYTE), 
+	"CONTENTS" VARCHAR2(4000 BYTE), 
+	"DAY" DATE, 
+	"HIT" NUMBER(8,0), 
+	"TOURNAME" VARCHAR2(1000 BYTE)
+   ) -----------------------
+--  DDL for Index REVIEW_NUM_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CRAYON"."REVIEW_NUM_PK" ON "CRAYON"."REVIEW" ("NUM") 
+
+--------------------------------------------------------
+--  Constraints for Table REVIEW
+--------------------------------------------------------
+
+  ALTER TABLE "CRAYON"."REVIEW" ADD CONSTRAINT "REVIEW_NUM_PK" PRIMARY KEY ("NUM")
+  ALTER TABLE "CRAYON"."REVIEW" MODIFY ("TOURNAME" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."REVIEW" MODIFY ("DAY" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."REVIEW" MODIFY ("CONTENTS" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."REVIEW" MODIFY ("WRITER" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."REVIEW" MODIFY ("TITLE" NOT NULL ENABLE);
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------
+--  DDL for Table TOUR
+--------------------------------------------------------
+
+  CREATE TABLE "CRAYON"."TOUR" 
+   (	"TNUM" NUMBER(8,0), 
+	"TOURNUM" NUMBER(8,0), 
+	"TOURNAME" VARCHAR2(400 BYTE), 
+	"MAXNUM" NUMBER(4,0), 
+	"PRICE" NUMBER(8,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index TOUR_TNUM_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CRAYON"."TOUR_TNUM_PK" ON "CRAYON"."TOUR" ("TNUM") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C007489
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CRAYON"."SYS_C007489" ON "CRAYON"."TOUR" ("TOURNUM") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  Constraints for Table TOUR
+--------------------------------------------------------
+
+  ALTER TABLE "CRAYON"."TOUR" ADD UNIQUE ("TOURNUM")
+  ALTER TABLE "CRAYON"."TOUR" ADD CONSTRAINT "TOUR_TNUM_PK" PRIMARY KEY ("TNUM")
+  ALTER TABLE "CRAYON"."TOUR" MODIFY ("PRICE" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."TOUR" MODIFY ("MAXNUM" NOT NULL ENABLE);
+
+
+
+-------
+
+
+
+
+-------------------------------------------------
+--  DDL for Table TOURFILES
+--------------------------------------------------------
+
+  CREATE TABLE "CRAYON"."TOURFILES" 
+   (	"FNUM" NUMBER(8,0), 
+	"NUM" NUMBER(8,0), 
+	"FNAME" VARCHAR2(400 BYTE), 
+	"ONAME" VARCHAR2(400 BYTE), 
+	"TIMETABLE" VARCHAR2(400 BYTE), 
+	"TIME" VARCHAR2(400 BYTE)
+   ) 
+--------------------------------------------------------
+--  DDL for Index TOURFILES_FNUM_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CRAYON"."TOURFILES_FNUM_PK" ON "CRAYON"."TOURFILES" ("FNUM") 
+
+--------------------------------------------------------
+--  Constraints for Table TOURFILES
+--------------------------------------------------------
+
+  ALTER TABLE "CRAYON"."TOURFILES" ADD CONSTRAINT "TOURFILES_FNUM_PK" PRIMARY KEY ("FNUM")
+  ALTER TABLE "CRAYON"."TOURFILES" MODIFY ("ONAME" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."TOURFILES" MODIFY ("FNAME" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Ref Constraints for Table TOURFILES
+--------------------------------------------------------
+
+  ALTER TABLE "CRAYON"."TOURFILES" ADD CONSTRAINT "TOURFILES_NUM_FK" FOREIGN KEY ("NUM")
+  REFERENCES "CRAYON"."TOURNOTICE" ("NUM") ON DELETE CASCADE ENABLE;
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------
+--  DDL for Table TOURNOTICE
+--------------------------------------------------------
+
+  CREATE TABLE "CRAYON"."TOURNOTICE" 
+   (	"NUM" NUMBER(8,0), 
+	"COMPARED" VARCHAR2(4000 BYTE), 
+	"INCLUDE" VARCHAR2(4000 BYTE), 
+	"EXCLUDE" VARCHAR2(4000 BYTE), 
+	"ALERT" VARCHAR2(4000 BYTE), 
+	"PREPARED" VARCHAR2(4000 BYTE), 
+	"ATTENTION" VARCHAR2(4000 BYTE), 
+	"REFUND" VARCHAR2(4000 BYTE), 
+	"TOURNUM" NUMBER(8,0), 
+	"YOUTUBE" VARCHAR2(1000 BYTE)
+   )
+--------------------------------------------------------
+--  DDL for Index TOURNOTICE_NUM_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CRAYON"."TOURNOTICE_NUM_PK" ON "CRAYON"."TOURNOTICE" ("NUM") 
+
+--------------------------------------------------------
+--  Constraints for Table TOURNOTICE
+--------------------------------------------------------
+
+  ALTER TABLE "CRAYON"."TOURNOTICE" ADD CONSTRAINT "TOURNOTICE_NUM_PK" PRIMARY KEY ("NUM")
+  ALTER TABLE "CRAYON"."TOURNOTICE" MODIFY ("TOURNUM" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Ref Constraints for Table TOURNOTICE
+--------------------------------------------------------
+
+  ALTER TABLE "CRAYON"."TOURNOTICE" ADD CONSTRAINT "TOURNOTICE_TOURNUM_FK" FOREIGN KEY ("TOURNUM")
+ REFERENCES "CRAYON"."TOUR" ("TOURNUM") ENABLE;
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------
+--  DDL for Table VRESERVATION
+--------------------------------------------------------
+
+  CREATE TABLE "CRAYON"."VRESERVATION" 
+   (	"VIPNO" NUMBER(8,0), 
+	"NAME" VARCHAR2(20 BYTE), 
+	"EMAIL" VARCHAR2(200 BYTE), 
+	"KAKAOID" VARCHAR2(200 BYTE), 
+	"CONTENT" VARCHAR2(1000 BYTE), 
+	"VDAY" VARCHAR2(400 BYTE), 
+	"VPRICE" NUMBER(8,0), 
+	"TOUREMAIL" VARCHAR2(200 BYTE), 
+	"AC" VARCHAR2(200 BYTE), 
+	"VPS" VARCHAR2(2000 BYTE), 
+	"VPHONE" VARCHAR2(400 BYTE)
+   )
+--------------------------------------------------------
+--  DDL for Index VIPNO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CRAYON"."VIPNO_PK" ON "CRAYON"."VRESERVATION" ("VIPNO") 
+
+--------------------------------------------------------
+--  Constraints for Table VRESERVATION
+--------------------------------------------------------
+
+  ALTER TABLE "CRAYON"."VRESERVATION" ADD CONSTRAINT "VIPNO_PK" PRIMARY KEY ("VIPNO")
+  ALTER TABLE "CRAYON"."VRESERVATION" MODIFY ("AC" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."VRESERVATION" MODIFY ("VPRICE" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."VRESERVATION" MODIFY ("VDAY" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."VRESERVATION" MODIFY ("EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."VRESERVATION" MODIFY ("NAME" NOT NULL ENABLE);
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------
+--  DDL for Table WISHLIKE
+--------------------------------------------------------
+
+  CREATE TABLE "CRAYON"."WISHLIKE" 
+   (	"LIKENO" NUMBER(8,0), 
+	"TOURNUM" NUMBER(8,0), 
+	"EMAIL" VARCHAR2(400 BYTE), 
+	"LIKECHECK" NUMBER(8,0) DEFAULT 0
+   )
+--------------------------------------------------------
+--  DDL for Index LIKE_LIKENO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CRAYON"."LIKE_LIKENO_PK" ON "CRAYON"."WISHLIKE" ("LIKENO") 
+
+--------------------------------------------------------
+--  Constraints for Table WISHLIKE
+--------------------------------------------------------
+
+  ALTER TABLE "CRAYON"."WISHLIKE" ADD CONSTRAINT "LIKE_LIKENO_PK" PRIMARY KEY ("LIKENO")
+  ALTER TABLE "CRAYON"."WISHLIKE" MODIFY ("EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."WISHLIKE" MODIFY ("TOURNUM" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Ref Constraints for Table WISHLIKE
+--------------------------------------------------------
+
+  ALTER TABLE "CRAYON"."WISHLIKE" ADD CONSTRAINT "LIKE_EMAIL_FK" FOREIGN KEY ("EMAIL")
+  REFERENCES "CRAYON"."MEMBER" ("EMAIL") ENABLE;
+  ALTER TABLE "CRAYON"."WISHLIKE" ADD CONSTRAINT "LIKE_TOURNUM_FK" FOREIGN KEY ("TOURNUM")
+  REFERENCES "CRAYON"."TOUR" ("TOURNUM") ENABLE;
+
+
+
+--------------------------------------------------------
+--  DDL for Table WISHLIST
+--------------------------------------------------------
+
+  CREATE TABLE "CRAYON"."WISHLIST" 
+   (	"NUM" NUMBER(8,0), 
+	"TOURNUM" NUMBER(8,0), 
+	"EMAIL" VARCHAR2(400 BYTE)
+   ) 
+--------------------------------------------------------
+--  DDL for Index WISHLIST_NUM_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CRAYON"."WISHLIST_NUM_PK" ON "CRAYON"."WISHLIST" ("NUM") 
+
+--------------------------------------------------------
+--  Constraints for Table WISHLIST
+--------------------------------------------------------
+
+  ALTER TABLE "CRAYON"."WISHLIST" ADD CONSTRAINT "WISHLIST_NUM_PK" PRIMARY KEY ("NUM")
+  ALTER TABLE "CRAYON"."WISHLIST" MODIFY ("EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "CRAYON"."WISHLIST" MODIFY ("TOURNUM" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Ref Constraints for Table WISHLIST
+--------------------------------------------------------
+
+  ALTER TABLE "CRAYON"."WISHLIST" ADD CONSTRAINT "WISHLIST_EMAIL_FK" FOREIGN KEY ("EMAIL")
+REFERENCES "CRAYON"."MEMBER" ("EMAIL") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "CRAYON"."WISHLIST" ADD CONSTRAINT "WISHLIST_TOURNUM_FK" FOREIGN KEY ("TOURNUM")
+REFERENCES "CRAYON"."TOUR" ("TOURNUM") ON DELETE CASCADE ENABLE;
+
+
+
+
+
+
+
+

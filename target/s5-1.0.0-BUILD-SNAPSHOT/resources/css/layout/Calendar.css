@@ -1,0 +1,458 @@
+@charset "UTF-8";
+.modal-content{
+	width:830px;
+}
+
+#date {
+	width: 153px;
+	height: 28px;
+	border: 1px, #010101, solid;
+	font-size: 16px;
+	margin-left: 37px;
+}
+
+#datebn {
+	width: 50px;
+	height: 32px;
+	border-style: none;
+	background-color: #a36ae3;
+	float:right;
+	color: white;
+	border-radius: 3px;
+	font-weight: 500;
+}
+
+.reserveDate_wrap {
+	width: 360px;
+	height: 560px;
+	border: 1px #999 solid;
+	float:right;
+	margin-right:350px;
+	position: sticky;
+	top: 160px;
+	background: white;
+}
+
+#adult_wrap {
+	width: 205px;
+	height: 32px;
+	float:right;
+	font-size: 15px;
+	border: 1px #999 solid;
+}
+
+#child_wrap {
+	width: 205px;
+	height: 32px;
+	float:right;
+	font-size: 15px;
+	border: 1px #999 solid;
+}
+
+.all_wrap {
+	width: 320px;
+	height: 170px;
+	margin: 0 auto;
+	margin-top: 20px;
+	font-size: 18px;
+	font-weight:500;
+}
+
+.select_all {
+	width: 360px;
+	height: 61px;
+	border-bottom: 1px #999 solid;
+	margin: 0 auto;
+	text-align: left;
+	line-height: 61px;
+	font-weight: lighter;
+	font-size: 21px;
+	letter-spacing: -2px;
+}
+
+.selectOption {
+	width: 320px;
+	height: 180px;
+	background-color: #eeeeee;
+	border: 1px #999 solid;
+	margin: 0 auto;
+	color:#888;
+}
+
+.select_btn {
+	width: 320px;
+	height: 60px;
+	margin-left: 20px;
+	margin-top: 10px;
+	background-color: #a36ae3;
+	border-style: none;
+	font-size: 21px;
+	color: white;
+}
+
+.select_text {
+	width: 250px;
+	height: 50px;
+	margin-left: 20px;
+}
+
+.Allmoney {
+	width: 320px;
+	height: 30px;
+	text-align: right;
+	line-height: 30px;
+	margin: 0 auto;
+	font-size: 16px;
+
+}
+
+#Aresult {
+	width: 100px;
+	height: 50px;
+	font-size: 18px;
+	margin-top: 20px;
+	margin-left: 20px;
+	color: gray;
+
+}
+
+#Nad {
+	width: 150px;
+	height: 30px;
+	font-size: 16px;
+	font-weight: 555;
+	padding-left: 30px;
+	font-size: 16px;
+}
+
+#Nch {
+	width: 150px;
+	height: 30px;
+	font-size: 16px;
+	padding-left: 30px;
+	font-weight: 555;
+}
+
+#reDay {
+	width: 150px;
+	height: 30px;
+	font-size: 16px;
+	padding-left: 30px;
+	font-weight: 555;
+}
+
+#priceBtn {
+	width: 100px;
+	height: 30px;
+	border-style: none;
+	background-color: #a36ae3;
+	color: white;
+	border-radius: 3px;
+	float: left;
+	margin-top: 10px;
+}
+
+.Allmoney {
+	width: 100px;
+	height: 30px;
+	border-style: none;
+	border-radius: 7px;
+	font-weight: 555;
+	float: left;
+	margin-top: 10px;
+	margin-left: 120px;
+	margin-right: 20px;
+}
+
+/*reservation*/
+#frm_1 {
+	width: 800px;
+	height: 880px;
+	margin: 0 auto;
+	
+}
+
+.reservationTitle {
+	width: 756px;
+	margin: 0 auto;
+	border-bottom: 1px solid #999;
+	height:305px;
+}
+
+.ReserveT {
+	width: 798px;
+	height: 68px;
+	background-color: gray;
+	color: white;
+	font-size:26px;
+	line-height: 68px;
+	letter-spacing: -1px;
+
+}
+
+.ReserveTN {
+	width: 756px;
+	height: 50px;
+	font-size:22px;
+	font-weight:520;
+	letter-spacing: -1px;
+	padding: 20px;
+	border:none;
+	border-bottom:1px solid #999;
+	margin-bottom: 10px;
+
+}
+
+.pn{
+	float: left;
+	width:375px;
+	font-size:18px;
+	letter-spacing: -2px;
+
+}
+.ReserveP_PN {
+	width: 756px;
+	height: 50px;
+	font-size:22px;
+	letter-spacing: -1px;
+	font-weight:520;
+	border:none;
+	border-bottom:1px solid #999;
+	margin-bottom: 10px;
+}
+
+.InputIN {
+	margin: 0 auto;
+	margin-top:20px;
+	width: 600px;
+	height: 220px;
+	letter-spacing: -1px;
+}
+
+.RT {
+	margin-top: 10px;
+	width: 250px;
+	height: 33px;
+	margin-left: 30px;
+	
+}
+
+.RT2 {
+	margin-top: 10px;
+	width: 250px;
+	height: 33px;
+	margin-left: 30px;
+}
+
+.RN_wrap {
+	width: 300px;
+	height: 200px;
+	border-right: 1px dashed #bababa;
+	float: left;
+	margin-top: 20px;
+}
+
+.RN2_wrap {
+	width: 300px;
+	height: 200px;
+	
+	float: left;
+	margin-top: 20px;
+}
+
+.RN{
+	width: 180px;
+	height: 20px;
+	margin-top: 20px;
+	font-size: 18px;
+	margin-left: 30px;
+}
+
+.RN2{
+	width: 180px;
+	height: 20px;
+	margin-top: 20px;
+	font-size: 18px;
+	margin-left: 30px;
+}
+
+.RTT {
+	width: 600px;
+	height: 100px;
+	margin-top: 20px;
+	resize: none;
+
+
+}
+
+.pstxt{
+	font-size: 16px;
+	width: 600px;
+	margin: 0 auto;
+}
+
+
+#Raccess {
+	width: 600px;
+	height: 150px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+#access {
+	width: 600px;
+	height: 100px;
+	resize: none;
+	margin-top: 10px;
+
+
+}
+
+.checkSelect {
+	width: 600px;
+	height: 90px;
+	height: 50px;
+	float: left;
+}
+
+.reserveOK {
+	width: 250px;
+	height: 50px;
+	background-color: #a36ae3;
+	border-radius:3px;
+	font-size:18px;
+	margin-left: 150px;
+	border-style: none;
+
+	color:white;
+}
+
+.NOreserve {
+	width: 250px;
+	height: 50px;
+	background-color: #a36ae3;
+	font-size:18px;
+	border-style: none;
+	margin-top: 50px;
+	border-radius:3px;
+	color:white;
+
+}
+
+
+/* ==================================== */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 100px;
+}
+
+.pop-layer .pop-container {
+	padding: 20px 25px;
+}
+
+.pop-layer p.ctxt {
+	color: #666;
+	line-height: 25px;
+}
+
+.pop-layer .btn-r {
+	width: 100%;
+	margin: 10px 0 20px;
+	padding-top: 10px;
+	border-top: 1px solid #DDD;
+	text-align: right;
+}
+
+.pop-layer {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 800px;
+	height: 640px;
+	background-color: #fff;
+	border: 5px solid #a36ae3;
+	z-index: 10;
+}
+
+.dim-layer {
+	display: none;
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+}
+
+.dim-layer .dimBg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: .5;
+	filter: alpha(opacity = 50);
+}
+
+.dim-layer .pop-layer {
+	display: block;
+}
+
+a.btn-layerClose {
+	display: inline-block;
+	height: 55px;
+	width: 100px;
+	padding: 0 14px 0;
+	background-color: #a36ae3;
+	font-size: 13px;
+	color: #fff;
+	line-height: 55px;
+	text-decoration: none;
+	font-size: 20px;
+	text-align: center;
+}
+
+a.btn-layerClose:hover {
+	border: 1px solid #a36ae3;
+	background-color: #a36ae3;
+	color: #fff;
+	text-decoration: none;
+}
+
+.Test {
+	width: 750px;
+	height: 420px;
+	margin: 0 auto;
+}
+
+select {
+	width: 270px;
+	height: 30px;
+}
+
+/****/
+html, body {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+	float: none;
+}
+
+/* ======== Calendar ======== */

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="qnaMapper">
+  
+  	<update id="qnaUpdate" parameterType="QnaVO"><!-- 유저 수정하기 버튼 -->
+  		update qna set question=#{question} where qnum = #{qnum}
+  	</update>
+  	
+  	<delete id="qnaDelete">
+  			delete qna where qnum=#{qnum}
+  	</delete>
+  
+    <select id="qnaSelect" parameterType="QnaVO" resultType="QnaVO">
+    	select * from qna where qnum = #{qnum}
+    </select>
+  
+  	<update id="qnaAnswer" parameterType="QnaVO">
+  		update qna set answer=#{answer} where qnum = #{qnum}
+  	</update>
+  
+  	<insert id="qnaQuestion" parameterType="QnaVO">
+	  	insert into qna (question, answer, qnum, email) 
+	  	values(#{question},'관리자의 답변을 기다리는 중입니다.', seq_qna.nextval, #{email})
+  	</insert>
+  	
+  	<select id="qnaList" parameterType="Pager" resultType="QnaVO" >
+  		select * from
+  			(select R.*, rownum RN from
+		  			(select * from qna
+		  			order by qnum desc) R)
+		  	where RN between #{startRow} and #{lastRow}
+  	</select>
+  	
+  	<select id="qnaCount" resultType="Integer" parameterType="Pager">
+  		select count(qnum) from qna
+  	</select>
+  </mapper>

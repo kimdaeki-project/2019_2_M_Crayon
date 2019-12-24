@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+.mypageContain{
+	height: 100%;
+}
+.body_main{
+	position:relative;
+	z-index:1;
+	width: 1100px;
+	height: 100%;
+	margin: 0 auto;
+	background-color: transparent;
+}
+
+
+.body_name{
+	top:100px;
+	position:relative;
+	width: 500px;
+	height: 40px;
+	background-color: transparent;
+	line-height: 40px;
+	font-size: 28px;
+	border-left: solid 3px black;
+}
+ 
+.body_inner{
+	margin-top: 150px;
+	width: 100%;
+	height: 100%;
+} 
+
+.tour_MainForm {
+	width: 1100px;
+	height: 1000px;
+
+}
+
+.tour_wrap {
+	width: 320px;
+	height: 290px;
+	float: left;
+	margin-right: 40px;
+	margin-bottom: 30px;
+}
+
+.tourIMG_wrap {
+	width: 320px;
+	height: 200px;
+}
+
+.TN_wrap{
+	width: 320px;
+	height: 90px;
+}
+
+.tourNN_wrap {
+	width: 320px;
+	height: 90px;
+	border-bottom: 1px solid #dadada;
+	border-left: 1px solid #dadada;
+	border-right: 1px solid #dadada;
+}
+
+.TN_wrap :hover{
+/* 	border: 2px solid #dadada; */
+}
+
+.tourNUM {
+	width: 250px;
+	height: 35px;
+	padding-top:10px;
+	margin-left: 20px;
+	font-size: 19px;
+	font-weight: bold;
+	line-height: 2;
+	color: black;
+}
+
+.tourNAME {
+	width: 250px;
+	height: 35px;
+	margin-left: 20px;
+	font-size: 21px;
+	line-height: 2;
+	color: black;
+}
+
+.tourLike{
+	width: 50px;
+	height: 50px;
+	float: right;
+	text-align: center;
+	line-height: 50px;
+	margin-top: 10px;
+	
+}

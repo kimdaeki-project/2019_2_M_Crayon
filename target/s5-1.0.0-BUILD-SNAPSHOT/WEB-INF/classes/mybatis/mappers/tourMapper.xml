@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  
+  <mapper namespace="tourMapper">
+  
+  	<select id="rPrice" resultType="Integer">
+	  	select sum(totalprice) from reservation
+  	</select>
+  	<select id="vPrice" resultType="Integer">
+	  	select sum(vprice) from vreservation
+  	</select>
+  	
+  	<update id="tourUpdate" parameterType="TourNoticeVO">
+  		update tourNotice set compared=#{compared}, include=#{include}, exclude=#{exclude}, alert=#{alert}, prepared=#{prepared}, attention=#{attention}, refund=#{refund}, youTube=#{youTube}
+  		where tourNum = #{tourNum}
+  	</update>
+  
+  	<delete id="tourDelete" parameterType="TourNoticeVO">
+  		delete tourNotice where tourNum = #{tourNum}
+  	</delete>
+  
+  	<insert id="tourWrite" parameterType="TourNoticeVO">
+  		<selectKey order="BEFORE" resultType="Integer" keyProperty="num">
+  			select seq_tour.nextval from dual		
+  		</selectKey>
+	  	insert into tourNotice
+	  	values(#{num}, #{compared}, #{include}, #{exclude}, #{alert}, #{prepared}, #{attention}, #{refund}, #{tourNum}, #{youTube})
+  	</insert>
+  	
+  	<select id="tourSelect" parameterType="TourNoticeVO" resultType="TourNoticeVO">
+  		select * from tourNotice where tourNum =#{tourNum}
+  	</select>
+  	
+	<resultMap type="TourVO" id="tourFile">
+		<id property="tourNum" column="tourNum" />
+		<result property="compared" column="compared" />
+		<result property="include" column="include" />
+		<result property="exclude" column="exclude" />
+		<result property="alert" column="alert" />
+		<result property="prepared" column="prepared" />
+		<result property="attention" column="attention" />
+		<result property="refund" column="refund" />
+		<result property="youTube" column="youTube"/>
+		<result property="tNum" column="tNum" />
+		<result property="tourName" column="tourName"/>
+		<result property="maxNum" column="maxNum"/>
+		<result property="price" column="price"/>
+		<result property="totalNum" column="totalNum"/>
+		<result property="num" column="num"/>
+		<collection property="files" javaType="java.util.List" ofType="TourFilesVO">
+			<id property="fnum" column="fnum" />
+			<result property="fname" column="fname" />
+			<result property="oname" column="oname" />
+			<result property="timeTable" column="timeTable" />
+			<result property="time" column="time" />
+		</collection>
+	</resultMap>
+
+	<select id="tourList" resultMap="tourFile">
+		select * from tour full outer join  tournotice using(tournum) full outer join tourfiles using(num) order by tourNum asc
+	</select>
+	
+	<select id="tourImgList" parameterType="TourFilesVO" resultType="TourFilesVO">
+		select fname, num from tourfiles where fnum = (select max(fnum) from tourfiles)
+
+	</select>
+
+
+<!--예약-->
+	<insert id="Reservation" parameterType="ReservationVO">
+		insert into reservation
+		values
+		(vip_seq.nextval,#{personNum}, #{name}, #{email}, #{phone}, #{day},
+		#{tourNum}, #{ps}, #{totalPrice}, #{tourName}, #{kakaoID},#{tourEmail})
+	</insert>
+	
+	
+	<select id="ReservationListMy" parameterType="ReservationVO" resultType="ReservationVO">
+		select * from reservation where email=#{email}
+	</select>
+
+	
+	<select id="ReservationList" parameterType="Pager" resultType="ReservationVO">	
+		select * from 
+  				(select R.*, rownum RN from
+		  			(select * from reservation
+		  			order by renum desc) R)
+		  	where RN between #{startRow} and #{lastRow}
+	</select>
+	
+	<select id="ReservationCount" resultType="Integer" parameterType="Pager">
+  			select count(renum) from reservation
+  		</select> 
+
+	
+	<select id="ReservationResult" parameterType="ReservationVO" resultType="ReservationVO">
+		select * from reservation 
+	</select>
+	
+	<delete id="ReservationDelete" parameterType="ReservationVO">
+		delete Reservation where reNum=#{reNum}	
+	</delete>
+
+<!--맞춤투어 예약-->
+
+	<insert id="VReservation" parameterType="vReservationVO" >
+		insert into vreservation
+		values
+		(vip_seq.nextval,#{name}, #{email},#{kakaoID},#{content},#{vday},#{vprice},#{tourEmail},'관리자 승인 대기',#{vps},#{vphone})
+	</insert>
+	
+
+	<select id="VReservationMy" parameterType="vReservationVO" resultType="vReservationVO">
+		select * from vreservation where email=#{email}
+	</select>
+
+
+	<select id="VReservationList" parameterType="vReservationVO" resultType="vReservationVO">
+	select * from 
+  				(select VR.*, rownum VRN from
+		  			(select * from vreservation
+		  			order by vipno desc) VR)
+		  	where VRN between #{startRow} and #{lastRow}
+	
+	</select>
+	
+	<update id="VReservationUpdate1" parameterType="vReservationVO">
+	update vreservation set ac='예약 확정 결제 대기', vprice=#{vprice} where vipno=#{vipno}
+	</update>
+	
+	
+		<select id="VReservationCount" resultType="Integer" parameterType="Pager">
+  			select count(vipno) from vreservation
+  		</select> 
+  		
+  		
+  		
+  			<delete id="VReservationDelete" parameterType="vReservationVO">
+		delete vReservation where vipno=#{vipno}	
+		</delete>
+  		
+
+</mapper>

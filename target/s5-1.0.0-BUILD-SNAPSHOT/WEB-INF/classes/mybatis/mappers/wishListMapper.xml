@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="wishListMapper">
+	<select id="listShow" resultMap="wishList">
+		select W.*, T.tourName, T.tnum, T.price, F.fname, F.oname, F.fnum from wishList W full outer join tour T
+		on W.tourNum = T.tourNum
+		full outer join tourNotice TN
+		on W.tourNum = TN.tourNum
+		full outer join tourfiles F
+		on TN.num = F.num
+		where email = #{email} order by tourNum asc
+	</select>  
+	
+	<resultMap type="wishListVO" id="wishList">
+		<id property="tourNum" column="tourNum" />
+		<result property="tNum" column="tNum" />
+		<result property="tourName" column="tourName"/>
+		<result property="price" column="price"/>
+		<result property="num" column="num"/>
+		<result property="email" column="email"/>
+		<collection property="files" javaType="java.util.List" ofType="TourFilesVO">
+			<id property="fnum" column="fnum" />
+			<result property="fname" column="fname" />
+			<result property="oname" column="oname" />
+		</collection>
+	</resultMap>
+	
+	<insert id="listInsert" parameterType="wishListVO">
+		insert into wishList(num, tourNum, email) values(seq_wishList.nextval, #{tourNum}, #{email})
+	</insert>
+	
+	<delete id="listDelete" parameterType="wishListVO">
+		delete wishList where tourNum = #{tourNum}
+	</delete>
+  </mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+  <configuration>
+  	<typeAliases>
+  		<typeAlias type="com.nuri.s5.model.MemberVO" alias="MemberVO"/>
+  		<typeAlias type="com.nuri.s5.model.ReviewVO" alias="ReviewVO"/>
+  		<typeAlias type="com.nuri.s5.model.TourNoticeVO" alias="TourNoticeVO"/>
+  		<typeAlias type="com.nuri.s5.model.TourVO" alias="TourVO"/>
+  		<typeAlias type="com.nuri.s5.model.WishListVO" alias="WishListVO"/>
+  		<typeAlias type="com.nuri.s5.model.ReviewFilesVO" alias="ReviewFilesVO"/>
+  		<typeAlias type="com.nuri.s5.model.TourFilesVO" alias="TourFilesVO"/>
+  		<typeAlias type="com.nuri.s5.util.Pager" alias="Pager"/>
+  		<typeAlias type="java.lang.Integer" alias="Integer"/>
+  		<typeAlias type="com.nuri.s5.model.QnaVO" alias="QnaVO"/>
+  		<typeAlias type="com.nuri.s5.model.TourCalendarVO" alias="TourCalendarVO"/>
+		<typeAlias type="java.util.HashMap" alias="HashMap"/>
+		<typeAlias type="com.nuri.s5.model.ReservationVO" alias="ReservationVO"/>
+		<typeAlias type="com.nuri.s5.model.VReservationVO" alias="vReservationVO"/>
+  	</typeAliases>
+  </configuration>
+  

@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+.h_Css{
+	margin-top: 20px;
+	margin-left:20px;
+	
+}
+
+.idTest{
+	margin-top:10px;
+	border-bottom: 2px solid #ce69fe;
+	margin-right: 25px;
+	padding: 10px;
+}
+
+.idTest_font{
+	font-size: 14px;
+}
+
+#email{
+	width: 250px;
+	height: 30px;
+}
+
+.h_Css2{
+	border-bottom: 1px solid #ce69fe;
+	margin-right: 25px;
+	padding: 10px;
+}
+
+#question, #answer{
+	width:450px;
+	margin: 0 auto;
+	margin-right: 25px;
+	
+}
+
+.qhfk{
+	height:15px;
+	border-bottom: 1px solid #ce69fe;
+	margin-right:25px;
+	margin-bottom: 10px;
+}
+
+.answerButton{
+	padding:8px;
+	border: 1px solid #c0c0c0;
+	border-radius:5px;
+	background-color:white; 
+}

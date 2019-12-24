@@ -1,0 +1,101 @@
+
+
+Insert into CRAYON.FILES (FNUM,NUM,FNAME,ONAME) values (25,165,'a1ca44da-30d5-461c-9797-d42d4a09c811_T6.jpg','T6.jpg');
+Insert into CRAYON.FILES (FNUM,NUM,FNAME,ONAME) values (26,168,'76d6bab3-9f91-4965-91eb-9b4341556704_vip.jpg','vip.jpg');
+Insert into CRAYON.FILES (FNUM,NUM,FNAME,ONAME) values (8,138,'dab59f9a-1efe-49d0-8089-cfcea9fa7809_in_6.jpg','in_6.jpg');
+Insert into CRAYON.FILES (FNUM,NUM,FNAME,ONAME) values (9,141,'dc5a8cf9-a723-4694-8e4b-efda15a9c903_in_2.jpg','in_2.jpg');
+Insert into CRAYON.FILES (FNUM,NUM,FNAME,ONAME) values (10,142,'f9a49abe-9e70-4446-829b-6f0c324a8a4a_in_4.jpg','in_4.jpg');
+
+
+Insert into CRAYON.MEMBER (EMAIL,PW,NAME,BIRTH,KCHECK,ACHECK,MNUM) values ('sk','sk123!','쌍용','2000-02-02',0,0,13);
+Insert into CRAYON.MEMBER (EMAIL,PW,NAME,BIRTH,KCHECK,ACHECK,MNUM) values ('qq123','qq123!','qq','2019-12-14',0,1,2);
+Insert into CRAYON.MEMBER (EMAIL,PW,NAME,BIRTH,KCHECK,ACHECK,MNUM) values ('asd','asd123!','asd','2019-10-04',0,0,6);
+Insert into CRAYON.MEMBER (EMAIL,PW,NAME,BIRTH,KCHECK,ACHECK,MNUM) values ('www','www123!','www','2019-12-05',0,0,7);
+Insert into CRAYON.MEMBER (EMAIL,PW,NAME,BIRTH,KCHECK,ACHECK,MNUM) values ('ck1','wldbs123!','창규','2019-12-05',0,0,21);
+
+
+
+
+Insert into CRAYON.QNA (QNUM,QUESTION,ANSWER,EMAIL) values (202,'예약신청후 입금계좌 확인은 어디서 하나요?','SMS 문자와 메일로 입금안내 발송되십니다.','hannaddy@naver.com');
+Insert into CRAYON.QNA (QNUM,QUESTION,ANSWER,EMAIL) values (203,'투어시간에 늦을경우 투어참여 가능한가요?','당일 투어에 늦을경우 노쇼''(No-Show)로 투어비용 전액환불 불가입니다. 간혹 10분정도 대기시간을 요구하는 경우도 있습니다.','hannaddy@naver.com');
+Insert into CRAYON.QNA (QNUM,QUESTION,ANSWER,EMAIL) values (204,' 어린이 투어요금 할인 있나요?','어린이 투어요금도 성인과 동일합니다.','hannaddy@naver.com');
+Insert into CRAYON.QNA (QNUM,QUESTION,ANSWER,EMAIL) values (205,' 환불규정이 궁금합니다!','투어일 기준으로 15일전 예약 수수료 1인2만원을 제외한금액 환불가능하며 투어일14일 전에환불 불가합니다.','supersonic11@daum.net');
+Insert into CRAYON.QNA (QNUM,QUESTION,ANSWER,EMAIL) values (206,'투어확정은 어떻게 진행되나요?','모든투어는 투어비용을 입금해 주셔야 우선예약 되시며 ,입금확인후 바우처를 이메일로 보내드리며 예약이 완료됩니다.','supersonic11@daum.net');
+
+
+
+
+
+Insert into CRAYON.RESERVATION (RENUM,PERSONNUM,NAME,EMAIL,PHONE,DAY,TOURNUM,PS,TOTALPRICE,TOURNAME,KAKAOID,TOUREMAIL) values (61,2,'tt','tt','010-2222-7777','2019/12/27','5','잘부탁드립니다 
+안전한 투어 부탁드려요~!',70000,'파리야경차량투어','tt','tt123@g.com');
+Insert into CRAYON.RESERVATION (RENUM,PERSONNUM,NAME,EMAIL,PHONE,DAY,TOURNUM,PS,TOTALPRICE,TOURNAME,KAKAOID,TOUREMAIL) values (34,12,'진창규','ck','023224854','2019/12/27','6','asd',2400000,'벨기에투어','qq','sdgd@naver.com');
+Insert into CRAYON.RESERVATION (RENUM,PERSONNUM,NAME,EMAIL,PHONE,DAY,TOURNUM,PS,TOTALPRICE,TOURNAME,KAKAOID,TOUREMAIL) values (13,5,'www','www','12345689','2019/12/20','1','sgse',450000,'몽생미셸투어','www','faege@rgri.com');
+Insert into CRAYON.RESERVATION (RENUM,PERSONNUM,NAME,EMAIL,PHONE,DAY,TOURNUM,PS,TOTALPRICE,TOURNAME,KAKAOID,TOUREMAIL) values (20,2,'asd','asd','1020404133','2020/02/21','5','asd',70000,'파리야경차량투어','asd','sdfgs@skj.com');
+Insert into CRAYON.RESERVATION (RENUM,PERSONNUM,NAME,EMAIL,PHONE,DAY,TOURNUM,PS,TOTALPRICE,TOURNAME,KAKAOID,TOUREMAIL) values (31,5,'진창규','ck','asd','2019/12/27','6','asd',1000000,'벨기에투어','qq','faege@rgri.com');
+Insert into CRAYON.RESERVATION (RENUM,PERSONNUM,NAME,EMAIL,PHONE,DAY,TOURNUM,PS,TOTALPRICE,TOURNAME,KAKAOID,TOUREMAIL) values (32,11,'진창규','ck','asd','2019/12/30','5','asd',385000,'파리야경차량투어','asd','as@sf.com');
+
+
+
+
+Insert into CRAYON.REVIEW (NUM,TITLE,WRITER,CONTENTS,DAY,HIT,TOURNAME) values (1,'ck','ck','ck',to_date('19/12/04','RR/MM/DD'),0,'tour');
+Insert into CRAYON.REVIEW (NUM,TITLE,WRITER,CONTENTS,DAY,HIT,TOURNAME) values (2,'ck','ck','ck',to_date('19/12/04','RR/MM/DD'),0,'tour');
+Insert into CRAYON.REVIEW (NUM,TITLE,WRITER,CONTENTS,DAY,HIT,TOURNAME) values (71,'ck49','ck49','tour49',to_date('19/12/04','RR/MM/DD'),0,'nonoTour49');
+Insert into CRAYON.REVIEW (NUM,TITLE,WRITER,CONTENTS,DAY,HIT,TOURNAME) values (72,'ck49','ck49','tour49',to_date('19/12/04','RR/MM/DD'),0,'nonoTour49');
+Insert into CRAYON.REVIEW (NUM,TITLE,WRITER,CONTENTS,DAY,HIT,TOURNAME) values (73,'ck0','ck0','tour0',to_date('19/12/04','RR/MM/DD'),0,'nonoTour0');
+
+
+
+
+
+
+
+Insert into CRAYON.TOUR (TNUM,TOURNUM,TOURNAME,MAXNUM,PRICE) values (11,1,'몽생미셸투어',20,90000);
+Insert into CRAYON.TOUR (TNUM,TOURNUM,TOURNAME,MAXNUM,PRICE) values (12,2,'베르사유 파리차량투어',20,90000);
+Insert into CRAYON.TOUR (TNUM,TOURNUM,TOURNAME,MAXNUM,PRICE) values (13,3,'픽업 샌딩',20,15000);
+Insert into CRAYON.TOUR (TNUM,TOURNUM,TOURNAME,MAXNUM,PRICE) values (14,4,'파리워킹투어',20,20000);
+Insert into CRAYON.TOUR (TNUM,TOURNUM,TOURNAME,MAXNUM,PRICE) values (15,5,'파리야경차량투어',20,35000);
+
+
+
+
+
+
+
+
+Insert into CRAYON.TOURFILES (FNUM,NUM,FNAME,ONAME,TIMETABLE,TIME) values (241,238,'e3a619ca-ef38-4052-98a0-5fa81394843e_T1_3.jpg','T1_3.jpg','옹플레흐도착&구시가지관관&점심식사','12:00');
+Insert into CRAYON.TOURFILES (FNUM,NUM,FNAME,ONAME,TIMETABLE,TIME) values (242,238,'9072c4ff-0ad3-4f2c-bb7d-a65a7593d837_T1_6.jpg','T1_6.jpg','자유시간&저녁식사&야경','17:30');
+Insert into CRAYON.TOURFILES (FNUM,NUM,FNAME,ONAME,TIMETABLE,TIME) values (243,238,'ace7a0e9-46fb-40df-8624-e64ab5d87bdd_T1_9.jpg','T1_9.jpg','집으로','20:00');
+Insert into CRAYON.TOURFILES (FNUM,NUM,FNAME,ONAME,TIMETABLE,TIME) values (245,244,'9aa4fd1c-193c-4e06-afc9-bc0b0129e779_1.jpg','1.jpg','집가기','09:00');
+Insert into CRAYON.TOURFILES (FNUM,NUM,FNAME,ONAME,TIMETABLE,TIME) values (177,176,'56efc869-cdef-4335-a395-66de10ae89f6_T8_2.jpeg','T8_2.jpeg','모임장소 출발','08:30');
+
+
+
+
+
+
+Insert into CRAYON.TOURNOTICE (NUM,COMPARED,INCLUDE,EXCLUDE,ALERT,PREPARED,ATTENTION,REFUND,TOURNUM,YOUTUBE) values (176,'- 프랑스 최초 한인 법인 버스회사설립<br>- 자사 버스로 진행되어 서비스는 UP 가격은 DOWN 동종업계비교불가<br>- 운전자와 가이드를 분리하여 고객님의 안전을 최우선으로 생각합니다.<br>- 가이드 자격증을 소지한 전문가이드님이 투어진행합니다.<br>- 파리크레파스여행사는 타사 손님을 공유하지 않으며 단독 진행합니다.<br>- 11년의 운영노하우의 이유있는 자신감<br>- 업체유일 신형벤츠차량과 버스안에서 와이파이 무료제공<br>- 파리크레파스 여행사는 한국관광협회 보증보험이 가입되어 있으며 보증보험<br>  미가입 업체는 불미스러운 사고로 인한 해택을 전혀 받을수 없는점 참고하시<br>  길 바랍니다.','- 베테랑 가이드비용 / 차량 관련 모든비용','- 베르사유입장료:궁전,정원,왕비의촌락,성인27유로(뮤지엄패스 사용가능)18세<br>  미만무료입장(여권지참)<br>- 점심식비:15~20유로','- 투어차량 : 7~9인승 (소그룹벤투어)<br>- 4인 이상 출발(8세 이상 투어 참여 가능)<br>- 예약신청후 SMS 문자와 메일로 입금안내 발송되십니다.',' 없음','- 예고없는 파업으로인해 변경되거나 지연 될수있으며 이를 사유로는 환불이 <br>  불가합니다.<br>- 원활한 투어진행을 위해 출발 10분전까지는 도착 하셔야하며 여권 지참하셔<br>  야 합니다.<br>- 케리어 가져오시면 투어참여 불가하십니다.<br>- 투어종료는 예상시간보다 약 30분정도 늦어질수 있습니다<br><br>***파리크레파스 여행사는 한국관광협회 보증보험이 가입되어 있으며 보증보험<br>   미가입 업체는 불미스러운 사고로 인한 해택을 전혀 받을수 없는점 참고하<br>   시길 바랍니다.','- 투어일 15일전: 환불가능 (단,환불수수료 1인 2만원징수) 이메일로 예약번호와<br>  함께 보내주시면 환불신청 가능하십니다.<br>- 투어일 14일전: 환불불가',2,'https://www.youtube.com/embed/syUOnIAoMNE');
+Insert into CRAYON.TOURNOTICE (NUM,COMPARED,INCLUDE,EXCLUDE,ALERT,PREPARED,ATTENTION,REFUND,TOURNUM,YOUTUBE) values (244,'- 프랑스 최초 한인 법인 버스회사설립<br>- 자사 버스로 진행되어 서비스는 UP 가격은 DOWN 동종업계비교불가<br>- 운전자와 가이드를 분리하여 고객님의 안전을 최우선으로 생각합니다.<br>- 가이드 자격증을 소지한 전문가이드님이 투어진행합니다.<br>- 파리크레파스여행사는 타사 손님을 공유하지 않으며 단독 진행합니다.<br>- 11년의 운영노하우의 이유있는 자신감<br>- 업체유일 신형벤츠차량과 버스안에서 와이파이 무료제공<br>- 파리크레파스 여행사는 한국관광협회 보증보험이 가입되어 있으며 보증보험<br>미가입 업체는 불미스러운 사고로 인한 해택을 전혀 받을수 없는점 참고하시<br>길 바랍니다.<br>','- 차량에대한 모든 제반 비용/가이드','- 베르사유궁전 입장료:성인 18유로(뮤지엄패스사용), 만 18세미만무료<br>- 지베르니입장료:성인 9.5유로,만25세미만 5.5유로(학생증지참),7세미만 무료<br>- 고흐다락방:성인6유로,만18세미만 4유로 ,12세미만 무료(선택사항)<br>- 점심식비 15~20유로<br>','- 투어차량 : 9인승 (소그룹벤투어)<br>- 8인 이상 출발합니다.(8세 이상 투어 참여 가능)<br>- 지베르니 정원은 3월23일~11월1까지만 오픈합니다.<br>- 본투어는 지베르니 동계휴관일 동안은 진행하지않습니다<br>- 예약신청후 SMS 문자와 메일로 입금안내 발송되십니다.<br><br>','- 이어폰 준비시, 쾌적한 수신기사용 가능하십니다.(지베르니정원 투어시)','- 원활한 투어진행을 위해 출발 10분전까지는 도착 하셔야하며 여권 지참하셔야<br>합니다.<br>- 예고없는 파업으로인해 변경되거나 지연 될수있으며 이를 사유로는 환불이 불<br>가합니다.<br>- 모임시간에 늦으시면 투어참여가 불가하며 따로 연락드리지 않는점 참고해 주<br>세요.<br>- 케리어 가져오시면 투어참여 불가하십니다.<br>***파리크레파스 여행사는 한국관광협회 보증보험이 가입되어 있으며 보증보험<br>미가입 업체는 불미스러운 사고로 인한 해택을 전혀 받을수 없는점 참고하시<br>길 바랍니다.','- 투어일 15일전: 환불가능 (단,환불수수료 1인 2만원징수) 이메일로 예약번호와<br>함께 보내주시면 환불신청 가능하십니다.<br>- 투어일 14일전: 환불불가',11,'https://www.youtube.com/embed/HNZP6pJ1R9c');
+
+
+
+
+
+Insert into CRAYON.VRESERVATION (VIPNO,NAME,EMAIL,KAKAOID,CONTENT,VDAY,VPRICE,TOUREMAIL,AC,VPS,VPHONE) values (33,'qq','qq123','www','　* 유림회관　* 창덕궁　* 창경궁','2019/12/25',130000,'hu@na.com','예약 확정 결제 대기','qqq','0226026418');
+Insert into CRAYON.VRESERVATION (VIPNO,NAME,EMAIL,KAKAOID,CONTENT,VDAY,VPRICE,TOUREMAIL,AC,VPS,VPHONE) values (18,'qq','qq123','tt','　* 창덕궁　* 경복궁　* 유림회관','2019/12/24',200000,null,'예약 확정 결제 대기','asfsafaasfsasafsfsafsasfaffafsaafsafsafsafsafsafsa','01022222222');
+Insert into CRAYON.VRESERVATION (VIPNO,NAME,EMAIL,KAKAOID,CONTENT,VDAY,VPRICE,TOUREMAIL,AC,VPS,VPHONE) values (54,'진창규','ck','jinck22','　* 경복궁　* 창경궁　* 창덕궁','2019/12/26',15000000,'jinchangkyu@gmail.com','예약 확정 결제 대기','좀 해줘라!!','023224854');
+Insert into CRAYON.VRESERVATION (VIPNO,NAME,EMAIL,KAKAOID,CONTENT,VDAY,VPRICE,TOUREMAIL,AC,VPS,VPHONE) values (40,'qq','qq123','yy','　* 경희궁,시립미술관　* 경복궁　* 덕수궁','2019/12/28',150000,'hannaddy@naver.com','예약 확정 결제 대기','qqr','0226026418');
+Insert into CRAYON.VRESERVATION (VIPNO,NAME,EMAIL,KAKAOID,CONTENT,VDAY,VPRICE,TOUREMAIL,AC,VPS,VPHONE) values (41,'qq','qq123','yr','　* 경희궁,시립미술관　* 경복궁　* 덕수궁','2019/12/27',150000,'hannaddy@naver.com','예약 확정 결제 대기','4444','78457477457');
+
+
+
+
+
+
+Insert into CRAYON.WISHLIST (NUM,TOURNUM,EMAIL) values (67,2,'ck');
+Insert into CRAYON.WISHLIST (NUM,TOURNUM,EMAIL) values (50,6,'asd');
+Insert into CRAYON.WISHLIST (NUM,TOURNUM,EMAIL) values (68,3,'ck');
+Insert into CRAYON.WISHLIST (NUM,TOURNUM,EMAIL) values (51,7,'asd');
+Insert into CRAYON.WISHLIST (NUM,TOURNUM,EMAIL) values (74,9,'ck');
+
+
+

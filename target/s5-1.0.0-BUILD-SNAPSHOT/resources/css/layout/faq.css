@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+.body_head{
+	position:relative;
+	top:101px;
+	background-image: url("../../images/kategorie/faq.jpg");
+	background-size:cover;
+	width:100%;
+	height: 320px;
+	z-index: 5;
+}
+
+
+/*안에 넣을 거 여기다가 추가*/
+.body_inner{
+	margin-top:180px;
+	width: 100%;
+	position: relative;
+}
+
+.body_main{
+	background-color: white;   
+	display: table-row;
+	margin: auto;
+	
+}
+.body_cover{
+	background-color: pink;
+	max-height: 800px;
+	display: table;
+	overflow: auto;
+	margin: auto;
+}
+
+
+/**/
+
+.qt{
+	margin: 0 auto;
+	width:1040px;
+	height:20px;
+	line-height:-2;
+	font-size: 20px;
+	padding:13px 30px 24px 25px;
+	border-bottom: 2px solid #cacaca;
+	color:black;
+}
+
+
+.qna >.q>a{
+	cursor:pointer;
+	
+}
+
+.qna> .hide{
+	
+	display: none;
+	
+}
+
+.hide >li{
+	border: 1px solid #cacaca;
+	padding: 13px 30px 24px 25px;
+	line-height: 1.6;
+	font-size: 17px;
+	background-color: white;
+}
+
+.page{
+	margin-top:100px;
+	width: 100%;
+	height: 100px;
+	background-color: pink;
+	
+	
+}
+
+.body_qna{
+	background-color: white;
+	height: auto;
+}
+
+.footer{
+	width:100%;
+	height: 305px;
+	background-color: #292929;
+	position: relative;
+	margin-top: 150px;
+}
+
+.list{
+	width: 35px;
+	height: 35px;
+	background-color: white;
+	border: solid 5px rgba(89, 92, 166, 0.2);
+	border-radius: 30px;
+	display: inline-block;
+	float: left;	
+	text-align: center;
+	line-height: 31px;
+	margin-top: 30px;
+	font-size: 20px;
+}
+
+.list:hover {
+	color: gray;
+}
+
+.answerButton{
+	float:right;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.btn_class{
+	float:right;
+	overflow: auto;
+	margin-top: 50px;
+}
+
+.pageWrap{
+	margin-left: 500px;
+}
+
+/*수정삭제 버튼*/
+
+.btn1{
+	float:right;
+	margin-top: 10px;
+	padding:8px;
+	border: 1px solid #c0c0c0;
+	border-radius:5px;
+	background-color:white; 
+	margin-left: 5px;
+}
+.btn2{
+	float:right;
+	margin-top: 10px;
+	padding:8px;
+	border: 1px solid #c0c0c0;
+	border-radius:5px;
+	background-color:white; 
+	margin-left: 5px;
+}
+.user{
+	float:right;
+}

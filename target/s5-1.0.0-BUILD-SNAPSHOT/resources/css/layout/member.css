@@ -1,0 +1,276 @@
+@charset "UTF-8";
+
+
+/*memberLogin*/
+.login_main_form {
+	position: relative;
+	background-image: url("../../images/login/login.jpg");
+	background-size: cover;
+	width: 100%;
+	height: 620px;
+}
+
+.login_main_form_sub {
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 620px;
+	display: block;
+}
+
+.login_form {
+	width: 1100px;
+	height: 267px;
+	background-color: transparent;
+	margin: 0 auto;
+	margin-top: 100px;
+	padding-top: 85px;
+}
+
+.login_form>.logtitle {
+	text-align: center;
+	color: white;
+}
+
+.inputform {
+	width: 400px;
+	height: 180px;
+	margin: 0 auto;
+}
+
+.inputform_sub {
+	width: 400px;
+	height: 45px;
+	background-color: white;
+}
+
+.welcomjoin {
+	margin-top: 30px;
+	margin-left: 25px;
+	color: white;
+}
+
+.welcomjoin>a {
+	text-decoration: underline;
+}
+
+.btnform {
+	width: 400px;
+	height: 150px;
+	margin: 0 auto;
+}
+
+
+/*kakao*/
+#kakao-login-btn{
+	width: 195px;
+	height: 65px;
+	float: left;
+	margin-left: 10px;
+}
+/**/
+.logbtn {
+	width: 195px;
+	height: 65px;
+	background-color: #3e86b5;
+	border-radius: 4px;
+	border-style: none;
+	color: white;
+	font-size: large;
+	float: left;
+}
+
+.findbtn {
+	width: 350px;
+	height: 50px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.findbtn>a {
+	margin-left: 75px;
+	color: #aeaeae;
+}
+
+/*memberJoin*/
+.joinMain {
+	position: relative;
+	background-image: url("../../images/login/login.jpg");
+	background-size: cover;
+	width: 100%;
+	height: 620px;
+}
+
+.joinMain_sub {
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 620px;
+	display: block;
+}
+
+.InputMain {
+	width: 1100px;
+	height: 600px;
+	margin: 0 auto;
+	margin-top: 100px;
+	padding-top: 85px;
+}
+
+.InputMain>.jointitle {
+	text-align: center;
+	color: white;
+}
+
+.joinInputBox {
+	width: 1000px;
+	height: 400px;
+	margin: 0 auto;
+}
+
+.joinInput {
+	width: 400px;
+	height: 35px;
+	background-color: white;
+	border-radius: 4px;
+}
+
+.joinInputBox_cover {
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+}
+
+.Joinbtn {
+	width: 400px;
+	height: 45px;
+	background-color: transparent;
+	border-style: solid;
+	border-radius: 4px;
+	border-color: white;
+	color: white;
+	font-size: large;
+}
+
+/* searchID,PW */
+.searchForm {
+	position: relative;
+	background-image: url("../../images/login/login.jpg");
+	background-size: cover;
+	width: 100%;
+	height: 620px;
+}
+
+.searchForm_sub {
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 620px;
+	display: block;
+}
+
+.searchTitle {
+	text-align: center;
+	color: white;
+}
+
+.inputsearch_Form {
+	width: 1100px;
+	height: 400px;
+	margin: 0 auto;
+	margin-top: 100px;
+	padding-top: 85px;
+}
+
+.searchInputBox {
+	margin-top: 30px;
+	width: 400px;
+	height: 250px;
+	margin: 0 auto;
+	width: 400px;
+}
+
+.searchinput {
+	width: 400px;
+	height: 35px;
+	background-color: white;
+	border-radius: 4px;
+}
+
+.searchBox {
+	width: 400px;
+	height: 35px;
+	background-color: transparent;
+	border-radius: 4px;
+	color: white;
+	font-size: large;
+}
+
+.msgBox {
+	margin-top: 70px;
+	color: white;
+	font-size: larger;
+	margin-left: 98px;
+}
+
+/* Mypage */
+.mypageMain {
+	position: relative;
+	background-image: url("../../images/login/mypageBack.jpg");
+	background-size: cover;
+	width: 100%;
+	height: 320px;
+	margin-top: 50px;
+}
+
+.mypageMain_sub {
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 320px;
+	display: block;
+}
+
+.mypageContain {
+	width: 100%;
+	height: 320px;
+	background-color: white;
+}
+.btnsBox{
+	width: 900px;
+	height: 45px;
+	background-color: transparent;
+	float: right;
+	padding-top: 250px;
+	padding-right: 250px;
+	
+}
+.btns{
+	width: 100px;
+	height: 45px;
+	background-color: transparent;
+	border: 2px solid white;
+	color: white;
+	font-size: large;
+	border-radius: 4px;
+	margin-left: 5px;
+}
+.btns_p{
+	width: 200px;
+	height: 45px;
+	background-color: #160727;
+	color: white;
+	border-radius: 4px;
+	font-size: large;
+	border: 2px solid  #a36ae3
+}
+/* Update */
+.updateInput{
+	width: 400px;
+	height: 35px;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 4px;
+	color: white;
+}
+/* checkID*/
+

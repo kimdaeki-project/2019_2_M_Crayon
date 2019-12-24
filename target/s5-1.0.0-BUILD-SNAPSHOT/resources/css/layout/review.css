@@ -1,0 +1,355 @@
+@charset "UTF-8";
+
+.header {
+	height: 100px;
+}
+.navigationWrap > a:hover{
+	text-decoration: none;
+}
+
+.body_head{
+	position:relative;
+	top:101px;
+	background-image: url("../../images/kategorie/review.jpg");
+	background-size:cover;
+	width:100%;
+	height: 320px;
+	z-index: 5;
+}
+
+
+.body_inner {
+	margin-top: 200px;
+	width: 100%;
+	height: 100px;
+}
+
+.body_main {
+	position: relative;
+	z-index: 1;
+	width: 1100px;
+	margin: 0 auto;
+	height:1000px;
+	background-color: transparent;
+}
+
+.container {
+	position: absolute;
+	top: 220px;
+}
+
+#tourName {
+	width: 340px;
+	height: 50px;
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+
+#title {
+	width: 1040px;
+	height: 38px;
+	margin-bottom: 10px;
+	font-size: 16px;
+	padding: 10px;
+}
+
+#contents {
+	width: 1040px;
+	height: 465px;
+	font-size: 16px;
+	padding: 20px;
+}
+
+#tourName>li {
+	border: solid 1px black;
+}
+
+.btnSelect{
+}
+
+/* review Select*/
+.reviewImg {
+	position: relative;
+	background: center 0 no-repeat
+		url("../../images/kategorie/company_profile.jpg");
+	background-size: cover;
+	width: 100%;
+	height: 320px;
+	top: 100px;
+}
+
+.reviewImg_sub {
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 320px;
+	display: block;
+}
+
+.reviewBodyForm {
+	width: 100%;
+	height: 900px;
+
+}
+
+.reviewT {
+	width: 1100px;
+	height: 500px;
+
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+.reviewFile {
+	width: 1100px;
+	height: 200px;
+	margin: 0 auto;	
+	border-bottom: 2px solid #cacaca;
+}
+
+.Reviewtable {
+	width: 1100px;
+	height: 200px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+.reviewBoardTitle {
+	
+}
+
+.ReviewSelectTitle {
+	width: 550px;
+	height: 60px;
+	float: left;
+	font-size: large;
+	border-bottom: 2px solid #cacaca;
+	line-height: 45px;
+}
+
+.ReviewSelectWriter {
+	width: 550px;
+	height: 60px;
+	float: left;
+	font-size: large;
+	border-bottom: 2px solid #cacaca;
+	line-height: 45px;
+}
+
+.Reviewactive {
+	width: 1100px;
+	height: 60px;
+	margin: 0 auto;
+}
+
+.rc {
+	float: left;
+	color: black;
+	font-size: larger;
+}
+.rc2{
+	float: right;
+	color: black;
+	font-size: medium;
+	margin-right: 10px;
+}
+
+.reviewContent {
+	width: 1100px;
+	height: 300px;
+
+}
+.ReviewContent_sub{
+	width: 1050px;
+	height: 240px;
+	font-size:medium;
+	margin: 0 auto;
+	margin-top: 30px;
+	
+}
+
+.reviewBtns {
+	width: 1100px;
+	height: 20px;
+
+}
+.reviewBtns > a {
+	float: right;
+	margin-left: 20px;
+	margin-right: 5px;
+}
+
+.realReview {
+	font-size: xx-large;
+	color: white;
+	padding-top: 200px;
+	padding-left: 390px;
+	font-weight: bolder;
+}
+
+.realReview2 {
+	font-size: medium;
+	color: white;
+	padding-top:10px; 
+	padding-left: 390px;
+	font-weight: bold;
+}
+
+/****************** 사진 크게보기  ********************/
+
+/* body { */
+/*   font-family: Verdana, sans-serif; */
+/*   margin: 0; */
+/* } */
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+}
+
+/* The Modal (background) */
+
+.modal {
+  display: none;
+  z-index: 50;
+  padding-top: 250px;
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 176%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 720px;
+  max-height: 420px;
+}
+
+/* The Close Button */
+.close {
+  color: black;
+  position: absolute;
+  top: 180px;
+  right: 590px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev {
+  cursor: pointer;
+  position: absolute;
+  left: 530px;
+  top: 32%;
+  width: auto;
+  padding: 16px;
+  margin-top: 150px;
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.next{
+  cursor: pointer;
+  position: absolute;
+  margin-right: 530px;
+  top: 32%;
+  width: auto;
+  padding: 16px;
+  margin-top: 150px;
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+/* .caption-container { */
+/*   text-align: center; */
+/*   background-color: black; */
+/*   padding: 2px 16px; */
+/*   color: white; */
+/* } */
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

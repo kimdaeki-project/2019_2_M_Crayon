@@ -1,0 +1,315 @@
+@charset "UTF-8";
+.body{
+	width: 100%;
+	height:100%;
+	background:white; 
+	margin-top: 100px;
+	
+}
+
+.body_main1{
+	
+	width:1100px;
+	height: 760px;
+	background: white;
+	margin: 0 auto;
+	
+}
+
+.goods_title{
+	padding: 20px;
+	font-size: 30px;
+	letter-spacing: -1.5;
+	font-weight: 500px;
+}
+
+.goods_main_img{
+	width: 1100px;
+	height: 580px;
+
+}
+
+.mySlides{
+	width: 720px;
+	height: 630px;
+	
+}
+
+#m1{
+	width: 100%;
+	height: 100%;
+	background: white;
+}
+
+/***/
+
+div.header_2{
+	width:100%;
+	height:60px;
+	position: -webkit-sticky;
+	position: sticky;
+	border-top: 1px solid #c0c0c0;
+	border-bottom: 1px solid #c0c0c0;
+	background-color:white;
+	top:100px;
+	z-index: 56;
+	
+}
+
+.header_2inner{
+	width: 1100px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.goods_menu{
+	float:left;
+	width: 125.61px;
+	height:60px;
+	text-align: center;
+	color:#BFBFBF;
+	font-size: 20px;
+	line-height: 60px;
+}
+
+.goods_menu> a{
+	color:#BFBFBF;
+}
+
+.goods_menu a:hover{
+	color:black;
+}
+
+.goods_menu:hover{
+	color:black;
+	height:60px;
+	border-bottom: 3px solid #a36ae3;
+}
+
+/****/
+.body_main2{
+	width: 1100px;
+	height:100%;
+
+	margin: 0 auto;
+}
+.m{
+	font-size: 20px;
+	padding: 20px;
+	font-weight: bold;
+}
+/*menu*/
+.menu1{
+	width: 100%;
+
+}
+
+.plan{
+	width: 718px;
+	height: 130px;
+	padding: 10px 20px;
+	
+}
+
+.planLine{
+	
+}
+
+/**/
+.menu2{
+	width: 100%;
+	height: 100%;
+}
+
+#m2{
+	position: relative;
+	top: -150px;
+	height: 1px;
+	width: 1px;
+	background-color: transparent;
+}
+
+/**/
+#m3{
+	position: relative;
+	top: -150px;
+	height: 1px;
+	width: 1px;
+	background-color: transparent;
+}
+
+.m3{
+	margin-top: 40px;
+	width: 720px;
+	height: 400px;
+	background-color: #f6f6f6;	
+}
+
+.m3Img{
+	width: 360px;
+	height: 250px;
+}
+
+.m3Txt{
+	font-size: 18px;
+	font-weight: normal;
+	colot:#000;
+	padding: 10px;
+}
+
+.m3Map{
+	position: relative;
+	float: right;
+	bottom:90px;
+	z-index: 5;
+}
+
+.menu3{
+	margin-left: 20px;
+	margin-top: 20px;
+	width: 720px;
+	height: 450px;
+	border-top: 1.5px solid #cacaca;
+
+}
+
+.m3_main{
+	font-size: 24px;
+	font-weight: normal;
+	letter-spacing: 1;
+
+}
+
+/**/
+.menu4{
+	width: 100%;
+	
+}
+
+#m4{
+	position: relative;
+	top: -150px;
+	height: 1px;
+	width: 1px;
+	background-color: transparent;
+}
+
+#reviewT{
+	width: 720px;
+
+}
+
+.m4_main{
+	font-size: 24px;
+	letter-spacing: -1;
+	font-weight: normal;
+	padding-bottom: 1px;
+}
+/**/
+.menu5{
+	width: 100%;
+	height: 400px;
+	
+}
+
+#m5{
+	position: relative;
+	top: -150px;
+	height: 1px;
+	width: 1px;
+	background-color: transparent;
+}
+
+
+/**/
+.menu6{
+	width: 100%;
+	height: 500px;
+}
+
+
+.gocenter{
+	width: 720px;
+	height: 100px;
+	border-top: 1px solid #cacaca;
+}
+
+.gocenterBtn{
+	width: 240px;
+	height: 50px;
+	padding: 10px;
+	margin-top: 20px;
+	border-radius: 5px;
+	background-color: white;
+	border: 1px solid black;
+	font-size: 18px;
+}
+
+.gocenterImg{
+	margin-top: 50px;
+}
+
+
+/* ==================== 넘기는거 css ==================== */
+.scheduleT{
+	width: 700px;
+
+	border: 1px solid gray; 
+}
+.planLine{
+	width: 650px;
+	margin: 0 auto;	
+}
+
+.scheduleText{
+	line-height: 4;
+	margin-left: 270px;
+}
+.scheduleText2{
+	margin-top: -40px;
+	margin-left: 40px;
+}
+
+.timeTableImg{
+	width: 120px;
+	height: 120px;
+	border-radius: 60px;
+}
+
+.timeTableWrap{
+	height: 150px;
+}
+
+.timeText{
+	font-size: 24px;
+
+	margin-left: 50px;
+	vertical-align: top;
+	line-height: 4;
+}
+
+.tableText{
+	font-size: 18px;
+	line-height: 5.5;
+	vertical-align: top;
+	margin-left: 20px;
+	letter-spacing: -2px;
+}
+
+h4{
+	font-size: 23px;
+	letter-spacing: -2px;
+}
+
+.textWrap{
+	margin-bottom: 50px;
+}
+
+.textText{
+	padding-bottom: 30px;
+	margin-left: 10px;
+	line-height: 2;
+	font-size: 16px;
+	font-weight: 200;
+	display: block;
+}
