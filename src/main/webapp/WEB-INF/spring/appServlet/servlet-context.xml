@@ -48,6 +48,20 @@
 		</interceptor>
 	</interceptors>
 	
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/pay/*"/>
+			<exclude-mapping path="/pay/kakaoPay"/>
+			<exclude-mapping path="/pay/kakaoPaySuccess"/>
+			<exclude-mapping path="/pay/vkakaoPay"/>
+			<exclude-mapping path="/pay/vkakaoPaySuccess"/>
+			<beans:bean class="com.nuri.s5.interceptors.LoginInterceptor"/>
+		</interceptor>
+	</interceptors>
+	
+	
+	
 	<interceptors>
 		<interceptor>
 			<mapping path="/member/memberMyPage"/>
